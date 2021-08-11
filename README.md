@@ -15,7 +15,7 @@
 The following long-form essays describe how to use a variety of smart tools the resilience and security of your digital assets
 
 ***Multisigs:***
-* [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Multisig.md) (March 2021) - Dsign process & sample multisigs (released).
+* [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Multisig.md) (March 2021) - Design process & sample multisigs (released).
 
 ***SSKR Shares:***
 * [Designing SSKR Share Scenarios]() (August 2021) - How to manage SSKR shares (pending)
@@ -30,6 +30,12 @@ The following smaller topics are simple suggesting for maintaing robust security
 * [SmartCustody Practices](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Practices.md)
    * [Separate Seeds from Keys](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Practices.md#separate-seeds--keys)
 
+## Gordian Apps
+
+All of the [Gordian](https://github.com/BlockchainCommons/Gordian) apps are SmartCustody apps, because they highlight the Gordian Principles, including resilience. They also tend to use SmartCustody tools such as multisigs and SSKR. However, some are of particular note, because they're also built to solve very specific SmartCustody problems.
+
+* [mori-cli](https://github.com/BlockchainCommons/mori-cli) — A miniscript-based app that uses timelocks to ensure the continuity of funds following death or incapacitation.
+ 
 ## Gordian Principles
 
 **SmartCustody** displays how to use the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which are philosophical and technical underpinnings to Blockchain Commons' Gordian technology, to ensure responsible key management.
