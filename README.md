@@ -15,7 +15,7 @@
 The following long-form essays describe how to use a variety of smart tools the resilience and security of your digital assets
 
 **Multisigs:**
-* [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Multisig.md) (March 2021) - Our design process & the Gordian multisig (released).
+* [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Multisig.md) (March 2021) - Dsign process & sample multisigs (released).
 
 **SSKR Shares:**
 * [Designing SSKR Share Scenarios]() (August 2021) - How to manage SSKR shares (pending)
