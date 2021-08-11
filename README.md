@@ -4,13 +4,11 @@
 
 **SmartCustody** is an educational project intended to encourage responsible key management for digital assets. It includes a book focused on risk modeling and digital custody scenarios as well as a number of shorter papers that focus on individual "smart" methodologies for managing digital custody, such as multisigs and sharded shares.
 
-## Additional Information
-
-### The SmartCustody Book
+## The SmartCustody Book
 
 * [#SmartCustody 1.01](https://github.com/BlockchainCommons/SmartCustodyBook) (July 2019) — Original book on how to model your risks and maintain the safety of your digital assets (released).
 
-### SmartCustody Tools
+## SmartCustody Tools
 
 The following long-form essays describe how to use a variety of smart tools the resilience and security of your digital assets
 
@@ -23,8 +21,7 @@ The following long-form essays describe how to use a variety of smart tools the 
 ***Timelocks:***
 * [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (preliminary draft).
 
-
-### Smaller Topics
+## SmartCustody Best Practices
 
 The following smaller topics are simple suggesting for maintaing robust security.
 
