@@ -14,13 +14,13 @@
 
 The following long-form essays describe how to use a variety of smart tools the resilience and security of your digital assets
 
-**Multisigs:**
+***Multisigs:***
 * [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Multisig.md) (March 2021) - Dsign process & sample multisigs (released).
 
-**SSKR Shares:**
+***SSKR Shares:***
 * [Designing SSKR Share Scenarios]() (August 2021) - How to manage SSKR shares (pending)
 
-**Timelocks:**
+***Timelocks:***
 * [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (preliminary draft).
 
 
