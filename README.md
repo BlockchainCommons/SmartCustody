@@ -28,7 +28,8 @@ The following long-form essays describe how to use a variety of smart tools the 
 
 The following smaller topics are simple suggesting for maintaing robust security.
 
-*
+* [SmartCustody Practices](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Practices.md)
+   * [Separate Seeds from Keys](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Practices.md#separate-seeds--keys)
 
 ## Gordian Principles
 
