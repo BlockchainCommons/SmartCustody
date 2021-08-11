@@ -1,41 +1,47 @@
-# Blockchain Commons `$projectname`
+# Blockchain Commons SmartCustody
 
-<!--Guidelines: https://github.com/BlockchainCommons/secure-template/wiki -->
+### _by Christopher Allen and Shannon Appelcline_
 
-### _by $major-authors_
-
-**`$ProjectDescription`** is …
+**SmartCustody** is an educational project intended to encourage responsible key management for digital assets. It includes a book focused on risk modeling and digital custody scenarios as well as a number of shorter papers that focus on individual "smart" methodologies for managing digital custody, such as multisigs and sharded shares.
 
 ## Additional Information
 
-The following files contain…
+### The SmartCustody Book
 
-* `$ListOfEssentialDocs`
+* [#SmartCustody 1.01](https://github.com/BlockchainCommons/SmartCustodyBook) (July 2019) — Out original book on how to model your risks and maintain the safety of your digital assets (released).
+
+### SmartCustody Tools
+
+The following long-form essays describe how to use a variety of smart tools the resilience and security of your digital assets
+
+**Multisigs:**
+* [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Multisig.md) (March 2021) - Our design process & the Gordian multisig (released).
+
+**SSKR Shares:**
+* [Designing SSKR Share Scenarios]() (August 2021) - How to manage SSKR shares (pending)
+
+**Timelocks:**
+* [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (preliminary draft).
+
+
+### Smaller Topics
+
+The following smaller topics are simple suggesting for maintaing robust security.
+
+*
 
 ## Gordian Principles
 
-` $projectname` is a reference implementation meant to display the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which are philosophical and technical underpinnings to Blockchain Commons' Gordian technology. This includes:
+**SmartCustody** displays how to use the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which are philosophical and technical underpinnings to Blockchain Commons' Gordian technology, to ensure responsible key management.
 
-* **Independence.** `how does it demonstrate independence`
-* **Privacy.** `how does it demonstrate privacy`
-* **Resilience.** `how does it demonstrate resilience`
-* **Openness.** `how does it demonstrate openness`
+* **Independence.** SmartCustody suggests self-sovereign scenarios, where you control your keys.
+* **Privacy.** A minor element of SmartCustody, privacy should innately develop from the independent scenarios.
+* **Resilience.** SmartCustody combats two major problems: it makes sure keys aren't lost or stolen.
+* **Openness.** The procedures of SmartCustody use standard, non-proprietary methods, such as multisigs, timelocks, and Shamir's Secret Sharing.
 
-Blockchain Commons apps do not phone home and do not run ads. Some are available through various app stores; all are available in our code repositories for your usage.
+## Status - Ongoing
 
-`REMOVE THIS SECTION UNLESS THIS IS A REFERENCE APP MEANT TO DEMONSTRATE GORDIAN PRINCIPLES`
-
-## Status - Late Alpha
-
-` $projectname`  is currently under active development and in the late alpha testing phase. It should not be used for production tasks until it has had further testing and auditing.
-
-### Roadmap
-
-## Prerequisites
-
-## Installation Instructions
-
-## Usage Instructions
+**SmartCustody** is an ongoing process. See the individual descriptions of books and articles.
 
 ## Origin, Authors, Copyright & Licenses
 
@@ -43,67 +49,11 @@ Unless otherwise noted (either in this [/README.md](./README.md) or in the file'
 
 In most cases, the authors, copyright, and license for each file reside in header comments in the source code. When it does not, we have attempted to attribute it accurately in the table below.
 
-This table below also establishes provenance (repository of origin, permalink, and commit id) for files included from repositories that are outside of this repo. Contributors to these files are listed in the commit history for each repository, first with changes found in the commit history of this repo, then in changes in the commit history of their repo of their origin.
-
-| File      | From                                                         | Commit                                                       | Authors & Copyright (c)                                | License                                                     |
-| --------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
-| exception-to-the-rule.c or exception-folder | [https://github.com/community/repo-name/PERMALINK](https://github.com/community/repo-name/PERMALINK) | [https://github.com/community/repo-name/commit/COMMITHASH]() | 2020 Exception Author  | [MIT](https://spdx.org/licenses/MIT)                        |
-
-### Dependencies
-
-To build  `$projectname` you'll need to use the following tools:
-
-- autotools - Gnu Build System from Free Software Foundation ([intro](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)).
-
-### Libraries
-
-The following external libraries are used with `$projectname`:
-
-- [community/repo-name](https://github.com/community/repo-name) — What the library does (use OR fork [version] OR include [version]).
-
-Libraries may be marked as `use` (the current version of the library is used), `fork` (a specific version has been forked to the BCC repos for usage), or `include` (files from a specific version have been included).
-
-### Derived from ...
-
-This  `$projectname` project is either derived from or was inspired by:
-
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
-
-## Subsequent Usage
-
-### Adapted by ...
-
-These are adaptations, conversions, and wrappers that make `$projectname` available for other languages:
-
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com)(language).
-
-### Used by ...
-
-These are other projects that directly use `$projectname`:
-
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com)(use OR fork [version] OR include [version]).
-
-Libraries may be marked as `use` (the current version of our repo is used), `fork` (a specific version of our repo has been forked for usage), or `include` (files from a specific version of our repo have been included).
-
-### Used with ...
-
-These are other projects that work with or leverage `$projectname`:
-
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
-
 ## Financial Support
 
-`$projectname` is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
+**SmartCustody** is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
 
 To financially support further development of `$projectname` and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
-
-### Project Sponsors
-
-Thanks to our project sponsors for their support of `$projectname`:
-
-$sponsor-logo-with-link
-
-$sponsor-description
 
 ## Contributing
 
@@ -132,6 +82,7 @@ The following people directly contributed to this repository. You can add your n
 | Name              | Role                | Github                                            | Email                                 | GPG Fingerprint                                    |
 | ----------------- | ------------------- | ------------------------------------------------- | ------------------------------------- | -------------------------------------------------- |
 | Christopher Allen | Principal Architect | [@ChristopherA](https://github.com/ChristopherA) | \<ChristopherA@LifeWithAlacrity.com\> | FDFE 14A5 4ECB 30FC 5D22  74EF F8D3 6C91 3574 05ED |
+| Shannon Appelcline | Co-Author | [@shannona](https://github.com/shannona) | \<shannon.appelcline@gmail.com\> | 7EC6 B928 606F 27AD |
 
 ## Responsible Disclosure
 
