@@ -2,6 +2,8 @@
 
 ### _by Christopher Allen and Shannon Appelcline_
 
+![](Images/smart-custody.jpg)
+
 **SmartCustody** is an educational project intended to encourage responsible key management for digital assets. It includes a book focused on risk modeling and digital custody scenarios as well as a number of shorter papers that focus on individual "smart" methodologies for managing digital custody, such as multisigs and sharded shares.
 
 ## The SmartCustody Book
