@@ -1,5 +1,7 @@
 # Using Timelocks to Protect Digital Assets
 
+## V0.1.0 [7/15/21] (Very Preliminary)
+
 **WARNING:** :warning: This is an unedited preliminary draft that was written as an investigation of current Timelock integration. We expect to finalize it when Timelocks are better integrated into Bitcoin Core. This document has not been reviewed, so please consider it with care.
 
 Timelocks are a simple Bitcoin tool that can be used to disallow coins from being spent until a certain time. 
