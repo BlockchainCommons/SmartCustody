@@ -12,7 +12,7 @@
 
 ## SmartCustody Tools
 
-The following long-form essays describe how to use a variety of smart tools the resilience and security of your digital assets
+The following long-form essays describe how to use a variety of smart tools to improve the resilience and security of your digital assets.
 
 ***Multisigs:***
 * [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Multisig.md) (March 2021) - Design process & sample multisigs (released).
