@@ -18,10 +18,11 @@ The following long-form essays describe how to use a variety of smart tools the 
 * [Designing Multisig for Indepedence & Resilience](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Multisig.md) (March 2021) - Design process & sample multisigs (released).
 
 ***SSKR Shares:***
-* [Designing SSKR Share Scenarios]() (August 2021) - How to manage SSKR shares (pending)
+* [Designing SSKR Share Scenarios](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/SSKR-Sharing.md) (August 2021) - How to manage SSKR shares (preliminary)
+* [The Dangers of Secret-Sharing Schemes](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/SSKR-Dangers.md) (August 2021) - How secret-sharing can be subverted (preliminary)
 
 ***Timelocks:***
-* [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (preliminary draft).
+* [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (preliminary).
 
 ## SmartCustody Best Practices
 
