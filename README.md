@@ -22,7 +22,7 @@ The following long-form essays describe how to use a variety of smart tools to i
 * [The Dangers of Secret-Sharing Schemes](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/SSKR-Dangers.md) (August 2021) - How secret-sharing can be subverted (preliminary)
 
 ***Timelocks:***
-* [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (preliminary).
+* [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (very preliminary).
 
 ## SmartCustody Best Practices
 
