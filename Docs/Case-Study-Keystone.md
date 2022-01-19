@@ -63,6 +63,64 @@ Keystone provides open information on their software and on their hardware audit
 
 ## Adversaries
 
+The Keystone offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries:
+
+**Bitrot.**
+
+Provided that a sure correctly stores their Recovery Phrase, they can transfer their seeds to another device if either Keystone or the Mobile Device grows obsolete. A Recovery Phrase Check allows users to occasionally ensure that phrase remains valid. 
+
+However, there is no way to regenerate the BIP-39 words or Shamir shards after initial creation, so if they are later lost, and the user does not move the funds to a new seed, the danger of Bitrot can resurface.
+
+**Coercion.**
+
+The Passphrase Wallet feature, which allows for the creation of additional wallets that are only visible if a user types in the correct passphrase, is an interesting methodology to try and prevent physical coercion. The idea of public wallets and secret wallets has long been a proposed solution to this adversary, and is fully enacted on the Keystone.
+
+**Convenience.**
+
+The Keystone provides sufficient convenience that users might be discouraged from using more "convenient", lower security methodologies, such as conducting transactions on a directly connected devices. The QR codes allow quick transfers across airgaps and the Keystone's high-quality touchscreen means that they don't have to fumble with the low-resolution LED screens and push buttons of the last generation of hardware wallets, which may have been sufficient to deter their usage.
+
+**Disaster.**
+
+Shamir's Secret Sharing allows a strong defense against disaster, if shards are in widely separated areas, but it requires both the use of Shamir's Secret Sharing, over the simpler BIP-39 methodology, and their separation.
+
+**Institutional Theft.**
+
+With private keys held on the Keystone, with all transaction creation done on the Mobile Device, and with source opened, the possibilities of institutional theft are minimized. (As always, the manufacturer must still be trusted.)
+
+**Key Fragility.**
+
+Key fragility is one of the biggest threats to individual cryptocurrency holders, and Shamir's Secret Sharing is a first step toward minimizing that.
+
+**Network Attack.**
+
+The use of an airgapped device to hold all seeds largely eliminates the possibility of network attack.
+
+**Physical Theft.**
+
+By depending on fingerprints and passwords, and by destroying information is there are too many bad password guesses or if the device is physically tampered with, Keystone makes physical theft largely irrelevent as a single-point-of-compromise. However, it still can be a single-point-of-failure if BIP-39 words or Shamir shards were not correctly held and protected.
+
+**Supply-Chain Attack.**
+
+A Keystone authenticates itself with the Keystone website on first usage. That, with its self-destruction in the case of physical tampering, minimizes the possibility of a supple-chain attack.
+
+**Transaction Error.**
+
+Like most modern wallets, the Mobile App takes care of most of the transaction details, such as scanning in addresses through QRs and determining fees. This greatly reduces the possibility of transaction errors.
+
+_Death/Incapacitation remains one of the largest outstanding adversaries, though use of Shamir's Secret Sharing can resolve that. Though Keystone advertises a true random number generator, and backs that up by releasing its code, they also provide documentation on generating seeds with dice, which can remove the possibility of Systemic Key Compromise. Censorship and Correlation may or may not be possible depending on the design of the integration of cryptography servers._
+
 ## Specifications
 
+Transfer of information between the Keystone and Mobile Device primarily occurs through QR codes that are encoded as `ur:bytes`. General interoperability with other devices is not possible because `ur:hdkey`, `ur:psbt`, `ur:request`, `ur:response`, and other specific UR types are not used.
+
 ## Hardware & Software
+
+[todo]
+
+## Final Notes
+
+The first generation of #SmartCustody primarily depended on good procedures for storing recovery words, which Keystone supports through its BIP-39 output and its Keystone Tablet.
+
+A second generation focuses on Shamir's Secret Sharing, which Keystone also supports.
+
+There is some interoperability for Keystone, allowing its use with specific other devices, which provides increased independence to the user, but it's thus far limited, and Keystone does not support the third generation of #SmartCustody, where single-points-of-failure and compromise are further reduced with multisigs.
