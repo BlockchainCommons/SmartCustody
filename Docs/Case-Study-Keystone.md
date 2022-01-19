@@ -11,7 +11,7 @@ The Keystone holds seeds and can interact with the Keystone Mobile App, which ac
 
 The normal process for using a Keystone is:
 
-1. Create a wallet on Keystone or import using BIP-39 words or using Shamir's Secret Sharing and SLIP-39 words.
+1. Create a wallet on Keystone or import using BIP-39 words or using Shamir's Secret Sharing with SLIP-39.
 2. Back up wallet by writing down BIP-39 or SLIP-39 words.
 3. Bind Keystone to Mobile App by displaying QR code on Keystone and reading it on Mobile App. This transfers account information (a hdpath and xpub) to the Mobile App, encoded as `ur:bytes`.
 4. Receive funds from remote wallet: QR codes can be read from Keystone or from Mobile App ..
@@ -25,12 +25,14 @@ Additional wallets on Keystone may be created using the "Hidden Wallet" feature.
 As an airgapped wallet, the Keystone matches the general design of the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model).
 It interacts with the more specific Gordian Principles as follows:
 
+[TODO: Resort by Pro/Con]
+
 **Independence.**
 
 Keystone's independenced focuses on the ability to transact funds without outside intervention.
 
 * Keystone allows direct, personal control of all assets. The master seed resides on the Keystone; a watch-only wallet exists on the Mobile App.
-* Keystone does _not_ provide an options for choosing cryptocurrency servers to work with, potentially creating a path for censorship that might require removing the funds to another device.
+* Keystone does _not_ provide an options for choosing cryptocurrency servers to work with, potentially creating a path for censorship that might require using another device with your seed for spending.
 
 **Privacy.**
 
