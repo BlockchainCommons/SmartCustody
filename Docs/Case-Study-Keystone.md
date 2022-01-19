@@ -25,16 +25,22 @@ It interacts with the more specific Gordian Principles as follows:
 
 **Independence.**
 
+Keystone's independenced focuses on the ability to transact funds without outside intervention.
+
 * Keystone allows direct, personal control of all assets. The master seed resides on the Keystone; a watch-only wallet exists on the Mobile Device.
 * Keystone does _not_ provide an options for choosing cryptocurrency servers to work with, potentially creating a path for censorship that might require removing the funds to another device.
 
-**Independence.**
+**Privacy.**
+
+The use of the Keystone and the Mobile Device together keep a user's information close.
 
 * As a closely held device, Keystone maximizes the privacy possibilities for private keys.
 * The Keystone is only accessible through QR codes or a micro-SD card.
 * Again, Keystone does _not_ provide options for choosing cryptocurrency servers, and so it's possible that data honeypots could be created: the user doesn't know.
 
 **Resilience.**
+
+Keystone's resilience depends on users properly managing their backups, with the biggest advance being the inclusion of Shamir's Secret Sharing.
 
 * The physical device is protect by password and/or fingerprint.
 * A Secure Element stores the private keys.
@@ -47,9 +53,13 @@ It interacts with the more specific Gordian Principles as follows:
  
 **Openness.**
 
+Keystone provides open information on their software and on their hardware audit. Interoperability is more limited, but there is full ability to move seeds on or off device.
+
 * Seeds can be transferred onto or off of the device using BIP-39 or Shamir's Secret Sharing.
 * Interactivity is provided not just with the Mobile Device, but also Metamask and a few other specific online coordinators.
 * Uniform Resources (URs) underlie QR codes, _but_ they are encoded as `ur:bytes` not more interoperable UR types such as `ur:hdkey` or `ur:psbt`
+* Software is [open source](https://github.com/KeystoneHQ).
+* Hardware audit is [publicly available](https://github.com/KeystoneHQ/Keystone-developer-hub/blob/main/audit-report/cobo_audit_report_2020_09_en_1_0.pdf).
 
 ## Adversaries
 
