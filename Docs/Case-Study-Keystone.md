@@ -77,6 +77,8 @@ Provided that a sure correctly stores their Recovery Phrase, they can transfer t
 
 However, there is no way to regenerate the BIP-39 words or Shamir shards after initial creation, so if they are later lost, and the user does not move the funds to a new seed, the danger of Bitrot can resurface.
 
+There also are real dangers from the alternate passphrases, which could easily be lost if there was a need to transfer devices, since they are not visible.
+
 **Coercion.**
 
 The Passphrase Wallet feature, which allows for the creation of additional wallets that are only visible if a user types in the correct passphrase, is an interesting methodology to try and prevent physical coercion. The idea of public wallets and secret wallets has long been a proposed solution to this adversary, and is fully enacted on the Keystone.
@@ -113,7 +115,7 @@ A Keystone authenticates itself with the Keystone website on first usage. That, 
 
 Like most modern wallets, the Mobile App takes care of most of the transaction details, such as scanning in addresses through QRs and determining fees. This greatly reduces the possibility of transaction errors.
 
-_Death/Incapacitation remains one of the largest outstanding adversaries, though use of Shamir's Secret Sharing can resolve that. Though Keystone advertises a true random number generator, and backs that up by releasing its code, they also provide documentation on generating seeds with dice, which can remove the possibility of Systemic Key Compromise. Censorship and Correlation may or may not be possible depending on the design of the integration of cryptography servers._
+_Death/Incapacitation remains one of the largest outstanding adversaries, though use of Shamir's Secret Sharing can resolve that. Though Keystone advertises a true random number generator, and backs that up by releasing its code, they also provide documentation on generating seeds with dice, which can remove the possibility of Systemic Key Compromise. Censorship and Correlation may or may not be possible depending on the design of the integration of cryptography servers. They may also be triggered by the use of a centralized pricing server._
 
 ## Specifications
 
@@ -135,7 +137,7 @@ Keystone uses a proprietary Secure Element to hold private keys. It is described
 
 The first generation of #SmartCustody primarily depended on good procedures for storing recovery words, which Keystone supports through its BIP-39 output and its Keystone Tablet.
 
-A second generation of #SmartCustody focuses on Shamir's Secret Sharing, which Keystone also supports.
+A second generation of #SmartCustody focuses on Shamir's Secret Sharing, which Keystone also supports. Support comes through use of SLIP-39, which has some [round-tripping issues](https://github.com/BlockchainCommons/lethekit/issues/38), not Blockchain Commons' own [SSKR](https://github.com/BlockchainCommons/bc-sskr).
 
 A third generation of #SmartCostudy focuses on multisig, and though Keystone could act as a holder of a single key when used in conjunction with certain third-party transaction coordinators, there's no native implementation in the Mobile App. (A standard Gordian architecture would be easily implemented in their native architecture, with a two-of-three multisig, where one key is held in the Keystone, one in the Mobile App, and one offline.)
 
