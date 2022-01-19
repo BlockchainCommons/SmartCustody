@@ -117,7 +117,7 @@ Like most modern wallets, the Mobile App takes care of most of the transaction d
 
 _Death/Incapacitation remains one of the largest outstanding adversaries, though use of Shamir's Secret Sharing can resolve that. Though Keystone advertises a true random number generator, and backs that up by releasing its code, they also provide documentation on generating seeds with dice, which can remove the possibility of Systemic Key Compromise. Censorship and Correlation may or may not be possible depending on the design of the integration of cryptography servers. They may also be triggered by the use of a centralized pricing server._
 
-## Specifications
+## Interoperability
 
 Transfer of information between the Keystone and Mobile App primarily occurs through QR codes.
 
@@ -126,6 +126,8 @@ Transfer of information between the Keystone and Mobile App primarily occurs thr
 * Transaction information of a PSBT is transferred between Keystone and Mobile App using `ur:bytes` encoded in a QR.
 
 General interoperability with other devices is not possible because `ur:hdkey`, `ur:psbt`, `ur:request`, `ur:response`, and other specific UR types are not used.
+
+[add suggestsions/best practices]
 
 ## Hardware & Software
 
