@@ -1,7 +1,9 @@
-# Keystone
+# Keystone (Firmware 1.0.1)
 ### A #SmartCustody Case Study
 
 The Keystone is an airgapped HD wallet/offline signer.
+
+[TODO: Upgrade Firmware and test out interactions with Sparrow, for multisig, and for type of UR used]
 
 ## Usage
 
@@ -9,12 +11,12 @@ The Keystone holds seeds and can interact with the Keystone Mobile App, which ac
 
 The normal process for using a Keystone is:
 
-1. Create a wallet on Keystone or import using BIP-39 words or shards from Shamir's Secret Sharing.
-2. Back up wallet by writing down BIP-39 words or shards from Shamir's Secret Sharing.
-3. Bind Keystone to Mobile App by displaying QR code on Keystone and reading it on Mobile App. This presumably transfers an xpub to the Mobile App, encoded as `ur:bytes`.
-4. Receive funds by reading address QR codes from Keystone or from Mobile App into remote wallet.
-5. Send funds by creating a transaction on the Mobile App, then generating a QR for signing, which presumably is a PSBT, encoded as `ur:bytes`.
-6. Read and sign the transaction on the Keystone, then send it back, now presumably as a fully signed PSBT, encoded as `ur:bytes`.
+1. Create a wallet on Keystone or import using BIP-39 words or using Shamir's Secret Sharing and SLIP-39 words.
+2. Back up wallet by writing down BIP-39 or SLIP-39 words.
+3. Bind Keystone to Mobile App by displaying QR code on Keystone and reading it on Mobile App. This transfers account information (a hdpath and xpub) to the Mobile App, encoded as `ur:bytes`.
+4. Receive funds from remote wallet: QR codes can be read from Keystone or from Mobile App ..
+5. Send funds by creating a transaction on the Mobile App, then generating a QR for signing containing a PSBT encoded as `ur:bytes`.
+6. Read and sign the transaction on the Keystone, then send it back as a PSBT encoded as `ur:bytes`.
 
 Additional wallets on Keystone may be created using the "Hidden Wallet" feature. Only one wallet is displayed at a time; switching to another requires a passphrase, with no indication given on the device that the additional wallet exists.
 
@@ -27,12 +29,12 @@ It interacts with the more specific Gordian Principles as follows:
 
 Keystone's independenced focuses on the ability to transact funds without outside intervention.
 
-* Keystone allows direct, personal control of all assets. The master seed resides on the Keystone; a watch-only wallet exists on the Mobile Device.
+* Keystone allows direct, personal control of all assets. The master seed resides on the Keystone; a watch-only wallet exists on the Mobile App.
 * Keystone does _not_ provide an options for choosing cryptocurrency servers to work with, potentially creating a path for censorship that might require removing the funds to another device.
 
 **Privacy.**
 
-The use of the Keystone and the Mobile Device together keep a user's information close.
+The use of the Keystone and the Mobile App together keep a user's information close.
 
 * As a closely held device, Keystone maximizes the privacy possibilities for private keys.
 * The Keystone is only accessible through QR codes or a micro-SD card.
@@ -48,18 +50,20 @@ Keystone's resilience depends on users properly managing their backups, with the
 * Master seeds can be backed up using written BIP-39 words. 
 * Keystone suggests backing up the BIP-39 words to the steel Keystone Tablet.
 * Master seeds can alternatively be backed up using Shamir's Secret Sharing and writing down the shards.
-* Keystones does _not_ provide any multisig capabilities, so BIP-39 words can act as a single-point-of-compromise.
-* Because there are _not_ multisig capabilities, loss of the Keystone device along with the backed up words can act as a point-of-failure.
+* Keystone used with Mobile App does _not_ provide any native multisig capabilities (though it's possible using the Keystone with certain other devices), so BIP-39 words can act as a single-point-of-compromise.
+* Because there are _not_ native multisig capabilities, loss of the Keystone device along with the backed up words can act as a point-of-failure.
  
 **Openness.**
 
 Keystone provides open information on their software and on their hardware audit. Interoperability is more limited, but there is full ability to move seeds on or off device.
 
 * Seeds can be transferred onto or off of the device using BIP-39 or Shamir's Secret Sharing.
-* Interactivity is provided not just with the Mobile Device, but also Metamask and a few other specific online coordinators.
+* Interactivity is provided not just with the Mobile App, but also Metamask and a few other specific online coordinators.
 * Uniform Resources (URs) underlie QR codes, _but_ they are encoded as `ur:bytes` not more interoperable UR types such as `ur:hdkey` or `ur:psbt`
+* The transferred data is _not_ self-describing.
+* SLIP-39 can cause interoperability problems because it does _not_ [round trip with BIP-39](https://github.com/BlockchainCommons/lethekit/issues/38).
 * Software is [open source](https://github.com/KeystoneHQ).
-* Hardware audit is [publicly available](https://github.com/KeystoneHQ/Keystone-developer-hub/blob/main/audit-report/cobo_audit_report_2020_09_en_1_0.pdf).
+* Security audit is [publicly available](https://github.com/KeystoneHQ/Keystone-developer-hub/blob/main/audit-report/cobo_audit_report_2020_09_en_1_0.pdf).
 
 ## Adversaries
 
@@ -67,7 +71,7 @@ The Keystone offers specific defenses against the following [#Smartcustody](http
 
 **Bitrot.**
 
-Provided that a sure correctly stores their Recovery Phrase, they can transfer their seeds to another device if either Keystone or the Mobile Device grows obsolete. A Recovery Phrase Check allows users to occasionally ensure that phrase remains valid. 
+Provided that a sure correctly stores their Recovery Phrase, they can transfer their seeds to another device if either Keystone or the Mobile App grows obsolete. A Recovery Phrase Check allows users to occasionally ensure that phrase remains valid. 
 
 However, there is no way to regenerate the BIP-39 words or Shamir shards after initial creation, so if they are later lost, and the user does not move the funds to a new seed, the danger of Bitrot can resurface.
 
@@ -85,7 +89,7 @@ Shamir's Secret Sharing allows a strong defense against disaster, if shards are 
 
 **Institutional Theft.**
 
-With private keys held on the Keystone, with all transaction creation done on the Mobile Device, and with source opened, the possibilities of institutional theft are minimized. (As always, the manufacturer must still be trusted.)
+With private keys held on the Keystone, with all transaction creation done on the Mobile App, and with source opened, the possibilities of institutional theft are minimized. (As always, the manufacturer must still be trusted.)
 
 **Key Fragility.**
 
@@ -111,16 +115,26 @@ _Death/Incapacitation remains one of the largest outstanding adversaries, though
 
 ## Specifications
 
-Transfer of information between the Keystone and Mobile Device primarily occurs through QR codes that are encoded as `ur:bytes`. General interoperability with other devices is not possible because `ur:hdkey`, `ur:psbt`, `ur:request`, `ur:response`, and other specific UR types are not used.
+Transfer of information between the Keystone and Mobile App primarily occurs through QR codes.
+
+* Authentication information is transferred from the web to the Keystone using JSON encoded in a QR.
+* Account information of hdkey and xpub is transferred from Keystone to Mobile App using `ur:bytes` encoded in a QR.
+* Transaction information of a PSBT is transferred between Keystone and Mobile App using `ur:bytes` encoded in a QR.
+
+General interoperability with other devices is not possible because `ur:hdkey`, `ur:psbt`, `ur:request`, `ur:response`, and other specific UR types are not used.
 
 ## Hardware & Software
 
-[todo]
+Keystone uses a proprietary Secure Element to hold private keys. It is described as "bank grade" and "EAL 5+" (semiformally designed and tested). 
+
+[software]
 
 ## Final Notes
 
 The first generation of #SmartCustody primarily depended on good procedures for storing recovery words, which Keystone supports through its BIP-39 output and its Keystone Tablet.
 
-A second generation focuses on Shamir's Secret Sharing, which Keystone also supports.
+A second generation of #SmartCustody focuses on Shamir's Secret Sharing, which Keystone also supports.
 
-There is some interoperability for Keystone, allowing its use with specific other devices, which provides increased independence to the user, but it's thus far limited, and Keystone does not support the third generation of #SmartCustody, where single-points-of-failure and compromise are further reduced with multisigs.
+A third generation of #SmartCostudy focuses on multisig, and though Keystone could act as a holder of a single key when used in conjunction with certain third-party transaction coordinators, there's no native implementation in the Mobile App. (A standard Gordian architecture would be easily implemented in their native architecture, with a two-of-three multisig, where one key is held in the Keystone, one in the Mobile App, and one offline.)
+
+#SmartCustody also focuses on interoperability (openness) as a crucial element because a fully interoperable device gives a user more options for how to use it to meet their particular needs and reduces the threat of dangers such as Bitrot because private data is not locked into a single device. There is some interoperability for Keystone, allowing its use with specific other devices, which provides increased independence to the user, but it's thus far limited. Uses of self-describing URs, such as `ur:psbt` and `ur:hdkey` could dramatically increase this interoperability, rather than use of `ur:bytes`, which offers some of the encoding benefits of URs (primarily the sequencing that allows for animated QRs) but not the benefits of self-describing data.
