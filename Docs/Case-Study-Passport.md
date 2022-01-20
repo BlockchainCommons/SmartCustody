@@ -86,3 +86,56 @@ Passport provides interoperability with a variety of software wallets, though no
 **Cons:**
 
 * Some interoperability is managed through a variety of other means, such as JSON-encoded xpubs, base64-encoded PSBTs, and textual descriptions of accounts, much of which is not self-describing.
+
+## Adversaries
+
+Passport offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries. Other adversaries such as Censorship, Correlation, and Transaction Error fall into the purview of the Software App used.
+
+**Bitrot.**
+
+There is theoretical protection against Bitrot, as a user can choose to find his BIP-39 words and record them, but this is not strongly suggested. Instead, Passport largely depends on the MicroSD backups, which require a functioning Passport for them to be useful.
+
+**Disaster.**
+
+Though the Passport doesn't advertise it, its core methodology of backing up to two different MicroSDs could be potent protection against Disaster if they were stored in widely separated locations.
+
+**Institutional Theft.**
+
+With private keys held on the Passport, the possibilities of institutional theft are minimized (though the Software App used could remain an attack vector).
+
+**Key Fragility.**
+
+The main defense against key fragility is the backup MicroSDs, though they could still be lost if their backup words are lost.
+
+**Network Attack.**
+
+The use of an airgapped device to hold all seeds largely eliminates the possibility of network attack.
+
+**Physical Theft.**
+
+Passport protects against physical theft mainly by its PIN and the limit on the number of guesses — though at 21, that number of guesses is relatively high.
+
+**Supply-Chain Attack.**
+
+A blue light constantly displays to show you that your Keystone has not been tampered with (although of course the blue light could be tampered with). There is also the typical security sealing of the device.
+
+_Death/Incapacitation remains one of the largest outstanding adversaries, as use of the Passport ultimately depends on personally known codes. Coercion and Blackmail also remain potential issues with the Passport, though these are adversaries that are often more theoretical than practical._
+
+## Interoperability
+
+Tranfer of data between Passport and various software wallet seems to varied.
+
+* `ur:bytes` are used in some cases to allow the use of animated PSBTs.
+* `ur:crypto-psbt` is recognized for the input of PSBTs.
+
+### Future Development Suggestions
+
+Interoperability could be improved by full usage of URs, whose self-describing data is resistant to Bitrot and can be used by a variety of applications.
+
+* Bare `ur:bytes` should not be used if a UR type exists, as `ur:bytes` lose the advantages of being self-described and thus easily portable.
+* Seeds should be easily exportable in a digital form, preferably as `ur:crypto-seed`, encoded as a QR.
+* Seeds should also be exportable as shards, to minimize SPOFs, preferably as `ur:crypto:sskr`, either encoded as a QR or as ByteWords.
+* Keys should be requestable from a software wallet, preferably using the `ur:crypto-request` methodology.
+* PSBTs should be as `ur:crypto-psbt` for bother sending and receipt and ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
+
+
