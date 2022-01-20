@@ -81,7 +81,7 @@ Passport provides interoperability with a variety of software wallets, though no
 * Seeds can be transferred onto or off of the device using BIP-39.
 * More than half-a-dozen wallets are interoperable with Paaport.
 * Some interoperability is managed through Uniform Resources (URs) such as `ur:bytes` and `ur:psbt`.
-* Software is [open source](https://docs.foundationdevices.com/en/open-source).
+* Electronics, assembly, and software is [open source](https://docs.foundationdevices.com/en/open-source).
 
 **Cons:**
 
@@ -138,4 +138,14 @@ Interoperability could be improved by full usage of URs, whose self-describing d
 * Keys should be requestable from a software wallet, preferably using the `ur:crypto-request` methodology.
 * PSBTs should be as `ur:crypto-psbt` for bother sending and receipt and ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
 
+## Hardware & Software
 
+Passport contains a	STM32h753 processor and a Microchip 608a secure element. Betrusted's [Avalanche Noise Source Design](https://betrusted.io/avalanche-noise) is implemented for their TRNG. [Firmware](https://github.com/Foundation-Devices/passport-firmware) is coded in C and MicroPython.
+
+## Final Notes
+
+Passport implements much the same architecture that we reference in [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229), but with a more secure hardware foundation. Nonetheless, it's same architectural concept, of using a closely held device to securely store seeds, to use that device to enable watch-only wallets, and then to pass PSBTs to the device for signing. It's an architecture that maximizes Independence and Privacy, two of the core Gordian ideals.
+
+The Resilience of Passport, focused on its MicroSD backups, provides a pragmatic solution to the core issue of Key Fragility that users are likely to actually use because of its ease-of-use. However, it opens up longer term issues regarding Bitrot and also doesn't provide protection from Disaster, where all local copies of a key might be lost. Passport's support for multisigs does provide a possible answer to the problem of Disasters, but much like Passport's BIP-39 word backups it's entirely left up to the user rather than offered as a strong suggestion.
+
+The Openness of Passport allows it to offer some support for the UR specification, but it also seems to make do as is necessary to integrate with a variety of other wallets. Again, this is a pragmatic solution, and one that likely offers the best integration today, but increased usage of URs could provide better interoperability with more wallets going forward. 
