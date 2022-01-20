@@ -47,9 +47,9 @@ The use of the Passport and a Software App together keep a user's information cl
 
 * Because Passport supports interaction with a number of Software Wallets, the question of whether honey points of information could be created on the servers those wallets connect to is left to them.
 
-### Resilience: Minimizing Single Point of Compromise (SPOC)
+### Resilience against SPOC
 
-Minimizing SPOC protects data from theft: on the Passport, it's managed through codes and PINs.
+Minimizing Single Point of Compromise (SPOC) protects data from theft: on the Passport, it's managed through codes and PINs.
 
 **Pros:**
 
@@ -58,9 +58,9 @@ Minimizing SPOC protects data from theft: on the Passport, it's managed through 
 * Passport protects backups with a set of six [Bytewords](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-012-bytewords.md).
 * Passport proactively supports the use of multisigs.
 
-### Resilience: Minimizing Single Point of Failure (SPOF)
+### Resilience against SPOF
 
-Minimizing SPOF protects data from loss: on the Passport, the most innovative feature is its backup system.
+Minimizing Single Point of Failure (SPOF) protects data from loss: on the Passport, the most innovative feature is its backup system.
 
 **Pros:**
 
