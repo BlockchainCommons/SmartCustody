@@ -82,12 +82,7 @@ Passport provides interoperability with a variety of software wallets, though no
 * More than half-a-dozen wallets are interoperable with Paaport.
 * Some interoperability is managed through Uniform Resources (URs) such as `ur:bytes` and `ur:psbt`.
 * Software is [open source](https://docs.foundationdevices.com/en/open-source).
-* 
+
 **Cons:**
 
 * Some interoperability is managed through a variety of other means, such as JSON-encoded xpubs, base64-encoded PSBTs, and textual descriptions of accounts, much of which is not self-describing.
-
-**Neutral:**
-
-* Software is [open source](https://github.com/KeystoneHQ).
-* Security audit is [publicly available](https://github.com/KeystoneHQ/Keystone-developer-hub/blob/main/audit-report/cobo_audit_report_2020_09_en_1_0.pdf).
