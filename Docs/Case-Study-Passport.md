@@ -38,7 +38,7 @@ With personal control of seeds and personal choice of software wallets, Passport
 
 The use of the Passport and a Software App together keep a user's information close.
 
-** Pros:** 
+**Pros:** 
 
 * As a closely held device, Passport maximizes the privacy possibilities for private keys.
 * The Passport is only accessible through QR codes or a micro-SD card.
@@ -54,8 +54,9 @@ Minimizing SPOC protects data from theft: on the Passport, it's managed through 
 **Pros:**
 
 * The physical device is protected by a PIN.
-* Passport proactively supports the use of multisigs.
+* A Secure Element stores the private keys.
 * Passport protects backups with a set of six [Bytewords](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-012-bytewords.md).
+* Passport proactively supports the use of multisigs.
 
 ### Resilience: Minimizing Single Point of Failure (SPOF)
 
@@ -70,3 +71,23 @@ Minimizing SPOF protects data from loss: on the Passport, the most innovative fe
 
 * PINs can form a SPOF if lost.
 * Backup Bytewords can form a SPOF if lost.
+
+**Openness.**
+
+Passport provides interoperability with a variety of software wallets, though not always using fully interoperable specifications.
+
+**Pros:**
+
+* Seeds can be transferred onto or off of the device using BIP-39.
+* More than half-a-dozen wallets are interoperable with Paaport.
+* Some interoperability is managed through Uniform Resources (URs) such as `ur:bytes` and `ur:psbt`.
+* Software is [open source](https://docs.foundationdevices.com/en/open-source).
+* 
+**Cons:**
+
+* Some interoperability is managed through a variety of other means, such as JSON-encoded xpubs, base64-encoded PSBTs, and textual descriptions of accounts, much of which is not self-describing.
+
+**Neutral:**
+
+* Software is [open source](https://github.com/KeystoneHQ).
+* Security audit is [publicly available](https://github.com/KeystoneHQ/Keystone-developer-hub/blob/main/audit-report/cobo_audit_report_2020_09_en_1_0.pdf).
