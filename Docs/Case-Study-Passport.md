@@ -144,6 +144,8 @@ In addition, URs could be specifically used in the following manners:
 * Seeds can be exportable as shards, to minimize SPOFs, preferably as `ur:crypto-sskr`, either encoded as a QR or as ByteWords.
 * PSBTs can be `ur:crypto-psbt` for both sending and receipt, but ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
 
+For more, see [registry of UR types](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md), [overview of crypto-request](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/ur-99-request-response.md), and [usage of crypto-request instead of crypto-psbt](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/crypto-request-or-crypto-psbt.md).
+
 ## Hardware & Software
 
 Passport contains a	STM32h753 processor and a Microchip 608a secure element. Betrusted's [Avalanche Noise Source Design](https://betrusted.io/avalanche-noise) is implemented for their TRNG. [Firmware](https://github.com/Foundation-Devices/passport-firmware) is coded in C and MicroPython.
