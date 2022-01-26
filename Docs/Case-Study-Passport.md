@@ -141,7 +141,7 @@ In addition, URs could be specifically used in the following manners:
 
 * Seeds can be imported as `ur:crypto-seed`, encoded as a QR, or preferably using `ur:crypto-request`, encoded as a QR.
 * Seeds can be easily exportable in a digital form, using `ur:crypto-seed`, encoded as a QR.
-* Seeds can be exportable as shards, to minimize SPOFs, preferably as `ur:crypto:sskr`, either encoded as a QR or as ByteWords.
+* Seeds can be exportable as shards, to minimize SPOFs, preferably as `ur:crypto-sskr`, either encoded as a QR or as ByteWords.
 * PSBTs can be `ur:crypto-psbt` for both sending and receipt, but ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
 
 ## Hardware & Software
