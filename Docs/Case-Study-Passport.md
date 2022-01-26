@@ -7,7 +7,7 @@ Foundation Devices' Passport is an airgapped HD wallet/offline signer.
 
 <img src="https://raw.githubusercontent.com/BlockchainCommons/SmartCustody/master/Images/casestudy/cs-passport-1.jpg" width=350 align="right">
 
-The Passport holds seeds, whose xpubs it shares with a choosen Software Wallet, which will act as a watch-only wallet. Transactions are then prepared by the Software Wallet and sent to the Passport via airgap (or MicroSD) for signing.
+The Passport holds seeds, whose xpubs it shares with a chosen Software Wallet, which will act as a watch-only wallet. Transactions are then prepared by the Software Wallet and sent to the Passport via airgap (or MicroSD) for signing.
 
 The normal process for using a Passport is:
 
@@ -96,7 +96,7 @@ Passport offers specific defenses against the following [#Smartcustody](https://
 
 **Bitrot.**
 
-There is theoretical protection against Bitrot, as a user can choose to find his BIP-39 words and record them, but this is not strongly suggested. Instead, Passport largely depends on the MicroSD backups, which require a functioning Passport for them to be useful.
+Protecting against Bitrot means ensuring that you don't lose funds due to obsolence of hardware or software. Following open standards for storage of seeds or private keys largely does this. Theoretically, a user can be totally protected if he finds his BIP-39 words and records them, but this is not strongly suggested. Instead, Passport largely depends on the MicroSD backups. The easiest way to restore these is directly to a functional Passport, but the 7zip backup files can restored elsewhere using the backup's ByteWords as the password, separating the six words with spaces. The result is a text file containing a variety of private key info, which could be restored anywhere. Provided that the user understands the procedure, this also entirely overcomes the Bitrot adversary.
 
 **Disaster.**
 
@@ -126,10 +126,12 @@ _Death/Incapacitation remains one of the largest outstanding adversaries, as use
 
 ## Interoperability
 
-Tranfer of data between the Passport and various Software Wallets seems to be varied.
+Transfer of data between the Passport and various Software Wallets seems to be varied.
 
 * `ur:bytes` are used in some cases to allow the use of animated QRs.
 * `ur:crypto-psbt` is recognized for the input of PSBTs.
+
+Backups are maintained as .txt files that are 7zipped with six Bytewords, space separated, used as the password.
 
 ### Future Development Suggestions
 
@@ -145,6 +147,8 @@ In addition, URs could be specifically used in the following manners:
 * PSBTs can be `ur:crypto-psbt` for both sending and receipt, but ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
 
 For more, see [registry of UR types](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md), [overview of crypto-request](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/ur-99-request-response.md), and [usage of crypto-request instead of crypto-psbt](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/crypto-request-or-crypto-psbt.md).
+
+A new specification for backup formatting could be helpful. As noted, Passport uses 7zip password-protected by 6 ByteWords. Coldcard uses a similar methodology, but uses 12 different BIP-39 words for each backup. Blockchain Commons generally leans toward Passport's choice because of the careful selection of ByteWords to minimize confusion and even allow usage by non-English speakers, but hasn't deeply looked into the topic.
 
 ## Hardware & Software
 
