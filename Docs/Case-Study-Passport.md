@@ -21,7 +21,7 @@ The normal process for using a Passport is:
 
 ## Gordian Principles
 
-As an airgapped wallet, the Keystone matches the general design of the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model).
+As an airgapped wallet, the Passport matches the general design of the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model).
 It interacts with the more specific Gordian Principles as follows:
 
 ### Independence
@@ -120,7 +120,7 @@ Passport protects against physical theft mainly by its PIN and the limit on the 
 
 **Supply-Chain Attack.**
 
-A blue light constantly displays to show you that your Keystone has not been tampered with (although of course the blue light could be tampered with). There is also the typical security sealing of the device.
+A blue light constantly displays to show you that your Passport has not been tampered with (although of course the blue light could be tampered with). There is also the typical security sealing of the device.
 
 _Death/Incapacitation remains one of the largest outstanding adversaries, as use of the Passport ultimately depends on personally known codes. Coercion and Blackmail also remain potential issues with the Passport, though these are adversaries that are often more theoretical than practical._
 
