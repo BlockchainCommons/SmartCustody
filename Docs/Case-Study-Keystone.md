@@ -1,12 +1,11 @@
-# Keystone (Firmware 1.0.1)
+# Keystone (Firmware M-5.2/B-2.5)
 ### A #SmartCustody Case Study
 
 The Keystone is an airgapped HD wallet/offline signer.
 
-[TODO: Upgrade Firmware and test out interactions with Sparrow, for multisig, and for type of UR used]
-
 ## Usage
 
+The Keystone is a 
 The Keystone holds seeds and can interact with the Keystone Mobile App, which acts as a watch-only wallet. Transactions are prepared by the Mobile App, then sent to the Keystone via airgap for signing.
 
 The normal process for using a Keystone is:
