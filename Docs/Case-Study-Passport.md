@@ -1,4 +1,4 @@
-# Passport (Firmware 1.0.8 [in process of update])
+# Passport (Firmware 1.0.8)
 ### A #SmartCustody Case Study
 
 Foundation Devices' Passport is an airgapped HD wallet/offline signer.
