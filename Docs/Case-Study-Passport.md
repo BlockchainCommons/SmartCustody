@@ -75,7 +75,7 @@ Minimizing Single Point of Failure (SPOF) protects data from loss: on the Passpo
 * PINs can form a SPOF if lost.
 * Backup Bytewords can form a SPOF if lost.
 
-**Openness.**
+### Openness
 
 Passport provides interoperability with a variety of software wallets, though not always using the most interoperable specifications.
 
