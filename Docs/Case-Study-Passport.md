@@ -7,7 +7,7 @@ Foundation Devices' Passport is an airgapped HD wallet/offline signer.
 
 <img src="https://raw.githubusercontent.com/BlockchainCommons/SmartCustody/master/Images/casestudy/cs-passport-1.jpg" width=350 align="right">
 
-The Passport holds seeds, whose xpubs it shares with a choosen Software Wallet, which will act as a watch-only wallet. Transactions are then prepared by the Software Wallet and sent to the Passport via airgap for signing.
+The Passport holds seeds, whose xpubs it shares with a choosen Software Wallet, which will act as a watch-only wallet. Transactions are then prepared by the Software Wallet and sent to the Passport via airgap (or MicroSD) for signing.
 
 The normal process for using a Passport is:
 
