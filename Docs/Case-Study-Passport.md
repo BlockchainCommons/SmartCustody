@@ -1,6 +1,7 @@
 # Passport (Firmware 1.0.8)
 ### A #SmartCustody Case Study
 
+<img src="https://raw.githubusercontent.com/BlockchainCommons/SmartCustody/master/Images/casestudy/cs-passport-1.jpg" width=400 align="right">
 Foundation Devices' Passport is an airgapped HD wallet/offline signer.
 
 ## Usage
