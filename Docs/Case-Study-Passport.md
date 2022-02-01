@@ -104,11 +104,11 @@ Though the Passport doesn't advertise it, its core methodology of backing up to 
 
 **Institutional Theft.**
 
-With private keys held on the Passport, the possibilities of institutional theft are minimized (though the Software Wallet used could be an attack vector if its PSBTs were not carefully considered).
+With private keys held on the Passport, the possibilities of institutional theft are minimized (though the Software Wallet used could used as an attack vector if the user doesn't carefully check the PSBTs that they're signing).
 
 **Key Fragility.**
 
-The main defense against key fragility is the backup MicroSDs, though they could still be lost if the backup words for those MicroSDs are lost.
+The main defense against key fragility is the backup MicroSDs, though they could still be lost if the backup words for those MicroSDs were lost.
 
 **Network Attack.**
 
@@ -141,7 +141,7 @@ Interoperability could be improved by full usage of URs, whose self-describing d
 
 In addition, URs could be specifically used in the following manners:
 
-* Seeds can be imported as `ur:crypto-seed`, encoded as a QR, or preferably using `ur:crypto-request`, encoded as a QR.
+* Seeds can be imported as `ur:crypto-seed`, encoded as a QR; or preferably using `ur:crypto-request`, encoded as a QR.
 * Seeds can be easily exportable in a digital form, using `ur:crypto-seed`, encoded as a QR.
 * Seeds can be exportable as shards, to minimize SPOFs, preferably as `ur:crypto-sskr`, either encoded as a QR or as ByteWords.
 * PSBTs can be `ur:crypto-psbt` for both sending and receipt, but ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
@@ -160,6 +160,10 @@ Firmware upgrades are possible using a MicroSD card.
 
 Passport implements much the same architecture that Blockchain Commons suggests in its reference implementation [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229), but with a independent hardware foundation, which offers a smaller attack surface than a full mobile device such as an iPhone. Nonetheless, it embodies the same architectural concept: using a closely held device to securely store seeds, utilizing that device to enable watch-only wallets, and passing PSBTs to the device for signing. It's an architecture that maximizes Independence and Privacy, two of the core Gordian ideals.
 
-The Resilience of Passport, focused on its MicroSD backups, provides a pragmatic solution to the core issue of Key Fragility that users are likely to actually use because of its ease-of-use. However, it opens up longer term issues regarding Bitrot and also creates some Key Fragility of its own due to the requirement of ByteWords to restore those backup. Passport's support for multisigs does provide a possible answer to the problem of Key Fragility, but much like Passport's BIP-39 word backups it's entirely left up to the user rather than offered as a strong suggestion.
+The Resilience of Passport, focused on its MicroSD backups, provides a pragmatic solution to the core issue of Key Fragility that users are likely to actually use because of its ease-of-use. However, it also creates some Key Fragility of its own due to the requirement of ByteWords to restore those backup. Passport's support for multisigs provides a possible answer to the problem of Key Fragility, but much like Passport's BIP-39 word backups it's entirely left up to the user rather than offered as a strong suggestion.
 
 The Openness of Passport is seen through some support for the UR specification, but it also seems to make do as is necessary to integrate with a variety of other wallets. Again, this is a pragmatic solution, and one that likely offers the best integration today, but increased usage of URs could provide better interoperability with more wallets going forward and even future-proof the design.
+
+## Disclaimer
+
+Foundation Devices is a Sustaining Sponsor of Blockchain Commons. Their Passport device was chosen for this Case Study because of its adoption of UR specifications.
