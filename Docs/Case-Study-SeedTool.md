@@ -36,7 +36,7 @@ Gordian Seed Tool was designed as a reference to all four of the [Gordian Princi
 
 ### Independence
 
-Gordian Seed Tool maximizes Independence by giving total control of seeds and what you do with them.
+Gordian Seed Tool maximizes Independence by allowing users to make all the choices about what they do with their seeds.
 
 **Pros:**
 
@@ -89,6 +89,7 @@ Minimizing Single Point of Failure (SPOF) protects data from loss: with Seed Too
 
 * Data is all backed up to iCloud, unless turned off by the user, and thus can be recovered by all devices logged into that account.
 * Users are given the capability to back up data in a variety of other ways, including printing SSKR shares, but they must decide to do so.
+* Data can all be exported as URs, which are self-describing, and thus unlikely to succumb to Bitrot in the future.
 
 **Neutral:**
 
@@ -113,7 +114,7 @@ Seed Tool offers specific defenses against the following [#Smartcustody](https:/
 
 **Bitrot.**
 
-Bitrot occurs when a software program or hardware device becomes outdated. There is some opportunity for Bitrot in Seed Tool, if the software is not updated and it no longer becomes possible to run it on newer devices. This is somewhat offset by the software being fully [open source](https://github.com/BlockchainCommons/GordianSeedTool-iOS) and moreso by Seed Tool offering the _opportunity_ for users to back up their data in a variety of ways.
+Bitrot occurs when a software program or hardware device becomes outdated. There is some opportunity for Bitrot in Seed Tool, if the software is not updated and it no longer becomes possible to run it on newer devices. This is somewhat offset by the software being fully [open source](https://github.com/BlockchainCommons/GordianSeedTool-iOS) and moreso by Seed Tool offering the _opportunity_ for users to back up their data in a variety of ways. By using URs as an option for these backups, Seed Tool also allows for self-describing data, which means that their purpose won't be forgotten in the future.
 
 **Convenience.**
 
@@ -176,3 +177,17 @@ Seed Tool also supports other popular data transfer methods for cryptocurrency:
 Gordian Seed Tool runs on any modern MacOS or iOS device. iOS is by far the preferred platform due to security advantages of having a closely held device with a more limited attack surface.
 
 The full source code for Gordian Seed Tool is available through [Git Hub](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
+
+## Final Notes
+
+Gordian Seed Tool is a reference implementation meant to demonstrate the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Though we believe the level of security and resilience built into Apple's hardware and software is strong, we also suspect that a custom-built hardware device would be stronger, both because it would be built with security as a prime goal and because it would have a smaller attack surface.
+
+Independence comes from user choice, privacy from user control, and resilience from seeds being automatically backed up, with additional options for sharing. Openness is demonstrated by the maximium interoperability possible, covering three different generations of interoperable specifications. We generally classify them as follows, in order of decreasing interoperability (and thus decreasing desirability):
+
+1. `ur:crypto-request` and `ur:crypto-response`, which create the ability for high-level converations.
+2. `ur:crypto-seed`, `ur-crypto-hdkey`, and other URs, which create resilience through self-describing data.
+3. BIP-39 and other older standards, which enable minimal interoperability, but which are widely recognized.
+
+Although many second-generation hardware wallets such as Keystone and Passport are now using airgapped architectures with some interoperability, they could still be improved by more focus on URs, especially the request/response cycle.
+
+Seed Tool is intended largely as an example, and though no example is perfect, it offers concrete examples of many of Blockchain Commons' best practices for architectural and interoperable design.
