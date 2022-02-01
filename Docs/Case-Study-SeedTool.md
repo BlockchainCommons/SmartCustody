@@ -143,3 +143,36 @@ Seed Tool offers random seed generation. But, if users feel uncomfortable with t
 Because Seed Tool is primarily a holder of seeds, it doesn't address the following adversaries, which are more likely to be found on the Wallet side of the equation: Censorship, Correlation, Transaction Error, User Error.
 
 Seed Tool also doesn't currently resolve the following adversaries of note: Blackmail, Coercion, Death/Incapacitation, Social Engineering, Supply-Chain Attack.
+
+## Interoperability
+
+Seed Tool maximizes how you can get data into the app:
+
+* Data can be read from files, images, photos, or the paste buffer.
+
+Seed Tool supports input and output of URs, using either QRs, textual URs, or in some cases ByteWords.
+
+* Seeds can be imported as `ur:crypto-seed`.
+* Backups can be restored as `ur:crypto-sskr`, provided that sufficient shares are available.
+* Specific keys can be exported using `ur:crypto-response` in response to a `ur:crypto-request` for a derivation.
+* PSBTs can be signed in a `ur:crypto-response` in response to a `ur:crypto-request` of an unsigned or partially signed PSBT.
+* Seeds can be output as `ur:crypto-seed`.
+* Seeds can be backed up as `ur:crypto-sskr` shares.
+* Accounts can be exported as `ur:crypto-account`.
+* Pubkeys can be exported as `ur:crypto-hdkey`.
+* Private keys can be exported as `ur-crypto-hdkey`.
+
+Blockchain Commons considers URs the gold standard for interoperability because they are both standardized and self-describing.
+
+Seed Tool also supports other popular data transfer methods for cryptocurrency:
+
+* Seeds can be imported as BIP-39 words or hex bytes.
+* Seeds can be exported as BIP-39 words or hex bytes.
+* Master keys can be exported as output descriptors.
+* Addresses can be exported. 
+
+## Hardware & Software
+
+Gordian Seed Tool runs on any modern MacOS or iOS device. iOS is by far the preferred platform due to security advantages of having a closely held device with a more limited attack surface.
+
+The full source code for Gordian Seed Tool is available through [Git Hub](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
