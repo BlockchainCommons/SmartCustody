@@ -103,6 +103,7 @@ Supporting a wide variety of specifications is one of Sparrow's strongest featur
 * Sparrow can interact with most popular connected and airgapped hardware wallets.
 * Sparrow can input BIP32 keys and BIP39 words.
 * Sparrow supports several UR types.
+* Sparrow code is [open source](https://github.com/sparrowwallet/sparrow).
 
 **Cons:**
 
@@ -158,9 +159,32 @@ _The following Adversaries are largely unaddressed: Coercion, Death/Incapacitati
 
 In the scenario where Sparrow is used as a warm wallet, threats such as Network Attack and Physical Theft become more problematic, requiring the user to ultimately decide on his own risk-tolerance for those possibilities. Fundamentally, this is an example of the Convenience adversary: by using a much more convenient (and potentially cheaper) scenario, the user is potentially put himself at risk.
 
+## Interoperability
+
+Sparrow has been built to be individually interoperable with a large number of hardware and software wallets. 
+
+* Sparrow can scan for a variety of connected hardware wallets.
+* Sparrow can import QRs and/or files from several airgapped hardware wallets.
+* Sparrow can import master private keys (BIP32) and mnemonic words (BIP39)
+* Sparrow can import from Electrum keystores.
+
+Sparrow also makes use of URs as appropriate:
+
+* `ur:crypto-hdkey` of a pubkey can be entered to create a watch-only wallet.
+* `ur:crypto-psbt` can be exchanged with appropriate devices for signing.
+
+### Future Development Suggestions
+
+Additional usage of URs could improve interoperability and resilience for URs as well as offer future-proofing of the overall app.
+
+* Import of seeds as `ur:crypto-seed` could be offered as a general choice ("Import through URs").
+* Seeds could be requested through `ur:crypto-request`.
+* PSBT signing could be requested through `ur:crypto-request` to offer [additional context](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/crypto-request-or-crypto-psbt.md)
+* Seeds could be output as `ur:crypto-seed` to offer easy backup or emigration from Sparrow, in a robust way that's self-identifying and self-verifying.
+* Seeds could be output as `ur:crypto-sskr` to offer more secure backup, once more in a way that's self-identifying and self-verifying.
 
 
-
+## Final Notes
 issues
 
 SPOF
