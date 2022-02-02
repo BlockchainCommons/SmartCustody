@@ -201,7 +201,7 @@ The full source code for Gordian Seed Tool is available through [Git Hub](https:
 
 Gordian Seed Tool is a reference implementation meant to demonstrate the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Though we believe the level of security and resilience built into Apple's hardware and software is strong, we also suspect that a dedicated hardware solution would be stronger, both because it would be built with security as a prime goal and because it would have a smaller attack surface.
 
-Independence comes from user choice, privacy from user control, and resilience from seeds being automatically backed up, with additional options for sharing. Openness is demonstrated by creating the maximium interoperability reasonable, covering three different generations of interoperable specifications. We generally classify them as follows, in order of decreasing desirability:
+Independence comes from user choice, privacy from user control, and resilience from seeds being automatically backed up (with additional options for sharing). Openness is demonstrated by creating the maximium interoperability reasonable, covering three different generations of interoperable specifications. We generally classify them as follows, in order of decreasing desirability:
 
 1. `ur:crypto-request` and `ur:crypto-response`, which create the ability for high-level converations.
 2. `ur:crypto-seed`, `ur-crypto-hdkey`, and other URs, which create resilience through self-describing data.
