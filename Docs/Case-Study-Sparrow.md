@@ -3,6 +3,15 @@
 
 Sparrow is a desktop wallet.
 
+## Overview
+
+Sparrow is a desktop Bitcoin wallet available for OSX, Windows, and Linux. It is fully featured, supporting creation of seeds and transactions alike. However, it also has extensive interoperability with numerous connected and airgapped hardware wallets.
+
+* **Website:** https://sparrowwallet.com/
+* **Repo:** https://github.com/sparrowwallet/sparrow
+* **Downloads:** https://sparrowwallet.com/download/
+* **Documentation:** https://sparrowwallet.com/docs/
+
 ## Usage
 
 To most closely cleave to Gordian designs and principles, Blockchain Commons suggests the use of Sparrow as a [transaction coordinator](https://github.com/BlockchainCommons/GordianSeedTool-iOS/blob/master/Docs/Integration.md#using-sparrow-as-a-transaction-coordinator), which allows the usage of the [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Keys are maintained on closely held devices, while Sparrow acts as a watch-only wallet that then requests signatures from those devices as required. In this scheme, Sparrow usage occurs as follows:
@@ -97,7 +106,8 @@ Supporting a wide variety of specifications is one of Sparrow's strongest featur
 
 **Cons:**
 
-* Export features are limited and don't include mnemonic words, SSKR, or other methods for movement
+* Export features are limited and don't include mnemonic words, SSKR, or other methods for movement of keys or seeds.
+ 
 ### Other Scenarios
 
 The other major scenario for Sparrow is using it as a warm software wallet, where it holds keys and conducts transactions. This causes the following variations to the Gordian Principles:
@@ -108,13 +118,47 @@ The other major scenario for Sparrow is using it as a warm software wallet, wher
 * **Resilience Against SPOF (Neutral to Con):** Some hardware wallets offer integrated backup methods (such as Passport's MicroSD backups) or additional export features (such as Gordian Seed Tool's SSKR backups). Keeping keys solely in Sparrow restricts a user to its currently limited wallet backup.
 * **Openness (Neutral):** Obviously, depending solely on Sparrow as a software wallet obviates the needs for a lot of the interoperability specifications, but nonetheless they remain available.
 
----
+## Adversaries
 
-Adversaries
+Sparrow offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries. Again, this largely focuses on the transaction-coordinator scenario. See "Other Scenarios", below, for additional notes on other usages.
 
-for Transaction Error
+### Censorship
 
-[note graphical transaction display]
+The biggest threat of Censorship tends to be if a Bitcoin node refuses to process your transactions. Because Sparrow offers so many choices for accessing the Bitcoin network, this problem is largely obviated.
+
+### Correlation
+
+Correlation can come about if a Bitcoin node collects information about your transcactions. A user who considered this vulnerability a true risk could either run his own Bitcoin server or regularly switch between others.
+
+### Convenience
+
+The power of Sparrow as a transaction coordinator is that its ease of use for both creating wallets from keys held by one or more hardware wallets and for creating transactions for those wallets is strong. There's little confusion and no particular time or effort costs. This keeps users from using even more convenient (and less secure) methodologies.
+
+### Institutional Theft
+
+As with any true self-sovereign solution, Sparrow minimizes institutional theft, because you hold your keys, not an institute.
+
+### Network Attack
+
+Network attack is the largest threat to wallets held on networked desktop computers. Nonetheless, even if an attack succeeded, in a transaction-coordinator scenario, all that an attacker could secure would be a watch-only wallet, since the keys are secured on hardware devices. 
+
+### Physical Theft
+
+The encryption of wallets not in immediate use for signing and optional password protection of wallets can provide good Physical-Theft protection, but even if these obstacles were overcome, again all that the attacker would gain would be watch-only wallets.
+
+### Transaction Error
+
+Sparrow shows the power of offering a full desktop computer UI with its graphical transaction display, which carefully shows inputs and outputs, reducing the odds of Transaction Errors.
+
+_The following Adversaries are largely passed off to the wallets holding keys in the transaction-coordinator scenario: Bitrot, Disaster, Key Fragility, Systemic Key Compromise, Supply-Chain Attack._
+
+_The following Adversaries are largely unaddressed: Coercion, Death/Incapacitation, Social Engineering._ 
+
+### Other Scenarios
+
+In the scenario where Sparrow is used as a warm wallet, threats such as Network Attack and Physical Theft become more problematic, requiring the user to ultimately decide on his own risk-tolerance for those possibilities. Fundamentally, this is an example of the Convenience adversary: by using a much more convenient (and potentially cheaper) scenario, the user is potentially put himself at risk.
+
+
 
 
 issues
