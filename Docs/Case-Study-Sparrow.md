@@ -183,9 +183,8 @@ Additional usage of URs could improve interoperability and resilience for URs as
 * Seeds could be output as `ur:crypto-seed` to offer easy backup or emigration from Sparrow, in a robust way that's self-identifying and self-verifying.
 * Seeds could be output as `ur:crypto-sskr` to offer more secure backup, once more in a way that's self-identifying and self-verifying.
 
-
 ## Final Notes
-issues
 
-SPOF
-export
+As a software wallet, Sparrow does its best to make a desktop wallet secure, using encryption and passwords. It's a big step up from the increasingly popular browser extensions, and a good choice for users insistant on the Convenience of having their Bitcoin on their desktop (a situation that runs at odds with the [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model), which focuses on the partioning of services and data). The biggest dangers of this scenario are the potential for Single-Point-of-Compromise or Single-Point-of-Failure. The SPOCs are implicit to the use of a desktop wallet (though it could be reduced by use of Sparrow's simple and intuitive multisigs, though obviously doing so moves away from the core desktop-wallet scenario). The SPOFs could be reduced with more varied and interoperable export functionality, and especially by using of Shamir's Secret Sharing, such as is found in [SSKR](https://github.com/BlockchainCommons/bc-sskr).
+
+Sparrow can also act as a transaction coordinator, where it gathers together pubkeys from hardware wallet devices, creates wallets, and then when money is to be sent, creates transactions and asks the hardware wallets for signing. This is a powerful scenario that allows for strong protection of seeds while maintaining ease of use. This is Blockchain Commons' recommended use of the wallet. This can be even more powerful if used in conjunction with Sparrow's simple multisig functionality, drawing multiple seeds from multiple hardware devices. Sparrow is sufficiently advanced in this regard that its currently Blockchain Commons' choice for designing a multisig #SmartCustody scenario.
