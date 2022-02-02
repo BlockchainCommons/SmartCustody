@@ -16,4 +16,23 @@ To most closely cleave to Gordian designs and principles, Blockchain Commons sug
 
 This is not the only possible usage for Sparrow, as it's a fully functional desktop wallet. Keys can also be generated and/or held by Sparrow itself, adding notable Convenience, but doing so also decreases the resilience of the wallet, potentially opening it up to compromise.
 
-## 
+## Gordian Principles
+
+The following discussion of how Sparrow meets [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) largely refers to the scenario above. See "Other Scenarios", below, for additional notes on other usages.
+
+### Independence
+
+Sparrow maximizes independence in all scenarios because it gives users almost total control over where seeds come from and how they're used, as well as how Sparrow operates with the Bitcoin network.
+
+**Pros:**
+
+* Users can choose to create seeds or import them from a wide variety of hardware, airgapped, or software wallets.
+* Users can choose to sign transactions directly in Sparrow or to hand them off to another device.
+* Users can choose to connect to the Bitcoin network via one of several public servers, via a specified Bitcoin Core Server, or via a Private Electrum server.
+
+**Neutral:**
+
+* The number of choices available through Sparrow can be overwhelming, and users may not know which create optimal security.
+
+### Privacy
+
