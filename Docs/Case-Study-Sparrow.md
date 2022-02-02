@@ -5,7 +5,7 @@ Sparrow is a desktop wallet.
 
 ## Usage
 
-To most closely cleave to Gordian designs and principles, Blockchain Commons suggests the use of Sparrow as a [transaction coordinator](https://github.com/BlockchainCommons/GordianSeedTool-iOS/blob/master/Docs/Integration.md#using-sparrow-as-a-transaction-coordinator), which allows the usage of the [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Keys are maintained on closely held devices, while Sparrow acts as a watch-only wallet that then requests signatures from those devices as requires. In this scheme, Sparrow usage occurs as follows:
+To most closely cleave to Gordian designs and principles, Blockchain Commons suggests the use of Sparrow as a [transaction coordinator](https://github.com/BlockchainCommons/GordianSeedTool-iOS/blob/master/Docs/Integration.md#using-sparrow-as-a-transaction-coordinator), which allows the usage of the [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Keys are maintained on closely held devices, while Sparrow acts as a watch-only wallet that then requests signatures from those devices as required. In this scheme, Sparrow usage occurs as follows:
 
 1. Keys are generated on closely held devices.
 2. A single-sig or multisig wallet is created on Sparrow.
@@ -14,7 +14,7 @@ To most closely cleave to Gordian designs and principles, Blockchain Commons sug
 5. Transactions are signed by closely held devices as needed.
 6. Transactions are returned to Sparrow as a fully signed PSBT and then transmitted.
 
-This is not the only possible usage for Sparrow, as it's a fully functional desktop wallet. Keys can also be generated and/or held by Sparrow itself, adding notable Convenience, but doing so also decreases the resilience of the wallet, potentially opening it up to compromise.
+This is not the only possible usage for Sparrow, as it's a fully functional desktop wallet. Keys can also be generated and/or held by Sparrow itself, adding notable Convenience, but simultaneously decreasing the security of the wallet, potentially opening it up to compromise.
 
 ## Gordian Principles
 
@@ -32,7 +32,92 @@ Sparrow maximizes independence in all scenarios because it gives users almost to
 
 **Neutral:**
 
-* The number of choices available through Sparrow can be overwhelming, and users may not know which create optimal security.
+* The number of choices available through Sparrow can be overwhelming, and users may not know which create optimal security, though the Sparrow web sites does list [best practices](https://sparrowwallet.com/docs/best-practices.html) for increasing security with increasing funds.
 
 ### Privacy
 
+Because it focuses on the Convenience of having a cryptocurrency wallet on your desktop, Sparrow does not focus heavily on Privacy.
+
+**Pros:**
+
+* Sparrows accesses nodes or Electrum servers rather than using less private technologies such as SPV.
+* Users have free choice of Bitcoin servers, which they can use to minimize Privacy threats such as Correlation or Censorship.
+* Sparrow can use Tor for currency exchange lookups.
+* 
+**Neutral:**
+
+* Users could choose to further improve privacy by keeping their computer offline, except when transmitting transactions, or by erasing account information from Sparrow when it's not needed, but these solutions sufficiently impact Convenience that they're unlikely to be used.
+  
+**Cons:**
+
+* As a networked computing device, Sparrow is threatened by the largest selection of privacy attacks.
+
+### Resilience Against SPOC
+
+Protecting against Single Points of Compromise (SPOC) can be challenging for a networked device, which is why Blockchain Commons suggests the use of Sparrow as a transaction coordinator.
+
+**Pros:**
+
+* Wallets are encrypted.
+* Wallets can optionally be stored on removable media.
+* Individual wallets can be password protected, using Argon2 hashing for key derivation the from password.
+* As a Java-coded wallet, Sparrow is more secure than the vulnerable browser extensions that are popular for wallet design.
+* Sparrow supports multisigs, with strong ease-of-construction and usage. 
+* Provided that a quorum of keys are kept offline, per the model of Sparrow-as-transaction-coordinator, Sparrow itself is almost entirely proof against SPOC. This boots the question of SPOC down to the hardware or airgapped wallet.
+
+**Neutral:**
+
+* Networking computing devices are vulnerable to Network Attacks. Even with keys kept offline, this could theoretically result in corruption of code or PSBTs. In those situations, security once more falls to the hardware and airgapped devices, and would be dependent on the quality of their UIs for approving PSBTs.
+
+### Resilience Against SPOF
+
+Sparrow does not have any implicit protection against Single Points of Failure (SPOF).
+
+**Pros:**
+
+* Wallet files can be exported, allowing the creation of backups.
+
+**Neutral:**
+
+* In a transaction-coordinator model, protection against SPOF ultimately falls on the hardware or airgapped wallets holding the seeds.
+
+**Cons:**
+
+* Password protection of wallets can act as a SPOF.
+
+### Openness
+
+Supporting a wide variety of specifications is one of Sparrow's strongest features.
+
+**Pros:**
+
+* Sparrow can interact with most popular connected and airgapped hardware wallets.
+* Sparrow can input BIP32 keys and BIP39 words.
+* Sparrow supports several UR types.
+
+**Cons:**
+
+* Export features are limited and don't include mnemonic words, SSKR, or other methods for movement
+### Other Scenarios
+
+The other major scenario for Sparrow is using it as a warm software wallet, where it holds keys and conducts transactions. This causes the following variations to the Gordian Principles:
+
+* **Indepedence (Pro):** Being able to also use Sparrow as a software wallet creates even more independence.
+* **Privacy (Pro):** Using a warm wallet enables the usage of CoinJoin by acting as a client of the Samourai Whirlpool implementating, creating a powerful privacy addition.
+* **Resilience Against SPOC (Con):** Though Sparrow has powerful password and encryption protections, maintaining private keys on a networked computing device is always more dangerous than doing so with a hardware wallet, especially an airgapped hardware wallet. This is the largest danger of using Sparrow as a warm wallet and is why Blockchain Commons instead suggests the use of an airgapped [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model).
+* **Resilience Against SPOF (Neutral to Con):** Some hardware wallets offer integrated backup methods (such as Passport's MicroSD backups) or additional export features (such as Gordian Seed Tool's SSKR backups). Keeping keys solely in Sparrow restricts a user to its currently limited wallet backup.
+* **Openness (Neutral):** Obviously, depending solely on Sparrow as a software wallet obviates the needs for a lot of the interoperability specifications, but nonetheless they remain available.
+
+---
+
+Adversaries
+
+for Transaction Error
+
+[note graphical transaction display]
+
+
+issues
+
+SPOF
+export
