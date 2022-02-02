@@ -3,6 +3,13 @@
 
 Foundation Devices' Passport is an airgapped HD wallet/offline signer.
 
+## Overview
+
+Foundation Devices is a second-generation hardware wallet that holds seeds and connects to software wallets through either QR codes or data transferred on a MicroSD card. It dependes on a chosen software wallet for transactions, simply signing acceptable PSBTs when it's passed them and allowing the software wallet to do transmission.
+
+* **Web Site:** https://foundationdevices.com/passport/details/
+* **GitHub:** https://github.com/Foundation-Devices
+
 ## Usage
 
 <img src="https://raw.githubusercontent.com/BlockchainCommons/SmartCustody/master/Images/casestudy/cs-passport-1.jpg" width=350 align="right">
@@ -84,7 +91,7 @@ Passport provides interoperability with a variety of software wallets, though no
 * Seeds can be transferred onto or off of the device using BIP-39.
 * More than half-a-dozen wallets are interoperable with Passport.
 * Some interoperability is managed through Uniform Resources (URs) such as `ur:bytes` and `ur:psbt`.
-* Electronics, assembly, and software is [open source](https://docs.foundationdevices.com/en/open-source).
+* Electronics, assembly, and software is [open source](https://docs.foundationdevices.com/en/open-source) and code in binary is [reproducible](https://walletscrutiny.com/hardware/passport/).
 
 **Cons:**
 
