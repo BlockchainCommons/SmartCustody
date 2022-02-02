@@ -84,6 +84,7 @@ Minimizing Single Point of Compromise (SPOC) protects data from theft: with Seed
 * Access to Seed Tool is by default protected by 2FA: one factor is checked when you log into your Apple account on first usage and another when you verify your access each time you look at data, usually using a biometric code. (This can be turned off if Seed Tool is to be used in offline mode.)
 * Seeds backed up to iCloud are encrypted, with the encryption key stored in your iCloud keychain, which is escrowed, so that not even Apple can read it.
 * Seed Tool remains functional even if network access is completely turned off, creating the option of a cold-storage device.
+* Seed Tool offers full support for cosigner keys, allowing its seeds to be used to create multisigs, which can offset any SPOC "Con"s.
 
 **Neutral:**
 
