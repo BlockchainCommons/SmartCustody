@@ -69,6 +69,8 @@ Keystone provides open information on their software and on their hardware audit
 * Software is [open source](https://github.com/KeystoneHQ).
 * Security audit is [publicly available](https://github.com/KeystoneHQ/Keystone-developer-hub/blob/main/audit-report/cobo_audit_report_2020_09_en_1_0.pdf).
 
+[some code not? https://walletscrutiny.com/android/com.keystone.mobile/]
+
 ## Adversaries
 
 The Keystone offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries:
