@@ -209,8 +209,8 @@ Independence comes from user choice, privacy from user control, and resilience f
 
 Although many second-generation hardware wallets such as Keystone and Passport are now using airgapped architectures with some interoperability, we believe they could still be improved by more focus on URs, especially the request/response cycle.
 
-Seed Tool is intended largely as an example, and though no example is perfect, it offers concrete demonstrations of many of Blockchain Commons' best practices for architectural and interoperable design.
+Seed Tool is intended largely as a reference and example of the feature set that future dedicated hardware wallets might want to consider; though no example is perfect, it offers concrete demonstrations of many of Blockchain Commons' best practices for architectural and interoperable design.
 
 ## Disclaimer
 
-Gordian Seed Tool is an app produced by Blockchain Commons. Though it is [freely compilable from source](https://github.com/BlockchainCommons/GordianSeedTool-iOS), it also available for sale through the Apple App Store. Caveat reader.
+Gordian Seed Tool is an app produced by Blockchain Commons. Though it is [freely compilable from source](https://github.com/BlockchainCommons/GordianSeedTool-iOS), it also available for sale through the [Apple App Store](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229). Caveat reader.
