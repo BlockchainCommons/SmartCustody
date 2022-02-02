@@ -7,6 +7,8 @@ This Case Study should not be taken as a review, as it covers one of Blockchain 
 
 ## Usage
 
+<a href="https://raw.githubusercontent.com/BlockchainCommons/GordianSeedTool-iOS/master/images/st-listing.jpeg"><img src="https://raw.githubusercontent.com/BlockchainCommons/GordianSeedTool-iOS/master/images/st-listing.jpeg" align="right" width=250 style="border:1px solid black;"></a>
+
 The Gordian Seed Tool stores seeds, optimally on an airgapped mobile device, and then allows their usage.
 
 There are generally three ways to put seeds into Seed Tool:
@@ -146,6 +148,8 @@ Because Seed Tool is primarily a holder of seeds, it doesn't address the followi
 Seed Tool also doesn't currently resolve the following adversaries of note: Blackmail, Coercion, Death/Incapacitation, Social Engineering, Supply-Chain Attack.
 
 ## Interoperability
+
+<a href="https://raw.githubusercontent.com/BlockchainCommons/GordianSeedTool-iOS/master/images/st-export.jpeg"><img src="https://raw.githubusercontent.com/BlockchainCommons/GordianSeedTool-iOS/master/images/st-export.jpeg" align="right" width=250 style="border:1px solid black;"></a>
 
 Seed Tool maximizes how you can get data into the app:
 
