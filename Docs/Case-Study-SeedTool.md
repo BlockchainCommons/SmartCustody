@@ -45,7 +45,7 @@ The Gordian architecture generally depends on airgaps for security, so the follo
 
 ## Gordian Principles
 
-Gordian Seed Tool was designed as a referenceforto all four of the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles).
+Gordian Seed Tool was designed as a reference for all four of the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles).
 
 ### Independence
 
