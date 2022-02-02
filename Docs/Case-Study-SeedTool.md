@@ -80,20 +80,21 @@ Minimizing Single Point of Compromise (SPOC) protects data from theft: with Seed
 
 **Pros:** 
 
-* Seed Tool stores all at-rest data in encrypted form.
-* Access to Seed Tool is always protected by 2FA: one factor is checked when you log into your Apple account on first usage and another when you verify your access each time you look at data, usually using a biometric code.
-* Seeds backed up to iCloud are encrypted, with the encryption key stored in your keychain.
+* Seed Tool stores all at-rest data in encrypted form using [Apple's APIs](https://developer.apple.com/documentation/foundation/nsdata/writingoptions/1617198-completefileprotection).
+* Access to Seed Tool is by default protected by 2FA: one factor is checked when you log into your Apple account on first usage and another when you verify your access each time you look at data, usually using a biometric code. (This can be turned off if Seed Tool is to be used in offline mode.)
+* Seeds backed up to iCloud are encrypted, with the encryption key stored in your iCloud keychain, which is escrowed, so that not even Apple can read it.
 * Seed Tool remains functional even if network access is completely turned off, creating the option of a cold-storage device.
 
 **Neutral:**
 
-* Trust in Seed Tool ultimately rests on trust in Apple.
+* Trust in Seed Tool ultimately rests on trust in Apple. The question of whether this is a pro or con may vary for different users; Blockchain Commons feels that Apple invests money to protect the privacy of their products and the ecosystem, and that we are thus able to leverage their best practices.
 
 **Cons:**
 
 * Some backup and sharing mechanisms have the possibility to be SPOCs if used. An individual user must decide between ease-of-use (Convenience) and resilience based on the individual risks of their own setup. Notably:
    * The network-printing option could make network access into a SPOC.
-   * Cut-and-paste sharing options could allow other apps to access the secure data on the clipboard.
+   * Cut-and-paste sharing options could allow other apps to access the secure data on the Universal Clipboard.
+* There has not yet been a security review of Seed Tool, though such a review is on the Blockchain Commons roadmap.
 
 ### Resilience against SPOF
 
@@ -103,7 +104,7 @@ Minimizing Single Point of Failure (SPOF) protects data from loss: with Seed Too
 
 * Data is all backed up to iCloud, unless turned off by the user, and thus can be recovered by all devices logged into that account.
 * Users are given the capability to back up data in a variety of other ways, including printing SSKR shares, but they must decide to do so.
-* Data can all be exported as URs, which are self-describing, and thus unlikely to succumb to Bitrot in the future.
+* Data can all be exported as URs, which are self-describing and self-verifying, and thus unlikely to succumb to Bitrot in the future.
 
 **Neutral:**
 
@@ -111,7 +112,7 @@ Minimizing Single Point of Failure (SPOF) protects data from loss: with Seed Too
 
 **Cons:**
 
-* iClouds backups can be lost if all physical devices or lost and Apple account information is lost.
+* iClouds backups can be lost if all physical devices are lost and Apple account information is lost or if Apple deletes or locks down your account.
 
 ### Openness
 
@@ -121,6 +122,8 @@ Seed Tool is the reference app for UR specifications, and so offers extensive in
 
 * Data can be imported via a variety of means, including URs.
 * Data can be exported via a variety of means, including URs.
+* The source code is [open source](https://github.com/BlockchainCommons/GordianSeedTool-iOS) and [commits are verified](https://github.com/BlockchainCommons/GordianSeedTool-iOS/commits/master).
+* Seed Tool is licensed to [protect against patent claims](https://github.com/BlockchainCommons/GordianSeedTool-iOS/blob/master/LICENSE), and Blockchain Commons is also a member of [COPA](https://www.opencrypto.org/).
 
 ## Adversaries
 
@@ -128,7 +131,7 @@ Seed Tool offers specific defenses against the following [#Smartcustody](https:/
 
 **Bitrot.**
 
-Bitrot occurs when a software program or hardware device becomes outdated. There is some opportunity for Bitrot in Seed Tool, if the software is not updated and it no longer becomes possible to run it on newer devices. This is somewhat offset by the software being fully [open source](https://github.com/BlockchainCommons/GordianSeedTool-iOS) and moreso by Seed Tool offering the _opportunity_ for users to back up their data in a variety of ways. By using URs as an option for these backups, Seed Tool also allows for self-describing data, which means that their purpose won't be forgotten in the future.
+Bitrot occurs when a software program or hardware device becomes outdated. There is some opportunity for Bitrot in Seed Tool, if the software is not updated and it no longer becomes possible to run it on newer devices. This is somewhat offset by the software being fully [open source](https://github.com/BlockchainCommons/GordianSeedTool-iOS) and moreso by Seed Tool offering the _opportunity_ for users to back up their data in a variety of ways. By using URs as an option for these backups, Seed Tool also allows for self-describing data, which means that their purpose won't be forgotten in the future. Finally, Blockchain Commons also offers a [command line version of the app](https://github.com/BlockchainCommons/seedtool-cli), which is likely to outlast the Apple version.
 
 **Convenience.**
 
@@ -140,19 +143,19 @@ Gordian Seed Tool is well-protected, even from institutional theft at Apple, pro
 
 **Key Fragility.**
 
-The backup to iCloud provides strong protection against key fragility, one of the largest dangers for cryptocurrency loss. The user can also proactively back up their seeds in a variety of different ways.
+The backup to iCloud provides strong protection against key fragility, one of the largest dangers for cryptocurrency loss. The user can also proactively back up their seeds in a variety of different ways, with URs containing checksums that additionally protect against error or fragility.
 
 **Network Attack.**
 
-If Seed Tool is entirely airgapped by using a non-networked mobile device, this largely eliminates the possibility of network attack. If Seed Tool is run on a networked mobile device, the possibility of network attack still remains very low, due to the strong protections of the iPhone. Network attack could remain a real possibility if Seed Tool is run on a networked computer.
+If Seed Tool is entirely airgapped by using a non-networked mobile device, this largely eliminates the possibility of network attack. If Seed Tool is run on a networked mobile device, the possibility of network attack still remains very low, due to the strong protections of the iPhone. Network attack could be a real possibility if Seed Tool is run on a networked computer.
 
 **Physical Theft.**
 
-Seed Tool protects against physical theft with its 2FA, especially for any newer devices that uses biometrics as one of the factors.
+Seed Tool protects against physical theft with its 2FA, especially for any newer devices that uses biometrics as one of the factors (provided that they remain turned on). Again, the MacOS version of Seed Tool may be less secure, especially for older Macs without trusted hardware.
 
 **Systemic Key Compromise.**
 
-Seed Tool offers random seed generation. But, if users feel uncomfortable with that and the resultant possibility of Systemic Key Compromise if an error were to be found in the algorithm, they can instead generate seeds with dice, cards, or coin flips.
+Seed Tool offers random seed generation. But, if users feel uncomfortable with that and the resultant possibility of Systemic Key Compromise if an error were to be found in the algorithm, they can instead generate seeds with dice, cards, or coin flips. Coins and dice can be checked against [Ian Coleman's Mnemonic Code Converter](https://iancoleman.io/bip39/), in off-line mode of course. They and cards can alternatively be checked against [LetheKit](https://github.com/BlockchainCommons/lethekit) or [seedtool-cli](https://github.com/BlockchainCommons/seedtool-cli).
 
 _Because Seed Tool is primarily a holder of seeds, it doesn't address the following adversaries, which are more likely to be found on the Wallet side of the equation: Censorship, Correlation, Transaction Error, User Error._
 
@@ -178,9 +181,9 @@ Seed Tool supports extensive input and output of URs, using either QRs, textual 
 * Pubkeys can be exported as `ur:crypto-hdkey`.
 * Private keys can be exported as `ur:crypto-hdkey`.
 
-Blockchain Commons considers URs the gold standard for interoperability because they are both standardized and self-describing.
+Blockchain Commons considers URs the gold standard for interoperability because they are standardized, self-describing, and self-verifying.
 
-Seed Tool also supports other popular data transfer methods for cryptocurrency:
+Seed Tool also supports other popular data transfer methods for cryptocurrency for compatibility with legacy systems:
 
 * Seeds can be imported as BIP-39 words or hex bytes.
 * Seeds can be exported as BIP-39 words or hex bytes.
@@ -195,7 +198,7 @@ The full source code for Gordian Seed Tool is available through [Git Hub](https:
 
 ## Final Notes
 
-Gordian Seed Tool is a reference implementation meant to demonstrate the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Though we believe the level of security and resilience built into Apple's hardware and software is strong, we also suspect that a custom-built hardware device would be stronger, both because it would be built with security as a prime goal and because it would have a smaller attack surface.
+Gordian Seed Tool is a reference implementation meant to demonstrate the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Though we believe the level of security and resilience built into Apple's hardware and software is strong, we also suspect that a dedicated hardware solution would be stronger, both because it would be built with security as a prime goal and because it would have a smaller attack surface.
 
 Independence comes from user choice, privacy from user control, and resilience from seeds being automatically backed up, with additional options for sharing. Openness is demonstrated by creating the maximium interoperability reasonable, covering three different generations of interoperable specifications. We generally classify them as follows, in order of decreasing desirability:
 
