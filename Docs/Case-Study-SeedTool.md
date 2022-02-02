@@ -1,9 +1,9 @@
 # Gordian Seed Tool (Version 1.3.1)
 ### A #SmartCustody Self Case Study
 
-The Godian Seed Tool reference app allows for the storage and seeds and their backup, transfer, or usage.
+The Godian Seed Tool reference app allows for the storage of cryptographic seeds and their backup, transfer, and usage.
 
-This Case Study should not be taken as a review, as it covers one of Blockchain Commons' own apps. Rather, it's intended as a pure Case Study, demonstrating how the Blockchain Commons app meets the goals of the Gordian architecture and thus acting as further reference for the design.
+This Case Study should not be taken as a review, as it covers one of Blockchain Commons' own apps. Rather, it's intended as a pure Case Study, demonstrating how Blockchain Commons feels that this app meets the goals of the Gordian architecture and thus how it acts as reference for the design.
 
 ## Usage
 
@@ -24,17 +24,18 @@ There are a number of ways that seed can then be used:
 * Respond to a request for a key.
 * Respond to a request to sign a PSBT.
 
-The Gordian architecture generally depends on airgaps for security, so the following usage most closely meets that design:
+The Gordian architecture generally depends on airgaps for security, so the following airgapped usage most closely meets that design:
 
 1. Add a seed to Seed Tool via any means.
-2. Backup Your seed with SSKR.
-3. Export a watch-only pubkey to a software wallet.
-4. Import PSBTs from the software wallet using `ur:crypto-request`.
-5. Export Signed PSBTs to the software wallet using `ur:crypto-response`.
+2. Backup Your seed with SSKR. Separate the shares.
+3. Export a watch-only pubkey to a software wallet via QR code. 
+   * Alternatively, export a pubkey as one of the keys in a multisig wallet.
+4. Import PSBTs from the software wallet using `ur:crypto-request` encoded as a QR.
+5. Export Signed PSBTs to the software wallet using `ur:crypto-response` encoded as a QR.
 
 ## Gordian Principles
 
-Gordian Seed Tool was designed as a reference to all four of the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles).
+Gordian Seed Tool was designed as a referenceforto all four of the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles).
 
 ### Independence
 
@@ -42,12 +43,12 @@ Gordian Seed Tool maximizes Independence by allowing users to make all the choic
 
 **Pros:**
 
-* Seed Tool gives total control of all assets, with the seeds residing within Seed Tool.
-* Through extensive support of Openness, Seed Tool ensures that users have total choice over what wallets or other devices to use with Seed Tool.
+* Seed Tool gives total control over all assets, with the seeds residing within Seed Tool.
+* Seed Tool ensures that users have total choice over what wallets or other devices they use with Seed Tool.
 
 **Neutral:**
 
-* Total independence means total responsibility: users might decide which wallets or other devices to use on their own.
+* Total independence means total responsibility: users must independently backup their data, make good choices about wallets, and consider the use of resilient multisig designs.
 
 ### Privacy
 
@@ -56,11 +57,12 @@ The use of Gordian Seed Tool keeps all private data close.
 **Pros:** 
 
 * As a closely held device, Seed Tool maximizes the privacy possibilities for private keys.
-* When run on networkless mobile device (iPhone or iPod Touch), the privacy of Seed Tool is near total; this decreases if Seed Tool is used on a closely held mobile device and even moreso if it's run on a computer.
+* When run on networkless mobile device (iPhone or iPod Touch), the privacy of Seed Tool is near total; this decreases if Seed Tool is used on a closely held mobile device and may not meet privacy needs if it's run on a networked computer.
 
 **Neutral:**
 
-* Again, the user bears responsibility for what happens when information is transffered out of Seed Tool. They must decide which wallets will optimize privacy (and other desirable features).
+* Again, the user bears responsibility for what happens when information is transferred out of Seed Tool: they must decide which wallets (or architectural designs) will optimize privacy.
+  
 
 ### Resilience against SPOC
 
@@ -69,9 +71,9 @@ Minimizing Single Point of Compromise (SPOC) protects data from theft: with Seed
 **Pros:** 
 
 * Seed Tool stores all at-rest data in encrypted form.
-* Access to Seed Tool is always protect by 2FA: one factor occurs when you log into your Apple account on first usage and another when you verify your access each time you look at data, usually using a biometric code.
-* Seeds backed up to iCloud are encrypted, with the encryption key stores in your keychain.
-* Seed Tool remains functional even if network access is completely turned off, creating a cold-storage device.
+* Access to Seed Tool is always protected by 2FA: one factor is checked when you log into your Apple account on first usage and another when you verify your access each time you look at data, usually using a biometric code.
+* Seeds backed up to iCloud are encrypted, with the encryption key stored in your keychain.
+* Seed Tool remains functional even if network access is completely turned off, creating the option of a cold-storage device.
 
 **Neutral:**
 
@@ -132,7 +134,7 @@ The backup to iCloud provides strong protection against key fragility, one of th
 
 **Network Attack.**
 
-If Seed Tool is entirely airgapped by using a non-networked mobile device, this largely eliminates the possibility of network attack. If Seed Tool is run on a networked mobile device, the possibility of network attack still remains very low, due to the strong protections of the iPhone.
+If Seed Tool is entirely airgapped by using a non-networked mobile device, this largely eliminates the possibility of network attack. If Seed Tool is run on a networked mobile device, the possibility of network attack still remains very low, due to the strong protections of the iPhone. Network attack could remain a real possibility if Seed Tool is run on a networked computer.
 
 **Physical Theft.**
 
@@ -140,22 +142,21 @@ Seed Tool protects against physical theft with its 2FA, especially for any newer
 
 **Systemic Key Compromise.**
 
-Seed Tool offers random seed generation. But, if users feel uncomfortable with that, and the possibility of Systemic Key Compromise if an error were to be found in the algorithm, they can instead generate seeds with dice, cards, or coin flips.
+Seed Tool offers random seed generation. But, if users feel uncomfortable with that and the resultant possibility of Systemic Key Compromise if an error were to be found in the algorithm, they can instead generate seeds with dice, cards, or coin flips.
 
+_Because Seed Tool is primarily a holder of seeds, it doesn't address the following adversaries, which are more likely to be found on the Wallet side of the equation: Censorship, Correlation, Transaction Error, User Error._
 
-Because Seed Tool is primarily a holder of seeds, it doesn't address the following adversaries, which are more likely to be found on the Wallet side of the equation: Censorship, Correlation, Transaction Error, User Error.
-
-Seed Tool also doesn't currently resolve the following adversaries of note: Blackmail, Coercion, Death/Incapacitation, Social Engineering, Supply-Chain Attack.
+_Seed Tool also doesn't currently resolve the following adversaries of note: Blackmail, Coercion, Death/Incapacitation, Social Engineering, Supply-Chain Attack._
 
 ## Interoperability
 
 <a href="https://raw.githubusercontent.com/BlockchainCommons/GordianSeedTool-iOS/master/images/st-export.jpeg"><img src="https://raw.githubusercontent.com/BlockchainCommons/GordianSeedTool-iOS/master/images/st-export.jpeg" align="right" width=250 style="border:1px solid black;"></a>
 
-Seed Tool maximizes how you can get data into the app:
+Seed Tool maximizes the ways that a user can get data into the app:
 
 * Data can be read from files, images, photos, or the paste buffer.
 
-Seed Tool supports input and output of URs, using either QRs, textual URs, or in some cases ByteWords.
+Seed Tool supports extensive input and output of URs, using either QRs, textual URs, or in some cases ByteWords.
 
 * Seeds can be imported as `ur:crypto-seed`.
 * Backups can be restored as `ur:crypto-sskr`, provided that sufficient shares are available.
@@ -165,7 +166,7 @@ Seed Tool supports input and output of URs, using either QRs, textual URs, or in
 * Seeds can be backed up as `ur:crypto-sskr` shares.
 * Accounts can be exported as `ur:crypto-account`.
 * Pubkeys can be exported as `ur:crypto-hdkey`.
-* Private keys can be exported as `ur-crypto-hdkey`.
+* Private keys can be exported as `ur:crypto-hdkey`.
 
 Blockchain Commons considers URs the gold standard for interoperability because they are both standardized and self-describing.
 
@@ -180,18 +181,22 @@ Seed Tool also supports other popular data transfer methods for cryptocurrency:
 
 Gordian Seed Tool runs on any modern MacOS or iOS device. iOS is by far the preferred platform due to security advantages of having a closely held device with a more limited attack surface.
 
-The full source code for Gordian Seed Tool is available through [Git Hub](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
+The full source code for Gordian Seed Tool is available through [Git Hub](https://github.com/BlockchainCommons/GordianSeedTool-iOS). It is programmed in Swift.
 
 ## Final Notes
 
 Gordian Seed Tool is a reference implementation meant to demonstrate the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and the [Gordian Architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). Though we believe the level of security and resilience built into Apple's hardware and software is strong, we also suspect that a custom-built hardware device would be stronger, both because it would be built with security as a prime goal and because it would have a smaller attack surface.
 
-Independence comes from user choice, privacy from user control, and resilience from seeds being automatically backed up, with additional options for sharing. Openness is demonstrated by the maximium interoperability possible, covering three different generations of interoperable specifications. We generally classify them as follows, in order of decreasing interoperability (and thus decreasing desirability):
+Independence comes from user choice, privacy from user control, and resilience from seeds being automatically backed up, with additional options for sharing. Openness is demonstrated by creating the maximium interoperability reasonable, covering three different generations of interoperable specifications. We generally classify them as follows, in order of decreasing desirability:
 
 1. `ur:crypto-request` and `ur:crypto-response`, which create the ability for high-level converations.
 2. `ur:crypto-seed`, `ur-crypto-hdkey`, and other URs, which create resilience through self-describing data.
 3. BIP-39 and other older standards, which enable minimal interoperability, but which are widely recognized.
 
-Although many second-generation hardware wallets such as Keystone and Passport are now using airgapped architectures with some interoperability, they could still be improved by more focus on URs, especially the request/response cycle.
+Although many second-generation hardware wallets such as Keystone and Passport are now using airgapped architectures with some interoperability, we believe they could still be improved by more focus on URs, especially the request/response cycle.
 
-Seed Tool is intended largely as an example, and though no example is perfect, it offers concrete examples of many of Blockchain Commons' best practices for architectural and interoperable design.
+Seed Tool is intended largely as an example, and though no example is perfect, it offers concrete demonstrations of many of Blockchain Commons' best practices for architectural and interoperable design.
+
+## Disclaimer
+
+Gordian Seed Tool is an app produced by Blockchain Commons. Though it is [freely compilable from source](https://github.com/BlockchainCommons/GordianSeedTool-iOS), it also available for sale through the Apple App Store. Caveat reader.
