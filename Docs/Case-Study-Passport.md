@@ -148,10 +148,10 @@ Interoperability could be improved by full usage of URs, whose self-describing d
 
 In addition, URs could be specifically used in the following manners:
 
-* Seeds can be imported as `ur:crypto-seed`, encoded as a QR; or preferably using `ur:crypto-request`, encoded as a QR.
-* Seeds can be easily exportable in a digital form, using `ur:crypto-seed`, encoded as a QR.
-* Seeds can be exportable as shards, to minimize SPOFs, preferably as `ur:crypto-sskr`, either encoded as a QR or as ByteWords.
-* PSBTs can be `ur:crypto-psbt` for both sending and receipt, but ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
+* Seeds could be imported as `ur:crypto-seed`, encoded as a QR; or preferably using `ur:crypto-request`, encoded as a QR.
+* Seeds could be easily exportable in a digital form, using `ur:crypto-seed`, encoded as a QR.
+* Seeds could be exportable as shards, to minimize SPOFs, preferably as `ur:crypto-sskr`, either encoded as a QR or as ByteWords.
+* PSBTs could be `ur:crypto-psbt` for both sending and receipt, but ideally should be transferred as part of a `ur:crypto-request`/`ur:crypto-response` protocol.
 
 For more, see [registry of UR types](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md), [overview of crypto-request](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/ur-99-request-response.md), and [usage of crypto-request instead of crypto-psbt](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/crypto-request-or-crypto-psbt.md).
 
