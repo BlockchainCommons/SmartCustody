@@ -51,7 +51,7 @@ Because it focuses on the Convenience of having a cryptocurrency wallet on your 
 
 **Pros:**
 
-* Sparrows accesses nodes or Electrum servers rather than using less privacy-focused technologies such as SPV.
+* Sparrows accesses nodes or Electrum servers rather than using non-privacy-focused technologies such as SPV.
 * Users have free choice of Bitcoin servers, which they can use to minimize Privacy threats such as Correlation or Censorship.
 * Sparrow can use Tor for currency exchange lookups.
 
