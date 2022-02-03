@@ -180,7 +180,7 @@ Sparrow also makes use of URs as appropriate:
 Additional usage of URs could improve interoperability and resilience for URs as well as future-proofing the overall app.
 
 * Import of seeds as `ur:crypto-seed` could be offered as a general choice ("Import through URs"), allowing interface with any wallet supporting the specification.
-* Seeds could be requested through `ur:crypto-request`.
+* Seeds could be requested through `ur:crypto-request`. This could be particularly useful for the creation of multisigs, with the creation entirely managed by Sparrow, requesting the exact key derivations it needs from other wallets. It would dramatically improve ease-of-use for a multsig creation of this sort.
 * PSBT signing could be requested through `ur:crypto-request` to offer [additional context](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/crypto-request-or-crypto-psbt.md) to transactions.
 * Seeds could be output as `ur:crypto-seed` to offer easy backup or emigration from Sparrow in a robust way that's self-identifying and self-verifying.
 * Seeds could be output as `ur:crypto-sskr` to offer more secure backup, once more in a way that's self-identifying and self-verifying.
