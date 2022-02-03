@@ -15,4 +15,16 @@ Each Case Study measures how the device advances the four Gordian Principles or 
 
 ### Gordian Architecture
 
-Blockchain Commons has advanced an [architectural model](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model) that we support as a best practice to advance the Gordian Principles. It supports 
+Blockchain Commons has advanced an [architectural model](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model) that we support as a best practice to advance the Gordian Principles. It supports the Gordian Principles by suggesting a partitioned architecture where data and services are isolated from each other, only connected by airgaps or torgaps. One of the preferred architectures for wallet design has seed holders physically isolated from the network, using QR codes transmitted by cameras to grant a networked transaction coordinators pubkeys to create a wallet and then signing PSBTs using that same method. We consider this the second generation of wallet design, forming the first generation of connected hardware wallets such as Ledger and Trezor. All of the wallets studied here can be used in that configuration.
+
+## SmartCustody Adversaries
+
+[what they are]
+
+[chart of all adversaries and which wallets respond to them: YES/NO/SOME]
+
+## More Case Studies
+
+[would love to have more]
+[we can edit/respond to ones, even self-ones]
+
