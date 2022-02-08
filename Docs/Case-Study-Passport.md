@@ -38,10 +38,7 @@ It interacts with the more specific Gordian Principles as follows:
 With personal control of seeds and personal choice of Software Wallet, Passport provides a high level of independence.
 
 * Passport allows direct, personal control of all assets. The master seed resides on the Passport; Software Wallets only receive xpubs, for use either as a watch-only wallet, or as one key in a multisig.
-
-**Neutral:**
-
-* Passport supports interaction with a number of Software Wallets, pushing questions of how the Bitcoin network is accessed to that software.
+* Passport supports interaction with a number of Software Wallets, allowing the user to choose whichever one they want and pushing questions of how the Bitcoin network is accessed to that software.
 
 ### Privacy
 
@@ -75,7 +72,7 @@ Minimizing Single Point of Failure (SPOF) protects data from loss: on the Passpo
 
 * Passport heavily encourages backups of the device to the two included MicroSD cards, to save seeds and other info in case of Passport loss.
 * Restoring from MicroSD backups is simple and automated, other than the need to enter Bytewords as a passcode.
-* Passport proactively supports the use of multisigs, and backs up complete information on the multisig.
+* While supporting the use of multisigs, Passport backs up complete information on the multisig.
 
 **Cons:**
 
@@ -138,11 +135,11 @@ Transfer of data between the Passport and various Software Wallets seems to be v
 * `ur:bytes` are used in some cases to allow the use of animated QRs.
 * `ur:crypto-psbt` is recognized for the input of PSBTs.
 
-Backups are maintained as .txt files that are 7zipped with six Bytewords, space separated, used as the password.
+Backups are maintained as .txt files that are 7zipped, with six Bytewords, space separated, used as the password.
 
 ### Future Development Suggestions
 
-Interoperability could be improved by full usage of URs, whose self-describing data is resistant to Bitrot and can be used by a variety of applications.
+Interoperability could be improved by full usage of URs, whose self-describing and self-verifying data is resistant to Bitrot and can be used by a variety of applications.
 
 * Bare `ur:bytes` should not be used if a UR type exists, as `ur:bytes` lose the advantages of being self-described and thus easily portable.
 
