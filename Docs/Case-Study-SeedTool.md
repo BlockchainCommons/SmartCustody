@@ -1,13 +1,13 @@
-# Gordian Seed Tool (Version 1.3.1)
+# Gordian Seed Tool (Version 1.3.2)
 ### A #SmartCustody Self Case Study
 
 The Gordian Seed Tool reference app allows for the storage of cryptographic seeds and their backup, transfer, and usage.
 
-This Case Study should not be taken as a review, as it covers one of Blockchain Commons' own apps. Rather, it's intended as a pure Case Study, demonstrating how Blockchain Commons feels that this app meets the goals of the Gordian architecture and thus how it acts as reference for the design.
+This Case Study should not be taken as a review, as it covers one of Blockchain Commons' own apps. Rather, it's intended as a pure Case Study, demonstrating how Blockchain Commons feels that this app meets the goals of the Gordian architecture and thus how it can act as a reference for the design.
 
 ## Overview
 
-Gordian Seed Tool is an iOS app that can also be run on MacOS devices. It stores seeds and also allows the transfer of those seeds via a variety of specifications, the backup of seeds via SSKR and othe rmethods, and the usage of seeds to sign PSBTs. Gordian Seed Tool's prime means of interacting with other devices is through airgapped QRs, though it can also transfer text via a variety of means.
+Gordian Seed Tool is an iOS app that can also be run on MacOS devices. It stores seeds and also allows the transfer of those seeds via a variety of specifications, the backup of seeds via SSKR and other methods, and the usage of seeds to sign PSBTs. Gordian Seed Tool's prime means of interacting with other devices is through airgapped QRs, though it can also transfer text via a variety of means.
 
 * **App Store:** https://apps.apple.com/us/app/gordian-seed-tool/id1545088229
 * **Repo:** https://github.com/BlockchainCommons/GordianSeedTool-iOS
@@ -67,12 +67,11 @@ The use of Gordian Seed Tool keeps all private data close.
 **Pros:** 
 
 * As a closely held device, Seed Tool maximizes the privacy possibilities for private keys.
-* When run on networkless mobile device (iPhone or iPod Touch), the privacy of Seed Tool is near total; this decreases if Seed Tool is used on a closely held mobile device and may not meet privacy needs if it's run on a networked computer.
+* When run on an unnetworked mobile device (iPhone or iPod Touch), the privacy of Seed Tool is near total; this decreases if Seed Tool is used on a networked mobile device (iPhone or iPod Touch with wifi or cellular connection) and may not meet privacy needs if it's run on a networked computer (desktop or laptop MacOS).
 
 **Neutral:**
 
 * Again, the user bears responsibility for what happens when information is transferred out of Seed Tool: they must decide which wallets (or architectural designs) will optimize privacy.
-  
 
 ### Resilience against SPOC
 
@@ -105,15 +104,15 @@ Minimizing Single Point of Failure (SPOF) protects data from loss: with Seed Too
 
 * Data is all backed up to iCloud, unless turned off by the user, and thus can be recovered by all devices logged into that account.
 * Users are given the capability to back up data in a variety of other ways, including printing SSKR shares, but they must decide to do so.
-* Data can all be exported as URs, which are self-describing and self-verifying, and thus unlikely to succumb to Bitrot in the future.
+* Data can all be exported as URs, which are self-describing and self-verifying, and thus unlikely to succumb to Bitrot in the future. Again, users must choose to do this export.
 
 **Neutral:**
 
-* Users can use seeds (and their keys) in any way that they want. If they use them to form multisigs, they will have additional protection from SPOF, but this is ultimately a decision up to the user.
+* Users can use seeds (and their keys) in any way that they want. If they use them to form multisigs, they will have additional protection from SPOF, but this is ultimately a decision that is up to the user.
 
 **Cons:**
 
-* iClouds backups can be lost if all physical devices are lost and Apple account information is lost or if Apple deletes or locks down your account.
+* iCloud backups can be lost if all physical devices (and/or logins to those devices) are lost and Apple account information is lost or if Apple deletes or locks down your account.
 
 ### Openness
 
@@ -136,7 +135,7 @@ Bitrot occurs when a software program or hardware device becomes outdated. There
 
 **Convenience.**
 
-With a touchscreen and a full graphical interface, Seed Tool offers a lot of convenience. This can itself be an adversary, because it means that users might not be using a fully airgapped device and are definitely using a device with a larger attack service than something that's exclusively a wallet. However, this level of convenience is meant to ward off users choosing something much more convenient (and less secure) such as keeping their seeds on a networked computer or at a centralized exchange.
+With a touchscreen and a full graphical interface, Seed Tool offers a lot of convenience. This can itself be an adversary, because it means that users might not be using a fully airgapped device and are definitely using a device with a larger attack service than something that's exclusively a wallet. However, this level of convenience is meant to ward off users choosing something even more convenient (and less secure) such as keeping their seeds on a networked computer or at a centralized exchange.
 
 **Institutional Theft.**
 
@@ -144,11 +143,11 @@ Gordian Seed Tool is well-protected, even from institutional theft at Apple, pro
 
 **Key Fragility.**
 
-The backup to iCloud provides strong protection against key fragility, one of the largest dangers for cryptocurrency loss. The user can also proactively back up their seeds in a variety of different ways, with URs containing checksums that additionally protect against error or fragility.
+The backup to iCloud provides strong protection against key fragility, one of the largest dangers for personal cryptocurrency loss. The user can also proactively back up their seeds in a variety of different ways, with URs containing checksums that additionally protect against error or fragility.
 
 **Network Attack.**
 
-If Seed Tool is entirely airgapped by using a non-networked mobile device, this largely eliminates the possibility of network attack. If Seed Tool is run on a networked mobile device, the possibility of network attack still remains very low, due to the strong protections of the iPhone. Network attack could be a real possibility if Seed Tool is run on a networked computer.
+If Seed Tool is entirely airgapped by using an unnetworked mobile device, this largely eliminates the possibility of network attack. If Seed Tool is run on a networked mobile device, the possibility of network attack still remains very low, due to the strong protections of the iPhone. Network attack could be a real possibility if Seed Tool is run on a networked computer, though the encryption of data still offers strong protection.
 
 **Physical Theft.**
 
@@ -168,23 +167,23 @@ _Seed Tool also doesn't currently resolve the following adversaries of note: Bla
 
 Seed Tool maximizes the ways that a user can get data into the app:
 
-* Data can be read from files, images, photos, or the paste buffer.
+* Data can be imported from files, images, photos, or the Universal Clipboard.
 
 Seed Tool supports extensive input and output of URs, using either QRs, textual URs, or in some cases ByteWords.
 
 * Seeds can be imported as `ur:crypto-seed`.
 * Backups can be restored as `ur:crypto-sskr`, provided that sufficient shares are available.
-* Specific keys can be exported using `ur:crypto-response` in response to a `ur:crypto-request` for a derivation.
-* PSBTs can be signed in a `ur:crypto-response` in response to a `ur:crypto-request` of an unsigned or partially signed PSBT.
 * Seeds can be output as `ur:crypto-seed`.
 * Seeds can be backed up as `ur:crypto-sskr` shares.
 * Accounts can be exported as `ur:crypto-account`.
 * Pubkeys can be exported as `ur:crypto-hdkey`.
 * Private keys can be exported as `ur:crypto-hdkey`.
+* Specific keys can be exported using `ur:crypto-response` in response to a `ur:crypto-request` for a derivation.
+* PSBTs can be signed as a `ur:crypto-response` in response to a `ur:crypto-request` of an unsigned or partially signed PSBT.
 
 Blockchain Commons considers URs the gold standard for interoperability because they are standardized, self-describing, and self-verifying.
 
-Seed Tool also supports other popular data transfer methods for cryptocurrency for compatibility with legacy systems:
+Seed Tool also supports other popular data transfer methods for cryptocurrency, ensuring compatibility with legacy systems:
 
 * Seeds can be imported as BIP-39 words or hex bytes.
 * Seeds can be exported as BIP-39 words or hex bytes.
@@ -193,7 +192,7 @@ Seed Tool also supports other popular data transfer methods for cryptocurrency f
 
 ## Hardware & Software
 
-Gordian Seed Tool runs on any modern MacOS or iOS device. iOS is by far the preferred platform due to security advantages of having a closely held device with a more limited attack surface.
+Gordian Seed Tool runs on any modern MacOS or iOS device. iOS is by far the preferred platform due to the security advantages of having a closely held device with a more limited attack surface.
 
 The full source code for Gordian Seed Tool is available through [Git Hub](https://github.com/BlockchainCommons/GordianSeedTool-iOS). It is programmed in Swift.
 
@@ -204,7 +203,7 @@ Gordian Seed Tool is a reference implementation meant to demonstrate the [Gordia
 Independence comes from user choice, privacy from user control, and resilience from seeds being automatically backed up (with additional options for sharing). Openness is demonstrated by creating the maximium interoperability reasonable, covering three different generations of interoperable specifications. We generally classify them as follows, in order of decreasing desirability:
 
 1. `ur:crypto-request` and `ur:crypto-response`, which create the ability for high-level converations.
-2. `ur:crypto-seed`, `ur-crypto-hdkey`, and other URs, which create resilience through self-describing data.
+2. `ur:crypto-seed`, `ur-crypto-hdkey`, and other URs, which create resilience through self-describing and self-verifying data.
 3. BIP-39 and other older standards, which enable minimal interoperability, but which are widely recognized.
 
 Although many second-generation hardware wallets such as Keystone and Passport are now using airgapped architectures with some interoperability, we believe they could still be improved by more focus on URs, especially the request/response cycle.
