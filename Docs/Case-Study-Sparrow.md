@@ -14,7 +14,7 @@ Sparrow is a desktop Bitcoin wallet available for OSX, Windows, and Linux. It is
 
 ## Usage
 
-To most closely cleave to Gordian designs and principles, Blockchain Commons suggests the use of Sparrow as a [transaction coordinator](https://github.com/BlockchainCommons/GordianSeedTool-iOS/blob/master/Docs/Integration.md#using-sparrow-as-a-transaction-coordinator), which allows the usage of the [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). In this scenario, keys are maintained on closely held devices, while Sparrow acts as a watch-only wallet that then requests signatures from those devices as required. 
+To most closely cleave to Gordian designs and principles, Blockchain Commons suggests the use of Sparrow as a [transaction coordinator](https://github.com/BlockchainCommons/GordianSeedTool-iOS/blob/master/Docs/Integration.md#using-sparrow-as-a-transaction-coordinator), which allows the usage of the [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model). In this scenario, keys are maintained on closely held devices, while Sparrow acts as a watch-only wallet that then requests signatures from those devices as required to create transactions. 
 
 Under this methodology, Sparrow usage occurs as follows:
 
@@ -25,7 +25,7 @@ Under this methodology, Sparrow usage occurs as follows:
 5. Transactions are signed by closely held devices as needed.
 6. Transactions are returned to Sparrow as a fully signed PSBT and then transmitted.
 
-This is not the only possible usage for Sparrow, as it's a fully functional desktop wallet. Keys can also be generated and/or held by Sparrow itself, adding notable Convenience, but simultaneously decreasing the security of the wallet, potentially opening it up to compromise.
+This is not the only possible usage for Sparrow, as it's a fully functional desktop wallet. Keys can also be generated and/or held by Sparrow itself, adding notable Convenience, but potentially decreasing the security of the custody model and opening it up to compromise.
 
 ## Gordian Principles
 
@@ -47,11 +47,11 @@ Sparrow maximizes independence in all scenarios because it gives users almost to
 
 ### Privacy
 
-Because it focuses on the Convenience of having a cryptocurrency wallet on your desktop, Sparrow does not focus heavily on Privacy.
+Sparrow also offers several interesting privacy advances.
 
 **Pros:**
 
-* Sparrows accesses nodes or Electrum servers rather than using non-privacy-focused technologies such as SPV.
+* Sparrow accesses nodes or Electrum servers rather than using non-privacy-focused technologies such as SPV.
 * Users have free choice of Bitcoin servers, which they can use to minimize Privacy threats such as Correlation or Censorship.
 * Sparrow can use Tor for currency exchange lookups.
 
@@ -106,10 +106,6 @@ Supporting a wide variety of specifications is one of Sparrow's strongest featur
 * Sparrow can import BIP32 master keys and BIP39 mnemonic words.
 * Sparrow supports several UR types.
 * Sparrow code is [open source](https://github.com/sparrowwallet/sparrow).
-
-**Cons:**
-
-* Export features are limited and don't include mnemonic words, SSKR, or other methods for movement of keys or seeds.
  
 ### Other Scenarios
 
@@ -118,7 +114,7 @@ The other major scenario for Sparrow is using it as a warm software wallet, wher
 * **Indepedence (Pro):** Being able to also use Sparrow as a software wallet creates even more independence.
 * **Privacy (Pro):** Using a warm wallet enables the usage of CoinJoin by having Sparrow act as a client of the Samourai Whirlpool implementation.
 * **Resilience Against SPOC (Con):** Though Sparrow has powerful password and encryption protections, maintaining private keys on a networked computing device is always more dangerous than doing so with a hardware wallet (especially an airgapped hardware wallet). This is the largest danger of using Sparrow as a warm wallet and is why Blockchain Commons instead suggests the use of an airgapped [Gordian architecture](https://github.com/BlockchainCommons/Gordian#overview-gordian-architectural-model).
-* **Resilience Against SPOF (Neutral to Con):** Some hardware wallets offer integrated backup methods (such as Passport's MicroSD backups) or additional export features (such as Gordian Seed Tool's SSKR backups). Keeping keys solely in Sparrow restricts a user to its currently limited wallet backup.
+* **Resilience Against SPOF (Neutral):** If a key is solely held in Sparrow, it can be exported as BIP-39 mnemonic words, using a "View Seed" functionality. This offers a methodology for easily backing up the seed, but it's not strongly presented, and doesn't support more integrated backups (such as Passport's MicroSD backups), nor backup features that offer additional resilience (such as SSKR).
 * **Openness (Neutral):** Obviously, depending solely on Sparrow as a software wallet obviates the needs for a lot of the interoperability specifications, but nonetheless they remain available.
 
 ## Adversaries
@@ -131,11 +127,11 @@ The biggest threat of Censorship tends to be if a Bitcoin node refuses to proces
 
 ### Correlation
 
-Correlation can come about if a Bitcoin node collects information about your transcactions. A user who considered this vulnerability a true risk could either run his own Bitcoin server or regularly switch between others, all of which is easy to do with Sparrow.
+Correlation can come about if a Bitcoin node collects information about your transactions. A user who considered this vulnerability a true risk could either run his own Bitcoin server or regularly switch between others, all of which is easy to do with Sparrow.
 
 ### Convenience
 
-The power of Sparrow as a transaction coordinator is that its ease of use for both creating wallets from keys held by one or more hardware wallets and for creating transactions for those wallets is strong. There's little confusion and no particular time or effort costs. This keeps users from using even more convenient (and less secure) methodologies.
+The power of Sparrow as a transaction coordinator is that it has strong ease of use for both creating wallets from keys held by one or more hardware wallets and for creating transactions for those wallets. There's little confusion and no particular time or effort costs. This keeps users from using even more convenient (and less secure) methodologies.
 
 ### Institutional Theft
 
@@ -147,7 +143,7 @@ Network attack is the largest threat to wallets held on networked desktop comput
 
 ### Physical Theft
 
-The encryption of wallets not in immediate use for signing and the optional password protection of wallets together provide good Physical-Theft protection, but even if these obstacles were overcome, again all that the attacker would gain would be watch-only wallets in the transaction-coordinator scenario.
+The encryption of wallets (if they're not in immediate use for signing) and the optional password protection of wallets together provide good Physical-Theft protection, but even if these obstacles were overcome, again all that the attacker would gain would be watch-only wallets in the transaction-coordinator scenario.
 
 ### Transaction Error
 
@@ -172,8 +168,8 @@ Sparrow has been built to be individually interoperable with a large number of h
 
 Sparrow also makes use of URs as appropriate:
 
-* `ur:crypto-hdkey` of a pubkey can be entered to create a watch-only wallet.
-* `ur:crypto-psbt` can be exchanged with appropriate devices for signing.
+* Sparrow can accept the `ur:crypto-hdkey` of a pubkey to create a watch-only wallet.
+* Sparrow can exchange a `ur:crypto-psbt` with appropriate devices for signing.
 
 ### Future Development Suggestions
 
@@ -181,7 +177,7 @@ Additional usage of URs could improve interoperability and resilience for URs as
 
 * Import of seeds as `ur:crypto-seed` could be offered as a general choice ("Import through URs"), allowing interface with any wallet supporting the specification.
 * Seeds could be requested through `ur:crypto-request`. This could be particularly useful for the creation of multisigs, with the creation entirely managed by Sparrow, requesting the exact key derivations it needs from other wallets. It would dramatically improve ease-of-use for a multsig creation of this sort.
-* PSBT signing could be requested through `ur:crypto-request` to offer [additional context](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/crypto-request-or-crypto-psbt.md) to transactions.
+* PSBT signing could be requested through `ur:crypto-request` to offer [additional context](https://github.com/BlockchainCommons/crypto-commons/blob/master/Docs/crypto-request-or-crypto-psbt.md) for transactions.
 * Seeds could be output as `ur:crypto-seed` to offer easy backup or emigration from Sparrow in a robust way that's self-identifying and self-verifying.
 * Seeds could be output as `ur:crypto-sskr` to offer more secure backup, once more in a way that's self-identifying and self-verifying.
 
