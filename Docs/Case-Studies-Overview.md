@@ -28,7 +28,7 @@ The airgapped wallets studied here can work in this configuration, while the sof
 
 Blockchain Commons' [#SmartCustody model](https://github.com/BlockchainCommons/SmartCustody/blob/master/README.md) is a risk-modeling system where users assess vulnerabilities in their custody scenario, map those vulnerabilities to adversaries, then assess which adversaries. Each adversary is an anthropomorphized threat that typically could cause a loss of funds (or other damage).
 
-The case studies to date suggest that the following adversaries are defeated (or at least impaired) by the following airgapped & connected wallets:
+The case studies to date suggest that the following adversaries are defeated (or at least impaired) by the various wallets. The wallets to the left are airgapped wallets being used as seed holders, those to the right are software wallets being used as transaction coordinators. Adversaries that are irrelevent to a role are not noted.
 
 <table>
   <tr>
@@ -36,53 +36,88 @@ The case studies to date suggest that the following adversaries are defeated (or
     <td><b>Keystone</b></td>
     <td><b>Passport</b></td>
     <td><b>Seed Tool</b></td>
+    <td><b>+</b></td>
+    <td><b>Sparrow (T.C.)</b></td>
   </tr>
   <tr>
     <td><b>Bitrot</b></td>
     <td></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td></td>
+    <td></td>
   </tr>
+  <tr>
+    <td><b>Censorship</b></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+  </tr>    
   <tr>
     <td><b>Convenience</b></td>
     <td></td>
     <td><b><font color="Maroon">No</font></b></td>
     <td><b><font color="Army Green">Partial</font></b></td>
+    <td></td>
+    <td><b><font color="Army Green">Partial</font></b></td>
   </tr>    
+  <tr>
+    <td><b>Correlation</b></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+  </tr>    
+  <tr>
   <tr>
     <td><b>Disaster</b></td>
     <td></td>
     <td><b><font color="Army Green">Partial</font></b></td>
     <td><b><font color="Maroon">No</font></b></td>
+    <td></td>
+    <td></td>
   </tr>    
   <tr>
     <td><b>Institutional Theft</b></td>
     <td></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
     <td><b>Key Fragility</b></td>
     <td></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
     <td><b>Network Attack</b></td>
     <td></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Mostly</font></b></td>
   </tr>
   <tr>
     <td><b>Physical Theft</b></td>
     <td></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Mostly</font></b></td>
   </tr>
   <tr>
     <td><b>Supply-Chain Attack</b></td>
     <td></td>
     <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td><b><font color="Maroon">No</font></b></td>
+    <td></td>
     <td><b><font color="Maroon">No</font></b></td>
   </tr>
   <tr>
@@ -90,6 +125,16 @@ The case studies to date suggest that the following adversaries are defeated (or
     <td></td>
     <td><b><font color="Maroon">No</font></b></td>
     <td><b><font color="Army Green">Optional</font></b></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>Transaction Error</b></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
   </tr>
 </table>
 
