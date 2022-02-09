@@ -49,6 +49,48 @@ The case studies to date suggest that the following adversaries are defeated (or
     <td><b><font color="Maroon">No</font></b></td>
     <td><b><font color="Army Green">Partial</font></b></td>
   </tr>    
+  <tr>
+    <td><b>Disaster</b></td>
+    <td></td>
+    <td><b><font color="Army Green">Partial</font></b></td>
+    <td><b><font color="Maroon">No</font></b></td>
+  </tr>    
+  <tr>
+    <td><b>Institutional Theft</b></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+  </tr>
+  <tr>
+    <td><b>Key Fragility</b></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+  </tr>
+  <tr>
+    <td><b>Network Attack</b></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+  </tr>
+  <tr>
+    <td><b>Physical Theft</b></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+  </tr>
+  <tr>
+    <td><b>Supply-Chain Attack</b></td>
+    <td></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td><b><font color="Maroon">No</font></b></td>
+  </tr>
+  <tr>
+    <td><b>System Key Compromise</b></td>
+    <td></td>
+    <td><b><font color="Maroon">No</font></b></td>
+    <td><b><font color="Army Green">Optional</font></b></td>
+  </tr>
 </table>
 
 ## More Case Studies
