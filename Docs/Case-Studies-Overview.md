@@ -33,6 +33,12 @@ The case studies to date suggest that the following adversaries are defeated (or
 <table>
   <tr>
     <td></td>
+    <td colspan=3><i>Seed Holders</i></td>
+    <td></td>
+    <td><i>Coordinators</i></td>
+  </tr>
+  <tr>
+    <td>Adversary</td>
     <td><b>Keystone</b></td>
     <td><b>Passport</b></td>
     <td><b>Seed Tool</b></td>
