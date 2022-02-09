@@ -1,7 +1,7 @@
 # Gordian Seed Tool (Version 1.3.2)
 ### A #SmartCustody Self Case Study
 
-The Gordian Seed Tool reference app allows for the storage of cryptographic seeds and their backup, transfer, and usage.
+The Gordian Seed Tool reference app allows for the storage of cryptographic seeds and their backup, transfer, and usage. It acts as a cosigner, seed generator, and seed vault.
 
 This Case Study should not be taken as a review, as it covers one of Blockchain Commons' own apps. Rather, it's intended as a pure Case Study, demonstrating how Blockchain Commons feels that this app meets the goals of the Gordian architecture and thus how it can act as a reference for the design.
 
@@ -38,10 +38,12 @@ The Gordian architecture generally depends on airgaps for security, so the follo
 
 1. Add a seed to Seed Tool via any means.
 2. Backup Your seed with SSKR. Separate the shares.
-3. Export a watch-only pubkey to a software wallet via QR code. 
-   * Alternatively, export a pubkey as one of the keys in a multisig wallet.
-4. Import PSBTs from the software wallet using `ur:crypto-request` encoded as a QR.
-5. Export Signed PSBTs to the software wallet using `ur:crypto-response` encoded as a QR.
+3. Export a watch-only pubkey to a transaction coordinator via QR code. 
+   * Alternatively, export a pubkey as one of the keys in a multisig account.
+4. Import PSBTs from the transaction coordinator using `ur:crypto-request` encoded as a QR.
+5. Export Signed PSBTs to the transaction coordinator using `ur:crypto-response` encoded as a QR.
+
+_Note that this case study uses the term "transaction coordinator" to refer to the desktop or mobile software that watches over the account associated with a key on Seed Tool and creates and transmits transactions. These apps have more commonly been called "software wallets", but when used with a seed vault such as Seed Tool, the software app holds no private keys, and so the term "wallet" is not entirely correct. For that reason, and to avoid overload of the term, the more practical "transaction coordinator" is used. See [Gordian Architecture Roles](https://github.com/BlockchainCommons/Gordian#gordian-architecture-roles) for more._
 
 ## Gordian Principles
 
@@ -54,11 +56,11 @@ Gordian Seed Tool maximizes Independence by allowing users to make all the choic
 **Pros:**
 
 * Seed Tool gives total control over all assets, with the seeds residing within Seed Tool.
-* Seed Tool ensures that users have total choice over what wallets or other devices they use with Seed Tool.
+* Seed Tool ensures that users have total choice over what transaction coordinator or other devices they use with Seed Tool.
 
 **Neutral:**
 
-* Total independence means total responsibility: users must independently backup their data, make good choices about wallets, and consider the use of resilient multisig designs.
+* Total independence means total responsibility: users must independently backup their data, make good choices about transaction coordinators, and consider the use of resilient multisig designs.
 
 ### Privacy
 
@@ -71,7 +73,7 @@ The use of Gordian Seed Tool keeps all private data close.
 
 **Neutral:**
 
-* Again, the user bears responsibility for what happens when information is transferred out of Seed Tool: they must decide which wallets (or architectural designs) will optimize privacy.
+* Again, the user bears responsibility for what happens when information is transferred out of Seed Tool: they must decide which transaction coordinators (or architectural designs) will optimize privacy.
 
 ### Resilience against SPOC
 
@@ -157,7 +159,7 @@ Seed Tool protects against physical theft with its 2FA, especially for any newer
 
 Seed Tool offers random seed generation. But, if users feel uncomfortable with that and the resultant possibility of Systemic Key Compromise if an error were to be found in the algorithm, they can instead generate seeds with dice, cards, or coin flips. Coins and dice can be checked against [Ian Coleman's Mnemonic Code Converter](https://iancoleman.io/bip39/), in off-line mode of course. They and cards can alternatively be checked against [LetheKit](https://github.com/BlockchainCommons/lethekit) or [seedtool-cli](https://github.com/BlockchainCommons/seedtool-cli).
 
-_Because Seed Tool is primarily a holder of seeds, it doesn't address the following adversaries, which are more likely to be found on the Wallet side of the equation: Censorship, Correlation, Transaction Error, User Error._
+_Because Seed Tool is primarily a seed vault, it doesn't address the following adversaries, which are more likely to be found on the transaction-coordinator side of the equation: Censorship, Correlation, Transaction Error, User Error._
 
 _Seed Tool also doesn't currently resolve the following adversaries of note: Blackmail, Coercion, Death/Incapacitation, Social Engineering, Supply-Chain Attack._
 
