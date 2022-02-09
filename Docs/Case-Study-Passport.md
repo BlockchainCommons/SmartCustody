@@ -114,7 +114,7 @@ With private keys held on the Passport, the possibilities of institutional theft
 
 The main defense against key fragility is the backup MicroSDs, though they could still be lost if the backup words for those MicroSDs were lost.
 
-#### Network Attack
+### Network Attack
 
 The use of an airgapped device to hold all seeds largely eliminates the possibility of network attack.
 
