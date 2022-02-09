@@ -16,7 +16,7 @@ The following case studies discuss how a variety of hardware and software wallet
 
 The [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) are independence, privacy, resilience, and openness. They together outline a self-sovereign methodology for the management of cryptocurrency, where a user stays in control of their digital assets and can easily transfer them, but simultaneously has good protections from the loss of funds that can otherwise arise from personal oversight of funds. 
 
-Each Case Study measures how the device advances the four Gordian Principles or succumbs to their dangers.
+Each Case Study measures how the device advances the four Gordian Principles (or fails to do so).
 
 ### Gordian Architecture
 
