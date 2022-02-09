@@ -33,9 +33,9 @@ The case studies to date suggest that the following adversaries are defeated (or
 <table>
   <tr>
     <td></td>
-    <td colspan=3><i>Seed Holders</i></td>
+    <td colspan=3 style="text-align:center"><i>Seed Holders</i></td>
     <td></td>
-    <td><i>Coordinators</i></td>
+    <td style="text-align:center"><i>Coordinators</i></td>
   </tr>
   <tr>
     <td>Adversary</td>
