@@ -33,9 +33,9 @@ The case studies to date suggest that the following adversaries are defeated (or
 <table>
   <tr>
     <td></td>
-    <td colspan=3><i><center>Seed Holders</center></i></td>
+    <td colspan=3><i>Seed Holders</i></td>
     <td></td>
-    <td><i><center>Coordinators</center></i></td>
+    <td><i>Coordinators</i></td>
   </tr>
   <tr>
     <td>Adversary</td>
@@ -146,6 +146,10 @@ The case studies to date suggest that the following adversaries are defeated (or
 
 ## More Case Studies
 
-[would love to have more]
-[we can edit/respond to ones, even self-ones]
+We would love to have more case studies to exemplify how second-generation wallets (and beyond) apply the Gordian Principles and foil the #SmartCustody Adversaries.
 
+If you would like to write your own self-assessment of your product, please feel free to enter a PR. We _will_ edit any case studies supplied to us, and may request a copy of any hardware wallet if we need to verify or re-assess any points. Please try to produce a well-written, organized, and balanced case study, without superlatives, as we (hopefully) did when looking at our own Gordian Seed Tool.
+
+If you would like to contract us to assess a wallet and produce a case study for publication here, contact us directly at team@blockchaincommons.com.
+
+We may continue to proactively produce other case studies ourselves. Our prime criteria for doing so is whether a wallet has strong interoperability, primarily through adoption of URs, SSKR, and other Blockchain Commons specifications.
