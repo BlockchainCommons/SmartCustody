@@ -1,11 +1,11 @@
 # Passport (Firmware 1.0.8)
 ### A #SmartCustody Case Study
 
-Foundation Devices' Passport is an airgapped HD wallet/offline signer.
+Foundation Devices' Passport is an airgapped HD hardware wallet that acts as a _seed generator_, _seed vault_, and _cosigner_.
 
 ## Overview
 
-Foundation Devices is a second-generation hardware wallet that holds seeds and connects to software wallets through either QR codes or data transferred on a MicroSD card. It dependes on a chosen software wallet for transactions, simply signing acceptable PSBTs when it's passed them and allowing the software wallet to do transmission.
+Foundation Devices is a second-generation hardware wallet that holds seeds and connects to transaction coordinators through either QR codes or data transferred on a MicroSD card. It dependes on a chosen transaction coordinator for transactions, simply signing acceptable PSBTs when it's passed them and allowing the transaction coordinator to do transmission.
 
 * **Web Site:** https://foundationdevices.com/passport/details/
 * **GitHub:** https://github.com/Foundation-Devices
@@ -14,17 +14,19 @@ Foundation Devices is a second-generation hardware wallet that holds seeds and c
 
 <img src="https://raw.githubusercontent.com/BlockchainCommons/SmartCustody/master/Images/casestudy/cs-passport-1.jpg" width=350 align="right">
 
-The Passport holds seeds, whose xpubs it shares with a chosen Software Wallet, which will act as a watch-only wallet. Transactions are then prepared by the Software Wallet and sent to the Passport via airgap (or MicroSD) for signing.
+The Passport holds seeds, whose xpubs it shares with a chosen transaction coordinator, which will act as creator and transmitter of transactions, as well as being a watch-only wallet. Transactions are then prepared by the transaction coordinator and sent to the Passport via airgap (or MicroSD) for signing.
 
 The normal process for using a Passport is:
 
 1. Enter PIN for Passport.
 2. Create a seed on Passport or import using BIP-39 words.
 3. Back up Passport to two included MicroSD cards.
-4. Pair Passport with Software Wallet by displaying QR code on Passport and reading it on Software App. This transfers account information (a hdpath and xpub) to the Mobile App, encoded as `ur:bytes`. This may be done to create a watch-only single sig wallet or to provide one key for a multisig wallet. 
-6. Receive funds in the Software Wallet using its address mechanisms.
-7. Send funds by creating a transaction on the Software App, then generating a PSBT for signing. Formats supported by Passport include `ur:crypto-psbt` encoded as a QR or PSBTs transferred by MicroSD.
-8. Read and sign the transaction on the Passport, then send it back as a `ur:crypto-psbt` encoded in a QR.
+4. Pair Passport with transaction coordinator by displaying QR code on Passport and reading it on the transaction-coordinator app. This transfers account information (a hdpath and xpub) to the Mobile App, encoded as `ur:bytes`. This may be done to create a watch-only single-sig wallet or to provide one key for a multi-sig wallet. 
+6. Receive funds using addresses revealed by the transaction coordinator.
+7. Send funds by creating a transaction on the transaction coordinator, then generating a PSBT for signing. Formats supported by Passport include `ur:crypto-psbt` encoded as a QR or PSBTs transferred by MicroSD.
+8. Read and sign the transaction on the Passport, then send it back to the transaction coordinator as a `ur:crypto-psbt` encoded in a QR.
+
+_Note that this case study uses the term "transaction coordinator" to refer to the desktop or mobile software that watches over the account associated with the key on the Passport and creates and transmits transactions. These apps have more commonly been called "software wallets", but when used with a hardware wallet such as Passport, the software app holds no private keys, and so the term "wallet" is not entirely correct. For that reason, and to avoid overload of the term, the more practical "transaction coordinator" is used. See [Gordian Architecture Roles](https://github.com/BlockchainCommons/Gordian#gordian-architecture-roles) for more._
 
 ## Gordian Principles
 
@@ -35,10 +37,10 @@ It interacts with the more specific Gordian Principles as follows:
 
 **Pros:**
 
-With personal control of seeds and personal choice of Software Wallet, Passport provides a high level of independence.
+With personal control of seeds and personal choice of transaction coordinator, Passport provides a high level of independence.
 
-* Passport allows direct, personal control of all assets. The master seed resides on the Passport; Software Wallets only receive xpubs, for use either as a watch-only wallet, or as one key in a multisig.
-* Passport supports interaction with a number of Software Wallets, allowing the user to choose whichever one they want and pushing questions of how the Bitcoin network is accessed to that software.
+* Passport allows direct, personal control of all assets. The master seed resides on the Passport; transaction coordinators only receive xpubs, for use either as a watch-only wallet, or as one key in a multisig.
+* Passport supports interaction with a number of transaction coordinators, allowing the user to choose whichever one they want and pushing questions of how the Bitcoin network is accessed to that software.
 
 ### Privacy
 
@@ -51,7 +53,7 @@ The use of the Passport and a Software App together keep a user's information cl
 
 **Neutral:**
 
-* Because Passport supports interaction with a number of Software Wallets, the question of whether honey pots of information could be created on the servers those wallets connect to is left to them.
+* Because Passport supports interaction with a number of transaction coordinators, the question of whether honey pots of information could be created on the servers those apps connect to is left to them.
 
 ### Resilience against SPOC
 
@@ -81,12 +83,12 @@ Minimizing Single Point of Failure (SPOF) protects data from loss: on the Passpo
 
 ### Openness
 
-Passport provides interoperability with a variety of software wallets, though not always using the most interoperable specifications.
+Passport provides interoperability with a variety of transaction coordinators, though not always using the most interoperable specifications.
 
 **Pros:**
 
 * Seeds can be transferred onto or off of the device using BIP-39.
-* More than half-a-dozen wallets are interoperable with Passport.
+* More than half-a-dozen transaction coordinators are interoperable with Passport.
 * Some interoperability is managed through Uniform Resources (URs) such as `ur:bytes` and `ur:psbt`.
 * Electronics, assembly, and software is [open source](https://docs.foundationdevices.com/en/open-source) and code in binary is [reproducible](https://walletscrutiny.com/hardware/passport/).
 
@@ -96,7 +98,7 @@ Passport provides interoperability with a variety of software wallets, though no
 
 ## Adversaries
 
-Passport offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries. Other adversaries such as Censorship, Correlation, and Transaction Error fall into the purview of the Software Wallet used.
+Passport offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries. Other adversaries such as Censorship, Correlation, and Transaction Error fall into the purview of the transaction coordinator used.
 
 ### Bitrot
 
@@ -108,7 +110,7 @@ Though the Passport doesn't advertise it, its core methodology of backing up to 
 
 ### Institutional Theft
 
-With private keys held on the Passport, the possibilities of institutional theft are minimized (though the Software Wallet used could used as an attack vector if the user doesn't carefully check the PSBTs that they're signing).
+With private keys held on the Passport, the possibilities of institutional theft are minimized (though the transaction coordinator used could used as an attack vector if the user doesn't carefully check the PSBTs that they're signing).
 
 ### Key Fragility
 
@@ -130,7 +132,7 @@ _Death/Incapacitation remains one of the largest outstanding adversaries, as use
 
 ## Interoperability
 
-Transfer of data between the Passport and various Software Wallets seems to be varied.
+Transfer of data between the Passport and various transaction coordinators seems to be varied.
 
 * `ur:bytes` are used in some cases to allow the use of animated QRs.
 * `ur:crypto-psbt` is recognized for the input of PSBTs.
@@ -166,7 +168,7 @@ Passport implements much the same architecture that Blockchain Commons suggests 
 
 The Resilience of Passport, focused on its MicroSD backups, provides a pragmatic solution to the core issue of Key Fragility that users are likely to actually use because of its ease-of-use. However, it also creates some Key Fragility of its own due to the requirement of ByteWords to restore those backup. Passport's support for multisigs provides a possible answer to the problem of Key Fragility, but much like Passport's BIP-39 word backups it's entirely left up to the user rather than offered as a strong suggestion.
 
-The Openness of Passport is seen through some support for the UR specification, but it also seems to make do as is necessary to integrate with a variety of other wallets. Again, this is a pragmatic solution, and one that likely offers the best integration today, but increased usage of URs could provide better interoperability with more wallets going forward and even future-proof the design.
+The Openness of Passport is seen through some support for the UR specification, but it also seems to make do as is necessary to integrate with a variety of transaction coordinators. Again, this is a pragmatic solution, and one that likely offers the best integration today, but increased usage of URs could provide better interoperability with more apps going forward and even future-proof the design.
 
 ## Disclaimer
 
