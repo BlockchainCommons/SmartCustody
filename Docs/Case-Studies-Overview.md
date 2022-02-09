@@ -39,15 +39,15 @@ The case studies to date suggest that the following adversaries are defeated (or
   </tr>
   <tr>
     <td><b>Bitrot</b></td>
-    <td><td>
-    <td bgcolor="green"><b>Yes</b></td>
-    <td bgcolor="green"><b>Yes</b></td>
+    <td></td>
+    <td style="background: green"><b>Yes</b></td>
+    <td style="background: green"><b>Yes</b></td>
   </tr>
   <tr>
     <td><b>Convenience</b></td>
-    <td><td>
-    <td bgcolor="red"><b>No</b></td>
-    <td bgcolor="aquamarine"><b>Partial</b></td>
+    <td></td>
+    <td style="background: red"><b>No</b></td>
+    <td style="background: aquamarine"><b>Partial</b></td>
   </tr>    
 </table>
 
