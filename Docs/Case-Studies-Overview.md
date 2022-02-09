@@ -4,13 +4,13 @@ The following case studies discuss how a variety of hardware and software wallet
 
 **Airgapped Wallets:**
 
-* Blockchain Commons Seed Tool (TBD)
-* Foundation Devices Passport (TBD)
+* [Blockchain Commons Seed Tool](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-SeedTool.md)
+* [Foundation Devices Passport](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Passport.md)
 * Keystone Pro (TBD)
 
 **Software Wallets:**
 
-* Sparrow Bitcoin Wallet (TBD)
+* [Sparrow Bitcoin Wallet](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md)
 
 ## Gordian Principles
 
