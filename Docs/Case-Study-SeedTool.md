@@ -129,31 +129,31 @@ Seed Tool is the reference app for UR specifications, and so offers extensive in
 
 Seed Tool offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries. 
 
-**Bitrot.**
+### Bitrot
 
 Bitrot occurs when a software program or hardware device becomes outdated. There is some opportunity for Bitrot in Seed Tool, if the software is not updated and it no longer becomes possible to run it on newer devices. This is somewhat offset by the software being fully [open source](https://github.com/BlockchainCommons/GordianSeedTool-iOS) and moreso by Seed Tool offering the _opportunity_ for users to back up their data in a variety of ways. By using URs as an option for these backups, Seed Tool also allows for self-describing data, which means that their purpose won't be forgotten in the future. Finally, Blockchain Commons also offers a [command line version of the app](https://github.com/BlockchainCommons/seedtool-cli), which is likely to outlast the Apple version.
 
-**Convenience.**
+### Convenience
 
 With a touchscreen and a full graphical interface, Seed Tool offers a lot of convenience. This can itself be an adversary, because it means that users might not be using a fully airgapped device and are definitely using a device with a larger attack service than something that's exclusively a wallet. However, this level of convenience is meant to ward off users choosing something even more convenient (and less secure) such as keeping their seeds on a networked computer or at a centralized exchange.
 
-**Institutional Theft.**
+### Institutional Theft
 
 Gordian Seed Tool is well-protected, even from institutional theft at Apple, provided that the data is actually protected as described in Apple APIs and tech sheets.
 
-**Key Fragility.**
+### Key Fragility
 
 The backup to iCloud provides strong protection against key fragility, one of the largest dangers for personal cryptocurrency loss. The user can also proactively back up their seeds in a variety of different ways, with URs containing checksums that additionally protect against error or fragility.
 
-**Network Attack.**
+### Network Attack
 
 If Seed Tool is entirely airgapped by using an unnetworked mobile device, this largely eliminates the possibility of network attack. If Seed Tool is run on a networked mobile device, the possibility of network attack still remains very low, due to the strong protections of the iPhone. Network attack could be a real possibility if Seed Tool is run on a networked computer, though the encryption of data still offers strong protection.
 
-**Physical Theft.**
+### Physical Theft
 
 Seed Tool protects against physical theft with its 2FA, especially for any newer devices that uses biometrics as one of the factors (provided that they remain turned on). Again, the MacOS version of Seed Tool may be less secure, especially for older Macs without trusted hardware.
 
-**Systemic Key Compromise.**
+### Systemic Key Compromise
 
 Seed Tool offers random seed generation. But, if users feel uncomfortable with that and the resultant possibility of Systemic Key Compromise if an error were to be found in the algorithm, they can instead generate seeds with dice, cards, or coin flips. Coins and dice can be checked against [Ian Coleman's Mnemonic Code Converter](https://iancoleman.io/bip39/), in off-line mode of course. They and cards can alternatively be checked against [LetheKit](https://github.com/BlockchainCommons/lethekit) or [seedtool-cli](https://github.com/BlockchainCommons/seedtool-cli).
 
