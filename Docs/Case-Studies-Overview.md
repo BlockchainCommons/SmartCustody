@@ -33,21 +33,21 @@ The case studies to date suggest that the following adversaries are defeated (or
 <table>
   <tr>
     <td></td>
-    <td>Keystone</td>
-    <td>Passport</td>
-    <td>Seed Tool</td>
+    <td><b>Keystone</b></td>
+    <td><b>Passport</b></td>
+    <td><b>Seed Tool</b></td>
   </tr>
   <tr>
     <td><b>Bitrot</b></td>
     <td></td>
-    <td style="background: green"><b>Yes</b></td>
-    <td style="background: green"><b>Yes</b></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
+    <td><b><font color="DarkGreen">Yes</font></b></td>
   </tr>
   <tr>
     <td><b>Convenience</b></td>
     <td></td>
-    <td style="background: red"><b>No</b></td>
-    <td style="background: aquamarine"><b>Partial</b></td>
+    <td><b><font color="Maroon">No</font></b></td>
+    <td><b><font color="Army Green">Partial</font></b></td>
   </tr>    
 </table>
 
