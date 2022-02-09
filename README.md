@@ -24,6 +24,15 @@ The following long-form essays describe how to use a variety of smart tools to i
 ***Timelocks:***
 * [Using Timelocks to Protect Digital Assets](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Timelocks.md) (July 2021) - Using Timelocks (very preliminary).
 
+## SmartCustody Case Studies
+
+Analyses of how professional apps and hardware devices accomodate [Gordian Principles](https://github.com/BlockchainCommons/Gordian/blob/master/README.md#gordian-principles) and defeat SmartCustody adversaries.
+
+* [Overview](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Studies-Overview.md) — Details of case study criteria.
+   * [Blockchain Commons Seed Tool](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-SeedTool.md) — Airgapped Hardware Wallet.
+   * [Foundation Devices Passport](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Passport.md) — Airgapped Hardware Wallet.
+   * [Sparrow Bitcoin Wallet](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md) — Software Wallet & Transaction Coordinator.
+
 ## SmartCustody Best Practices
 
 The following smaller topics are simple suggesting for maintaing robust security.
