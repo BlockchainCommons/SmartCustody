@@ -125,13 +125,13 @@ Sparrow offers specific defenses against the following [#Smartcustody](https://w
 
 The biggest threat of Censorship tends to be if a Bitcoin node refuses to process your transactions. Because Sparrow offers so many choices for accessing the Bitcoin network, this problem is largely obviated.
 
-### Correlation
-
-Correlation can come about if a Bitcoin node collects information about your transactions. A user who considered this vulnerability a true risk could either run his own Bitcoin server or regularly switch between others, all of which is easy to do with Sparrow.
-
 ### Convenience
 
 The power of Sparrow as a transaction coordinator is that it has strong ease of use for both creating wallets from keys held by one or more hardware wallets and for creating transactions for those wallets. There's little confusion and no particular time or effort costs. This keeps users from using even more convenient (and less secure) methodologies.
+
+### Correlation
+
+Correlation can come about if a Bitcoin node collects information about your transactions. A user who considered this vulnerability a true risk could either run his own Bitcoin server or regularly switch between others, all of which is easy to do with Sparrow.
 
 ### Institutional Theft
 
