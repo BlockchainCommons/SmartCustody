@@ -98,31 +98,31 @@ Passport provides interoperability with a variety of software wallets, though no
 
 Passport offers specific defenses against the following [#Smartcustody](https://www.smartcustody.com/) adversaries. Other adversaries such as Censorship, Correlation, and Transaction Error fall into the purview of the Software Wallet used.
 
-**Bitrot.**
+### Bitrot
 
 Protecting against Bitrot means ensuring that you don't lose funds due to obsolence of hardware or software. Following open standards for storage of seeds or private keys largely does this. Theoretically, a user can be totally protected if he finds his BIP-39 words and records them, but this is not strongly suggested. Instead, Passport largely depends on the MicroSD backups. The easiest way to restore these is directly to a functional Passport, but the 7zip backup files can restored elsewhere using the backup's ByteWords as the password, separating the six words with spaces. The result is a text file containing a variety of private key info, which could be restored anywhere. Provided that the user understands the procedure, this also entirely overcomes the Bitrot adversary.
 
-**Disaster.**
+### Disaster
 
 Though the Passport doesn't advertise it, its core methodology of backing up to two different MicroSDs could be potent protection against Disaster if they were stored in widely separated locations.
 
-**Institutional Theft.**
+### Institutional Theft
 
 With private keys held on the Passport, the possibilities of institutional theft are minimized (though the Software Wallet used could used as an attack vector if the user doesn't carefully check the PSBTs that they're signing).
 
-**Key Fragility.**
+### Key Fragility
 
 The main defense against key fragility is the backup MicroSDs, though they could still be lost if the backup words for those MicroSDs were lost.
 
-**Network Attack.**
+#### Network Attack
 
 The use of an airgapped device to hold all seeds largely eliminates the possibility of network attack.
 
-**Physical Theft.**
+### Physical Theft
 
 Passport protects against physical theft mainly by its PIN and the limit on the number of guesses — though at 21, that number of guesses is relatively high.
 
-**Supply-Chain Attack.**
+### Supply-Chain Attack
 
 A blue light constantly displays to show you that your Passport has not been tampered with (although of course the blue light could be tampered with). There is also the typical security sealing of the device.
 
