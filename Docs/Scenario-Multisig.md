@@ -49,18 +49,18 @@ See **Adversaries** for a more extensive list and discussion.
 
 The following items are necessary for this procedure, and should be purchased in advance of your setting up this scenario.
 
-* [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) ) [^safe]
+* [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) )
 * [  ] Safety Deposit Box at Bank or other institution
 * [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet(https://sparrowwallet.com/).
 * [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)
 
-Three devices are required to hold seeds: two live devices and one temporary device. We suggest the following:
+Three devices are required to hold seeds: two live devices and one backup/temporary device. We suggest the following:
 
 * [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/)
 * [  ] iPhone or iPod to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed.
-* [  ] Separate [^1] iPhone or iPod to temporarily create and shard seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229).
+* [  ] Separate[^1] iPhone or iPod to temporarily create and shard seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229).
 
-The three devices selected are all second-generation airgapped wallet technology [^2][^3]. See the footnotes for discussions of why we choose these specifically [^4]. 
+The three devices selected are all second-generation airgapped wallet technology[^2][^3]. See the footnotes for discussions of why we choose these specifically[^4]. 
 
 ### Case Studies
 
@@ -115,6 +115,28 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
    1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
 
 #### **Step B: Prepare Computer**
+
+#### **Step C: Create Multisig**
+
+#### **Step D: Create Backup Seed on Gordian Seed Tool**
+
+#### **Step E: Verify Backup Seed**
+
+#### **Step F: Create Active Seed on Passport**
+
+#### **Step G: Create Active Seed on Gordian Seed Tool**
+
+#### **Step H: Create Test Transaction**
+
+#### **Step I: Transfer Funds**
+
+#### **Step J: Prepare Instructions for Heirs and/or Executor**
+
+#### **Step K: Check Primary Storage (Spring)**
+
+#### **Step L: Check Secondary Storage (Fall)**
+
+---
 
 [^1]: **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Thus, though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active and one as a backup, they should _not_ be done on the same device. For the permanent key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your backup key, we suggest you use an older iPod Touch or even borrow a trusted partner's iPhone; you'll be deleting that key after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a backup key and holding an active key, provided you were careful about deleting the backup key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a SPOC.
 
