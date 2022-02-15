@@ -2,9 +2,13 @@
 
 #### _Best practices for protecting Your personal digital assets using a multi-sig_
 
+**THIS IS IN PROCESS AND SHOULD NOT BE CONSIDERED READY FOR USAGE.**
+
 ## Introduction to the Multisig Scenario
 
-Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either those loss or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to allow ease-of-use, it can simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. This scenario explains how to do so.
+Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either those loss or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to allow ease-of-use, it can simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
+
+This scenario explains how to do so. It does so by using a software wallet as a transaction coordinator that manages the receipt and spending of funds while holding no keys, by using two second-generation hardware wallets to hold keys, and by using SSKR shares to divide up a third, backup, key.
 
 ### About The Base Scenario
 
@@ -43,7 +47,7 @@ See **Adversaries** for a more extensive list and discussion.
 
 ### Requirements
 
-The following items are necessary for this procedure, and should be purchased in advance of your setting up this scenario.[^1].
+The following items are necessary for this procedure, and should be purchased in advance of your setting up this scenario.
 
 * [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) ) [^safe]
 * [  ] Safety Deposit Box at Bank or other institution
@@ -54,10 +58,25 @@ Three devices are required to hold seeds: two live devices and one temporary dev
 
 * [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/)
 * [  ] iPhone or iPod to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed.
-* [  ] Separate[^1] iPhone or iPod to temporarily create and shard seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229).
+* [  ] Separate [^1] iPhone or iPod to temporarily create and shard seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229).
 
-The two live devices are both selected because they are second-generation wallet technology[^2]. Also see the footnotes for discussions of why we choose these specifically[^4]. 
-Please see our footnotes on the Ledger[^3] and the CryptoTag[^4] for discussions of why we choose that hardware over other alternatives.
+The three devices selected are all second-generation airgapped wallet technology [^2][^3]. See the footnotes for discussions of why we choose these specifically [^4]. 
+
+### Case Studies
+
+Further discussions of why specific hardware and software wallets are desirable, or not, may be found in our [#SmartCustody Case Studies](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Studies-Overview.md).
+
+**Airgapped Wallets:**
+
+* [Blockchain Commons Seed Tool](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-SeedTool.md)
+* [Foundation Devices Passport](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Passport.md)
+* Keystone Pro (TBD)
+
+**Software Wallets:**
+
+* [Sparrow Bitcoin Wallet](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md)
+
+  _**Alternative Wallets** (described later) offer procedures for using different hardware that our suggestions._
 
   _**Optional Steps** (described later) may require  purchases of additional items._
 
@@ -80,6 +99,34 @@ This procedure will secure your Bitcoin private keys by keeping the more sensiti
 
 ## The Basic Procedure
 
-#### **Step A: Setup Safes**
+#### **Step A: Setup Storage Locales**
 
-[^1] **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Thus, though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active and one as a backup, they should _not_ be done on the same device. For the permanent key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your backup key, we suggest you use an older iPod Touch or even borrow a trusted partner's iPhone; you'll be deleting that key after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a backup key and holding an active key, provided you were careful about deleting the backup key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a SPOC.
+You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale. They will be used to store seeds and devices [^5]. 
+
+1. [  ] Install Home Safe[^6][^7]
+   1. Ideally, it should be physically secured by mounting it to floor or wall joists, or even more securely, directly to a foundation
+   1. You will store an SSKR share in your Home Storage Locale, usually along with your Secondary Hardware Wallet (by default: a Passport).
+2. [  ] Choose Primary Storage Locale
+   1. Ideally, this should be a bank safety deposit box. But, if you don't have one, choose the most secure location you can think of outside of your house.
+   1. You will store an SSKR share in your Primary Store Locale, along with your Second Hardware Wallet (by default: a Passport) if it's not in regular usage, and possibly other backup material
+3. [  ] Choose Secondary Storage Locale
+   1. This may be a somewhat less secure locale that your Home Storage Locale and your Primary Storage Locale.
+   1. Options include your work, your parent's house, a trusted friends house.
+   1. You will only store a few backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
+
+#### **Step B: Prepare Computer**
+
+
+[^1]: **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Thus, though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active and one as a backup, they should _not_ be done on the same device. For the permanent key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your backup key, we suggest you use an older iPod Touch or even borrow a trusted partner's iPhone; you'll be deleting that key after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a backup key and holding an active key, provided you were careful about deleting the backup key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a SPOC.
+
+[^2]: **Wallet Generations.** First-generation hardware wallets tended to focus on support for single-sig addresses and tended to be direct-connected devices. The original [Ledger](https://www.ledger.com/) and [Trezor](https://trezor.io/) wallets both fit into that category. The [Coldcard Wallet](https://coldcard.com/) was transitional, offering some of the first options to connect across airgaps, with a MicroSD slot, while still maintaining the port-connection paradigm. Second-generation hardware wallets are fully airgapped, with no ability to directly connect them to other devices. They transmit data via QR codes or MicroSD cards. the [Foundation Devices Passport](https://foundationdevices.com/passport/details/) and the [Keystone Pro](https://keyst.one/) are both second-generation hardware wallets. 
+
+[^3]: **Why Airgaps?** Optimal safety of a seed means ensuring that the device holding the key can't be corrupted and that the seed (or even hints about the seed) can't slip off the device. Any type of live connection can be dangerous, because even if a stream is purely intended for data, a buffer overflow or other error might send return data back across the connection without intervention of the users. Airgaps not only ensure data is in the maximally constrained form, thanks to use of a QR code or a MicroSD data file, but they also ensure that the user can see any data that's being sent back in return, and OK that sending or not. Of course, this also depends on airgapped devices being very precise and complete in revealing what data they receive and what data they send.
+
+[^4]: **Why Passport and Seed Tool?** We choose Passport and Gordian Seed Tool as second-generation airgapped wallets that have fully integrated backup mechanisms: Passport to MicroSD, Seed Tool to iCloud. We've thus combined the protection against SPOC implicit in an airgapped design  with the protection against SPOF supported by a backup that the user doesn't have to think (much) about.
+
+[^5]: **Locale Safety.** No single locale should have enough information to access your funds in an unlocked way. Your home is the biggest danger because it holds two keys, but they should both be locked, either by PIN or biometrics. Each other locale holds at most one and a third keys, the full key locked.
+
+[^6]: **Safe Usage.** Note that most home safes do not offer enough [Disaster](#adversary-disaster) resistance to sufficiently protect your digital assets. At best they are rated to protect paper against fire. The primary goal of a home safe is to protect any Hardware Wallet kept at home that is not in active use and to store one share of your SSKR, so that neither can easily be lost or stolen. Stealing would likely not compromise your funds, but it would put you on the path to losing control of those funds if disaster struck another locale.
+
+[^7]: **Safe Optional.** The use of a safe is somewhat optional: you will have enough seeds at home to compromise your funds, but they should each be locked by PINs or biometrics, making such compromise unlikely. It's recommended, and it's better to have it, but don't give up on this procedure just because you don't have a home safe. 
