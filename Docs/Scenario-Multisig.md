@@ -105,17 +105,16 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
 
 1. [  ] Install Home Safe[^7][^8]
    1. Ideally, it should be physically secured by mounting it to floor or wall joists, or even more securely, directly to a foundation
-   1. You will store an SSKR share in your Home Storage Locale, usually along with your Secondary Hardware Wallet (by default: a Passport).
+   1. You will store an SSKR share in your Home Storage Locale, usually along with your Secondary Hardware Wallet (by default: a Passport), if it's in regular usage.
 2. [  ] Choose Primary Storage Locale
    1. Ideally, this should be a bank safety deposit box. But, if you don't have one, choose the most secure location you can think of outside of your house.
-   1. You will store an SSKR share in your Primary Store Locale, along with your Second Hardware Wallet (by default: a Passport) if it's not in regular usage, and possibly other backup material
+   1. You will store an SSKR share in your Primary Store Locale, might store your Secondary Hardware Wallet (by default: a Passport) if it's not in regular usage, and possibly other backup material
 3. [  ] Choose Secondary Storage Locale
    1. This may be a somewhat less secure locale that your Home Storage Locale and your Primary Storage Locale.
-   1. Options include your work, your parent's house, a trusted friends house.
-   1. You will only store a few backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
+   1. Options include your work, your parent's house, a trusted friend's house.
+   1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
 
 #### **Step B: Prepare Computer**
-
 
 [^1]: **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Thus, though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active and one as a backup, they should _not_ be done on the same device. For the permanent key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your backup key, we suggest you use an older iPod Touch or even borrow a trusted partner's iPhone; you'll be deleting that key after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a backup key and holding an active key, provided you were careful about deleting the backup key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a SPOC.
 
