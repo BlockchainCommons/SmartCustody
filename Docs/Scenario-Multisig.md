@@ -101,9 +101,9 @@ This procedure will secure your Bitcoin private keys by keeping the more sensiti
 
 #### **Step A: Setup Storage Locales**
 
-You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale. They will be used to store seeds and devices [^5]. 
+You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale[^6]. They will be used to store seeds and devices [^5]. 
 
-1. [  ] Install Home Safe[^6][^7]
+1. [  ] Install Home Safe[^7][^8]
    1. Ideally, it should be physically secured by mounting it to floor or wall joists, or even more securely, directly to a foundation
    1. You will store an SSKR share in your Home Storage Locale, usually along with your Secondary Hardware Wallet (by default: a Passport).
 2. [  ] Choose Primary Storage Locale
@@ -125,8 +125,10 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
 
 [^4]: **Why Passport and Seed Tool?** We choose Passport and Gordian Seed Tool as second-generation airgapped wallets that have fully integrated backup mechanisms: Passport to MicroSD, Seed Tool to iCloud. We've thus combined the protection against SPOC implicit in an airgapped design  with the protection against SPOF supported by a backup that the user doesn't have to think (much) about.
 
-[^5]: **Locale Safety.** No single locale should have enough information to access your funds in an unlocked way. Your home is the biggest danger because it holds two keys, but they should both be locked, either by PIN or biometrics. Each other locale holds at most one and a third keys, the full key locked.
+[^5]: **Locale Contents.** No single locale should have enough information to access your funds in an unlocked way. Your home is the biggest danger because it holds two keys, but they should both be locked, either by PIN or biometrics. Each other locale holds at most one and a third keys, the full key locked.
 
-[^6]: **Safe Usage.** Note that most home safes do not offer enough [Disaster](#adversary-disaster) resistance to sufficiently protect your digital assets. At best they are rated to protect paper against fire. The primary goal of a home safe is to protect any Hardware Wallet kept at home that is not in active use and to store one share of your SSKR, so that neither can easily be lost or stolen. Stealing would likely not compromise your funds, but it would put you on the path to losing control of those funds if disaster struck another locale.
+[^6]: **Locale Security.** Obviously, the more secure locations are, the better. Optimal setup would be to have a robust Home Safe and two safety deposit boxes in banks in two widely separated locales. However, we expect most people will choose their locales as home, bank, and work; or else as home, work, and family/friend home. The most important factor for the overall security of your scenario may not be physical security of the locale (since no locale other than your home has enough key material to compromise your digital assets), but instead geographical separation, ensuring that no single disaster such as an earthquake or wildfire and no single event such as a war or civil unrest, could easily compromise two locales.
 
-[^7]: **Safe Optional.** The use of a safe is somewhat optional: you will have enough seeds at home to compromise your funds, but they should each be locked by PINs or biometrics, making such compromise unlikely. It's recommended, and it's better to have it, but don't give up on this procedure just because you don't have a home safe. 
+[^7]: **Safe Usage.** Note that most home safes do not offer enough [Disaster](#adversary-disaster) resistance to sufficiently protect your digital assets. At best they are rated to protect paper against fire. The primary goal of a home safe is to protect any Hardware Wallet kept at home that is not in active use and to store one share of your SSKR, so that neither can easily be lost or stolen. Stealing would likely not compromise your funds, but it would put you on the path to losing control of those funds if disaster struck another locale.
+
+[^8]: **Safe Optional.** The use of a safe is somewhat optional: you will have enough seeds at home to compromise your funds, but they should each be locked by PINs or biometrics, making such compromise unlikely. It's recommended, and it's better to have it, but don't give up on this procedure just because you don't have a home safe. 
