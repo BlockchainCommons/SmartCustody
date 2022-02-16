@@ -120,6 +120,20 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
 
 Because your computer never holds seeds, you don't need to do the same extensive work securing it as you might have with previous generations of signing devices. However, it's best to use a computer that you're careful with. If you have a computer that's not used much, and especially one that's not used for web browsing, that's a good choice[^10].
 
+**Sparrow Requirements:** Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Debian, Redhat, or Cenix).
+
+1. [  ] Download [Sparrow Wallet](https://sparrowwallet.com/download/).
+1. [  ] Also download the manifest and the manifest signature from the same page.
+1. [  ] Verify the signature[^11].
+   1. `curl https://keybase.io/craigraw/pgp_keys.asc | gpg --import`
+   1. `gpg --verify sparrow-X.X.X-manifest.txt.asc`where X.X.X is the version number
+   1. You should be looking for a "Good Signature", probably from Craig Raw
+1. [  ] Verify the checksum[^11].
+   1. **Windows:** `CertUtil -hashfile Sparrow-X.X.X.exe SHA256 | findstr /v "hash"` and compare to the checksum in the `manifest.txt` file.
+   1. **MacOS:** `sha256sum --check sparrow-X.X.X-manifest.txt --ignore-missing` and look for OK.
+   1. **Linux: `sha256sum --check sparrow-X.X.X-manifest.txt --ignore-missing` and look for OK.
+1. [  ] If the program verified, install as appropraite for your OS.
+
 #### **Step C: Create Multisig**
 
 #### **Step D: Create Backup Seed on Gordian Seed Tool**
@@ -146,6 +160,13 @@ write new backup for passport (to exercise card)
 
 #### **Step L: Check Secondary Storage (Fall)**
 
+## Appendix: SPOFs & SPOCs in This Scenario
+
+[can lose any one locale]
+[can recover by heirs]
+[can lose both storage locales]
+[if you lose storage locale & home it gets dicey]
+
 ---
 
 [^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, the language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically internet connected. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
@@ -167,3 +188,5 @@ write new backup for passport (to exercise card)
 [^9]: **Safe Optional.** The use of a safe is somewhat optional: you will have enough seeds at home to compromise your funds, but they should each be locked by PINs or biometrics, making such compromise unlikely. It's recommended, and it's better to have it, but don't give up on this procedure just because you don't have a home safe. 
 
 [^10]: **Computer Choices.** Everything's a balance. If you can choose a computer that doesn't get much use, that's more secure, but you also want to make sure that it's a computer that will stay up to date with security updates. If the computer is no longer being supported with security updates, that's a bad choice. The biggest danger if your computer is compromised is that your transaction coordinator may be compromised and it will send you incorrect PSBTs for signing. So _always_ look carefully at any PSBTs that you're signing, and be even more careful if your computer is less secure through other usage.
+
+[^11]: **Software Verification.** It can be tempting to skip over this verification step. **Don't.** A supply-chain attack is a real adversary: the software may have been changed on the website. But, if so, it won't match the checksum or the checksum won't be signed by the correct creator. So, be sure to verify and be sure to carefully consider the results.
