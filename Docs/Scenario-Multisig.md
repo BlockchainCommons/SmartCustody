@@ -88,7 +88,7 @@ Your material should be divided among four places: your home; secure storage in 
 
 | Home | Home Storage | Primary Storage | Secondary Storage | iCloud |
 | :--- | :--- | :--- | :--- | :--- | 
-|  | Backup SSKR Share #1 | Backup SSKR Share #2 | Backup SSKR Share #3 |
+|  | Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
 | Sparrow Computer |
 | GST iPhone | | | | GST Backup |
 |  | Passport | Passport MicroSD #1 | Passport MicroSD #2 |
