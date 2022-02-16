@@ -92,7 +92,10 @@ Your material should be divided among four places: your home; secure storage in 
 | Sparrow Computer |
 | GST iPhone | | | | GST Backup |
 |  | Passport | Passport MicroSD #1 | Passport MicroSD #2 |
+| | Passport Backup Password | Passport PIN | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code|
 | | Instructions for heirs | Duplicates of instructions for heirs |
+
+Obviously this state will vary if alternative signing devices are chosen.
 
 {pagebreak}
 
