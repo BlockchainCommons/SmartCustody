@@ -84,16 +84,15 @@ Further discussions of why specific hardware and software wallets are desirable,
 
 ### Final State
 
-[revise]
-This procedure will secure your Bitcoin private keys by keeping the more sensitive information in a safety deposit box and the less sensitive information in a home safe, as follows:
+Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario. 
 
-| Home Safe | Safe Deposit Box |
-| :--- | :--- |
-| Ledger Device #1 | Ledger Device #2 |
-|  | Ledger PIN |
-|  | Paper 24-word seed |
-|  | CryptoTag 24-word seed |
-| Instructions for heirs and xpub and cold storage addresses | Duplicates of instructions for heirs and xpub and cold storage addresses |
+| Home | Home Storage | Primary Storage | Secondary Storage
+| :--- | :--- | :--- |
+|  | Backup SSKR Share #1 | Backup SSKR Share #2 | Backup SSKR Share #3 |
+| Sparrow Computer |
+| GST iPhone |
+|  | Passport | Passport MicroSD #1 | Passport MicroSD #2 |
+| | Instructions for heirs and xpub and cold storage addresses | Duplicates of instructions for heirs and xpub and cold storage addresses |
 
 {pagebreak}
 
