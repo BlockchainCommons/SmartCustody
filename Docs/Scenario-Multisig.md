@@ -84,7 +84,7 @@ Further discussions of why specific hardware and software wallets are desirable,
 
 ### Final State
 
-Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario. 
+Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with a Sparrow software wallet as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as hardware wallets, with a third, backup key sharded.
 
 | Home | Home Storage | Primary Storage | Secondary Storage | iCloud |
 | :--- | :--- | :--- | :--- | :--- | 
