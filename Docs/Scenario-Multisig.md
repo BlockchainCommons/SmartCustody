@@ -90,8 +90,8 @@ Your material should be divided among four places: your home; secure storage in 
 | :--- | :--- | :--- | :--- | :--- | 
 |  | Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
 | Sparrow Computer |
-| GST iPhone | | | | GST Backup |
-|  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 | Passport MicroSD #2<br>w/GST SSKR Share #3 |
+| GST iPhone | GST SSKR Share #1 (optional) | | | GST Backup |
+|  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (optional) | Passport MicroSD #2<br>w/GST SSKR Share #3 (optional) |
 | | Passport Backup Password | Passport PIN | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code|
 | | Instructions for heirs | Duplicates of instructions for heirs |
 
