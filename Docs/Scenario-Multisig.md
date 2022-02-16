@@ -115,6 +115,8 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
 
 #### **Step B: Prepare Computer**
 
+Because your computer never holds seeds, you don't need to do the same extensive work securing it as you might have with previous generaitons of hardware wallets. However, it's best to use a computer that you're careful with. If you have a computer that's not used much, and especially one that's not used for web browsing, that's a good choice[^9].
+
 #### **Step C: Create Multisig**
 
 #### **Step D: Create Backup Seed on Gordian Seed Tool**
@@ -152,3 +154,5 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
 [^7]: **Safe Usage.** Note that most home safes do not offer enough [Disaster](#adversary-disaster) resistance to sufficiently protect your digital assets. At best they are rated to protect paper against fire. The primary goal of a home safe is to protect any Hardware Wallet kept at home that is not in active use and to store one share of your SSKR, so that neither can easily be lost or stolen. Stealing would likely not compromise your funds, but it would put you on the path to losing control of those funds if disaster struck another locale.
 
 [^8]: **Safe Optional.** The use of a safe is somewhat optional: you will have enough seeds at home to compromise your funds, but they should each be locked by PINs or biometrics, making such compromise unlikely. It's recommended, and it's better to have it, but don't give up on this procedure just because you don't have a home safe. 
+
+[^9]: **Computer Choices.** Everything's a balance. If you can choose a computer that doesn't get much use, that's more secure, but you want to make sure that it's a computer that will stay up to date with security updates. If it's no longer being support, that's a bad choice. The biggest danger if your computer is compromised is that your software wallet / transaction coordinator may be compromised and it will send you incorrect PSBTs for signing. So _always_ look carefully at any PSBTs that you're signing, and be even more careful if your computer is less secure through other usage.
