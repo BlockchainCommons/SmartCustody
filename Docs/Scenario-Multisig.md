@@ -201,13 +201,24 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 1. **Loss of Home & Primary Storage.** The only things left are a MicroSD at Secondary Storage and whatever's in the Cloud. Recovery is only possible if care was taken in backing up access info to the cloud. If the user has the Passport Backup Words in the Cloud and if they have Apple login information somewhere such as Lastpass, and if they know the PIN to a previous apple device, then they can restore one seed off the MicroSD at the Secondary Storage and another from iCloud. But in most cases, the assets are lost.
 1. **Loss of Home, Primary Storage, and Secondary Storage.** One key may still remain available in iCloud, if Gordian Seed Tool can be rebuilt, but that's insufficient to sign multisigs: the assets are definitely lost.
 
-Loss of individual data causes no asset loss.
+Loss of individual data causes no asset loss, nor does simulataneous loss of data and the Storage site *not* associated with access to that data.
 
-1. **Lost Apple ID.** The Apple account can be recovered using the data stored at the Primary Otherwise. If not, two of the three recovery shares may be used to rebuild the recovery key, which is used in conjunction with the Passport.
-1. **Forgot Passport PIN.** The Passport PIN at the Secondary Storage may be sued to access the Passport. If not, two of the three recovery shares may be used to rebuild the recovery key, which is used in conjunction with Gordian Seed Tool.
+1. **Lost Apple ID.** The Apple account can be recovered using the data stored at the Primary Storage. 
+1. **Forgot Passport PIN.** The Passport PIN at the Secondary Storage may be used to access the Passport. 
 1. **Forgot Passport Backup Words.** This is not an issue unless the Passport is lost. However, new backups should be made immediately, with new Backup Words.
 
-As suggested, even loss of one item of data and one storage locale should not cause loss, as the remaining signing device and the two remaining recovery shares can be used to access the assets. Similarly, loss of two piece of data and one storage locale always allows restoral of one device and the use of two recovery shares to support that. However, loss of one item of data and both storage will likely cause data loss.
+Loss of data and the associated Storage can similarly be recovered from:
+
+1. **Lost Apple ID & Primary Storage.** The Apple ID, and thus Gordian Seed Tool, are gone. The recovery seed can be rebuilt from the SSKR at Home and at the Secondary Storage, and that may be used in conjunction with the Passport.
+1. **Lost Passport PIN & Secondary Storage.** Access to the Passport is lost. The recovery seed can be rebuilt from the SSKR at Home and at the Primary Storage, and that may be used in conjunction with Gordian Seed Tool.
+1. **Lost Apple ID, Passport PIN, and Primary Storage.** The Apple ID, and thus Gordian Seed Tool, are gone. The recovery seed can be rebuilt from the SSKR at Home and at the Secondary Storage, and that may be used in conjunction with the Passport.
+1. **Lost Apple ID, Passport PIN, and Secondary Storage.** Access to the Passport is lost. The recovery seed can be rebuilt from the SSKR at Home and at the Primary Storage, and that may be used in conjunction with Gordian Seed Tool.
+
+But the loss of data along with both Storages likely results in the loss of everything.
+
+1. **Lost Apple ID, Primary Storage & Secondary Storage.** Unless Apple ID can be restored using other Apple devices, the assets are gone.
+1. **Lost Passport PIN, Primary Storage & Secondary Storage.** Only the key on Gordian Seed Tool remains: the assets are gone.
+1. **Lost Apple ID, Passport PIN, Primary Storage & Secondary Storage.** Perhaps the Apple ID could be restored using other Apple devices, but the Passport and recovery keys are gone, so the assets are gone.
 
 ### Single Points of Compromise (SPOC)
 
