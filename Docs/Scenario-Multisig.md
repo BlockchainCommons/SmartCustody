@@ -141,13 +141,24 @@ Because your computer never holds seeds, you don't need to do the same extensive
 
 #### **Step C: Create Multisig**
 
-#### **Step D: Create Backup Seed on Gordian Seed Tool**
+The creation of a multisig is initiated on your transaction coordinator. This scenario suggests a 2-of-3 multisig.
+
+1. [  ] Create a new multisig in Sparrow.
+   1. "File -> New Wallet"[^12]
+   1. Name it[^13]
+1. [  ] Choose "Multi Signature" for "Policy Type".
+   1. Leave "Native Segwit" as the "Script Type"[^14]
+1. [  ] Choose "2/3" for the "M of N". This should be the default.
+
+At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices** from the Appendix. Choosing an alternative recovery device will replace steps D & E; choose an alternative main signing device will replace either step F or G. Just follow the separate steps in the Appendix rather than the ones listed below in those cases.
+
+#### **Step D: Create Recovery Seed on Gordian Seed Tool**
 
 [iCloud turned off; airplane mode]
 
 [write SSKR to same MicroSD?]
 
-#### **Step E: Verify Backup Seed**
+#### **Step E: Verify Recovery Seed**
 
 #### **Step F: Create Active Seed on Passport**
 
@@ -172,6 +183,7 @@ write new backup for passport (to exercise card)
 [can lose both storage locales]
 [if you lose storage locale & home it gets dicey]
 
+## Appendix: Alternative Signing Devices
 ---
 
 [^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, the language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically internet connected. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
@@ -195,3 +207,9 @@ write new backup for passport (to exercise card)
 [^10]: **Computer Choices.** Everything's a balance. If you can choose a computer that doesn't get much use, that's more secure, but you also want to make sure that it's a computer that will stay up to date with security updates. If the computer is no longer being supported with security updates, that's a bad choice. The biggest danger if your computer is compromised is that your transaction coordinator may be compromised and it will send you incorrect PSBTs for signing. So _always_ look carefully at any PSBTs that you're signing, and be even more careful if your computer is less secure through other usage.
 
 [^11]: **Software Verification.** It can be tempting to skip over this verification step. **Don't.** A supply-chain attack is a real adversary: the software may have been changed on the website. But, if so, it won't match the checksum or the checksum won't be signed by the correct creator. So, be sure to verify and be sure to carefully consider the results.
+
+[^12]: **New Wallet.** As we said, the term "wallet" is overloaded. Here, "New Wallet" really means a "new account", which is to say a group of addresses.
+
+[^13]: **Account Naming.** Choose an intuitive, obvious name, like "Multisig" or "Passport and Seed Tool Multisig" or "LLC Multisig". Security by obscurity *isn't*, and worse, it's only likely to mess you or your heirs up.
+
+[^14]: **Script Type.** Current options are "Legacy", "Nested Segwit", and "Native Segwit". Both "Legacy" and "Nested Segwit" are older Bitcoin scripts, while "Native Segwit" has been the current one for several years. It's always best to stick with the newest, to future-proof your funds, as long as it's been around for a year or two and is a mature technology.
