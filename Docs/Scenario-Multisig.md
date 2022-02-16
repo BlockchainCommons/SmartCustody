@@ -92,7 +92,7 @@ Your material should be divided among four places: your home; secure storage in 
 | Sparrow Computer |
 | GST iPhone |
 |  | Passport | Passport MicroSD #1 | Passport MicroSD #2 |
-| | Instructions for heirs and xpub and cold storage addresses | Duplicates of instructions for heirs and xpub and cold storage addresses |
+| | Instructions for heirs | Duplicates of instructions for heirs |
 
 {pagebreak}
 
