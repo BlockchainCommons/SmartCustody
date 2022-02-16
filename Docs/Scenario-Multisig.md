@@ -64,8 +64,12 @@ The following items are recommended, but don't let their absence stop you from s
 
 * [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) )
 * [  ] Safety Deposit Box at Bank or other institution
+
+The following items are even more optional, but will increase the resilience of your scenario:
+
 * [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
 * [  ] MicroSD Adapter with an extra MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices
+* [  ] Encrypted Cloud-based note storage, such as [LastPass](https://www.lastpass.com/)
 
 ### Case Studies
 
@@ -91,13 +95,13 @@ Further discussions of why specific transaction coordinators or signing devices 
 
 Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
-| Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
+| Home | Home Storage | Primary Storage | Secondary Storage | iCloud |
 | :--- | :--- | :--- | :--- | :--- | 
 |  | Recovery SSKR Overview<br>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
 | Sparrow Computer |
 | GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup |
 |  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
-| | Passport Backup Words | Passport PIN |  | Passport Backup Words |
+| | Passport Backup Words |  | Passport PIN |  Passport Backup Words (opt.) |
 | | Instructions for heirs | Duplicates of instructions for heirs |
 
 Obviously this state will vary if alternative signing devices are chosen.
@@ -150,7 +154,7 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
    1. Leave "Native Segwit" as the "Script Type"[^14]
 1. [  ] Choose "2/3" for the "M of N". This should be the default.
 
-At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices** from the Appendix. Choosing an alternative recovery device will replace steps D & E; choose an alternative main signing device will replace either step F or G. Just follow the separate steps in the Appendix rather than the ones listed below in those cases.
+At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices** from the Appendix. Choosing an alternative recovery device will replace steps D & E; choose an alternative active signing device will replace either step F or G. Just follow the separate steps in the Appendix rather than the ones listed below in those cases.
 
 #### **Step D: Create Recovery Seed on Gordian Seed Tool**
 
@@ -178,6 +182,35 @@ write new backup for passport (to exercise card)
 
 ## Appendix: SPOFs & SPOCs in This Scenario
 
+The original #SmartCustody single-sig scenario ensured that there were no Single Points of Failure (SPOFs) where the loss of devices and data at a single site could result in the loss of digital funds. This multi-sig expands on that by also ensuring that there are no Single Points of Compromise (SPOCs) where the theft of devices and data at a single site could result in the loss of digital funds.
+
+Following are discussions of potential fail modes and how this scenario avoids them.
+
+### Single Points of Failure (SPOF)
+
+Loss of individual locales results in no loss of assets[^A1]:
+
+1. **Loss of Home.** New phone can be rebuilt with login info at Primary Storage; ideally new Passport is loaded with MicrOSD at Primary Storage and Passport Backup Words from Cloud, but if Backup Words are not available, instead: Recovery Key is rebuilt from  SSKR Shares at Primary and Secondary Storage.
+1. **Loss of Primary Storage.** Passport and Gordian Seed Tool remain available at home.
+1. **Loss of Second Storage.** Passport and Gordian Seed Tool remain available at home.
+
+Loss of multiple sites can cause asset loss, depending on how much optional resilience was used:
+
+1. **Loss of Primary & Secondary Storage.** Passport and Gordian Seed Tool remain available at home.
+1. **Loss of Home & Secondary Storage.** The Passport MicroSD at Primary Storage may be used to recover a seed provided Passport Backup Words were put in Cloud; Gordian Seed Tool can be rebuilt from iCloud, possibly requiring login information at Primary Storage. If the Passport Backup Words were not backed up to the Cloud, and they are not known, the assets are lost.
+1. **Loss of Home & Primary Storage.** The only things left are a MicroSD at Secondary Storage and whatever's in the Cloud. Recovery is only possible if care was taken in backing up access info to the cloud. If the user has the Passport Backup Words in the Cloud and if they have Apple login information somewhere such as Lastpass, and if they know the PIN to a previous apple device, then they can restore one seed off the MicroSD at the Secondary Storage and another from iCloud. But in most cases, the assets are lost.
+1. **Loss of Home, Primary Storage, and Secondary Storage.** One key may still remain available in iCloud, if Gordian Seed Tool can be rebuilt, but that's insufficient to sign multisigs: the assets are definitely lost.
+
+Loss of individual data causes no asset loss.
+
+1. **Lost Apple ID.** The Apple account can be recovered using the data stored at the Primary Otherwise. If not, two of the three recovery shares may be used to rebuild the recovery key, which is used in conjunction with the Passport.
+1. **Forgot Passport PIN.** The Passport PIN at the Secondary Storage may be sued to access the Passport. If not, two of the three recovery shares may be used to rebuild the recovery key, which is used in conjunction with Gordian Seed Tool.
+1. **Forgot Passport Backup Words.** This is not an issue unless the Passport is lost. However, new backups should be made immediately, with new Backup Words.
+
+As suggested, even loss of one item of data and one storage locale should not cause loss, as the remaining signing device and the two remaining recovery shares can be used to access the assets. Similarly, loss of two piece of data and one storage locale always allows restoral of one device and the use of two recovery shares to support that. However, loss of one item of data and both storage will likely cause data loss.
+
+### Single Points of Compromise (SPOC)
+
 [can lose any one locale]
 [can recover by heirs]
 [can lose both storage locales]
@@ -194,7 +227,7 @@ write new backup for passport (to exercise card)
 
 [^4]: **Why Airgaps?** Optimal safety of a seed means ensuring that the device holding the key can't be corrupted and that the seed (or even hints about the seed) can't slip off the device. Any type of live connection can be dangerous, because even if a stream is purely intended for data, a buffer overflow or other error might send return data back across the connection without intervention of the users. Airgaps not only ensure data is in the maximally constrained form, thanks to use of a QR code or a MicroSD data file, but they also ensure that the user can see any data that's being sent back in return, and OK that sending or not. Of course, this also depends on airgapped devices being very precise and complete in revealing what data they receive and what data they send.
 
-[^5]: **Why Passport and Seed Tool?** We choose Passport and Gordian Seed Tool as second-generation signing devices that have fully integrated backup mechanisms: Passport to MicroSD, Seed Tool to iCloud. We've thus combined the protection against SPOC implicit in an airgapped design  with the protection against SPOF supported by a backup that the user doesn't have to think (much) about.
+[^5]: **Why Passport and Seed Tool?** We choose Passport and Gordian Seed Tool as second-generation signing devices that have fully integrated backup mechanisms: Passport to MicroSD, Seed Tool to iCloud. We've thus combined the protection against SPOC implicit in an airgapped design  with the protection against SPOF supported by a backup that the user doesn't have to think (much) about. Caveats: Foundation Devices is a patron of Blockchain Commons. This likely impacted our familiarity with the device, but didn't impact our decision to choose it as the best signing device for this scenario. The Gordian Seed Tool is a reference app created by Blockchain Commons.
 
 [^6]: **Locale Security.** Obviously, the more secure locations are, the better. Optimal setup would be to have a robust Home Safe and two safety deposit boxes in banks in two widely separated locales. However, we expect most people will choose their locales as home, bank, and work; or else as home, work, and family/friend home. The most important factor for the overall security of your scenario may not be physical security of the locale, but instead geographical separation, ensuring that no single disaster such as an earthquake or wildfire and no single event such as a war or civil unrest, could easily compromise two locales.
 
@@ -213,3 +246,7 @@ write new backup for passport (to exercise card)
 [^13]: **Account Naming.** Choose an intuitive, obvious name, like "Multisig" or "Passport and Seed Tool Multisig" or "LLC Multisig". Security by obscurity *isn't*, and worse, it's only likely to mess you or your heirs up.
 
 [^14]: **Script Type.** Current options are "Legacy", "Nested Segwit", and "Native Segwit". Both "Legacy" and "Nested Segwit" are older Bitcoin scripts, while "Native Segwit" has been the current one for several years. It's always best to stick with the newest, to future-proof your funds, as long as it's been around for a year or two and is a mature technology.
+
+[^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
+
+[^A2]: **Access Lossage.** Similar, if you lose a single piece of data, such as access to your Apple account, you must immediately rectify that before a second loss stacks atop it, resulting in much more serious consequences.
