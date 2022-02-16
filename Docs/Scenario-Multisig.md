@@ -91,13 +91,13 @@ Further discussions of why specific transaction coordinators or signing devices 
 
 Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
-| Home | Home Storage | Primary Storage | Secondary Storage | iCloud |
+| Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
 | :--- | :--- | :--- | :--- | :--- | 
 |  | Recovery SSKR Overview<br>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
 | Sparrow Computer |
 | GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup |
 |  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
-| | Passport Backup Words | Passport PIN |  |
+| | Passport Backup Words | Passport PIN |  | Passport Backup Words |
 | | Instructions for heirs | Duplicates of instructions for heirs |
 
 Obviously this state will vary if alternative signing devices are chosen.
