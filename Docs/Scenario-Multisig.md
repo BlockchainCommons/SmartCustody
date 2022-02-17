@@ -154,7 +154,7 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
    1. Leave "Native Segwit" as the "Script Type"[^14]
 1. [  ] Choose "2/3" for the "M of N". This should be the default.
 
-At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices** from the Appendix. Choosing an alternative recovery device will replace steps D & E; choose an alternative active signing device will replace either step F or G. Just follow the separate steps in the Appendix rather than the ones listed below in those cases.
+At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices**. Choosing an alternative recovery device will replace steps D & E; choose an alternative active signing device will replace either step F or G. Just follow the separate steps in that section rather than the ones listed below in those cases.
 
 #### **Step D: Create Recovery Seed on Gordian Seed Tool**
 
@@ -222,21 +222,46 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
 #### **Step F: Create & Input Active Seed on Passport**
 
+In the default Blockchain Commons scenario, a Foundation Devices Passport is used to create and store one of the seeds.
+
+_Any Alternative Signing Device may be used to replace this Step._
+
 #### **Step G: Create & Input Active Seed on Gordian Seed Tool**
+
+In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of the seeds.
+
+_Any Alternative Signing Device may be used to replace this Step._
 
 #### **Step H: Create Test Transaction**
 
+Particularly in the case of a multisig, you want to test your new account by both receiving and then sending back small amounts of funds 
+
 #### **Step I: Transfer Funds**
+
+Once you are confident in your control of an account, you can send the rest of your funds to it, preferably in an iterative way as described below.
 
 #### **Step J: Prepare Instructions for Heirs and/or Executor**
 
+Leaving our assets to our children or other heirs is important for many of us. Digital assets can be hard to find and access, to instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost.
+
 #### **Step K: Check Primary Storage (Spring)**
 
+Your digital assets are only protected if you actively maintain your backups. In Spring you're going to check your best protected Storage.
+
+[bring the Passport!]
 write new backup for passport (to exercise card)
 
 #### **Step L: Check Secondary Storage (Fall)**
 
-## Appendix: SPOFs & SPOCs in This Scenario
+Your Secondary storage may be with friends or family, so Fall is a great time to visit them, and simulataneously check on that storage as well.
+
+[bring the Passport]
+
+## Optional Steps
+
+## Alternative Signing Devices
+
+## Appendix I: SPOFs & SPOCs in This Scenario
 
 The original #SmartCustody single-sig scenario ensured that there were no Single Points of Failure (SPOFs) where the loss of devices and data at a single site could result in the loss of digital funds. This multi-sig expands on that by also ensuring that there are no Single Points of Compromise (SPOCs) where the theft of devices and data at a single site could result in the loss of digital funds.
 
@@ -278,10 +303,9 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 ### Single Points of Compromise (SPOC)
 
-[can lose any one locale]
-[can recover by heirs]
-[can lose both storage locales]
-[if you lose storage locale & home it gets dicey]
+### Death and Disability
+
+## Appendix II: Sample Letter to Heirs
 
 ## Appendix: Alternative Signing Devices
 ---
