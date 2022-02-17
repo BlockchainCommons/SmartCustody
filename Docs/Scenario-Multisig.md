@@ -209,12 +209,13 @@ Now that you know you can recover your seed from the recovery shards, you should
    3. Click the Camera icon.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
    5. An xpub should be imported.
+1. [  ] Change the label for Keystone One in Sparrow to be something meaningful like "SSKR Recovery Key"[^19].
 3. [  ] Delete the seed on Gordian Seed Tool.
 4. [  ] Delete Gordian Seed Tool.
 
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
-1. [  ] Separate and store the shares[^19][^20]. 
+1. [  ] Separate and store the shares[^20][^21]. 
    1. Place the overview page and one share in your Home Storage.
    1. Place one share in your Primary Storage.
    1. Place one share in your Secondary Storage.
@@ -321,9 +322,11 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 [^18]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares.
 
-[^19]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
+[^19]: **Clear Labelling.** No security through obscurity.
 
-[^20]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
+[^20]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
+
+[^21]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
