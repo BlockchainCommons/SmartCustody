@@ -173,15 +173,55 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
    1. "Print All Shares", using the defaults for a Summary Page and coupons on individual pages. Be sure you're not printing double-sided!
 1. Delete the Seed by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
 
-#### **Step E: Verify Recovery Seed**
+#### **Step E: Verify & Input Recovery Seed with Gordian Seed Tool**
 
-1. [  ] Separate and store the shares[^16]. 
+You want to immediately make sure your SSKR shares are valid.
+
+1. [  ] Scan in Your SSKR
+   1. Select the "QR Scan" icon.
+   1. Point it at the QR Code for one SSKR Share.
+   1. Point it at the QR Code for another SSKR Share.
+   1. The Seed Should Be Restored[^16]. 
+1. [  ] Check Your Seed
+   1. "Save" The Restored Seed
+   1. Touch it to open it.
+   1. Does the shortened hex code match?
+   1. Does the Lifehash image match?
+   1. Do the first one or two words of the name, describing a color, match?[^17]
+   1. If anything is wrong, go back to Step D, but that shouldn't happen[^16].
+1. [  ] Again, delete your Seed.
+1. [  ] Check Your SSKR a Second Time.
+   1. Restore your seed a second time, but this time use one of your two previous shares and the one you didn't previously scan.
+   1. "Save" it, check it, and delete it.
+1. [  ] Check Your SSKR a Third Time[^18].
+   1. Restore one more time, this time using the other of your two original shares from that first scan along with the one you didn't originally scan.
+   1. In other words, you should have scanned all three combinations of two shares: AB, BC, and AC. If you're confused at which you've used, labeled them "A", "B", and "C".
+   1. "Save" it, check it, and this time do *not* delete it.
+ 
+Now that you know you can recover your seed from the recovery shards, you should enter that seed into Sparrow.
+
+1. [  ] Display the Cosigner Public Key in Gordian Seed Tool
+   1. Select the seed.
+   1. Touch "Cosigner Public Key".
+2. [  ] Input the Cosigner Key into Sparrow
+   1. Choose "Keystore 1", which should already be selected.
+   2. Select "xpub/Watch Only Wallet".
+   3. Click the Camera icon.
+   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
+   5. An xpub should be imported.
+3. [  ] Delete the seed on Gordian Seed Tool.
+4. [  ] Delete Gordian Seed Tool.
+
+Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
+
+1. [  ] Separate and store the shares[^19][^20]. 
    1. Place the overview page and one share in your Home Storage.
-   1. Put one share in your
+   1. Place one share in your Primary Storage.
+   1. Place one share in your Secondary Storage.
 
-#### **Step F: Create Active Seed on Passport**
+#### **Step F: Create & Input Active Seed on Passport**
 
-#### **Step G: Create Active Seed on Gordian Seed Tool**
+#### **Step G: Create & Input Active Seed on Gordian Seed Tool**
 
 #### **Step H: Create Test Transaction**
 
@@ -275,7 +315,15 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 [^15]: **Computer or Mobile Device?** Generally, a mobile device is preferred over a computer because it reduces the attack surface. If you do choose to use a computer for creating your recovery key, be sure it's not the computer also running Sparrow. Generally, keep your keys and your transaction coordinator separate, or you begin to lose the advantages of this scenario.
 
-[^16]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
+[^16]: **No Restore?** If it didn't restore, you have a problem. You're probably going to need to go back to Step D and create a new seed. But this really shouldn't happen.
+
+[^17]: **OIB Name.** The Object Identity Block name has one or two words that describe the color of the Lifehash and two words that are random. So the last two words _will_ change. That's expected.
+
+[^18]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares.
+
+[^19]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
+
+[^20]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
