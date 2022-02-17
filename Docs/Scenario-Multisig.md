@@ -158,11 +158,26 @@ At this point, you will need to finalize your decision for which Signing Devices
 
 #### **Step D: Create Recovery Seed on Gordian Seed Tool**
 
-[iCloud turned off; airplane mode]
+Your recovery seed will be created, printed as SSKR shares, and then deleted. This should _not_ be done on the same device that you will use for your active Gordian Seed Tool key, if at all possible. Do it on an old iPod Touch, an old iPhone, or even an old laptop computer[^15]. Alternatively, use your partner's iPhone temporarily.
 
-[write SSKR to same MicroSD?]
+1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
+   1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
+1. [  ] Go to the Gear for Preferences and turn OFF "Sync to iCloud".
+1. [  ] Click the "+" and Add a Seed with "Quick Create".
+1. [  ] "Save" it.
+1. [  ] Print the SSKR for the Seed.
+   1. Touch the Seed.
+   1. Touch "Authenticate".
+   1. Touch "Backup" and Choose "Backup as SSKR Multi-Share".
+   1. Choose "2 of 3" and touch "Next"
+   1. "Print All Shares", using the defaults for a Summary Page and coupons on individual pages. Be sure you're not printing double-sided!
+1. Delete the Seed by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
 
 #### **Step E: Verify Recovery Seed**
+
+1. [  ] Separate and store the shares[^16]. 
+   1. Place the overview page and one share in your Home Storage.
+   1. Put one share in your
 
 #### **Step F: Create Active Seed on Passport**
 
@@ -257,6 +272,10 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^13]: **Account Naming.** Choose an intuitive, obvious name, like "Multisig" or "Passport and Seed Tool Multisig" or "LLC Multisig". Security by obscurity *isn't*, and worse, it's only likely to mess you or your heirs up.
 
 [^14]: **Script Type.** Current options are "Legacy", "Nested Segwit", and "Native Segwit". Both "Legacy" and "Nested Segwit" are older Bitcoin scripts, while "Native Segwit" has been the current one for several years. It's always best to stick with the newest, to future-proof your funds, as long as it's been around for a year or two and is a mature technology.
+
+[^15]: **Computer or Mobile Device?** Generally, a mobile device is preferred over a computer because it reduces the attack surface. If you do choose to use a computer for creating your recovery key, be sure it's not the computer also running Sparrow. Generally, keep your keys and your transaction coordinator separate, or you begin to lose the advantages of this scenario.
+
+[^16]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
