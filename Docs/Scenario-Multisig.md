@@ -172,7 +172,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
    1. Choose "2 of 3" and touch "Next"
    1. "Print All Shares", using the defaults for a Summary Page and coupons on individual pages. Be sure you're not printing double-sided!
 
-**Resilience Improvement.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
+**Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
 1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
 1. [  ] Insert MicroSD Card #1[^17].
@@ -199,19 +199,19 @@ You want want to remove the electronic version of your Recovery Seed, but then i
    1. Select the "QR Scan" icon.
    1. Point it at the QR Code for one SSKR Share.
    1. Point it at the QR Code for another SSKR Share.
-   1. The Seed Should Be Restored[^17]. 
+   1. The Seed Should Be Restored[^20]. 
 1. [  ] Check Your Seed
    1. "Save" The Restored Seed
    1. Touch it to open it.
    1. Does the shortened hex code match?
    1. Does the Lifehash image match?
-   1. Do the first one or two words of the name, describing a color, match?[^18]
-   1. If anything is wrong, go back to Step D, but that shouldn't happen[^17].
+   1. Do the first one or two words of the name, describing a color, match?[^21]
+   1. If anything is wrong, go back to Step D, but that shouldn't happen[^20].
 1. [  ] Again, delete your Seed.
 1. [  ] Check Your SSKR a Second Time.
    1. Restore your seed a second time, but this time use one of your two previous shares and the one you didn't previously scan.
    1. "Save" it, check it, and delete it.
-1. [  ] Check Your SSKR a Third Time[^19].
+1. [  ] Check Your SSKR a Third Time[^22].
    1. Restore one more time, this time using the other of your two original shares from that first scan along with the one you didn't originally scan.
    1. In other words, you should have scanned all three combinations of two shares: AB, BC, and AC. If you're confused at which you've used, labeled them "A", "B", and "C".
    1. "Save" it, check it, and this time do *not* delete it.
@@ -227,18 +227,31 @@ Now that you know you can recover your seed from the recovery shards, you should
    3. Click the Camera icon.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
    5. An xpub should be imported.
-1. [  ] Change the label for Keystone One in Sparrow to be something meaningful like "SSKR Recovery Key"[^20].
+1. [  ] Change the label for Keystone One in Sparrow to be something meaningful like "SSKR Recovery Key"[^23].
 3. [  ] Delete the seed on Gordian Seed Tool.
 4. [  ] Delete Gordian Seed Tool.
 
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
-1. [  ] Separate and store the shares[^21][^22]. 
+1. [  ] Separate and store the shares[^24][^25]. 
    1. Place the overview page and one share in your Home Storage.
    1. Place one share in your Primary Storage.
    1. Place one share in your Secondary Storage.
 
-#### **Step f: Create & Input Active Seed on Gordian Seed Tool**
+**Resilience Improvement: Use MicroSD Cards for SSKR Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
+
+1. [  ] Insert one of your MicroSD cards into your iPhone Reader.
+1. [  ] Touch the "QR" button to "Scan" in Gordian Seed Tool and then choose "Files"
+1. [  ] Find your SSKR Share of the QR and Select It
+   1. You should see "Recover from SSKR" with one of your two shares recovered.
+1. [  ] Remove that first MicroSD and Replace It with Another
+1. [  ] Find your SSKR Share of the QR and Select It
+1. [  ] Verify That Your Seed Has Restored
+1. [  ] Best Practice is to Repeat This with the Other Two Potential Combos of Cards
+1. [  ] Delete Any Restored Seeds After Testing
+1. [  ] Do *not* yet store your Cards. You'll be using them again in Steps F and G.
+
+#### **Step F: Create & Input Active Seed on Gordian Seed Tool**
 
 In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of the seeds.
 
@@ -278,11 +291,11 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 
 ## Optional Steps
 
-### Optional Step: Backup SSKR to MicroSD
+### Optional Step: Use MicroSD Cards for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
 
-
+[write this up, say it's already there as "Resilience Improvement" because we see it as relatively central]
 
 ## Alternative Signing Devices
 
@@ -373,19 +386,17 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 [^19]: **Export Together!** One you have clicked the "Export Shares Individually" button do *not* click done until you have exported all three shares. Each times SSKR shares are generated, they're modified by new entropy. That means that SSKR shares may only be used with the other shares created at the exact same time.
 
---
+[^20]: **No Restore?** If it didn't restore, you have a problem. You're probably going to need to go back to Step D and create a new seed. But this really shouldn't happen.
 
-[^17]: **No Restore?** If it didn't restore, you have a problem. You're probably going to need to go back to Step D and create a new seed. But this really shouldn't happen.
+[^21]: **OIB Name.** The Object Identity Block name has one or two words that describe the color of the Lifehash and two words that are random. So the last two words _will_ change. That's expected.
 
-[^18]: **OIB Name.** The Object Identity Block name has one or two words that describe the color of the Lifehash and two words that are random. So the last two words _will_ change. That's expected.
+[^22]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares.
 
-[^19]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares.
+[^23]: **Clear Labelling.** No security through obscurity.
 
-[^20]: **Clear Labelling.** No security through obscurity.
+[^24]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
 
-[^21]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
-
-[^22]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
+[^25]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
