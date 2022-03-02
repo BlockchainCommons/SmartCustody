@@ -162,7 +162,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 
 1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
-1. [  ] Go to the Gear for Preferences and turn OFF "Sync to iCloud".
+1. [  ] Go to the Gear icon, for Preferences, and turn OFF "Sync to iCloud".
 1. [  ] Click the "+" and Add a Seed with "Quick Create".
 1. [  ] "Save" it.
 1. [  ] Print the SSKR for the Seed.
@@ -175,7 +175,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 **Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
 1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
-1. [  ] Insert MicroSD Card #1[^17].
+1. [  ] Insert MicroSD Card #1[^18].
 1. [  ] In Gordian Seed Tool, again choose your Seed and "Backup" as a "SSKR Multi-Share" of "2 of 3".
    1. If you just printed your SSKR Shares, you're already on the right page.
 1. [  ] Choose "Export Shares Individually".
@@ -183,7 +183,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 1. [  ] Click on the Export Icon for "Share 1".
 1. [  ] Scroll down to "Save to Files" and select it.
 1. [  ] "Save" the file to your MicroSD Card.
-   1. The MicroSD card will typically be after your iPhone and iCloud, visible as a drive icon.
+   1. The MicroSD card will typically be on the files list after your iPhone and iCloud, visible as a drive icon.
    1. You will typically want to create a folder, such as "Recovery SSKR" and save to that.
 1. [  ] Remove MicroSD Card #1; insert MicroSD Card #2[^18].
 1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
@@ -192,9 +192,9 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 
 #### **Step E: Verify & Input Recovery Seed with Gordian Seed Tool**
 
-You want want to remove the electronic version of your Recovery Seed, but then immediately make sure your SSKR shares are valid.
+You want to remove the electronic version of your Recovery Seed, but then immediately make sure your SSKR shares are valid.
 
-1. [  ] Delete the Seed by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
+1. [  ] Delete the Seed in Gordian Seed Tool by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
 1. [  ] Scan in Your SSKR
    1. Select the "QR Scan" icon.
    1. Point it at the QR Code for one SSKR Share.
@@ -214,26 +214,29 @@ You want want to remove the electronic version of your Recovery Seed, but then i
 1. [  ] Check Your SSKR a Third Time[^22].
    1. Restore one more time, this time using the other of your two original shares from that first scan along with the one you didn't originally scan.
    1. In other words, you should have scanned all three combinations of two shares: AB, BC, and AC. If you're confused at which you've used, labeled them "A", "B", and "C".
-   1. "Save" it, check it, and this time do *not* delete it.
+   1. "Save" it, check it, and this time do *not* delete it (yet).
  
 Now that you know you can recover your seed from the recovery shards, you should enter that seed into Sparrow.
 
-1. [  ] Display the Cosigner Public Key in Gordian Seed Tool
+1. [  ] Display the Account in Gordian Seed Tool
    1. Select the seed.
-   1. Touch "Cosigner Public Key".
-2. [  ] Input the Cosigner Key into Sparrow
-   1. Choose "Keystore 1", which should already be selected.
+   2. Touch "Authenticate"[^23]
+   3. Touch "Derive Key" and "Other Key Derivations".
+   4. 
+1. [  ] Input the Cosigner Key into Sparrow
+   1. On Sparrow, Choose "Keystore 1", which should already be selected.
    2. Select "xpub/Watch Only Wallet".
    3. Click the Camera icon.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
    5. An xpub should be imported.
-1. [  ] Change the label for Keystone One in Sparrow to be something meaningful like "SSKR Recovery Key"[^23].
-3. [  ] Delete the seed on Gordian Seed Tool.
-4. [  ] Delete Gordian Seed Tool.
+1. [  ] Change the label for Keystone One in Sparrow to be something meaningful like "SSKR Recovery Key"[^25].
+1. [  ] Delete the seed on Gordian Seed Tool.[^26]
+1. [  ] Delete Gordian Seed Tool.
+1. [  ] Turn on "Sync to iCloud" from the Gear icon.
 
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
-1. [  ] Separate and store the shares[^24][^25]. 
+1. [  ] Separate and store the shares[^27][^28]. 
    1. Place the overview page and one share in your Home Storage.
    1. Place one share in your Primary Storage.
    1. Place one share in your Secondary Storage.
@@ -248,7 +251,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
 1. [  ] Find your SSKR Share of the QR and Select It
 1. [  ] Verify That Your Seed Has Restored
 1. [  ] Best Practice is to Repeat This with the Other Two Potential Combos of Cards
-1. [  ] Delete Any Restored Seeds After Testing
+1. [  ] Delete Any Restored Seeds After Testing[^24].
 1. [  ] Do *not* yet store your Cards. You'll be using them again in Steps F and G.
 
 #### **Step F: Create & Input Active Seed on Gordian Seed Tool**
@@ -392,11 +395,17 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 [^22]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares.
 
-[^23]: **Clear Labelling.** No security through obscurity.
+[^23]: **Authenticate?** Needing to authenticate suggests that you're passing private information, but `ur:crypto-account`[^24] and its `ur:crypto-outputs` are [defined](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-015-account.md) to only pass public-key info. So why is authentication required? Because they're derived from the master private key.
 
-[^24]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
+[^24]: **Why Crypto Account?** A crypto-account includes outputs of descriptors for a number of different key derivations. It allows Gordian Seed Tool to output a single packet of information and for the recipient to pull the specific derivation that they need (in this case, a cosigner key). So, it minimizes user errors when passing over xpubs. But, our preferred solution if for the recipient to make a `ur:crypto-request` for exactly what they need and Gordian Seed Tool to use a `ur:crypto-request` to send it.
 
-[^25]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
+[^25]: **Clear Labelling.** No security through obscurity.
+
+[^26]: **Seriously, Delete It!** It is very important that your recovery seed *not* be in Gordian Seed Tool as it creates an additional vector of action. This is especially important if you are using the same devie for your recovery seed and your active Gordian Seed Tool (not recommended!).
+
+[^27]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
+
+[^28]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
