@@ -222,17 +222,17 @@ Now that you know you can recover your seed from the recovery shards, you should
    1. Select the seed.
    2. Touch "Authenticate"[^23]
    3. Touch "Derive Key" and "Other Key Derivations".
-   4. 
+   4. Scroll down to "Secondary Derivation" and Choose "Account Descriptor"
+   5. Export the Account Descriptor, which should show an ANimated QR.
 1. [  ] Input the Cosigner Key into Sparrow
    1. On Sparrow, Choose "Keystore 1", which should already be selected.
-   2. Select "xpub/Watch Only Wallet".
-   3. Click the Camera icon.
+   2. Select "Airgapped Hardware Wallet".
+   3. Click the "Scan" button for Gordian Seed Tool
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
-   5. An xpub should be imported.
+   5. An xpub of the appropriate key derivation should be imported.
 1. [  ] Change the label for Keystone One in Sparrow to be something meaningful like "SSKR Recovery Key"[^25].
 1. [  ] Delete the seed on Gordian Seed Tool.[^26]
 1. [  ] Delete Gordian Seed Tool.
-1. [  ] Turn on "Sync to iCloud" from the Gear icon.
 
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
