@@ -172,7 +172,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
    1. Choose "2 of 3" and touch "Next"
    1. "Print All Shares", using the defaults for a Summary Page and coupons on individual pages. Be sure you're not printing double-sided!
 
-**Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
+**Suggested Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
 1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
 1. [  ] Insert MicroSD Card #1[^18].
@@ -223,8 +223,8 @@ Now that you know you can recover your seed from the recovery shards, you should
    2. Touch "Authenticate"[^23]
    3. Touch "Derive Key" and "Other Key Derivations".
    4. Scroll down to "Secondary Derivation" and Choose "Account Descriptor"
-   5. Export the Account Descriptor, which should show an ANimated QR.
-1. [  ] Input the Cosigner Key into Sparrow
+   5. Export the Account Descriptor, which should show an Animated QR.
+1. [  ] Input the Account into Sparrow
    1. On Sparrow, Choose "Keystore 1", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
    3. Click the "Scan" button for Gordian Seed Tool
@@ -241,7 +241,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
    1. Place one share in your Primary Storage.
    1. Place one share in your Secondary Storage.
 
-**Resilience Improvement: Use MicroSD Cards for SSKR Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
+**Suggested Resilience Improvement: Test MicroSD Cards for SSKR Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
 1. [  ] Insert one of your MicroSD cards into your iPhone Reader.
 1. [  ] Touch the "QR" button to "Scan" in Gordian Seed Tool and then choose "Files"
@@ -256,7 +256,49 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
 #### **Step F: Create & Input Active Seed on Gordian Seed Tool**
 
-In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of the seeds.
+In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of the seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
+
+1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
+   1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
+1. [  ] Click the "+" and Add a Seed with "Coin Flips", "Die Rolls", or "Playing Cards" as you prefer[^29][^30].
+   1. Rolling dice is probably the quickest and least tedious method.
+   2. Drawing cards can take time because it's done with replacement: reshuffle after each draw.
+   3. Flipping coins to generate 128 bits of entropy takes 128 flips. That's a lot!
+1. [  ] "Save" it.
+
+You're now ready to read an xpub into Sparrow[^31]:
+
+1. [  ] Display the Account in Gordian Seed Tool
+   1. Select the seed.
+   2. Touch "Authenticate"[^23]
+   3. Touch "Derive Key" and "Other Key Derivations".
+   4. Scroll down to "Secondary Derivation" and Choose "Account Descriptor"
+   5. Export the Account Descriptor, which should show an Animated QR.
+1. [  ] Input the Account into Sparrow
+   1. On Sparrow, Choose "Keystore 2", which should already be selected.
+   2. Select "Airgapped Hardware Wallet".
+   3. Click the "Scan" button for Gordian Seed Tool
+   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
+   5. An xpub of the appropriate key derivation should be imported.
+1. [  ] Change the label for "Keystone 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
+
+**Optional Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^32] procedure will increase the resilience of your recovery backup by sharding your active seed from Gordian Seed Tool and saving those SSKRs to MicroSDs[^33].
+
+1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
+1. [  ] Insert MicroSD Card #1[^34].
+1. [  ] In Gordian Seed Tool, again choose your Seed and "Backup" as a "SSKR Multi-Share" of "2 of 3".
+1. [  ] Choose "Export Shares Individually".
+1. [  ] Select to Export Shares as "QR Code"[^17].
+1. [  ] Click on the Export Icon for "Share 1".
+1. [  ] Scroll down to "Save to Files" and select it.
+1. [  ] "Save" the file to your MicroSD Card.
+   1. The MicroSD card will typically be on the files list after your iPhone and iCloud, visible as a drive icon.
+   1. You will typically want to create a folder, such as "GST Active SSKR" and save to that.
+1. [  ] Remove MicroSD Card #1; insert MicroSD Card #2[^33].
+1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
+1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^33].
+1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
+1. [  ] Again, do *not* yet store your Cards. You'll be using them again in Step G.
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -294,7 +336,7 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 
 ## Optional Steps
 
-### Optional Step: Use MicroSD Cards for SSKR Backup
+### Optional Step: Use NFCs for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
 
@@ -406,6 +448,18 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^27]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
 
 [^28]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
+
+[^29]: **Why Dice, Coins, and Cards?** One of the potential adversaries for digital assets is "Systemic Key Compromise", where the methodology for creating a key was wrong. We don't want the key-generation process to be a SPOC, and since you used "Quick Create" for your recovery key, that means you should use a different methodology for creating the active key that you're going to use in Gordian Seed Tool.
+
+[^30]: **Do It Right!** Rolling dice, picking cards, and especially flipping coins can be tedious, but do it right! Actually engage in the activity until you have 128 bits of entropy. Do not just randomly hit buttons: that won't be random. If you're not going to correctly feed in the entropy from those dice, cards, or coins, you might as well just "Quick Create".
+
+[^31]: **Don't Delete!** Note that unlike with the recovery key, you're not deleting either this key or Gordian Seed Tool on this device. This is one of your two active keys; it's what you'll regularly use to spend funds on your account.
+
+[^32]: **More Optional.** This is more optional than the previous reslience options. In fact, it may even be a trade-off. As is, you've got your active Gordian Seed Tool seed in two places: on your iPhone and in iCloud. So why back it up further? Because Apple could disappear. Because you could lose access to your Apple account. Because you could forget PINs to old Apple computers when you try to load a new one. And, if you've already got a trio of MicroSDs from the previous resilience options, this is easy to do. Why not do it? Because you're putting enough data on the MicroSD cards that any two of them could be used to compromise your account, without additional passwords. So, if you think it's more likely that Apple or your Apple account disappear, do this! If you think it's more likely a pair of MicroSDs cards are compromised, don't. SmartCustody is all about analyzing which risks are most likely to affect *you*.
+
+[^33]: **No Printing.** Do *not* create SSKR shares for your active GST seed by printing them, or at the last, not on the same network you printed the previous ones. If that network is compromised, an attacker can now empty your Bitcoin account.
+
+[^34]: **Which Card is Which (II)?** All that matters it that you continue to track which cards will not have the Passport backup, because that's the one to store with the backup words.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
