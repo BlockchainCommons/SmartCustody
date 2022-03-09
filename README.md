@@ -9,7 +9,8 @@
 ## The SmartCustody Book
 
 * [#SmartCustody 1.01](https://github.com/BlockchainCommons/SmartCustodyBook) (July 2019) — Original book on how to model your risks and maintain the safety of your digital assets (released). Also see the original [GitHub files](https://github.com/BlockchainCommons/SmartCustodyBook).
-
+   * [#SmartCustody 2.0 Plans](https://github.com/BlockchainCommons/SmartCustodyBook/blob/master/TODO.md) — Outline & notes for revision & expansion.
+ 
 ## SmartCustody Tools
 
 The following long-form essays describe how to use a variety of smart tools to improve the resilience and security of your digital assets.
