@@ -150,6 +150,7 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
 1. [  ] Create a new multisig in Sparrow.
    1. "File -> New Wallet"[^12]
    1. Name it[^13]
+   1. "Create Wallet".
 1. [  ] Choose "Multi Signature" for "Policy Type".
    1. Leave "Native Segwit" as the "Script Type"[^14]
 1. [  ] Choose "2/3" for the "M of N". This should be the default.
@@ -228,18 +229,18 @@ Now that you know you can recover your seed from the recovery shards, you should
    1. On Sparrow, Choose "Keystore 1", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
    3. Click the "Scan" button for Gordian Seed Tool
-   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
+   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
-1. [  ] Change the label for Keystone One in Sparrow to be something meaningful like "SSKR Recovery Key"[^25].
+1. [  ] Change the label for Keystore One in Sparrow to be something meaningful like "SSKR Recovery Key"[^25].
 1. [  ] Delete the seed on Gordian Seed Tool.[^26]
 1. [  ] Delete Gordian Seed Tool.
 
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
 1. [  ] Separate and store the shares[^27][^28]. 
-   1. Place the overview page and one share in your Home Storage.
-   1. Place one share in your Primary Storage.
-   1. Place one share in your Secondary Storage.
+   1. Place the overview page and one printed share in your Home Storage.
+   1. Place one printed share in your Primary Storage.
+   1. Place one printed share in your Secondary Storage.
 
 **Suggested Resilience Improvement: Test MicroSD Cards for SSKR Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
@@ -256,7 +257,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
 #### **Step F: Create & Input Active Seed on Gordian Seed Tool**
 
-In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of the seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
+In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of yur active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
 
 1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
@@ -278,7 +279,7 @@ You're now ready to read an xpub into Sparrow[^31]:
    1. On Sparrow, Choose "Keystore 2", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
    3. Click the "Scan" button for Gordian Seed Tool
-   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running sparrow.
+   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
 1. [  ] Change the label for "Keystone 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
 
@@ -305,6 +306,36 @@ _Any Alternative Signing Device may be used to replace this Step._
 #### **Step G: Create & Input Active Seed on Passport**
 
 In the default Blockchain Commons scenario, a Foundation Devices Passport is used to create and store one of the seeds.
+
+If you have never before used your Passport, you'll need to set it up:
+
+1. [  ] Open up your Passport, being sure that security seals are all still present[^35].
+1. [  ] Power on your Passport by holding down the bottom-left button.
+1. [  ] Do the bureaucratic steps.
+   1. Call up the setup instructions with the QR.
+   2. Agree to the terms of service
+1. [  ] Conduct the Supply-Chain Validation[^35].
+   1. Scan the Validation Code from the web
+   2. Copy the four words that appear on your Passport back to the web.
+   3. Verify that the result is a "Success!"
+1. [  ] Enter a PIN. 
+   1. Start out by entering four numbers.
+   2. Note the two words shown; these will be shown any time you enter the start of your PIN, so that you know your Passport has not been compromised or swapped.
+   3. Enter at least two more digits and hit the right button for enter.
+   4. Verify your PIN.
+   5. Record your PIN to a piece of waterproof paper.
+
+It is strongly recommended that you update the firmware on your Passport before you begin using it[^36].
+
+...
+
+You're now ready to create a new seed on your Passport.
+
+...
+
+You can now import an xpub into Sparrow.
+
+...
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -460,6 +491,10 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^33]: **No Printing.** Do *not* create SSKR shares for your active GST seed by printing them, or at the last, not on the same network you printed the previous ones. If that network is compromised, an attacker can now empty your Bitcoin account.
 
 [^34]: **Which Card is Which (II)?** All that matters it that you continue to track which cards will not have the Passport backup, because that's the one to store with the backup words.
+
+[^35]: **Supply-Chain Attack.** This is all fighting against the "Supply-Chain Attack" adversary, where the threat is that someone tampers with the device somewhere in the supply chain, between Foundation Devices shipping it out and you receiving it. The attacker could be a retailer, distributor, or someone in the postal system, depending on how you acquired your Passport. If your device were tampered with, it might supply a static seed that an attacker knows about or damage your security in any of a number of other ways.
+
+[^36]: **Why Upgrade?** ...
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
