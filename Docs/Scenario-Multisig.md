@@ -369,6 +369,17 @@ You can now import an account into Sparrow.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. If your computer is having problems reading the QR, consider shading it to reduce glare and/or hitting the right button for Resize to display a smaller QR
    6. An xpub of the appropriate key derivation should be imported.
+1. [  ] Verify the Seed on Sparrow
+   1. Click "Export" on Sparrow.
+   1. Select "Show" next to "Passport Multisig".
+   1. Scan the animated QR into your Passport
+   1. When it gives you the option to create a wallet, click the right-button on your Passport to do so.
+   1. On Sparrow, cancel the "Export" and go to "Receive"
+   1. Scan the address into your Passport.
+   1. This should complete the two-stage verification that your Passport seed has been imported correctly
+1. [  ] Update your backups
+   1. At this time, your Passport will suggest that you update the backups you just made.
+   1. You should do so, so that if your recover from backup, the backups include the Sparrow connection
 1. [  ] Change the label for "Keystone 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
 
 Finally, you need to divy out the various backups and such you made[^39]:
@@ -393,13 +404,55 @@ After you have added three keys to Sparrow, either using the defaults of an SSKR
 1. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
 1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store a copy of the descriptor there too.
 
-#### **Step H: Create Test Transaction**
+#### **Step I: Create Test Transaction**
 
 Particularly in the case of a multisig, you want to test your new account by both receiving and then sending back small amounts of funds 
+
+1. [  ] Send funds to your Multisig address from a remote wallet.
+   1. Click "Receive" in Sparrow.
+   1. Read the address or QR into a remote wallet.
+   1. Send a _small_ amount of funds to the multisig address from your remote wallet.
+1. [  ] Wait for the funds to arrive.
+   1. Click "Transactions" in Sparrow.
+   1. Wait for the "Uncomfirmed" funds to have at least one confirmation
+1. [  ] Prepare transaction to send funds back to a remote wallet[^43].
+   1. Click "Send" in Sparrow.
+   1. Copy in an address or read in a QR code.
+   1. Add a label; it's required.
+   1. Choose an amount to send
+   1. Choose a fee based on the priorities shown by Sparrow.
+   1. Click "Create Transaction"
+   1. Click "Finalize Transaction for Signing".
+1. [  ] Sign with your Passport[^43].
+   1. Click "Show QR" in Sparrow
+   1. Power On your Passport, and sign in with your PIN.
+   1. Select "Sign with QR Code".
+   1. Hit the right-button on your Passport to review the transaction[^44] and Sign.
+   1. Hit "Cancel" on Sparrow to end the "Show QR", then click "Scan QR".
+   1. You may need to "Resize" the Passport QR to make it smaller and/or protect the screenf from glare.
+   1. You should see a status bar slowly increase as the QR is read in, and eventually the screen should show "FDP Active Key" (or whatever the name) has signed.
+1. [  ] Sign with Gordian Seed Tool[^43].
+   1. Click "Show QR" in Sparrow
+   1. Start up Gordian Seed Tool and hit the "Scan" (QR Code) button
+   1. Review the transaction[^44] and "Approve".
+   1. Select "QR Code" under "ur:crypto-psbt"
+   1. Hit "Cancel" on Sparrow to end the "Show QR", then click "Scan QR".
+   1. You should see a status bar quickly increase as the QR is read in, and eventually the screen should show "GST Active Key" (or whatever the name) has signed.
+1. [  ] Touch "Broadcast Transmission"[^43]
+1. [  ] Wait for the funds to arrive.
+   1. Click "Transactions" in Sparrow.
+   1. Wait for the "Uncomfirmed" funds to have at least one confirmation.
+
+If you were able to receive and send a transaction, you should feel confident in your new wallet.
 
 #### **Step I: Transfer Funds**
 
 Once you are confident in your control of an account, you can send the rest of your funds to it, preferably in an iterative way as described below.
+
+1. [  ] Send about $10 to your new multisig account.
+1. [  ] Wait for it arrive.
+1. [  ] Once it does, multiply the amount that you last sent to the wallet by x10 (e.g., to $100, then $1,000, then $10,000, then $100,000, then $1,000,000).
+1. [  ] Repeat the previous two steps until you have sent all the money to your account.
 
 #### **Step J: Prepare Instructions for Heirs and/or Executor**
 
@@ -562,6 +615,10 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^41]: **Cloud Words.** The Passport Backup Words are probably the scariest Single Point of Failure in this whole scenario. As noted in Appendix I, there are situations where a dual-loss can result in the loss of your assets if you don't have a cloud backup of your words, but you can save them if you do. If you have any large amount of funds you should _ensure_ that your Passport Backup Words and preferably your PIN as well are doubled-up in some secure storage, such as the encrypted cloud.
 
 [^42]: **Why No Password?** Every time you add a password to your system, you add a new SPOF (Single Point of Failure). In this case, all you'd be protecting is a watch-only wallet, which could compromise your privacy, but not your digital assets, so it's not worth it unless you have strong reasons for privacy protection.
+
+[^43]: **Sending Funds.** This procedure can be used whenever you want to send funds from your wallet.
+
+[^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
