@@ -329,20 +329,35 @@ It is strongly recommended that you update the firmware on your Passport before 
 
 1. [  ] Check your Firmware version on your Passport: v___________.
    1. This can be found at Settings > Firmware > Firmware Version.
-2. [  ] Check the current Firmware version on the Setup Page: v____________.
+1. [  ] Check the current Firmware version on the Setup Page: v____________.
    1. If the Passport Firmware is less than the current Firmware, then continue (otherwise you're done).
-3. [  ] Download the current Firmware from the Setup page.
-4. [  ] Copy the Firmware to a MicroSD card, using an adapter[^37].
-5. [  ] Install the Firmware on your Passport.
+1. [  ] Download the current Firmware from the Setup page.
+1. [  ] Copy the Firmware to a MicroSD card, using an adapter[^37].
+1. [  ] Install the Firmware on your Passport.
    1. Insert the MicroSD card into the top of your Passport.
-   2. On your Passport, choose Settings > Firmware > Update Firmware
+   1. On your Passport, choose Settings > Firmware > Update Firmware
   
 You're now ready to create a new seed on your Passport.
 
-...
+1. [  ] Choose "Create New Seed" on your Passport.
+1. [  ] Backup Your Passport
+   1. Choose Continue with the right button.
+   1. Insert the first MicroSD Card[^38] supplied with the Passport.
+   1. Choose Continue with the right button.
+   1. Write down the six backup password onto a piece of waterproof paper.
+   1. Verify your knowledge of the six words.
+1. [  ] Make a second backup
+   1. Choose "Yes" to make a second Backup.
+   1. Insert the second MicroSD Card[^38] supplied with the Passport.
+   1. Choose Continue to make the Backup.
 
 You can now import an xpub into Sparrow.
-
+1. [  ] Display a Public Cosigner QR for Your Seed on the Passport.
+   1. Choose "Pair Wallet" on your Passport.
+   1. Choose "Sparrow".
+   1. Choose "Multi-Sig". 
+   1. Choose "QR Code".
+   1. Choose "Continue".
 ...
 
 _Any Alternative Signing Device may be used to replace this Step._
@@ -427,7 +442,9 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 ### Death and Disability
 
-## Appendix II: Sample Letter to Heirs
+## Appendix II: Preserving Assets for Your Heirs
+
+## Appendix III: Sample Letter to Heirs
 
 ## Appendix: Alternative Signing Devices
 ---
@@ -505,6 +522,8 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^36]: **Why Upgrade?** You always want every piece of software and hardware you use to be the most up-to-date before you put digital assets on it. Older versions might have flaws or compromises that could lead to the loss of assets. So, even though it takes some real effort to upgrade your Passport, you should do so.
 
 [^37]: **MicroSDs & SDs.** A MicroSD card is about the size of a fingernail. It can fit in your Passport, your iPhone and other small devices. An SD card is about the size of your thumb. That's the size more typically used for computers. In order to use a MicroSD card on a computer, you'll typically need an [adapter](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), which is the size of an SD card. That'll let you read and write the MicroSD on your computer. You then remove the MicroSD card from the adapter, and you can use it with your Passport. 
+
+[^38]: **Which Card is Which? (Redux).** These two cards are the two that came with your Passport. If you are using the "Suggested Resilience Improvement" of this Scenario, where you also back up SSKR shares to MicroSD cards[^18], you will _not_ make a backup to the extra card you have, because that one is going to be stored with a copy of your backup words.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
