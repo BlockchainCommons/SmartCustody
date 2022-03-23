@@ -101,7 +101,8 @@ Your material should be divided among four places: your home; secure storage in 
 | Sparrow Computer |
 | GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup |
 |  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
-| | Passport Backup Words |  | Passport PIN |  Passport Backup Words (opt.) |
+| | Passport Backup Words |  Passport PIN |  | Passport PIN<br>Passport Backup Words (opt.) |
+| | Account Descriptor | Account Descriptor | Account Descriptor | Account Descriptor (opt.) |
 | | Instructions for heirs | Duplicates of instructions for heirs |
 
 Obviously this state will vary if alternative signing devices are chosen.
@@ -299,7 +300,8 @@ You're now ready to read an xpub into Sparrow[^31]:
 1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
 1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^33].
 1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
-1. [  ] Again, do *not* yet store your Cards. You'll be using them again in Step G.
+1. [  ] At this point you can store MicroSD Card #1 in your Home Storage.
+3. [  ] Do not yet store your MicroSD Cards #2 and #3. You'll be using them again in Step G.
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -351,17 +353,45 @@ You're now ready to create a new seed on your Passport.
    1. Insert the second MicroSD Card[^38] supplied with the Passport.
    1. Choose Continue to make the Backup.
 
-You can now import an xpub into Sparrow.
+You can now import an account into Sparrow.
+
 1. [  ] Display a Public Cosigner QR for Your Seed on the Passport.
    1. Choose "Pair Wallet" on your Passport.
    1. Choose "Sparrow".
    1. Choose "Multi-Sig". 
    1. Choose "QR Code".
    1. Choose "Continue".
-...
+   1. An animated QR Code should be displayed.
+1. [  ] Import the QR into Sparrow
+   1. On Sparrow, Choose "Keystore 3", which should already be selected.
+   2. Select "Airgapped Hardware Wallet".
+   3. Click the "Scan" button for Passport Multisig
+   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
+   5. If your computer is having problems reading the QR, consider shading it to reduce glare and/or hitting the right button for Resize to display a smaller QR
+   6. An xpub of the appropriate key derivation should be imported.
+1. [  ] Change the label for "Keystone 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
+
+Finally, you need to divy out the various backups and such you made[^39]:
+
+1. [  ] Store your Passport and your listing of the Passport Backup Words in your Home Storage.
+1. [  ] Store one Passport MicroSD in your Primary Storage.
+1. [  ] Store your written Passport PIN in your Primary Storage.
+1. [  ] Store one Passport MicroSD in your Secondary Storage.
+1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store an extra copy of your Passport Backup Words there as well as your Passport PIN[^41].
 
 _Any Alternative Signing Device may be used to replace this Step._
 
+#### **Step H: Finalize Your Multisig**
+
+After you have added three keys to Sparrow, either using the defaults of an SSKR Recovery Key and active keys on Passport and GST, or via Alternative Signing Devices, you are ready to finalize your multisig in Sparrow.
+
+1. [  ] Click "Apply"
+1. [  ] Choose whether to add a password; you probably should not[^42].
+1. [  ] Export your account
+   1. Choose "Export".
+   1. Click "Export File" next to "Output Descriptor".
+1. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
+1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store a copy of the descriptor there too.
 
 #### **Step H: Create Test Transaction**
 
@@ -524,6 +554,14 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^37]: **MicroSDs & SDs.** A MicroSD card is about the size of a fingernail. It can fit in your Passport, your iPhone and other small devices. An SD card is about the size of your thumb. That's the size more typically used for computers. In order to use a MicroSD card on a computer, you'll typically need an [adapter](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), which is the size of an SD card. That'll let you read and write the MicroSD on your computer. You then remove the MicroSD card from the adapter, and you can use it with your Passport. 
 
 [^38]: **Which Card is Which? (Redux).** These two cards are the two that came with your Passport. If you are using the "Suggested Resilience Improvement" of this Scenario, where you also back up SSKR shares to MicroSD cards[^18], you will _not_ make a backup to the extra card you have, because that one is going to be stored with a copy of your backup words.
+
+[^39]: **Dividing Passport Assets.** If it's not obvious, the Passport assets are divided such that no storage unit becoems a single-point-of-compromise _for that key_. So, your Passport Backup Words are stored at Home because you don't keep either of your Passport Backups there. Thus, a thief would either (at home) get your Passport (which requires your PIN) and your Passport Backup Words (which require a Backup), and each of those are worthless on their own. Similarly, a thief at your Primary Storage would get your PIN (which requires your Passport) and a Backup (which requires the Passport Backup Words), and again each would be worthless on their own. If you are using Suggested Resilience Option, things are very slightly more complex[^40].
+
+[^40]: **Dividing Other Assets.** With the suggested and optional resilience options, you also put SSKR shares onto the Passport MicroSDs, as well as a third MicroSD. Again, those are safe from SPOC because two shares are required to make a key. But you have to be careful to make sure that one of the MicroSDs _doesn't_ contain a Passport backup, and that it's the MicroSD you keep in Home Storage, because that's where the Passport Backup Words are!
+
+[^41]: **Cloud Words.** The Passport Backup Words are probably the scariest Single Point of Failure in this whole scenario. As noted in Appendix I, there are situations where a dual-loss can result in the loss of your assets if you don't have a cloud backup of your words, but you can save them if you do. If you have any large amount of funds you should _ensure_ that your Passport Backup Words and preferably your PIN as well are doubled-up in some secure storage, such as the encrypted cloud.
+
+[^42]: **Why No Password?** Every time you add a password to your system, you add a new SPOF (Single Point of Failure). In this case, all you'd be protecting is a watch-only wallet, which could compromise your privacy, but not your digital assets, so it's not worth it unless you have strong reasons for privacy protection.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
