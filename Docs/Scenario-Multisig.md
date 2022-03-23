@@ -315,20 +315,28 @@ If you have never before used your Passport, you'll need to set it up:
    1. Call up the setup instructions with the QR.
    2. Agree to the terms of service
 1. [  ] Conduct the Supply-Chain Validation[^35].
-   1. Scan the Validation Code from the web
-   2. Copy the four words that appear on your Passport back to the web.
+   1. Scan the Validation Code from the setup instructions.
+   2. Copy the four words that appear on your Passport back to the web page.
    3. Verify that the result is a "Success!"
 1. [  ] Enter a PIN. 
    1. Start out by entering four numbers.
    2. Note the two words shown; these will be shown any time you enter the start of your PIN, so that you know your Passport has not been compromised or swapped.
-   3. Enter at least two more digits and hit the right button for enter.
+   3. Enter at least two more digits and hit the right button to store your PIN.
    4. Verify your PIN.
    5. Record your PIN to a piece of waterproof paper.
 
 It is strongly recommended that you update the firmware on your Passport before you begin using it[^36].
 
-...
-
+1. [  ] Check your Firmware version on your Passport: v___________.
+   1. This can be found at Settings > Firmware > Firmware Version.
+2. [  ] Check the current Firmware version on the Setup Page: v____________.
+   1. If the Passport Firmware is less than the current Firmware, then continue (otherwise you're done).
+3. [  ] Download the current Firmware from the Setup page.
+4. [  ] Copy the Firmware to a MicroSD card, using an adapter[^37].
+5. [  ] Install the Firmware on your Passport.
+   1. Insert the MicroSD card into the top of your Passport.
+   2. On your Passport, choose Settings > Firmware > Update Firmware
+  
 You're now ready to create a new seed on your Passport.
 
 ...
@@ -494,7 +502,9 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 [^35]: **Supply-Chain Attack.** This is all fighting against the "Supply-Chain Attack" adversary, where the threat is that someone tampers with the device somewhere in the supply chain, between Foundation Devices shipping it out and you receiving it. The attacker could be a retailer, distributor, or someone in the postal system, depending on how you acquired your Passport. If your device were tampered with, it might supply a static seed that an attacker knows about or damage your security in any of a number of other ways.
 
-[^36]: **Why Upgrade?** ...
+[^36]: **Why Upgrade?** You always want every piece of software and hardware you use to be the most up-to-date before you put digital assets on it. Older versions might have flaws or compromises that could lead to the loss of assets. So, even though it takes some real effort to upgrade your Passport, you should do so.
+
+[^37]: **MicroSDs & SDs.** A MicroSD card is about the size of a fingernail. It can fit in your Passport, your iPhone and other small devices. An SD card is about the size of your thumb. That's the size more typically used for computers. In order to use a MicroSD card on a computer, you'll typically need an [adapter](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), which is the size of an SD card. That'll let you read and write the MicroSD on your computer. You then remove the MicroSD card from the adapter, and you can use it with your Passport. 
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
