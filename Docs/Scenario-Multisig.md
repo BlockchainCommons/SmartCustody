@@ -103,7 +103,7 @@ Your material should be divided among four places: your home; secure storage in 
 |  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
 | | Passport Backup Words |  Passport PIN |  | Passport PIN<br>Passport Backup Words (opt.) |
 | | Account Descriptor | Account Descriptor | Account Descriptor | Account Descriptor (opt.) |
-| | Instructions for heirs | Duplicates of instructions for heirs |
+| | Instructions for heirs | Instructions for heirs | Instructions for heirs |
 
 Obviously this state will vary if alternative signing devices are chosen.
 
@@ -445,18 +445,22 @@ Particularly in the case of a multisig, you want to test your new account by bot
 
 If you were able to receive and send a transaction, you should feel confident in your new wallet.
 
-#### **Step I: Transfer Funds**
+#### **Step J: Transfer Funds**
 
 Once you are confident in your control of an account, you can send the rest of your funds to it, preferably in an iterative way as described below.
 
 1. [  ] Send about $10 to your new multisig account.
-1. [  ] Wait for it arrive.
+1. [  ] Wait for it to arrive.
 1. [  ] Once it does, multiply the amount that you last sent to the wallet by x10 (e.g., to $100, then $1,000, then $10,000, then $100,000, then $1,000,000).
 1. [  ] Repeat the previous two steps until you have sent all the money to your account.
 
-#### **Step J: Prepare Instructions for Heirs and/or Executor**
+#### **Step K: Prepare Instructions for Heirs and/or Executor**
 
 Leaving our assets to our children or other heirs is important for many of us. Digital assets can be hard to find and access, to instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost.
+
+1. [  ] Prepare a sample letter for your heirs, such as the one found in Appendix III. Choose whether to be specific or vague[^45]. We suggest specific.
+1. [  ] Print your letter.
+1. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
 
 #### **Step K: Check Primary Storage (Spring)**
 
@@ -619,6 +623,8 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^43]: **Sending Funds.** This procedure can be used whenever you want to send funds from your wallet.
 
 [^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
+
+[^45]: **Specific or Vague.** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises, for example if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more liekly and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
