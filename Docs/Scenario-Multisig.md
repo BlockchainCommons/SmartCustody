@@ -464,7 +464,7 @@ Once you are confident in your control of an account, you can send the rest of y
 
 Leaving our assets to our children or other heirs is important for many of us. Digital assets can be hard to find and access, to instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost.
 
-1. [  ] Prepare a sample letter for your heirs, such as the one found in Appendix III. Choose whether to be specific or vague[^45]. We suggest specific.
+1. [  ] Prepare a sample letter for your heirs, such as the one found in Appendix III. Choose whether to be specific or vague[^45]. We suggest specific. Be sure to be clear of the scope of the assets if they are large[^46].
 1. [  ] Print your letter.
 1. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
 
@@ -483,7 +483,7 @@ Your digital assets are only protected if you actively maintain your backups. Ev
    3. If you recorded an Apple Recovery Code, make sure it's still there and legible.
 1. [  ] Check your Passport PIN.
    1. Use the PIN to log into your Passport; if you realize it has changed, record the new PIN.
-1. [  ] Backup your Passport[^46].
+1. [  ] Backup your Passport[^47].
    1. Choose Settings > Backup > Create Backup
    2. Insert the MicroSD from the Primary Storage into your Passport
    3. Create a New Backup
@@ -500,7 +500,7 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 1. [  ] Make sure your printed SSKR share still exists.
 1. [  ] Make sure your printed account descriptor still exists.
 1. [  ] Make sure your instructions for heirs still exist.
-1. [  ] Backup your Passport[^46].
+1. [  ] Backup your Passport[^47].
    1. Choose Settings > Backup > Create Backup
    2. Insert the MicroSD from the Secondary Storage into your Passport
    3. Create a New Backup
@@ -509,6 +509,36 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
    2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
 
 #### **Step M: Update MicroSDs**
+
+Our current expectation is that MicroSDs have a lifetime of 10 years. But, we're not sure if that's a minimum or actually a median or average. To be safe, we suggest replacing your MicroSD cards every three years. The following process should occur whenever your calendar reminder goes off.
+
+1. [  ] Order two new MicroSD cards (or three if you used the Suggested/Optional Resilience Improvements.)
+1. [  ] Bring your Passport to the Primary Storage.
+1. [  ] Create a new Backup on the new Card
+1. [  ] Store that Card at Primary storage.
+1. [  ] Destroy the old Card[^48]
+1. [  ] Bring your Passport to the Secondary Storage.
+1. [  ] Create a new Backup on the new Card
+1. [  ] Store that Card at Secondary Storage.
+1. [  ] Destroy the old Card[^48]
+
+**Optional Resilience Improvement: Use MicroSD Cards for SSKR Backup.** 
+
+If you stored your Active Seed from Gordian Seed Tool on MicroSDs, create a new set of shares on the MicroSDs _before_ you go to your Storage, as described in the _Optional_ section of Step F.
+
+**Suggested Resilience Improvement: Use MicroSD Cards for SSKR Backup.** 
+
+If you stored your Recovery Seed on MicroSDs, you should also create a new set of shares on the MicroSDs, but this is slightly tricky because it's currently sharded. Here's the best way to do that!
+
+1. [  ] Grab your partner's iPhone, your iPod, or some other device running Gordian Seed Tool, separate from your main iPhone.
+1. [  ] Scan the first Recovery Shard from your Home Storage, as described in Step E.
+1. [  ] Leave the scanning _in process_, you'll need to complete it when you get to your Primary Storage.
+1. [  ] When you arrive at Primary Storage, scan the second Recovery Shard.
+   1. Your Recovery Seed should now be restored to your backup of Gordian Seed Tool.
+1. [  ] Shard your Recovery Seed in Gordian Seed Tool, as described in Step D, and output the first share to the MicroSD at your Primary Storage.
+1. [  ] Leave the output _in process_, as if you exit Gordian Seed Tool (or exit the SSKR process), the next time it will produce new, incompatible shares.
+1. [  ] Output the second share to the MicroSD at your Secondary Storage.
+1. [  ] Output the third share to the MicroSD at your Home Storage.
 
 ## Optional Steps
 
@@ -569,15 +599,27 @@ But the loss of data along with both Storages likely results in the loss of ever
 1. **Lost Passport PIN, Primary Storage & Secondary Storage.** Only the key on Gordian Seed Tool remains: the assets are gone.
 1. **Lost Apple ID, Passport PIN, Primary Storage & Secondary Storage.** Perhaps the Apple ID could be restored using other Apple devices, but the Passport and recovery keys are gone, so the assets are gone.
 
+[TODO: add a chart]
+
 ### Single Points of Compromise (SPOC)
 
-### Death and Disability
+[TODO: write a similar discussion of how SPOC has been avoided.]
+
+[TODO: add a chart]
 
 ## Appendix II: Preserving Assets for Your Heirs
 
+[TODO: write about death and disability and intent of giving your heirs access.]
+
 ## Appendix III: Sample Letter to Heirs
 
+[TODO: write a letter that includes blank spaces to fill in info]
+
 ## Appendix: Alternative Signing Devices
+
+[FUTURE: Add additional signing devices to plug into sections C+D+E+F]
+[In intro: also note things to exclude from Spring/Fall checks if default ones aren't used]
+
 ---
 
 [^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, the language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically internet connected. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
@@ -668,9 +710,13 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 [^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
 
-[^45]: **Specific or Vague.** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises, for example if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more liekly and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
+[^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises, for example if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more liekly and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
 
-[^46]: **Why Backup?** Pragmatically, it's good to always make sure your backup is up-to-date. But, we also don't have a lot of data on the longevity of MicroSD cards. Our current belief is that they last 10 years (but is that a median, an average, a minimum? we're not sure) and that they remain fresher if exercised. So, every year you make sure you read and write to your card. And every three years, you replace it.
+[^46]: **Funds Scope.** If you have a lot of assets, be sure your heirs know that. Retrieving your digital assets is going to be time consuming and alien to most people. It might be ignored if your heirs don't think it's worthwhile. So, be sure to let them know if it is!
+
+[^47]: **Why Backup?** Pragmatically, it's good to always make sure your backup is up-to-date. But, we also don't have a lot of data on the longevity of MicroSD cards. Our current belief is that they last 10 years (but is that a median, an average, a minimum? we're not sure) and that they remain fresher if exercised. So, every year you make sure you read and write to your card. And every three years, you replace it.
+
+[^48]: **Destroying MicroSD Cards.** We like scissors. See [How to Destroy a Memory Card](https://www.askcybersecurity.com/how-to-destroy-memory-card/) for more.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
