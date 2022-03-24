@@ -284,6 +284,11 @@ You're now ready to read an xpub into Sparrow[^31]:
    5. An xpub of the appropriate key derivation should be imported.
 1. [  ] Change the label for "Keystone 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
 
+You need to add a few things related to your Apple account to your Storage:
+
+1. [  ] Record your iPhone PIN, your Apple account and password, and your Apple recovery code (if you have one) on a piece of waterproof paper.
+2. [  ] Store your Apple information at your Primary Storage.
+
 **Optional Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^32] procedure will increase the resilience of your recovery backup by sharding your active seed from Gordian Seed Tool and saving those SSKRs to MicroSDs[^33].
 
 1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
@@ -389,6 +394,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
 1. [  ] Store your written Passport PIN in your Primary Storage.
 1. [  ] Store one Passport MicroSD in your Secondary Storage.
 1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store an extra copy of your Passport Backup Words there as well as your Passport PIN[^41].
+1. [  ] Put on your calendar a TODO to "Update MicroSD Storage (Step M)" three years in the future.
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -464,24 +470,62 @@ Leaving our assets to our children or other heirs is important for many of us. D
 
 #### **Step K: Check Primary Storage (Spring)**
 
-Your digital assets are only protected if you actively maintain your backups. In Spring you're going to check your best protected Storage.
+Your digital assets are only protected if you actively maintain your backups. Every Spring you're going to check your Primary Storage.
 
-[bring the Passport!]
-write new backup for passport (to exercise card)
+1. [  ] Collect your Passport, your iPhone, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
+2. [  ] Visit your Primary Storage.
+1. [  ] Make sure your printed SSKR share still exists.
+1. [  ] Make sure your printed account descriptor still exists.
+1. [  ] Make sure your instructions for heirs still exist.
+1. [  ] Check your Apple Information Sheet.
+   1. Use the PIN to log into your phone; if you realize it has changed, record the new PIN.
+   2. Use the Apple Login & Password to log in to your Apple account; if you realize it has changed, record the new info.
+   3. If you recorded an Apple Recovery Code, make sure it's still there and legible.
+1. [  ] Check your Passport PIN.
+   1. Use the PIN to log into your Passport; if you realize it has changed, record the new PIN.
+1. [  ] Backup your Passport[^46].
+   1. Choose Settings > Backup > Create Backup
+   2. Insert the MicroSD from the Primary Storage into your Passport
+   3. Create a New Backup
+1. Check your MicroSD on your Computer
+   1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
+   2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
 
 #### **Step L: Check Secondary Storage (Fall)**
 
-Your Secondary storage may be with friends or family, so Fall is a great time to visit them, and simulataneously check on that storage as well.
+Your Secondary storage may be with friends or family, so Fall is a great time to visit them, and simulataneously check on that online storage as well. (But make sure you do this _every fall_, whether you otherwise plan a visit or not!)
 
-[bring the Passport]
+1. [  ] Collect your Passport, your iPhone, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
+1. [  ] Visit your Secondary Storage.
+1. [  ] Make sure your printed SSKR share still exists.
+1. [  ] Make sure your printed account descriptor still exists.
+1. [  ] Make sure your instructions for heirs still exist.
+1. [  ] Backup your Passport[^46].
+   1. Choose Settings > Backup > Create Backup
+   2. Insert the MicroSD from the Secondary Storage into your Passport
+   3. Create a New Backup
+1. Check your MicroSD on your Computer
+   1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
+   2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
+
+#### **Step M: Update MicroSDs**
 
 ## Optional Steps
+
+[TODO: any optional steps]
+
+[metal?]
+
+### Optional Step: Use MicroSDs for SSKR Backup
+
+**Obstructed Adversary:** Key Fragility
+
+[incorporated]
 
 ### Optional Step: Use NFCs for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
 
-[write this up, say it's already there as "Resilience Improvement" because we see it as relatively central]
 
 ## Alternative Signing Devices
 
@@ -625,6 +669,8 @@ But the loss of data along with both Storages likely results in the loss of ever
 [^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
 
 [^45]: **Specific or Vague.** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises, for example if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more liekly and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
+
+[^46]: **Why Backup?** Pragmatically, it's good to always make sure your backup is up-to-date. But, we also don't have a lot of data on the longevity of MicroSD cards. Our current belief is that they last 10 years (but is that a median, an average, a minimum? we're not sure) and that they remain fresher if exercised. So, every year you make sure you read and write to your card. And every three years, you replace it.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority.
 
