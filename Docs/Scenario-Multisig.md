@@ -248,15 +248,11 @@ _Default Recovery Device:_ Gordian Seed Tool.
     subgraph 2[<h4>II. Prepare Seeds</h4>]
     D[<b>D. Create Recovery Seed</b>]
     E[E. Test & Input Recovery Seed]
-    subgraph 2a[Create Active Seeds]
     F[F. Create Active Seed #1]
     G[G. Create Active Seed #2]
-    end
     D-->E
     E-->F
     E-->F & G
-    F-->G
-    G-->F
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
