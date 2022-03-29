@@ -145,12 +145,15 @@ Obviously this state will vary if alternative signing devices are chosen.
 
 ```mermaid
 graph LR;
-    subgraph 1[Prepare Setup]
+    subgraph 1[I. Prepare Setup]
     A[A. Setup Storage Locales]
     B[B. Prepare Computer]
     C[C. Create Multisig]
     A-->B-->C
     end
+    subgraph 2[II. Create Seeds]
+    end
+    1-->2
 ```
 
 You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale[^6]. They will be used to store seeds and devices[^7]. 
