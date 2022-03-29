@@ -145,7 +145,7 @@ Obviously this state will vary if alternative signing devices are chosen.
 
 ```mermaid
 graph LR;
-    subgraph 1[I. Prepare Setup]
+    subgraph 1[<h4>I. Prepare Setup</h4>]
     A[<b>A. Setup Storage Locales</b>]
     B[B. Prepare Computer]
     C[C. Create Multisig]
