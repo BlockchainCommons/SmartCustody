@@ -103,10 +103,10 @@ This procedure incorporates the following steps:
 
 **PART TWO: CREATE SEEDS**
 
-* **[Step D: Create Recovery Seed on SSKR Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-d-create-recovery-seed-on-recovery-device).** Create a seed and shard it.
-* **[Step E: Verify & Input Recovery Seed with SSKR Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-e-verify--input-recovery-seed-with-recovery-device).** Test the seed shards.
-* **[Step F: Create & Input Active Seed on First Signing Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-f-create--input-active-seed-on-first-signing-device).** Create a second seed.
-* **[Step G: Create & Input Active Seed on Second Signing Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-g-create--input-active-seed-on-second-signing-device).** Create a third seed.
+* **[Step D: Create Recovery Seed](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-d-create-recovery-seed-on-recovery-device).** Create a seed and shard it.
+* **[Step E: Test & Input Recovery Seed](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-e-verify--input-recovery-seed-with-recovery-device).** Test the seed shards.
+* **[Step F: Create & Input Active Seed #1](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-f-create--input-active-seed-on-first-signing-device).** Create a second seed.
+* **[Step G: Create & Input Active Seed #2](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-g-create--input-active-seed-on-second-signing-device).** Create a third seed.
 
 **PART THREE: FINALIZE SETUP**
 
@@ -140,6 +140,8 @@ Obviously this state will vary if alternative signing devices are chosen.
 {pagebreak}
 
 ## The Basic Procedure
+
+### PART ONE: PREPARE SETUP
 
 #### **Step A: Setup Storage Locales**
 
@@ -232,9 +234,30 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
 
 At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices**. Choosing an alternative recovery device will replace steps D & E; choose an alternative active signing device will replace either step F or G. Just follow the separate steps in that section rather than the ones listed below in those cases.
 
-#### **Step D: Create Recovery Seed on Recovery Device**
+### PART TWO: CREATE SEEDS
+
+#### **Step D: Create Recovery Seed**
 
 _Default Recovery Device:_ Gordian Seed Tool.
+
+```mermaid
+graph LR;
+    subgraph 1[I. Prepare Setup]
+    C[Steps A-C]
+    end
+    subgraph 2[<h4>II. Prepare Seeds</h4>]
+    D[<b>D. Create Recovery Seed</b>]
+    E[E. Test & Input Recovery Seed]
+    F[F. Create Active Seed #1]
+    G[G. Create Active Seed #2]
+    D-->E-->F-->G
+    end
+    subgraph 3[III. Finalize Setup]
+    H[Steps H-K]
+    end
+    C-->D
+    G-->H
+```
 
 Your recovery seed will be created, printed as SSKR shares, and then deleted. This should _not_ be done on the same device that you will use for your active Gordian Seed Tool key, if at all possible. Do it on an old iPod Touch, an old iPhone, or even an old laptop computer[^15]. Alternatively, use your partner's iPhone temporarily.
 
@@ -270,7 +293,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
-#### **Step E: Verify & Input Recovery Seed with Recovery Device**
+#### **Step E: Test & Input Recovery Seed**
 
 _Default Recovery Device:_ Gordian Seed Tool.
 
@@ -338,7 +361,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
-#### **Step F: Create & Input Active Seed on First Signing Device**
+#### **Step F: Create & Test Active Seed #1**
 
 _Default Signing Device #1:_ Gordian Seed Tool.
 
@@ -394,7 +417,7 @@ You need to add a few things related to your Apple account to your Storage:
 
 _Any Alternative Signing Device may be used to replace this Step._
 
-#### **Step G: Create & Input Active Seed on Second Signing Device**
+#### **Step G: Create & Test Active Seed #2**
 
 _Default Signing Device #2:_ Foundation Devices Passport.
 
@@ -484,6 +507,8 @@ Finally, you need to divy out the various backups and such you made[^39]:
 
 _Any Alternative Signing Device may be used to replace this Step._
 
+### PART THREE: FINALIZE SETUP
+
 #### **Step H: Finalize Your Multisig**
 
 After you have added three keys to Sparrow, either using the defaults of an SSKR Recovery Key and active keys on Passport and GST, or via Alternative Signing Devices, you are ready to finalize your multisig in Sparrow.
@@ -553,6 +578,8 @@ Leaving our assets to our children or other heirs is important for many of us. D
 1. [  ] Prepare a sample letter for your heirs, such as the one found in Appendix III. Choose whether to be specific or vague[^45]. We suggest specific. Be sure to be clear of the scope of the assets if they are large[^46].
 1. [  ] Print your letter.
 1. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
+
+### PART FOUR: REVISIT BACKUPS
 
 #### **Step L: Check Primary Storage (Spring)**
 
