@@ -253,6 +253,8 @@ _Default Recovery Device:_ Gordian Seed Tool.
     D-->E
     E-->F
     E-->G
+    F-->G
+    G-->F
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
