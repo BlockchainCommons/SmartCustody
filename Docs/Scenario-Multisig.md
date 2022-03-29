@@ -85,7 +85,7 @@ Further discussions of why specific transaction coordinators or signing devices 
 
 * [Sparrow Bitcoin Wallet](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md)
 
-  _**Alternative Signing Devices** (described later) offer procedures for using different hardware that our suggestions._
+  _This procedure is intended to be entirely interoperable, with default choices listed, but the user able to choose to insert other options at his hoice: **Alternative Signing Devices** (described later) offer procedures for using different hardware than our suggestions._
 
   _**Optional Steps** (described later) may require  purchases of additional items._
 
@@ -95,7 +95,7 @@ Further discussions of why specific transaction coordinators or signing devices 
 
 Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
-| Home | Home Storage | Primary Storage | Secondary Storage | iCloud |
+| Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
 | :--- | :--- | :--- | :--- | :--- | 
 |  | Recovery SSKR Overview<br>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
 | Sparrow Computer |
@@ -111,6 +111,34 @@ Obviously this state will vary if alternative signing devices are chosen.
 
 ## The Basic Procedure
 
+This procedure incorporates the following steps:
+
+**PART ONE: PREPARE SETUP**
+
+* **Step A: Setup Storage Locales.** Prepare three locales for storing key material.
+* **Step B: Prepare Computer.** Load transaction coordinator.
+* **Step C: Create Multisig.** Create multisig in transaction coordinator.
+
+**PART TWO: CREATE SEEDS**
+
+* **Step D: Create Recovery Seed on SSKR Device.** Create a seed and shard it.
+* **Step E: Verify & Input Recovery Seed with SSKR Device.** Test the seed shards.
+* **Step F: Create & Input Active Seed on First Signing Device*.** Create a second seed.
+* **Step G: Create & Input Active Seed on Second Signing Device.** Create a third seed.
+
+**PART THREE: FINALIZE SETUP**
+
+* **Step H: Finalize Your Multisig.** Complete multisig in transaction coordinator.
+* **Step I: Create Test Transaction.** Test out receipt and sending of funds.
+* **Step J: Transfer Funds.** Iteratively transfer funds.
+* **Step K: Prepare Instructions for Heirs and/or Executor.** Prepare for the future.
+
+**PART FOUR: REVISIT SETUP**
+
+* **Step L: Check Primary Storage (Spring).** Each spring, test main backups.
+* **Step M: Check Secondary Storage (Fall).** Each fall, test other backups.
+* **Step N: Update MicroSDs.** Every three years, replace MicroSDs.
+
 #### **Step A: Setup Storage Locales**
 
 You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale[^6]. They will be used to store seeds and devices[^7]. 
@@ -125,6 +153,8 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
    1. This may be a somewhat less secure locale that your Home Storage Locale and your Primary Storage Locale.
    1. Options include your work, your parent's house, a trusted friend's house.
    1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
+
+**Optional Resilience Improvement: Prepare Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. LastPass's "Notes" feature is one methodology.
 
 #### **Step B: Prepare Computer**
 
@@ -158,7 +188,9 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
 
 At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices**. Choosing an alternative recovery device will replace steps D & E; choose an alternative active signing device will replace either step F or G. Just follow the separate steps in that section rather than the ones listed below in those cases.
 
-#### **Step D: Create Recovery Seed on Gordian Seed Tool**
+#### **Step D: Create Recovery Seed on Recovery Device**
+
+_Default Recovery Device:_ Gordian Seed Tool.
 
 Your recovery seed will be created, printed as SSKR shares, and then deleted. This should _not_ be done on the same device that you will use for your active Gordian Seed Tool key, if at all possible. Do it on an old iPod Touch, an old iPhone, or even an old laptop computer[^15]. Alternatively, use your partner's iPhone temporarily.
 
@@ -192,7 +224,11 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^18].
 1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
 
-#### **Step E: Verify & Input Recovery Seed with Gordian Seed Tool**
+_Any Alternative SSKR Device may be used to replace Steps D + E._
+
+#### **Step E: Verify & Input Recovery Seed with Recovery Device**
+
+_Default Recovery Device:_ Gordian Seed Tool.
 
 You want to remove the electronic version of your Recovery Seed, but then immediately make sure your SSKR shares are valid.
 
@@ -256,7 +292,11 @@ Finally, you need to divy out your shares, which is how you will recover this se
 1. [  ] Delete Any Restored Seeds After Testing[^24].
 1. [  ] Do *not* yet store your Cards. You'll be using them again in Steps F and G.
 
-#### **Step F: Create & Input Active Seed on Gordian Seed Tool**
+_Any Alternative SSKR Device may be used to replace Steps D + E._
+
+#### **Step F: Create & Input Active Seed on First Signing Device**
+
+_Default Signing Device #1:_ Gordian Seed Tool.
 
 In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of yur active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
 
@@ -310,7 +350,9 @@ You need to add a few things related to your Apple account to your Storage:
 
 _Any Alternative Signing Device may be used to replace this Step._
 
-#### **Step G: Create & Input Active Seed on Passport**
+#### **Step G: Create & Input Active Seed on Second Signing Device**
+
+_Default Signing Device #2:_ Foundation Devices Passport.
 
 In the default Blockchain Commons scenario, a Foundation Devices Passport is used to create and store one of the seeds.
 
@@ -468,7 +510,7 @@ Leaving our assets to our children or other heirs is important for many of us. D
 1. [  ] Print your letter.
 1. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
 
-#### **Step K: Check Primary Storage (Spring)**
+#### **Step L: Check Primary Storage (Spring)**
 
 Your digital assets are only protected if you actively maintain your backups. Every Spring you're going to check your Primary Storage.
 
@@ -491,7 +533,7 @@ Your digital assets are only protected if you actively maintain your backups. Ev
    1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
    2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
 
-#### **Step L: Check Secondary Storage (Fall)**
+#### **Step M: Check Secondary Storage (Fall)**
 
 Your Secondary storage may be with friends or family, so Fall is a great time to visit them, and simulataneously check on that online storage as well. (But make sure you do this _every fall_, whether you otherwise plan a visit or not!)
 
@@ -508,7 +550,7 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
    1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
    2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
 
-#### **Step M: Update MicroSDs**
+#### **Step N: Update MicroSDs**
 
 Our current expectation is that MicroSDs have a lifetime of 10 years. But, we're not sure if that's a minimum or actually a median or average. To be safe, we suggest replacing your MicroSD cards every three years. The following process should occur whenever your calendar reminder goes off.
 
