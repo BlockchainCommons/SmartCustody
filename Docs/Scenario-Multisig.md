@@ -174,6 +174,20 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
 
 #### **Step B: Prepare Computer**
 
+```mermaid
+graph LR;
+    subgraph 1[I. Prepare Setup]
+    A[A. Setup Storage Locales]
+    B[<b>B. Prepare Computer</b>]
+    C[C. Create Multisig]
+    A-->B-->C
+    end
+    subgraph 2[II. Create Seeds]
+    D[Steps D-G]
+    end
+    C-->D
+```
+
 Because your computer never holds seeds, you don't need to do the same extensive work securing it as you might have with previous generations of signing devices. However, it's best to use a computer that you're careful with. If you have a computer that's not used much, and especially one that's not used for web browsing, that's a good choice[^10].
 
 **Sparrow Requirements:** Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Debian, Redhat, or Cenix).
@@ -191,6 +205,20 @@ Because your computer never holds seeds, you don't need to do the same extensive
 1. [  ] If the program verified, install as appropraite for your OS.
 
 #### **Step C: Create Multisig**
+
+```mermaid
+graph LR;
+    subgraph 1[I. Prepare Setup]
+    A[A. Setup Storage Locales]
+    B[B. Prepare Computer]
+    C[<b>C. Create Multisig</b>]
+    A-->B-->C
+    end
+    subgraph 2[II. Create Seeds]
+    D[Steps D-G]
+    end
+    C-->D
+```
 
 The creation of a multisig is initiated on your transaction coordinator. This scenario suggests a 2-of-3 multisig.
 
