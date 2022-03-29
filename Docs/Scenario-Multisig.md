@@ -110,10 +110,10 @@ This procedure incorporates the following steps:
 
 **PART THREE: FINALIZE SETUP**
 
-* **[Step H: Finalize Your Multisig](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-h-finalize-your-multisig).** Complete multisig in transaction coordinator.
-* **[Step I: Create Test Transaction](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-i-create-test-transaction).** Test out receipt and sending of funds.
+* **[Step H: Finalize Multisig](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-h-finalize-multisig).** Complete multisig in transaction coordinator.
+* **[Step I: Test Transaction](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-i-test-transaction).** Test out receipt and sending of funds.
 * **[Step J: Transfer Funds](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-j-transfer-funds).** Iteratively transfer funds.
-* **[Step K: Prepare Instructions for Heirs and/or Executor](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-k-prepare-instructions-for-heirs-andor-executor).** Prepare for the future.
+* **[Step K: Ensure Inheritance](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-k-ensure-inheritance).** Prepare for the future.
 
 **PART FOUR: REVISIT BACKUPS**
 
@@ -567,7 +567,26 @@ _Any Alternative Signing Device may be used to replace this Step._
 
 ### PART THREE: FINALIZE SETUP
 
-#### **Step H: Finalize Your Multisig**
+#### **Step H: Finalize Multisig**
+
+```mermaid
+    graph LR;
+    subgraph 2[II. Create Seeds]
+    G[Steps D-G]
+    end
+    subgraph 3[<h4>III. Finalize Setup</h4>]
+    H[<b>H. Finalize Multisig</b>]
+    I[I. Test Transaction]
+    J[J. Transfer Funds]
+    K[K. Ensure Inheritance]
+    H-->I-->J-->K
+    end
+    subgraph 4[IV. Revisit Backups]
+    L[Steps L-N]
+    end
+    G-->H
+    K-->L
+```
 
 After you have added three keys to Sparrow, either using the defaults of an SSKR Recovery Key and active keys on Passport and GST, or via Alternative Signing Devices, you are ready to finalize your multisig in Sparrow.
 
@@ -579,7 +598,7 @@ After you have added three keys to Sparrow, either using the defaults of an SSKR
 1. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
 1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store a copy of the descriptor there too.
 
-#### **Step I: Create Test Transaction**
+#### **Step I: Test Transaction**
 
 Particularly in the case of a multisig, you want to test your new account by both receiving and then sending back small amounts of funds 
 
@@ -629,7 +648,7 @@ Once you are confident in your control of an account, you can send the rest of y
 1. [  ] Once it does, multiply the amount that you last sent to the wallet by x10 (e.g., to $100, then $1,000, then $10,000, then $100,000, then $1,000,000).
 1. [  ] Repeat the previous two steps until you have sent all the money to your account.
 
-#### **Step K: Prepare Instructions for Heirs and/or Executor**
+#### **Step K: Ensure Inheritance**
 
 Leaving our assets to our children or other heirs is important for many of us. Digital assets can be hard to find and access, to instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost.
 
