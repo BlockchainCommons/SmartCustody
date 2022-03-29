@@ -153,7 +153,6 @@ graph LR;
     end
     subgraph 2[II. Create Seeds]
     end
-    1-->2
 ```
 
 You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale[^6]. They will be used to store seeds and devices[^7]. 
