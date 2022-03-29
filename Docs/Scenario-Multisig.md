@@ -394,14 +394,15 @@ _Default Signing Device #1:_ Gordian Seed Tool.
     D[D. Create Recovery Seed]
     E[E. Test & Input Recovery Seed]
     F[<b>F-G. Create Active Seeds</b>]
-    F1{<b>MicroSDs?</b>}
-    D-->E-->F-->F1
+    F1{<b>Cloud?</b>}
+    F2{<b>MicroSDs?</b>}
+    D-->E-->F-->F1->F2
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
     end
     C-->D
-    F1-->H
+    F2-->H
 ```
 
 In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of yur active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
@@ -432,8 +433,12 @@ You're now ready to read an xpub into Sparrow[^31]:
 
 You need to add a few things related to your Apple account to your Storage:
 
-1. [  ] Record your iPhone PIN, your Apple account and password, and your Apple recovery code (if you have one) on a piece of waterproof paper.
+1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) on a piece of waterproof paper.
 2. [  ] Store your Apple information at your Primary Storage.
+
+**Optional Resilience Improvement: Store Apple Info in Cloud.** The following optional[^32] procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud
+
+1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) in encrypted cloud storage, such as at LastPass.
 
 **Optional Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^32] procedure will increase the resilience of your recovery backup by sharding your active seed from Gordian Seed Tool and saving those SSKRs to MicroSDs[^33].
 
