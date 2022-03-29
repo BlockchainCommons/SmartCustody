@@ -401,7 +401,7 @@ _Default Signing Device #1:_ Gordian Seed Tool.
     H[Steps H-K]
     end
     C-->D
-    F-->H
+    F1-->H
 ```
 
 In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of yur active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
@@ -476,7 +476,7 @@ _Default Signing Device #2:_ Foundation Devices Passport.
     H[Steps H-K]
     end
     C-->D
-    F-->H
+    F1-->H
 ```
 
 In the default Blockchain Commons scenario, a Foundation Devices Passport is used to create and store one of the seeds.
