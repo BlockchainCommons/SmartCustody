@@ -241,12 +241,11 @@ At this point, you will need to finalize your decision for which Signing Devices
 _Default Recovery Device:_ Gordian Seed Tool.
 
 ```mermaid
-graph TD;
+    graph LR;
     subgraph 1[I. Prepare Setup]
     C[Steps A-C]
     end
     subgraph 2[<h4>II. Prepare Seeds</h4>]
-    graph LR;
     D[<b>D. Create Recovery Seed</b>]
     E[E. Test & Input Recovery Seed]
     F[F. Create Active Seed #1]
