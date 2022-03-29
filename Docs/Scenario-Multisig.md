@@ -149,9 +149,10 @@ Obviously this state will vary if alternative signing devices are chosen.
 graph LR;
     subgraph 1[<h4>I. Prepare Setup</h4>]
     A[<b>A. Setup Storage Locales</b>]
+    A1{<b>Cloud?</b>}
     B[B. Prepare Computer]
     C[C. Create Multisig]
-    A-->B-->C
+    A-->A1-->B-->C
     end
     subgraph 2[II. Create Seeds]
     D[Steps D-G]
@@ -247,7 +248,7 @@ _Default Recovery Device:_ Gordian Seed Tool.
     end
     subgraph 2[<h4>II. Create Seeds</h4>]
     D[<b>D. Create Recovery Seed</b>]
-    D1{MicroSD?}
+    D1{<b>MicroSD?</b>}
     E[E. Test & Input Recovery Seed]
     F[F-G. Create Active Seeds]
     D-->D1-->E-->F
@@ -305,8 +306,9 @@ _Default Recovery Device:_ Gordian Seed Tool.
     subgraph 2[<h4>II. Create Seeds</h4>]
     D[D. Create Recovery Seed]
     E[<b>E. Test & Input Recovery Seed</b>]
+    E1{<b>MicroSD?</b>}
     F[F-G. Create Active Seeds]
-    D-->E-->F
+    D-->E-->E1-->F
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
@@ -392,7 +394,8 @@ _Default Signing Device #1:_ Gordian Seed Tool.
     D[D. Create Recovery Seed]
     E[E. Test & Input Recovery Seed]
     F[<b>F-G. Create Active Seeds</b>]
-    D-->E-->F
+    F1{<b>MicroSDs?</b>}
+    D-->E-->F-->F1
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
@@ -466,7 +469,8 @@ _Default Signing Device #2:_ Foundation Devices Passport.
     D[D. Create Recovery Seed]
     E[E. Test & Input Recovery Seed]
     F[<b>F-G. Create Active Seeds</b>]
-    D-->E-->F
+    F1{<b>MicroSDs?</b>}
+    D-->E-->F-->F1
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
