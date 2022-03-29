@@ -97,29 +97,29 @@ This procedure incorporates the following steps:
 
 **PART ONE: PREPARE SETUP**
 
-* **[Step A: Setup Storage Locales.](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-a-setup-storage-locales)** Prepare three locales for storing key material.
-* **Step B: Prepare Computer.** Load transaction coordinator.
-* **Step C: Create Multisig.** Create multisig in transaction coordinator.
+* **[Step A: Setup Storage Locales](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-a-setup-storage-locales).** Prepare three locales for storing key material.
+* **[Step B: Prepare Computer](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-b-prepare-computer).** Load transaction coordinator.
+* **[Step C: Create Multisig](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-c-create-multisig).** Create multisig in transaction coordinator.
 
 **PART TWO: CREATE SEEDS**
 
-* **Step D: Create Recovery Seed on SSKR Device.** Create a seed and shard it.
-* **Step E: Verify & Input Recovery Seed with SSKR Device.** Test the seed shards.
-* **Step F: Create & Input Active Seed on First Signing Device*.** Create a second seed.
-* **Step G: Create & Input Active Seed on Second Signing Device.** Create a third seed.
+* **[Step D: Create Recovery Seed on SSKR Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-d-create-recovery-seed-on-recovery-device).** Create a seed and shard it.
+* **[Step E: Verify & Input Recovery Seed with SSKR Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-e-verify--input-recovery-seed-with-recovery-device).** Test the seed shards.
+* **[Step F: Create & Input Active Seed on First Signing Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-f-create--input-active-seed-on-first-signing-device).** Create a second seed.
+* **[Step G: Create & Input Active Seed on Second Signing Device](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-g-create--input-active-seed-on-second-signing-device).** Create a third seed.
 
 **PART THREE: FINALIZE SETUP**
 
-* **Step H: Finalize Your Multisig.** Complete multisig in transaction coordinator.
-* **Step I: Create Test Transaction.** Test out receipt and sending of funds.
-* **Step J: Transfer Funds.** Iteratively transfer funds.
-* **Step K: Prepare Instructions for Heirs and/or Executor.** Prepare for the future.
+* **[Step H: Finalize Your Multisig](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-h-finalize-your-multisig).** Complete multisig in transaction coordinator.
+* **[Step I: Create Test Transaction](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-i-create-test-transaction).** Test out receipt and sending of funds.
+* **[Step J: Transfer Funds](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-j-transfer-funds).** Iteratively transfer funds.
+* **[Step K: Prepare Instructions for Heirs and/or Executor](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-k-prepare-instructions-for-heirs-andor-executor).** Prepare for the future.
 
-**PART FOUR: REVISIT SETUP**
+**PART FOUR: REVISIT BACKUPS**
 
-* **Step L: Check Primary Storage (Spring).** Each spring, test main backups.
-* **Step M: Check Secondary Storage (Fall).** Each fall, test other backups.
-* **Step N: Update MicroSDs.** Every three years, replace MicroSDs.
+* **[Step L: Check Primary Storage (Spring)](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-l-check-primary-storage-spring).** Each spring, test main backups.
+* **[Step M: Check Secondary Storage (Fall)](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-m-check-secondary-storage-fall).** Each fall, test other backups.
+* **[Step N: Update MicroSDs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-n-update-microsds).** Every three years, replace MicroSDs.
 
 ### Final State
 
