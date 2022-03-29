@@ -144,11 +144,11 @@ Obviously this state will vary if alternative signing devices are chosen.
 #### **Step A: Setup Storage Locales**
 
 ```mermaid
-flowchart LR;
+graph LR;
     subgraph 1[Prepare Setup]
-    A[Setup Storage Locales]
-    B[Prepare Computer]
-    C[Create Multisig]
+    A[A. Setup Storage Locales]
+    B[B. Prepare Computer]
+    C[C. Create Multisig]
     A-->B-->C
     end
 ```
