@@ -143,6 +143,16 @@ Obviously this state will vary if alternative signing devices are chosen.
 
 #### **Step A: Setup Storage Locales**
 
+```mermaid
+flowchart LR;
+    subgraph 1[Prepare Setup]
+    A[Setup Storage Locales]
+    B[Prepare Computer]
+    C[Create Multisig]
+    A-->B-->C
+    end
+```
+
 You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale[^6]. They will be used to store seeds and devices[^7]. 
 
 1. [  ] Install Home Safe[^8][^9]
