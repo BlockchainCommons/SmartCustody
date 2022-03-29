@@ -176,7 +176,7 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
 
 ```mermaid
 graph LR;
-    subgraph 1[I. Prepare Setup]
+    subgraph 1[<h4>I. Prepare Setup</h4>]
     A[A. Setup Storage Locales]
     B[<b>B. Prepare Computer</b>]
     C[C. Create Multisig]
@@ -208,7 +208,7 @@ Because your computer never holds seeds, you don't need to do the same extensive
 
 ```mermaid
 graph LR;
-    subgraph 1[I. Prepare Setup]
+    subgraph 1[<h4>I. Prepare Setup</h4>]
     A[A. Setup Storage Locales]
     B[B. Prepare Computer]
     C[<b>C. Create Multisig</b>]
