@@ -250,8 +250,7 @@ _Default Recovery Device:_ Gordian Seed Tool.
     D1{MicroSD?}
     E[E. Test & Input Recovery Seed]
     F[F-G. Create Active Seeds]
-    D-->E-->F
-    D-->D1
+    D-->D1->E-->F
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
