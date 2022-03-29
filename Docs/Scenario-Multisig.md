@@ -248,18 +248,14 @@ _Default Recovery Device:_ Gordian Seed Tool.
     subgraph 2[<h4>II. Prepare Seeds</h4>]
     D[<b>D. Create Recovery Seed</b>]
     E[E. Test & Input Recovery Seed]
-    F[F. Create Active Seed #1]
-    G[G. Create Active Seed #2]
-    D-->E
-    E-->F & G
-    F-->G
-    G-->F
+    F[F-G. Create Active Seeds]
+    D-->E-->F
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
     end
     C-->D
-    F & G-->H
+    F-->H
 ```
 
 Your recovery seed will be created, printed as SSKR shares, and then deleted. This should _not_ be done on the same device that you will use for your active Gordian Seed Tool key, if at all possible. Do it on an old iPod Touch, an old iPhone, or even an old laptop computer[^15]. Alternatively, use your partner's iPhone temporarily.
