@@ -245,7 +245,7 @@ _Default Recovery Device:_ Gordian Seed Tool.
     subgraph 1[I. Prepare Setup]
     C[Steps A-C]
     end
-    subgraph 2[<h4>II. Prepare Seeds</h4>]
+    subgraph 2[<h4>II. Create Seeds</h4>]
     D[<b>D. Create Recovery Seed</b>]
     E[E. Test & Input Recovery Seed]
     F[F-G. Create Active Seeds]
@@ -295,6 +295,24 @@ _Any Alternative SSKR Device may be used to replace Steps D + E._
 #### **Step E: Test & Input Recovery Seed**
 
 _Default Recovery Device:_ Gordian Seed Tool.
+
+```mermaid
+    graph LR;
+    subgraph 1[I. Prepare Setup]
+    C[Steps A-C]
+    end
+    subgraph 2[<h4>II. Create Seeds</h4>]
+    D[D. Create Recovery Seed]
+    E[<b>E. Test & Input Recovery Seed</b>]
+    F[F-G. Create Active Seeds]
+    D-->E-->F
+    end
+    subgraph 3[III. Finalize Setup]
+    H[Steps H-K]
+    end
+    C-->D
+    F-->H
+```
 
 You want to remove the electronic version of your Recovery Seed, but then immediately make sure your SSKR shares are valid.
 
@@ -364,6 +382,24 @@ _Any Alternative SSKR Device may be used to replace Steps D + E._
 
 _Default Signing Device #1:_ Gordian Seed Tool.
 
+```mermaid
+    graph LR;
+    subgraph 1[I. Prepare Setup]
+    C[Steps A-C]
+    end
+    subgraph 2[<h4>II. Create Seeds</h4>]
+    D[D. Create Recovery Seed]
+    E[E. Test & Input Recovery Seed]
+    F[<b>F-G. Create Active Seeds</b>]
+    D-->E-->F
+    end
+    subgraph 3[III. Finalize Setup]
+    H[Steps H-K]
+    end
+    C-->D
+    F-->H
+```
+
 In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of yur active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
 
 1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
@@ -419,6 +455,24 @@ _Any Alternative Signing Device may be used to replace this Step._
 #### **Step G: Create & Test Active Seed #2**
 
 _Default Signing Device #2:_ Foundation Devices Passport.
+
+```mermaid
+    graph LR;
+    subgraph 1[I. Prepare Setup]
+    C[Steps A-C]
+    end
+    subgraph 2[<h4>II. Create Seeds</h4>]
+    D[D. Create Recovery Seed]
+    E[E. Test & Input Recovery Seed]
+    F[<b>F-G. Create Active Seeds</b>]
+    D-->E-->F
+    end
+    subgraph 3[III. Finalize Setup]
+    H[Steps H-K]
+    end
+    C-->D
+    F-->H
+```
 
 In the default Blockchain Commons scenario, a Foundation Devices Passport is used to create and store one of the seeds.
 
