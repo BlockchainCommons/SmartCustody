@@ -795,7 +795,7 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
     N[<b>N. Update MicroSDs</b>]
     N1{<b>GST?</b>}
     N2{<b>SSKR?</b>}
-    L-->M-->N->N1->N2
+    L-->M-->N-->N1-->N2
     end
     K-->L
 ```
