@@ -600,6 +600,25 @@ After you have added three keys to Sparrow, either using the defaults of an SSKR
 
 #### **Step I: Test Transaction**
 
+```mermaid
+    graph LR;
+    subgraph 2[II. Create Seeds]
+    G[Steps D-G]
+    end
+    subgraph 3[<h4>III. Finalize Setup</h4>]
+    H[H. Finalize Multisig]
+    I[<b>I. Test Transaction</b>]
+    J[J. Transfer Funds]
+    K[K. Ensure Inheritance]
+    H-->I-->J-->K
+    end
+    subgraph 4[IV. Revisit Backups]
+    L[Steps L-N]
+    end
+    G-->H
+    K-->L
+```
+
 Particularly in the case of a multisig, you want to test your new account by both receiving and then sending back small amounts of funds 
 
 1. [  ] Send funds to your Multisig address from a remote wallet.
@@ -641,6 +660,25 @@ If you were able to receive and send a transaction, you should feel confident in
 
 #### **Step J: Transfer Funds**
 
+```mermaid
+    graph LR;
+    subgraph 2[II. Create Seeds]
+    G[Steps D-G]
+    end
+    subgraph 3[<h4>III. Finalize Setup</h4>]
+    H[H. Finalize Multisig]
+    I[I. Test Transaction]
+    J[<b>J. Transfer Funds</b>]
+    K[K. Ensure Inheritance]
+    H-->I-->J-->K
+    end
+    subgraph 4[IV. Revisit Backups]
+    L[Steps L-N]
+    end
+    G-->H
+    K-->L
+```
+
 Once you are confident in your control of an account, you can send the rest of your funds to it, preferably in an iterative way as described below.
 
 1. [  ] Send about $10 to your new multisig account.
@@ -649,6 +687,25 @@ Once you are confident in your control of an account, you can send the rest of y
 1. [  ] Repeat the previous two steps until you have sent all the money to your account.
 
 #### **Step K: Ensure Inheritance**
+
+```mermaid
+    graph LR;
+    subgraph 2[II. Create Seeds]
+    G[Steps D-G]
+    end
+    subgraph 3[<h4>III. Finalize Setup</h4>]
+    H[H. Finalize Multisig]
+    I[I. Test Transaction]
+    J[J. Transfer Funds]
+    K[<b>K. Ensure Inheritance</b>]
+    H-->I-->J-->K
+    end
+    subgraph 4[IV. Revisit Backups]
+    L[Steps L-N]
+    end
+    G-->H
+    K-->L
+```
 
 Leaving our assets to our children or other heirs is important for many of us. Digital assets can be hard to find and access, to instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost.
 
