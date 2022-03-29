@@ -905,7 +905,7 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 
 | Data/Locale | None | Home | Primary | Secondary | P+S | H+P | H+S | H+P+S |
-|------|------|---------|-----------|-----|-----|-----|-------|
+|:------|:------|:---------|:-----------|:-----|:-----|:-----|:-------|
 | None | OK | OK | OK | OK | OK | Cloud | Cloud | LOSS |
 | Apple ID | OK | OK | OK | OK | Apple | Apple | Apple | LOSS |
 | Passport PIN | OK | OK | OK | OK | LOSS | LOSS | LOSS | LOSS |
