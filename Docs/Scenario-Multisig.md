@@ -91,31 +91,13 @@ Further discussions of why specific transaction coordinators or signing devices 
 
 {pagebreak}
 
-### Final State
-
-Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
-
-| Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
-| :--- | :--- | :--- | :--- | :--- | 
-|  | Recovery SSKR Overview<br>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
-| Sparrow Computer |
-| GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup |
-|  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
-| | Passport Backup Words |  Passport PIN |  | Passport PIN<br>Passport Backup Words (opt.) |
-| | Account Descriptor | Account Descriptor | Account Descriptor | Account Descriptor (opt.) |
-| | Instructions for heirs | Instructions for heirs | Instructions for heirs |
-
-Obviously this state will vary if alternative signing devices are chosen.
-
-{pagebreak}
-
-## The Basic Procedure
+## Procedure Overview
 
 This procedure incorporates the following steps:
 
 **PART ONE: PREPARE SETUP**
 
-* **Step A: Setup Storage Locales.** Prepare three locales for storing key material.
+* **[Step A: Setup Storage Locales.](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-a-setup-storage-locales)** Prepare three locales for storing key material.
 * **Step B: Prepare Computer.** Load transaction coordinator.
 * **Step C: Create Multisig.** Create multisig in transaction coordinator.
 
@@ -138,6 +120,26 @@ This procedure incorporates the following steps:
 * **Step L: Check Primary Storage (Spring).** Each spring, test main backups.
 * **Step M: Check Secondary Storage (Fall).** Each fall, test other backups.
 * **Step N: Update MicroSDs.** Every three years, replace MicroSDs.
+
+### Final State
+
+Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
+
+| Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
+| :--- | :--- | :--- | :--- | :--- | 
+|  | Recovery SSKR Overview<br>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
+| Sparrow Computer |
+| GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup |
+|  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
+| | Passport Backup Words |  Passport PIN |  | Passport PIN<br>Passport Backup Words (opt.) |
+| | Account Descriptor | Account Descriptor | Account Descriptor | Account Descriptor (opt.) |
+| | Instructions for heirs | Instructions for heirs | Instructions for heirs |
+
+Obviously this state will vary if alternative signing devices are chosen.
+
+{pagebreak}
+
+## The Basic Procedure
 
 #### **Step A: Setup Storage Locales**
 
