@@ -103,10 +103,10 @@ This procedure incorporates the following steps:
 
 **PART TWO: CREATE SEEDS**
 
-* **[Step D: Create Recovery Seed](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-d-create-recovery-seed-on-recovery-device).** Create a seed and shard it.
-* **[Step E: Test & Input Recovery Seed](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-e-verify--input-recovery-seed-with-recovery-device).** Test the seed shards.
-* **[Step F: Create & Input Active Seed #1](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-f-create--input-active-seed-on-first-signing-device).** Create a second seed.
-* **[Step G: Create & Input Active Seed #2](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-g-create--input-active-seed-on-second-signing-device).** Create a third seed.
+* **[Step D: Create Recovery Seed](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-d-create-recovery-seed).** Create a seed and shard it.
+* **[Step E: Test & Input Recovery Seed](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-e-test--input-recovery-seed).** Test the seed shards.
+* **[Step F: Create & Input Active Seed #1](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-f-create--test-active-seed-1).** Create a second seed.
+* **[Step G: Create & Input Active Seed #2](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-g-create--test-active-seed-2).** Create a third seed.
 
 **PART THREE: FINALIZE SETUP**
 
@@ -250,12 +250,15 @@ _Default Recovery Device:_ Gordian Seed Tool.
     E[E. Test & Input Recovery Seed]
     F[F. Create Active Seed #1]
     G[G. Create Active Seed #2]
-    D-->E-->F-->G
+    D-->E
+    E-->F
+    E-->G
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
     end
     C-->D
+    F-->H
     G-->H
 ```
 
