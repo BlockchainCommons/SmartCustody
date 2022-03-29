@@ -469,14 +469,13 @@ _Default Signing Device #2:_ Foundation Devices Passport.
     D[D. Create Recovery Seed]
     E[E. Test & Input Recovery Seed]
     F[<b>F-G. Create Active Seeds</b>]
-    F1{<b>MicroSDs?</b>}
-    D-->E-->F-->F1
+    D-->E-->F
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
     end
     C-->D
-    F1-->H
+    F-->H
 ```
 
 In the default Blockchain Commons scenario, a Foundation Devices Passport is used to create and store one of the seeds.
@@ -717,6 +716,20 @@ Leaving our assets to our children or other heirs is important for many of us. D
 
 #### **Step L: Check Primary Storage (Spring)**
 
+```mermaid
+    graph LR;
+    subgraph 3[II. Finalize Setup]
+    K[Steps H-K]
+    end
+    subgraph 4[<h4>IV. Revisit Backups</h4>]
+    L[<b>L. Check Primary</b>]
+    M[M. Check Secondary]
+    N[N. Update MicroSDs]
+    L-->M-->N
+    end
+    K-->L
+```
+
 Your digital assets are only protected if you actively maintain your backups. Every Spring you're going to check your Primary Storage.
 
 1. [  ] Collect your Passport, your iPhone, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
@@ -740,6 +753,20 @@ Your digital assets are only protected if you actively maintain your backups. Ev
 
 #### **Step M: Check Secondary Storage (Fall)**
 
+```mermaid
+    graph LR;
+    subgraph 3[II. Finalize Setup]
+    K[Steps H-K]
+    end
+    subgraph 4[<h4>IV. Revisit Backups</h4>]
+    L[L. Check Primary]
+    M[<b>M. Check Secondary</b>]
+    N[N. Update MicroSDs]
+    L-->M-->N
+    end
+    K-->L
+```
+
 Your Secondary storage may be with friends or family, so Fall is a great time to visit them, and simulataneously check on that online storage as well. (But make sure you do this _every fall_, whether you otherwise plan a visit or not!)
 
 1. [  ] Collect your Passport, your iPhone, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
@@ -756,6 +783,22 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
    2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
 
 #### **Step N: Update MicroSDs**
+
+```mermaid
+    graph LR;
+    subgraph 3[II. Finalize Setup]
+    K[Steps H-K]
+    end
+    subgraph 4[<h4>IV. Revisit Backups</h4>]
+    L[L. Check Primary]
+    M[M. Check Secondary]
+    N[<b>N. Update MicroSDs</b>]
+    N1{<b>GST?</b>}
+    N2{<b>SSKR?</b>}
+    L-->M-->N->N1->N2
+    end
+    K-->L
+```
 
 Our current expectation is that MicroSDs have a lifetime of 10 years. But, we're not sure if that's a minimum or actually a median or average. To be safe, we suggest replacing your MicroSD cards every three years. The following process should occur whenever your calendar reminder goes off.
 
