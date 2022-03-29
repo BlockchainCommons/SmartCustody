@@ -396,7 +396,7 @@ _Default Signing Device #1:_ Gordian Seed Tool.
     F[<b>F-G. Create Active Seeds</b>]
     F1{<b>Cloud?</b>}
     F2{<b>MicroSDs?</b>}
-    D-->E-->F-->F1->F2
+    D-->E-->F-->F1-->F2
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
