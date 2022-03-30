@@ -882,6 +882,16 @@ Following are discussions of potential fail modes and how this scenario avoids t
 
 ### Single Points of Failure (SPOF)
 
+**Loss of Individual Data:**
+
+Loss of individual data causes no asset loss because of careful storage in locales.
+
+1. **Lost Apple ID.** The Apple account can be recovered using the data stored at the Primary Storage. 
+1. **Forgot Passport PIN.** The Passport PIN at the Secondary Storage may be used to access the Passport. 
+1. **Forgot Passport Backup Words.** This is not an issue unless the Passport is lost from Home Storage. Optionally, Backup Words can be stored in Cloud storage and restored to Home Storage if lost. If there is a loss, new backups should be made immediately, with new Backup Words. 
+
+This makes the locales the ultimate measure for SPOF.
+
 **Loss of Individual Locale:**
 
 Loss of individual locales results in no loss of assets[^A1]:
@@ -894,59 +904,21 @@ Loss of individual locales results in no loss of assets[^A1]:
 
 Loss of multiple sites can cause asset loss, depending on how much optional resilience was used:
 
-1. **Loss of Home + Primary.** The only things left are a MicroSD at Secondary Storage and whatever's in the Cloud. Recovery is only possible if care was taken in backing up access info to the cloud. If the user has the Passport Backup Words in the Cloud and if they have Apple login information somewhere such as Lastpass, and if they know the PIN to a previous apple device, then they can restore one seed off the MicroSD at the Secondary Storage and another from iCloud. But in most cases, the assets are lost.
+1. **Loss of Home + Primary.** The only things left are a MicroSD at Secondary Storage and whatever's in the Cloud. Recovery is only possible if care was taken in backing up access info to the cloud. If the user has the Passport Backup Words in the Cloud and if they have Apple login information somewhere such as Lastpass, and if they know the PIN to a previous apple device, then they can restore one seed off the MicroSD at the Secondary Storage and another from iCloud. But without optional Cloud backup, the assets are lost.
 1. **Loss of Home + Secondary.** The Passport MicroSD at Primary Storage may be used to recover a seed provided Passport Backup Words were put in Cloud; Gordian Seed Tool can be rebuilt from iCloud, possibly requiring login information at Primary Storage. If the Passport Backup Words were not backed up to the Cloud, and they are not known, the assets are lost.
 1. **Loss of Primary + Secondary.** Passport and Gordian Seed Tool remain available at home.
 1. **Loss of Home, Primary Storage, and Secondary Storage.** One key may still remain available in iCloud, if Gordian Seed Tool can be rebuilt, but that's insufficient to sign multisigs: the assets are definitely lost.
 
 **KEY LOSS BY LOCATION LOSS**
 | What's Lost? | Also ... Home | Primary | Secondary |
-| :--- | :--- | :--- | :--- | :--- | 
-| Home | :green_square: Rebuild iPhone<br>Rebuild Passport | :yellow_square: Rebuild iPhone<br>(Cloud Dependent<br>Rebuild Passport<br>(Cloud Dependent) | :red_square: 2 keys |
-| Primary | :yellow_square: Rebuild iPhone<br>(Cloud Dependent<br>Rebuild Passport<br>(Cloud Dependent) | :green_square: Recreate Backups | :yellow_square: 1.5 keys |
-| Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys |:green_square: Recreate Backups | 
+| :--- | :--- | :--- | :--- |
+| Home | :green_square: Rebuild iPhone & Passport; or Rebuild iPhone and Restore SSKR | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
+| Primary | yellow_square: Rebuild iPhone & Passport (Cloud Dependent) | :green_square: Recreate Backups | :green_square: Recreate Backups |
+| Secondary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone | :green_square: Recreate Backups |:green_square: Recreate Backups | 
 
-TRIPLE LOSS: :red_square:
+TRIPLE LOSS: :red_square: LOSS! Only Gordian Seed Tool Potentially Remains
 
-**Loss of Individual Data:**
-
-Loss of individual data causes no asset loss, nor does simulataneous loss of data and one Storage site *not* associated with access to that data.
-
-1. **Lost Apple ID.** The Apple account can be recovered using the data stored at the Primary Storage. 
-1. **Forgot Passport PIN.** The Passport PIN at the Secondary Storage may be used to access the Passport. 
-1. **Forgot Passport Backup Words.** This is not an issue unless the Passport is lost from Home Storage. However, new backups should be made immediately, with new Backup Words.
-
-**Loss of Data & Locale:**
-
-Loss of data and the associated Storage can similarly be recovered from in some situations. (Data losses presume *all* versions of that data are gone, whether they were physically saved, stored in the cloud, or whatever.)
-
-1. **Lost Apple ID & Primary Storage.** The Apple ID, and thus Gordian Seed Tool, are gone. The recovery seed can be rebuilt from the SSKR at Home and at the Secondary Storage, and that may be used in conjunction with the Passport.
-1. **Lost Passport PIN & Secondary Storage.** Access to the Passport is lost. The recovery seed can be rebuilt from the SSKR at Home and at the Primary Storage, and that may be used in conjunction with Gordian Seed Tool.
-2. **Lost Passport Backups Words & Home Storage.** The Passport cannot be recovered. Gordian Seed Tool was also potentially lost with the Home Storage. However, the Primary and Secondary Storage hold two recovery shares and new Gordian Seed Tool can be restored on a new device using the Apple recovery information.
-3. **Lost Apple ID, Passport PIN, and Any Storage.** The Apple ID, and thus Gordian Seed Tool, are gone. The Passport is inaccessible. The recovery seed can be rebuilt from the SSKR at Home and at the Secondary Storage, but that's it.
-3. **Lost Apple ID, Passport Words, Home and Any Other.** The Passport and recovery words are gone.
-3. **Lost Apple ID, Passport Words, Primary and Secondary.** The Passport and Gordian Seed Tool remain usable. Make new backups!
- 
-**Loss of Data & Multiple Locales:**
-
-But the loss of data along with both Storages likely results in the loss of everything.
-
-1. **Lost Apple ID, Two Locales.** Unless Apple ID can be restored using other Apple devices, the assets are gone.
-1. **Lost Passport PIN, Two Locales.** Only the key on Gordian Seed Tool remains: the assets are gone.
-1. **Lost Passport Backup Words, Two Locales.** If you're home locale is the survivor, you're OK, but should quickly make new backups. Otherwise, only the key on Gordian Seed Tool survives.
-3. **Lost Apple ID, Passport PIN, Two Locales.** Perhaps the Apple ID could be restored using other Apple devices, but the Passport and recovery keys are gone, so the assets are gone.
-
-| What's Lost? | No Locale | Home | Primary | Secondary | P+S | H+P | H+S | H+P+S |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| No Data | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :yellow_square: Cloud | :yellow_square: Cloud | :red_square: LOSS |
-| Apple ID | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :yellow_square: Apple | :yellow_square: Apple | :yellow_square: Apple | :red_square: LOSS |
-| Passport Words | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
-| Passport PIN | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
-| Apple ID + Passport Words | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
-| Apple ID + Passport PIN | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
-
-* _Apple._ Recovery of funds is dependent on being able to restore Apple account to a new device.
-* _Cloud._ Recovery of funds is dependent on optional saving of data into cloud.
+_Note that the SSKR shares are usually not needed, except in the Home Loss scenario. They may also come into play for a loss of some material at a location, such as if the iPhone is lost along with the Primary Storage, which contains backup information. Nonetheless, they're important to ensure that the scenario remains robust for this sort of situation._
 
 ### Single Points of Compromise (SPOC)
 
