@@ -76,6 +76,15 @@ This procedure incorporates the following steps:
 * **[Step M: Check Secondary Storage (Fall)](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-m-check-secondary-storage-fall).** Each fall, test other backups.
 * **[Step N: Update MicroSDs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-n-update-microsds).** Every three years, replace MicroSDs.
 
+**OPTIONS: ALTERNATIVE SETUPS**
+
+* **[Option I: Additional Steps](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#options-i-additional-steps)** — TBA, additional techniques to conquer adversaries.
+* **[Option II: Alternative Signing Devices](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#options-ii-alternative-signing-devices)** — TBA, choosing signing devices for alternative scenarios.
+
+**APPENDICES: FURTHER INFORMATION**
+
+* **[Appendix I: SPOCs & SPOFs in This Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-i-spofs--spocs-in-this-scenario) — Compromise & Failure.
+* 
 ### Requirements
 
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
@@ -882,7 +891,57 @@ _There may need to be some adjustments to the Storage check sections too._
 
 _This may require new scenarios to fully lay out._
 
-## Appendix I: SPOFs & SPOCs in This Scenario
+## Appendix I: Gordian Principles & Adversaries
+
+This #SmartCustody procedure is intended to highlight the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and address many [adversaries](https://www.smartcustody.com/) from #SmartCustody. Here's how it does so.
+
+### Gordian Principles
+
+* **Independence.** This multisig procedure is _self-sovereign_. You retain control of your keys and thus your finances.
+* **Privacy.** Though obviously maintaining your own keys helps with your privacy, much of the issue relates to how you conduct transactions on the network, which is beyond the scope of this document. See the [Sparrow case study](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md#privacy) for more on how that transaction coordinator manages Privacy, and particularly consider what Bitcoin server you are using: a personal server will be more private than a public server.
+* **Resilience.** The focus of #SmartCustody is on the resilience principle, so this procedure demonstrates how to minimize both SPOCs and SPOFs for your self-sovereign cryptocurrency usage. See the next Appendix for more.
+* **Openness.** The modularity of this scenario is intended to create openness, so that you can make your own choice of any signing devices. Though we offer default assumptions, the procedure is written so that other devices can easily be slotted in. (We'd likeyou to be able to choose your own transaction coordinator too, but that's a bit harder to modularize since it runs through the entire procedure.
+
+### Adversaries
+
+The heart of #SmartCustody is a discussion of Adversaries that can oppose the Gordian Principles (especially resilience). Here's a complete listing of those, and how this procedure addresses them (or not).
+
+1.  **Loss by Acts of God**
+   * *Adversary: Death / Incapacitation* — The instruction for heirs ensure that your digital assets remain available to heirs and executors.
+   * *Adversary: Denial of Access* — Having a 2 of 3 multisig means the denial of access to a single locale doesn't prevent access to your assets.
+   * *Adversary: Disaster* — If the keys (and SSKR shares) for your funds are well-separated, they will be largely proof against disasters. As our notes say, geographic separation can be more important than physical security.
+2.  **Loss by Computer Error**
+   * *Adversary: Bitrot* — Your account descriptor ensure that you aren't subject to Sparrow Bitrot, and your storage of a recovery key as shares in a standardized format (SSKR) similarly protects that key. The Gordian Seed Tool and Passport keys are somewhat more subject to Bitrot, as the programs could go away, but Gordian Seed Tool is open source and Passport keeps its backups in a well-understand 7zip format, so those should always be retrievable as well. Backing up your Gordian Seed Tool key as shares, per the resilience option, further decreases any Bitrot danger.
+   * *Adversary: Systemic Key Compromise* — If the full procedure is used, including using two different methods to generate Gordian Seed Tool keys, the overall account should be proof against Systemic Key Compromise, because at worst 1 of 3 keys would be compromised at any time.
+3.  **Loss by Crime, Theft**
+   * *Adversary: Institutional Theft* — The joy of self-sovereign control of assets is that you don't have to trust an institution.
+   * *Adversary: Internal Theft* — Theoretically, revealing information about your digital assets to your heirs does create a threat of internal theft. However, as long as you maintain sole control over the locales with at least two of the keys, your assets should remain protected. Nonetheless, be aware of the potential issue.
+   * *Adversary: Network Attack, Personal* — None of your keys are online, so the only network attack surface is your network coordinator. This simply means that you need to carefully review the details of any PSBTs that you sign with your airgapped signing devices.
+   * *Adversary: Network Attack, Systemic* — By avoiding the use of exchanges or other online services, you entirely protect yourself from more systemic attacks.
+   * *Adversary: Physical Theft, Casual* — A casual theft will have no effect: you lose one key (but probably have a backup) and the thief gets one key (which is insufficient).
+   * *Adversary: Physical Theft, Sophisticated* — For a sophisticated theft to work would require knowledge of the location of multiple keys and their simultaneous theft. A much more likely situation would be a thief stealing one key and your instructions to heirs and then making plans to steal the others: which means that you have to regularly check your storage locales and immediately sweep funds to new keys if a theft occurs.
+   * *Adversary: Social Engineering* — There is no proof against social engineering. So, you still need to be careful.
+   * *Adversary: Supply-Chain Attack*] — Using the default scenario, your Passport is well protected against Supply-Chain Attack, but an iPhone could be more vulnerable. This is another reason that it's important to use two different iDevices for your active and recovery key. You can reduce the danger of a supply-chain attack by buying directly from an Apple Store.
+4.  **Loss by Crime, Other Attacks**
+   * *Adversary: Blackmail* — Blackmail isn't as immediate as coercion, but remains something not well controlled by a cryptocurrency procedure.
+   * *Adversary: Coercion* — Coercion is generally a social threat that can't be controlled by a cryptocurrency procedure. Not linking your cryptocurrency to a real-world identity is one of the best solutions.
+   * *Adversary: Non-Financially Motivated Attackers* — Funds are well protected against theft of any sort, so a non-financially motivated attack is unlikely to succeed.
+   * *Adversary: Terrorist / Mob* — This is another variation of coercion, subject to those dangers.
+5.  **Loss by Government**
+   * *Adversary: Legal Forfeiture* — There is no attempt made to protect assets from legal action.
+   * *Adversary: Nation-State Actor* — This scenario assumes a first-world government that is not a threat, though a self-sovereign scenario such as this would provide good protection against a rogue government, if the assets were kept secret.
+6.  **Loss by Mistakes**
+   * *Adversary: Convenience* — There is certainly some friction built into the scenario, such as the need to occasionally replace MicroSDs, and the suggestion to keep keys in widely separated locations. Giving in to convenience by ignoring some of the core tenets of the procedure could dramatically reduce is usefulness and protections.
+   * *Adversary: Key Fragility* — This procedure dramatically reduces the possibility of accidental key lost _provided_ that funds are swept forward immediately if one key is ever misplaced.
+   * *Adversary: Process Fatigue* — As noted under Convenience, there is some real possibility for Process Fatigue, particularly in the semi-yearly checks. The actual usage of two devices to sign PSBTs is quite fast and simple, and should not cause process fatigue itself.
+   * *Adversary: Transaction Error* — Errors in fees or amounts sent are increasingly not an issue when using modern transaction coordinators such as Sparrow and modern signing devices (which repeat information about a transaction).
+   * *Adversary: User Error* — Obviously, user error is always an issue, but the existance of an extra key and the usage of modern transaction coordinators and signing devices minimizes that.
+7.  **Privacy-related Problems**
+   * *Adversary: Censorship* — The biggest danger of censorship lies in sending transactions, and the Sparrow transaction coordinator makes it very easy to send via a variety of means.
+   * *Adversary: Correlation* — If desired, a user could maintain an additional warm wallet in the Sparrow transaction coordinator to allow use of CoinJoin to foil any correlation.
+   * *Adversary: Loss of Fungibility* — CoinJoin can also foil problems of loss of fungibility.
+
+## Appendix II: SPOFs & SPOCs in This Scenario
 
 The original #SmartCustody single-sig scenario ensured that there were no Single Points of Failure (SPOFs) where the loss of devices and data at a single site could result in the loss of digital funds. This multi-sig expands on that by also ensuring that there are no Single Points of Compromise (SPOCs) where the theft of devices and data at a single site could result in the loss of digital funds.
 
@@ -956,7 +1015,7 @@ The addition of an optional cloud adds very little danger, except in the situati
 | Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys |:green_square: OK |  :green_square: .5 keys |
 | Cloud | :red_square: 2 keys | :green_square: .5 keys | :green_square: .5 keys | :green_square: OK |
 
-## Appendix II: Preserving Assets for Your Heirs
+## Appendix III: Preserving Assets for Your Heirs
 
 Being able to pass assets down to heirs is important for many. But, even if you don't have any heirs, making your funds available to someone else, whether it be a spouse or a lawyer, can be crucially important: if you are disabled to the point where you are unable to access your funds yourself, you may _need_ someone to access your funds for you, quite possibly to pay for the medical care that you need.
 
@@ -968,7 +1027,7 @@ Ensuring that heirs, spouses, or lawyers can access digital access runs afoul of
 
 This scenario has been set up to minimize the possiblity of losing your authentication tokens, but you must still: reveal assets to heirs; tell them how to access them; and underline their value. That's what a letter does, which is why one of those is included in the scenario as well.
 
-## Appendix III: Sample Letter to Heirs
+## Appendix IV: Sample Letter to Heirs
 
 ```
 Dear _________________,
@@ -1041,55 +1100,7 @@ Run On: Old Laptop Computer (MacBook Air 2017 model)
 Access Info: Password is at Safety Deposit Box
 ```
 
-## Appendix IV: Gordian Principles & Adversaries
 
-This #SmartCustody procedure is intended to highlight the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and address many [adversaries](https://www.smartcustody.com/) from #SmartCustody. Here's how it does so.
-
-### Gordian Principles
-
-* **Independence.** This multisig procedure is _self-sovereign_. You retain control of your keys and thus your finances.
-* **Privacy.** Though obviously maintaining your own keys helps with your privacy, much of the issue relates to how you conduct transactions on the network, which is beyond the scope of this document. See the [Sparrow case study](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md#privacy) for more on how that transaction coordinator manages Privacy, and particularly consider what Bitcoin server you are using: a personal server will be more private than a public server.
-* **Resilience.** The focus of #SmartCustody is on the resilience principle, so this procedure demonstrates how to minimize both SPOCs and SPOFs for your self-sovereign cryptocurrency usage.
-* **Openness.** The modularity of this scenario is intended to create openness, so that you can make your own choice of any signing devices. Though we offer default assumptions, the procedure is written so that other devices can easily be slotted in. (We'd likeyou to be able to choose your own transaction coordinator too, but that's a bit harder to modularize since it runs through the entire procedure.
-
-### Adversaries
-
-The heart of #SmartCustody is a discussion of Adversaries that can oppose the Gordian Principles (especially resilience). Here's a complete listing of those, and how this procedure addresses them (or not).
-
-1.  **Loss by Acts of God**
-   * *Adversary: Death / Incapacitation* — The instruction for heirs ensure that your digital assets remain available to heirs and executors.
-   * *Adversary: Denial of Access* — Having a 2 of 3 multisig means the denial of access to a single locale doesn't prevent access to your assets.
-   * *Adversary: Disaster* — If the keys (and SSKR shares) for your funds are well-separated, they will be largely proof against disasters. As our notes say, geographic separation can be more important than physical security.
-2.  **Loss by Computer Error**
-   * *Adversary: Bitrot* — Your account descriptor ensure that you aren't subject to Sparrow Bitrot, and your storage of a recovery key as shares in a standardized format (SSKR) similarly protects that key. The Gordian Seed Tool and Passport keys are somewhat more subject to Bitrot, as the programs could go away, but Gordian Seed Tool is open source and Passport keeps its backups in a well-understand 7zip format, so those should always be retrievable as well. Backing up your Gordian Seed Tool key as shares, per the resilience option, further decreases any Bitrot danger.
-   * *Adversary: Systemic Key Compromise* — If the full procedure is used, including using two different methods to generate Gordian Seed Tool keys, the overall account should be proof against Systemic Key Compromise, because at worst 1 of 3 keys would be compromised at any time.
-3.  **Loss by Crime, Theft**
-   * *Adversary: Institutional Theft* — The joy of self-sovereign control of assets is that you don't have to trust an institution.
-   * *Adversary: Internal Theft* — Theoretically, revealing information about your digital assets to your heirs does create a threat of internal theft. However, as long as you maintain sole control over the locales with at least two of the keys, your assets should remain protected. Nonetheless, be aware of the potential issue.
-   * *Adversary: Network Attack, Personal* — None of your keys are online, so the only network attack surface is your network coordinator. This simply means that you need to carefully review the details of any PSBTs that you sign with your airgapped signing devices.
-   * *Adversary: Network Attack, Systemic* — By avoiding the use of exchanges or other online services, you entirely protect yourself from more systemic attacks.
-   * *Adversary: Physical Theft, Casual* — A casual theft will have no effect: you lose one key (but probably have a backup) and the thief gets one key (which is insufficient).
-   * *Adversary: Physical Theft, Sophisticated* — For a sophisticated theft to work would require knowledge of the location of multiple keys and their simultaneous theft. A much more likely situation would be a thief stealing one key and your instructions to heirs and then making plans to steal the others: which means that you have to regularly check your storage locales and immediately sweep funds to new keys if a theft occurs.
-   * *Adversary: Social Engineering* — There is no proof against social engineering. So, you still need to be careful.
-   * *Adversary: Supply-Chain Attack*] — Using the default scenario, your Passport is well protected against Supply-Chain Attack, but an iPhone could be more vulnerable. This is another reason that it's important to use two different iDevices for your active and recovery key. You can reduce the danger of a supply-chain attack by buying directly from an Apple Store.
-4.  **Loss by Crime, Other Attacks**
-   * *Adversary: Blackmail* — Blackmail isn't as immediate as coercion, but remains something not well controlled by a cryptocurrency procedure.
-   * *Adversary: Coercion* — Coercion is generally a social threat that can't be controlled by a cryptocurrency procedure. Not linking your cryptocurrency to a real-world identity is one of the best solutions.
-   * *Adversary: Non-Financially Motivated Attackers* — Funds are well protected against theft of any sort, so a non-financially motivated attack is unlikely to succeed.
-   * *Adversary: Terrorist / Mob* — This is another variation of coercion, subject to those dangers.
-5.  **Loss by Government**
-   * *Adversary: Legal Forfeiture* — There is no attempt made to protect assets from legal action.
-   * *Adversary: Nation-State Actor* — This scenario assumes a first-world government that is not a threat, though a self-sovereign scenario such as this would provide good protection against a rogue government, if the assets were kept secret.
-6.  **Loss by Mistakes**
-   * *Adversary: Convenience* — There is certainly some friction built into the scenario, such as the need to occasionally replace MicroSDs, and the suggestion to keep keys in widely separated locations. Giving in to convenience by ignoring some of the core tenets of the procedure could dramatically reduce is usefulness and protections.
-   * *Adversary: Key Fragility* — This procedure dramatically reduces the possibility of accidental key lost _provided_ that funds are swept forward immediately if one key is ever misplaced.
-   * *Adversary: Process Fatigue* — As noted under Convenience, there is some real possibility for Process Fatigue, particularly in the semi-yearly checks. The actual usage of two devices to sign PSBTs is quite fast and simple, and should not cause process fatigue itself.
-   * *Adversary: Transaction Error* — Errors in fees or amounts sent are increasingly not an issue when using modern transaction coordinators such as Sparrow and modern signing devices (which repeat information about a transaction).
-   * *Adversary: User Error* — Obviously, user error is always an issue, but the existance of an extra key and the usage of modern transaction coordinators and signing devices minimizes that.
-7.  **Privacy-related Problems**
-   * *Adversary: Censorship* — The biggest danger of censorship lies in sending transactions, and the Sparrow transaction coordinator makes it very easy to send via a variety of means.
-   * *Adversary: Correlation* — If desired, a user could maintain an additional warm wallet in the Sparrow transaction coordinator to allow use of CoinJoin to foil any correlation.
-   * *Adversary: Loss of Fungibility* — CoinJoin can also foil problems of loss of fungibility.
 
 
 ---
