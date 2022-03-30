@@ -961,7 +961,76 @@ This scenario has been set up to minimize the possiblity of losing your authenti
 
 ## Appendix III: Sample Letter to Heirs
 
-[TODO: write a letter that includes blank spaces to fill in info]
+```
+Dear _________________,
+
+This letter is meant to alert you that I have digital cryptocurrency assets that as of ____________ have a value of approximately ___________________.
+
+This includes:
+
+____________________________________________________
+____________________________________________________
+____________________________________________________
+____________________________________________________
+____________________________________________________
+____________________________________________________
+
+My cryptocurrency is protected by a 2-of-3 multisig. That means that it can be recovered by accessing the correct cryptocurrency account and unlocking it with two of my three keys. I suggest you consult __________________________________________ as someone who I trust and who is knowledgeable with cryptocurrencies. You will need to either access my exchange login or create a new one with a cryptocurrency exchange, send the money to that exchange using my multisig keys, and then withdraw it to a normal bank account.
+
+My keys can be retrieved as follows:
+
+Key #1 
+Kept In ________________________
+Stored at _________________________
+Access Info ________________________
+
+Key #2 
+Kept In ________________________
+Stored at _________________________
+Access Info ________________________
+
+Key #3 
+Kept In ________________________
+Stored at _________________________
+Access Info ________________________
+
+Once you have the keys you can apply them in the account which can be found as follows:
+
+Account
+Kept In _____________________
+Run On ______________________
+Access Info __________________
+
+Again, if this is foreign to you _________________ will be able to help. I suggest you consult with them before trying to move any funds.
+
+Love,
+
+________________________
+```
+
+This form should _not_ contain the access info, as doing so would create a SPOC. Instead, it should highlight the places where your information is stored. If you are using this scenario, it would look something like this:
+
+```
+Key #1 
+Kept In: Passport Hardware Wallet
+Stored at: Home Safe
+Access Info: PIN is at Safety Deposit Box
+
+Key #2 
+Kept In: Gordian Seed Tool
+Stored at: My iPhone
+Access Info: PIN is at Safety Deposit Box
+
+Key #3 
+Kept In: Sharded Shares
+Stored at: Home Safe, Safety Deposit Box, Mom's House (you only need 2)
+Access Info: Scan them into Gordian Seed Tool on _your_ iPhone
+
+Account
+Kept In: Sparrow
+Run On: Old Laptop Computer (MacBook Air 2017 model)
+Access Info: Password is at Safety Deposit Box
+```
 
 ## Appendix IV: Gordian Principles & Adversaries
 
