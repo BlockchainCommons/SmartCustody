@@ -1051,7 +1051,53 @@ Access Info: Password is at Safety Deposit Box
 
 ## Appendix IV: Gordian Principles & Adversaries
 
+This #SmartCustody procedure is intended to highlight the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and address many [adversaries](https://www.smartcustody.com/) from #SmartCustody. Here's how it does so.
 
+### Gordian Principles
+
+* **Independence.** This multisig procedure is _self-sovereign_. You retain control of your keys and thus your finances.
+* **Privacy.** Though obviously maintaining your own keys helps with your privacy, much of the issue relates to how you conduct transactions on the network, which is beyond the scope of this document. See the [Sparrow case study](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md#privacy) for more on how that transaction coordinator manages Privacy, and particularly consider what Bitcoin server you are using: a personal server will be more private than a public server.
+* **Resilience.** The focus of #SmartCustody is on the resilience principle, so this procedure demonstrates how to minimize both SPOCs and SPOFs for your self-sovereign cryptocurrency usage.
+* **Openness.** The modularity of this scenario is intended to create openness, so that you can make your own choice of any signing devices. Though we offer default assumptions, the procedure is written so that other devices can easily be slotted in. (We'd likeyou to be able to choose your own transaction coordinator too, but that's a bit harder to modularize since it runs through the entire procedure.
+
+### Adversaries
+
+The heart of #SmartCustody is a discussion of Adversaries that can oppose the Gordian Principles (especially resilience). Here's a complete listing of those, and how this procedure addresses them (or not).
+
+1.  **Loss by Acts of God**
+   * *Adversary: Death / Incapacitation* — The instruction for heirs ensure that your digital assets remain available to heirs and executors.
+   * *Adversary: Denial of Access* — Having a 2 of 3 multisig means the denial of access to a single locale doesn't prevent access to your assets.
+   * *Adversary: Disaster* — If the keys (and SSKR shares) for your funds are well-separated, they will be largely proof against disasters. As our notes say, geographic separation can be more important than physical security.
+2.  **Loss by Computer Error**
+   * *Adversary: Bitrot* — Your account descriptor ensure that you aren't subject to Sparrow Bitrot, and your storage of a recovery key as shares in a standardized format (SSKR) similarly protects that key. The Gordian Seed Tool and Passport keys are somewhat more subject to Bitrot, as the programs could go away, but Gordian Seed Tool is open source and Passport keeps its backups in a well-understand 7zip format, so those should always be retrievable as well. Backing up your Gordian Seed Tool key as shares, per the resilience option, further decreases any Bitrot danger.
+   * *Adversary: Systemic Key Compromise* — If the full procedure is used, including using two different methods to generate Gordian Seed Tool keys, the overall account should be proof against Systemic Key Compromise, because at worst 1 of 3 keys would be compromised at any time.
+3.  **Loss by Crime, Theft**
+   * *Adversary: Institutional Theft* — The joy of self-sovereign control of assets is that you don't have to trust an institution.
+   * *Adversary: Internal Theft* — Theoretically, revealing information about your digital assets to your heirs does create a threat of internal theft. However, as long as you maintain sole control over the locales with at least two of the keys, your assets should remain protected. Nonetheless, be aware of the potential issue.
+   * *Adversary: Network Attack, Personal* — None of your keys are online, so the only network attack surface is your network coordinator. This simply means that you need to carefully review the details of any PSBTs that you sign with your airgapped signing devices.
+   * *Adversary: Network Attack, Systemic* — By avoiding the use of exchanges or other online services, you entirely protect yourself from more systemic attacks.
+   e) [*Adversary: Physical Theft, Casual*](#adversary-physical-theft-casual) — *an opportunistic physical theft*
+   f) [*Adversary: Physical Theft, Sophisticated*](#adversary-physical-theft-sophisticated) — *a purposeful physical theft*
+   g) [*Adversary: Social Engineering*](#adversary-social-engineering) — *a social theft*
+   h) [*Adversary: Supply-Chain Attack*](#adversary-supply-chain-attack) — *a logistical theft*
+4.  **Loss by Crime, Other Attacks**
+   a) [*Adversary: Blackmail*](#adversary-blackmail) — *threat of exposure*
+   b) [*Adversary: Coercion*](#adversary-coercion) — *threat of death, disability, or detention*
+   c) [*Adversary: Non-Financially Motivated Attackers*](#adversary-non-financially-motivated-attackers) — an *attack not intended to steal funds*
+   d) [*Adversary: Terrorist / Mob*](#adversary-terrorist--mob) — a *potentially mortal threat related to coercion*
+5.  **Loss by Government**
+   a) [*Adversary: Legal Forfeiture*](#adversary-legal-forfeiture) — *a legal civic or state seizure of funds*
+   b) [*Adversary: Nation-State Actor*](#adversary-nation-state-actor) — *wide-ranging threats related to surveillance and coercion*
+6.  **Loss by Mistakes**
+   a) [*Adversary: Convenience*](#adversary-convenience) — *decreased security due to ease of use*
+   b) [*Adversary: Key Fragility*](#adversary-key-fragility) — *an accidental key loss*
+   c) [*Adversary: Process Fatigue*](#adversary-process-fatigue) — *errors caused by the complexity of the overall procedure*
+   d) [*Adversary: Transaction Error*](#adversary-transaction-error) — *incorrect transaction details leading to loss*
+   e) [*Adversary: User Error*](#adversary-user-error) — *an operator mistake leading to loss*
+7.  **Privacy-related Problems**
+   a) [*Adversary: Censorship*](#adversary-censorship) — *network denial that prevents the use of funds*
+   b) [*Adversary: Correlation*](#adversary-correlation) — *a connection of funds based on their usage*
+   c) [*Adversary: Loss of Fungibility*](#adversary-loss-of-fungibility) — *a blacklisting of funds based on their provenance*
 ## Appendix: Alternative Signing Devices
 
 [FUTURE: Add additional signing devices to plug into sections C+D+E+F]
