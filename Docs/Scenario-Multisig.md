@@ -959,13 +959,13 @@ The addition of an optional cloud adds very little danger, except in the situati
 * **Primary + Cloud:** .5 keys: potential to highjack Apple account.
 * **Secondary + Cloud:** .5 keys: potential to highjack Apple account.
 
-| Where's Compromised? | Home | Primary | Secondary | Cloud | 
+**KEY LOSS BY LOCATION COMPROMISE**
+| Where's Compromised? | Also ... Home | Primary | Secondary | Cloud | 
 | :--- | :--- | :--- | :--- | :--- | 
-| That's It! | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK |
-| Also: Home | -- | :red_square: 3 keys | :red_square: 2 keys | :red_square: 2 keys | 
-| Also: Primary | :red_square: 3 keys | -- | :yellow_square: 1.5 keys | :green_square: .5 keys |
-| Also: Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys | -- |  :green_square: .5 keys |
-| Also: Cloud | :red_square: 2 keys | :green_square: .5 keys | :green_square: .5 keys | -- |
+| Home | :green_square: OK | :red_square: 3 keys | :red_square: 2 keys | :red_square: 2 keys | 
+| Primary | :red_square: 3 keys | :green_square: OK | :yellow_square: 1.5 keys | :green_square: .5 keys |
+| Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys |:green_square: OK |  :green_square: .5 keys |
+| Cloud | :red_square: 2 keys | :green_square: .5 keys | :green_square: .5 keys | :green_square: OK |
 
 ## Appendix II: Preserving Assets for Your Heirs
 
