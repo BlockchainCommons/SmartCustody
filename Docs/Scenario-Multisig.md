@@ -906,17 +906,15 @@ But the loss of data along with both Storages likely results in the loss of ever
 1. **Lost Passport PIN, Two Locales.** Only the key on Gordian Seed Tool remains: the assets are gone.
 1. **Lost Passport Backup Words, Two Locales.** If you're home locale is the survivor, you're OK, but should quickly make new backups. Otherwise, only the key on Gordian Seed Tool survives.
 3. **Lost Apple ID, Passport PIN, Two Locales.** Perhaps the Apple ID could be restored using other Apple devices, but the Passport and recovery keys are gone, so the assets are gone.
-4. **Lost Apple ID, Passport Words, Home and Any Other Storage.** If the 
-
 
 | What's Lost? | No Locale | Home | Primary | Secondary | P+S | H+P | H+S | H+P+S |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| No Data | OK | OK | OK | OK | OK | Cloud | Cloud | LOSS |
-| Apple ID | OK | OK | OK | OK | Apple | Apple | Apple | LOSS |
-| Passport PIN | OK | OK | OK | OK | LOSS | LOSS | LOSS | LOSS |
-| Passport Words | OK | OK | OK | OK | OK | LOSS | LOSS | LOSS |
-| Apple ID + Passport Words | OK | OK | OK | OK | OK | LOSS | LOSS | LOSS |
-| Apple ID + Passport PIN | LOSS | LOSS | LOSS | LOSS | LOSS | LOSS | LOSS | LOSS |
+| No Data | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :yellow_square: Cloud | :yellow_square: Cloud | :red_square: LOSS |
+| Apple ID | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :yellow_square: Apple | :yellow_square: Apple | :yellow_square: Apple | :red_square: LOSS |
+| Passport Words | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
+| Passport PIN | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
+| Apple ID + Passport Words | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
+| Apple ID + Passport PIN | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS | :red_square: LOSS |
 
 * _Apple._ Recovery of funds is dependent on being able to restore Apple account to a new device.
 * _Cloud._ Recovery of funds is dependent on optional saving of data into cloud.
