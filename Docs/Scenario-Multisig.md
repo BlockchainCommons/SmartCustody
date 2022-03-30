@@ -2,13 +2,15 @@
 
 #### _Best practices for protecting Your personal digital assets using a multi-sig_
 
-**THIS IS IN PROCESS AND SHOULD NOT BE CONSIDERED READY FOR USAGE.**
+**THIS IS FULLY DRAFTED, BUT NOT FULLY REVIEWED; IT SHOULD NOT BE CONSIDERED READY FOR USAGE.**
 
 ## Introduction to the Multisig Scenario
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either those loss or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to allow ease-of-use, it can simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
 
 This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. SSKR shares are then used to divide up a third, recoveyr, key.
+
+**WARNING:** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
 
 ### About The Base Scenario
 
@@ -24,70 +26,6 @@ The base scenario presumes an audience with all of the following characteristics
 This scenario advocates the basic procedure to address XXX major types of adversaries, while the optional procedures can help protect against XXX further adversaries. Additional categories of "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" adversaries are not strongly considered in this scenario. See **Adversaries**.
 
 For simplicity, this document focuses on Bitcoin; adapting it to other cryptocurrencies may require choosing different signing devices.
-
-{pagebreak}
-
-## Procedures
-
-The following procedure will help ensure the safety of a simple self-custody cold-storage scenario for managing digital assets. It is important that you initiate it when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
-
-### Adversaries
-
-This process in this basic scenario has been optimized to avoid risks from XX adversaries listed below — simplified by not addressing the risks of all possible adversaries (over 25+). In particular, these adversaries were the ones selected as most likely to impact a self-custodian in the first world. Adversaries related to "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" are not strongly considered in this scenario.
-
-Some additional processes for this scenario are offered as options—but be careful to avoid [Process Fatigue](#adversary-process-fatigue).
-
-[adversary list]
-
-[notable absences]
-
-See **Adversaries** for a more extensive list and discussion.
-
-{pagebreak}
-
-### Requirements
-
-The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
-
-* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet(https://sparrowwallet.com/).
-* [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)
-
-Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
-
-* [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/) for active ssed.
-* [  ] iPhone or iPod to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed.
-* [  ] Separate[^2] iPhone or iPod to temporarily create and shard recovery seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229).
-
-The three devices selected are all second-generation signing device technology[^3][^4]. See the footnotes for discussions of why we choose these specifically[^5].  See Step C for making different choices.
-
-The following items are recommended, but don't let their absence stop you from securing your digital assets:
-
-* [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) )
-* [  ] Safety Deposit Box at Bank or other institution
-
-The following items are even more optional, but will increase the resilience of your scenario:
-
-* [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
-* [  ] MicroSD Adapter with an extra MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overally, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter and have two others from your Passport.
-* [  ] Encrypted Cloud-based note storage, such as [LastPass](https://www.lastpass.com/)
-
-### Case Studies
-
-Further discussions of why specific transaction coordinators or signing devices are desirable, or not, may be found in our [#SmartCustody Case Studies](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Studies-Overview.md).
-
-**Signing Devices:**
-
-* [Blockchain Commons Seed Tool](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-SeedTool.md)
-* [Foundation Devices Passport](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Passport.md)
-* Keystone Pro (TBD)
-
-**Transaction Coordinators:**
-
-* [Sparrow Bitcoin Wallet](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md)
-
-  _This procedure is intended to be entirely interoperable, with default choices listed, but the user able to choose to insert other options at his hoice: **Alternative Signing Devices** (described later) offer procedures for using different hardware than our suggestions._
-
-  _**Optional Steps** (described later) may require  purchases of additional items._
 
 {pagebreak}
 
@@ -138,6 +76,32 @@ This procedure incorporates the following steps:
 * **[Step M: Check Secondary Storage (Fall)](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-m-check-secondary-storage-fall).** Each fall, test other backups.
 * **[Step N: Update MicroSDs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-n-update-microsds).** Every three years, replace MicroSDs.
 
+### Requirements
+
+The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
+
+* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet(https://sparrowwallet.com/).
+* [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)
+
+Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
+
+* [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/) for active ssed.
+* [  ] iPhone or iPod to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed.
+* [  ] Separate[^2] iPhone or iPod to temporarily create and shard recovery seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229).
+
+The three devices selected are all second-generation signing device technology[^3][^4]. See the footnotes for discussions of why we choose these specifically[^5].  See Step C for making different choices.
+
+The following items are recommended, but don't let their absence stop you from securing your digital assets:
+
+* [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) )
+* [  ] Safety Deposit Box at Bank or other institution
+
+The following items are even more optional, but will increase the resilience of your scenario:
+
+* [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
+* [  ] MicroSD Adapter with an extra MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overally, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter and have two others from your Passport.
+* [  ] Encrypted Cloud-based note storage, such as [LastPass](https://www.lastpass.com/)
+* 
 ### Final State
 
 Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
@@ -852,27 +816,71 @@ If you stored your Recovery Seed on MicroSDs, you should also create a new set o
 1. [  ] Output the second share to the MicroSD at your Secondary Storage.
 1. [  ] Output the third share to the MicroSD at your Home Storage.
 
-## Option: Additional Steps
+## Options I: Additional Steps
 
-[TODO: any optional steps]
+_This section will contain additional steps that may be incorporated into the scenario to better address certain adversaries._
 
-[metal?]
+### Optional Step: Use Bags (Fire-Resistant)
+
+**Obstructed Adversary:** Disaster
+
+_This option will describe how to use fire-proof bags to protect paper._
+
+### Optional Step: Use Bags (Fire-Resistant)
+
+**Obstructed Adversary:** Internal Theft, Institutional Theft, Physical Theft (Sophisticated)
+
+_This option will describe how to use tamper-proof bags to protect from theft._
+
+### Optional Step: Use Metal Storage
+
+**Obstructed Adversary:** Disaster, Key Fragility
+
+_This option will describe how to use a metal tile and engraver to protect information._
 
 ### Optional Step: Use MicroSDs for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
 
-[incorporated]
+_This is already incorporated into the scenario as a strong option._
 
 ### Optional Step: Use NFCs for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
 
+_This option will describe how to use NFCs with Gordian Seed Tool._
 
-## Option: Alternative Signing Devices
+## Options II: Alternative Signing Devices
 
-[FUTURE: Add additional signing devices to plug into sections C+D+E+F]
-[In intro: also note things to exclude from Spring/Fall checks if default ones aren't used]
+Further discussions of why specific transaction coordinators or signing devices are desirable, or not, may be found in our [#SmartCustody Case Studies](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Studies-Overview.md).
+
+**Signing Devices:**
+
+* [Blockchain Commons Seed Tool](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-SeedTool.md)
+* [Foundation Devices Passport](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Passport.md)
+* Keystone Pro (TBD)
+
+**Transaction Coordinators:**
+
+* [Sparrow Bitcoin Wallet](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Study-Sparrow.md)
+
+  _This procedure is intended to be entirely interoperable, with default choices listed, but the user able to choose to insert other options at his hoice: **Alternative Signing Devices** (described later) offer procedures for using different hardware than our suggestions._
+
+  _**Optional Steps** (described later) may require  purchases of additional items._
+
+### Alternative Recovery Devices
+
+_This will include elements like seed-tool CLI that can produce SSKR shares._
+
+### Alternative Signing Devices
+
+_This will include alternative signing devices such as Keystone and possibly older devices such as Ledger and Trezor_.
+
+_There may need to be some adjustments to the Storage check sections too._
+
+### Alternative Transaction Coordinators
+
+_This may require new scenarios to fully lay out._
 
 ## Appendix I: SPOFs & SPOCs in This Scenario
 
