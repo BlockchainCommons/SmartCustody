@@ -95,6 +95,23 @@ Further discussions of why specific transaction coordinators or signing devices 
 
 This procedure incorporates the following steps:
 
+```mermaid
+    graph LR;
+    subgraph 1[I. Prepare Setup]
+    A[Steps A-C]
+    end
+    subgraph 2[II. Create Seeds]
+    B[Steps D-G]
+    end
+    subgraph 3[III. Finalize Setup]
+    C[Steps H-K]
+    end
+    subgraph 4[IV. Revisit Backups]
+    D[Steps L-N]
+    end
+    A-->B-->C-->D
+```
+
 **PART ONE: PREPARE SETUP**
 
 * **[Step A: Setup Storage Locales](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#step-a-setup-storage-locales).** Prepare three locales for storing key material.
