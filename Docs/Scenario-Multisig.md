@@ -83,8 +83,11 @@ This procedure incorporates the following steps:
 
 **APPENDICES: FURTHER INFORMATION**
 
-* **[Appendix I: SPOCs & SPOFs in This Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-i-spofs--spocs-in-this-scenario) — Compromise & Failure.
-* 
+* **[Apendix I: Gordian Principles & Adversaries](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-i-gordian-principles--adversaries)** — What this procedure does.
+* **[Appendix II: SPOCs & SPOFs in This Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-ii-spofs--spocs-in-this-scenario)** — Compromise & failure
+* **[Appendix III: Preserving Assets for Your Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iii-preserving-assets-for-your-heirs)** — Why asset preservation is important.
+* **[Appendix IV: Sample Letter to Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iv-sample-letter-to-heirs)** — What to say about your assets.
+
 ### Requirements
 
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
@@ -825,7 +828,7 @@ If you stored your Recovery Seed on MicroSDs, you should also create a new set o
 1. [  ] Output the second share to the MicroSD at your Secondary Storage.
 1. [  ] Output the third share to the MicroSD at your Home Storage.
 
-## OPTIONS
+## OPTIONS: ALTERNATIVE SETUPS
 
 ### Options I: Additional Steps
 
@@ -893,7 +896,7 @@ _There may need to be some adjustments to the Storage check sections too._
 
 _This may require new scenarios to fully lay out._
 
-## APPENDICES
+## APPENDICES: FURTHER INFORMATION
 
 ### Appendix I: Gordian Principles & Adversaries
 
@@ -984,7 +987,7 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 | What's Lost? | Also ... Home | Primary | Secondary |
 | :--- | :--- | :--- | :--- |
 | Home | :green_square: Rebuild Passport (Cloud Dependent) & iPhone; or Rebuild iPhone and Restore SSKR | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
-| Primary | yellow_square: Rebuild iPhone & Passport (Cloud Dependent) | :green_square: Recreate Backups | :green_square: Recreate Backups |
+| Primary | :yellow_square: Rebuild iPhone & Passport (Cloud Dependent) | :green_square: Recreate Backups | :green_square: Recreate Backups |
 | Secondary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone | :green_square: Recreate Backups |:green_square: Recreate Backups | 
 
 TRIPLE LOSS: :red_square: LOSS! Only Gordian Seed Tool Potentially Remains
@@ -1036,7 +1039,8 @@ This scenario has been set up to minimize the possiblity of losing your authenti
 ```
 Dear _________________,
 
-This letter is meant to alert you that I have digital cryptocurrency assets that as of ____________ have a value of approximately ___________________.
+This letter is meant to alert you that I have digital cryptocurrency assets that as of ____________ 
+have a value of approximately ___________________.
 
 This includes:
 
@@ -1047,7 +1051,12 @@ ____________________________________________________
 ____________________________________________________
 ____________________________________________________
 
-My cryptocurrency is protected by a 2-of-3 multisig. That means that it can be recovered by accessing the correct cryptocurrency account and unlocking it with two of my three keys. I suggest you consult __________________________________________ as someone who I trust and who is knowledgeable with cryptocurrencies. You will need to either access my exchange login or create a new one with a cryptocurrency exchange, send the money to that exchange using my multisig keys, and then withdraw it to a normal bank account.
+My cryptocurrency is protected by a 2-of-3 multisig. That means that it can be recovered by accessing 
+the correct cryptocurrency account and unlocking it with two of my three keys. I suggest you consult 
+__________________________________________ as someone who I trust and who is knowledgeable with 
+cryptocurrencies. You will need to either access my exchange login or create a new one with a 
+cryptocurrency exchange, send the money to that exchange using my multisig keys, and then withdraw 
+it to a normal bank account.
 
 My keys can be retrieved as follows:
 
@@ -1073,7 +1082,8 @@ Kept In _____________________
 Run On ______________________
 Access Info __________________
 
-Again, if this is foreign to you _________________ will be able to help. I suggest you consult with them before trying to move any funds.
+Again, if this is foreign to you _________________ will be able to help. I suggest you consult with 
+them before trying to move any funds.
 
 Love,
 
