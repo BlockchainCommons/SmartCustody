@@ -923,9 +923,32 @@ But the loss of data along with both Storages likely results in the loss of ever
 
 ### Single Points of Compromise (SPOC)
 
-[TODO: write a similar discussion of how SPOC has been avoided.]
+SPOF and SPOC inevitably lie in balance. The more SPOF is reduced, the greater SPOC is increased. Since this scenario does its best to minimize, it does have some vulnerability to SPOC, but it has been designed so that two locales must be attacked to provide an attacker with sufficient key material to create a compromise. This underlines the importance of separating locales where material is stored.
 
-[TODO: add a chart]
+Here's the key material loss in each situation:
+
+* **Home:** No key material: locked iPhone, locked Passport, 1 recovery share.
+* **Primary:** No key material: locked Passport Backup.
+* **Secondary:** No key material: locked Passport Backup.
+* **Home + Primary:** 3 keys: iPhone + PIN; Passport + PIN; 2 recovery shares.
+* **Home + Secondary:** 2 keys: locked iPhone; locked Passport; Passport Backup + Words; 2 recovery shares.
+* **Primary + Secondary:** 1.5 keys: locked Passport Backup; potential to highjack Apple account; 2 recovery shares.
+
+The addition of an optional cloud adds very little danger, except in the situation where both Home and Cloud are compromised (which means: don't make your cloud login information available at home, or you're creating a SPOC.)
+
+* **Cloud:** .5 keys: potential to highjack Apple account.
+* **Home + Cloud:** 2 keys: unlocked iPhone, unlocked Passport, 1 recovery share.
+* **Primary + Cloud:** .5 keys: potential to highjack Apple account.
+* **Secondary + Cloud:** .5 keys: potential to highjack Apple account.
+
+| Where's Compromised? | Home | Primary | Secondary | Cloud | 
+| :--- | :--- | :--- | :--- | :--- | 
+| That's It! | OK | OK | OK | OK |
+| Also: Home | -- | 3 keys | 2 keys | 2 keys |
+| Also: Primary | 3 keys | -- | 1.5 keys | .5 keys |
+| Also: Secondary | 2 keys | 1.5 keys | -- |  .5 keys |
+| Also: Cloud | 2 keys | .5 keys | .5 keys | -- |
+
 
 ## Appendix II: Preserving Assets for Your Heirs
 
@@ -934,6 +957,9 @@ But the loss of data along with both Storages likely results in the loss of ever
 ## Appendix III: Sample Letter to Heirs
 
 [TODO: write a letter that includes blank spaces to fill in info]
+
+## Appendix IV: Gordian Principles & Adversaries
+
 
 ## Appendix: Alternative Signing Devices
 
