@@ -852,7 +852,7 @@ If you stored your Recovery Seed on MicroSDs, you should also create a new set o
 1. [  ] Output the second share to the MicroSD at your Secondary Storage.
 1. [  ] Output the third share to the MicroSD at your Home Storage.
 
-## Optional Steps
+## Option: Additional Steps
 
 [TODO: any optional steps]
 
@@ -869,7 +869,10 @@ If you stored your Recovery Seed on MicroSDs, you should also create a new set o
 **Obstructed Adversary:** Key Fragility
 
 
-## Alternative Signing Devices
+## Option: Alternative Signing Devices
+
+[FUTURE: Add additional signing devices to plug into sections C+D+E+F]
+[In intro: also note things to exclude from Spring/Fall checks if default ones aren't used]
 
 ## Appendix I: SPOFs & SPOCs in This Scenario
 
@@ -1081,27 +1084,24 @@ The heart of #SmartCustody is a discussion of Adversaries that can oppose the Go
    * *Adversary: Social Engineering* — There is no proof against social engineering. So, you still need to be careful.
    * *Adversary: Supply-Chain Attack*] — Using the default scenario, your Passport is well protected against Supply-Chain Attack, but an iPhone could be more vulnerable. This is another reason that it's important to use two different iDevices for your active and recovery key. You can reduce the danger of a supply-chain attack by buying directly from an Apple Store.
 4.  **Loss by Crime, Other Attacks**
-   a) [*Adversary: Blackmail*](#adversary-blackmail) — *threat of exposure*
-   b) [*Adversary: Coercion*](#adversary-coercion) — *threat of death, disability, or detention*
-   c) [*Adversary: Non-Financially Motivated Attackers*](#adversary-non-financially-motivated-attackers) — an *attack not intended to steal funds*
-   d) [*Adversary: Terrorist / Mob*](#adversary-terrorist--mob) — a *potentially mortal threat related to coercion*
+   * *Adversary: Blackmail* — Blackmail isn't as immediate as coercion, but remains something not well controlled by a cryptocurrency procedure.
+   * *Adversary: Coercion* — Coercion is generally a social threat that can't be controlled by a cryptocurrency procedure. Not linking your cryptocurrency to a real-world identity is one of the best solutions.
+   * *Adversary: Non-Financially Motivated Attackers* — Funds are well protected against theft of any sort, so a non-financially motivated attack is unlikely to succeed.
+   * *Adversary: Terrorist / Mob* — This is another variation of coercion, subject to those dangers.
 5.  **Loss by Government**
-   a) [*Adversary: Legal Forfeiture*](#adversary-legal-forfeiture) — *a legal civic or state seizure of funds*
-   b) [*Adversary: Nation-State Actor*](#adversary-nation-state-actor) — *wide-ranging threats related to surveillance and coercion*
+   * *Adversary: Legal Forfeiture* — There is no attempt made to protect assets from legal action.
+   * *Adversary: Nation-State Actor* — This scenario assumes a first-world government that is not a threat, though a self-sovereign scenario such as this would provide good protection against a rogue government, if the assets were kept secret.
 6.  **Loss by Mistakes**
-   a) [*Adversary: Convenience*](#adversary-convenience) — *decreased security due to ease of use*
-   b) [*Adversary: Key Fragility*](#adversary-key-fragility) — *an accidental key loss*
-   c) [*Adversary: Process Fatigue*](#adversary-process-fatigue) — *errors caused by the complexity of the overall procedure*
-   d) [*Adversary: Transaction Error*](#adversary-transaction-error) — *incorrect transaction details leading to loss*
-   e) [*Adversary: User Error*](#adversary-user-error) — *an operator mistake leading to loss*
+   * *Adversary: Convenience* — There is certainly some friction built into the scenario, such as the need to occasionally replace MicroSDs, and the suggestion to keep keys in widely separated locations. Giving in to convenience by ignoring some of the core tenets of the procedure could dramatically reduce is usefulness and protections.
+   * *Adversary: Key Fragility* — This procedure dramatically reduces the possibility of accidental key lost _provided_ that funds are swept forward immediately if one key is ever misplaced.
+   * *Adversary: Process Fatigue* — As noted under Convenience, there is some real possibility for Process Fatigue, particularly in the semi-yearly checks. The actual usage of two devices to sign PSBTs is quite fast and simple, and should not cause process fatigue itself.
+   * *Adversary: Transaction Error* — Errors in fees or amounts sent are increasingly not an issue when using modern transaction coordinators such as Sparrow and modern signing devices (which repeat information about a transaction).
+   * *Adversary: User Error* — Obviously, user error is always an issue, but the existance of an extra key and the usage of modern transaction coordinators and signing devices minimizes that.
 7.  **Privacy-related Problems**
    a) [*Adversary: Censorship*](#adversary-censorship) — *network denial that prevents the use of funds*
    b) [*Adversary: Correlation*](#adversary-correlation) — *a connection of funds based on their usage*
    c) [*Adversary: Loss of Fungibility*](#adversary-loss-of-fungibility) — *a blacklisting of funds based on their provenance*
-## Appendix: Alternative Signing Devices
 
-[FUTURE: Add additional signing devices to plug into sections C+D+E+F]
-[In intro: also note things to exclude from Spring/Fall checks if default ones aren't used]
 
 ---
 
