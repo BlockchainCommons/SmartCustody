@@ -912,7 +912,7 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 **KEY LOSS BY LOCATION LOSS**
 | What's Lost? | Also ... Home | Primary | Secondary |
 | :--- | :--- | :--- | :--- |
-| Home | :green_square: Rebuild iPhone & Passport; or Rebuild iPhone and Restore SSKR | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
+| Home | :green_square: Rebuild Passport (Cloud Dependent) & iPhone; or Rebuild iPhone and Restore SSKR | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
 | Primary | yellow_square: Rebuild iPhone & Passport (Cloud Dependent) | :green_square: Recreate Backups | :green_square: Recreate Backups |
 | Secondary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone | :green_square: Recreate Backups |:green_square: Recreate Backups | 
 
