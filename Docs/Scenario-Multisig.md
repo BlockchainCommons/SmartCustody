@@ -943,16 +943,23 @@ The addition of an optional cloud adds very little danger, except in the situati
 
 | Where's Compromised? | Home | Primary | Secondary | Cloud | 
 | :--- | :--- | :--- | :--- | :--- | 
-| That's It! | OK | OK | OK | OK |
-| Also: Home | -- | 3 keys | 2 keys | 2 keys |
+| That's It! | <font color="green">OK</font> | OK | OK | OK |
+| Also: Home | -- | <font color="red">3 keys</font> | 2 keys | 2 keys |
 | Also: Primary | 3 keys | -- | 1.5 keys | .5 keys |
 | Also: Secondary | 2 keys | 1.5 keys | -- |  .5 keys |
 | Also: Cloud | 2 keys | .5 keys | .5 keys | -- |
 
-
 ## Appendix II: Preserving Assets for Your Heirs
 
-[TODO: write about death and disability and intent of giving your heirs access.]
+Being able to pass assets down to heirs is important for many. But, even if you don't have any heirs, making your funds available to someone else, whether it be a spouse or a lawyer, can be crucially important: if you are disabled to the point where you are unable to access your funds yourself, you may _need_ someone to access your funds for you, quite possibly to pay for the medical care that you need.
+
+Ensuring that heirs, spouses, or lawyers can access digital access runs afoul of three large problems:
+
+1. **The Invisibility of Digital Assets.** It's relatively easy to discover most physical assets, but because of their decentralization, no one is ever going to contact an heir about digital assets and why they're not being used.
+2. **The Lack of Authorities.** Because many digital assets, including cryptocurrencies, are self-sovereign, there's no one to unlock funds. Instead, that can only be done with control of private keys, which themselves may be locked by PINs, passwords, or biometrics. Information on this authentication information must be left to heirs, but it also must be done in a way that the funds can't be stolen.
+3. **The Difficulty of Access.** Accessing digital assets can be a pain if someone is not familiar with the process. This itself can cause loss, especially if heirs don't realize the value of the assets.
+
+This scenario has been set up to minimize the possiblity of losing your authentication tokens, but you must still: reveal assets to heirs; tell them how to access them; and underline their value. That's what a letter does, which is why one of those is included in the scenario as well.
 
 ## Appendix III: Sample Letter to Heirs
 
