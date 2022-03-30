@@ -943,11 +943,11 @@ The addition of an optional cloud adds very little danger, except in the situati
 
 | Where's Compromised? | Home | Primary | Secondary | Cloud | 
 | :--- | :--- | :--- | :--- | :--- | 
-| That's It! | ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+)OK | OK | OK | OK |
-| Also: Home | -- | ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)3 keys | 2 keys | 2 keys | 
-| Also: Primary | 3 keys | -- | 1.5 keys | .5 keys |
-| Also: Secondary | 2 keys | 1.5 keys | -- |  .5 keys |
-| Also: Cloud | 2 keys | .5 keys | .5 keys | -- |
+| That's It! | :green_square: OK | :green_square: OK | :green_square: OK | :green_square: OK |
+| Also: Home | -- | :red_square: 3 keys | :red_square: 2 keys | :red_square: 2 keys | 
+| Also: Primary | :red_square: 3 keys | -- | :yellow_square: 1.5 keys | :green_square: .5 keys |
+| Also: Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys | -- |  :green_square: .5 keys |
+| Also: Cloud | :red_square: 2 keys | :green_square: .5 keys | :green_square: .5 keys | -- |
 
 ## Appendix II: Preserving Assets for Your Heirs
 
