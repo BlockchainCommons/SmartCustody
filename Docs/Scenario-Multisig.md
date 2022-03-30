@@ -1098,9 +1098,9 @@ The heart of #SmartCustody is a discussion of Adversaries that can oppose the Go
    * *Adversary: Transaction Error* — Errors in fees or amounts sent are increasingly not an issue when using modern transaction coordinators such as Sparrow and modern signing devices (which repeat information about a transaction).
    * *Adversary: User Error* — Obviously, user error is always an issue, but the existance of an extra key and the usage of modern transaction coordinators and signing devices minimizes that.
 7.  **Privacy-related Problems**
-   a) [*Adversary: Censorship*](#adversary-censorship) — *network denial that prevents the use of funds*
-   b) [*Adversary: Correlation*](#adversary-correlation) — *a connection of funds based on their usage*
-   c) [*Adversary: Loss of Fungibility*](#adversary-loss-of-fungibility) — *a blacklisting of funds based on their provenance*
+   * *Adversary: Censorship* — The biggest danger of censorship lies in sending transactions, and the Sparrow transaction coordinator makes it very easy to send via a variety of means.
+   * *Adversary: Correlation* — If desired, a user could maintain an additional warm wallet in the Sparrow transaction coordinator to allow use of CoinJoin to foil any correlation.
+   * *Adversary: Loss of Fungibility* — CoinJoin can also foil problems of loss of fungibility.
 
 
 ---
