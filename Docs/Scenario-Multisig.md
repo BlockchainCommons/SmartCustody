@@ -47,7 +47,7 @@ See **Adversaries** for a more extensive list and discussion.
 
 ### Requirements
 
-The following items are necessary for this procedure, and should be purchased in advance of your setting up this scenario.
+The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
 
 * [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet(https://sparrowwallet.com/).
 * [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)
@@ -1076,10 +1076,10 @@ The heart of #SmartCustody is a discussion of Adversaries that can oppose the Go
    * *Adversary: Internal Theft* — Theoretically, revealing information about your digital assets to your heirs does create a threat of internal theft. However, as long as you maintain sole control over the locales with at least two of the keys, your assets should remain protected. Nonetheless, be aware of the potential issue.
    * *Adversary: Network Attack, Personal* — None of your keys are online, so the only network attack surface is your network coordinator. This simply means that you need to carefully review the details of any PSBTs that you sign with your airgapped signing devices.
    * *Adversary: Network Attack, Systemic* — By avoiding the use of exchanges or other online services, you entirely protect yourself from more systemic attacks.
-   e) [*Adversary: Physical Theft, Casual*](#adversary-physical-theft-casual) — *an opportunistic physical theft*
-   f) [*Adversary: Physical Theft, Sophisticated*](#adversary-physical-theft-sophisticated) — *a purposeful physical theft*
-   g) [*Adversary: Social Engineering*](#adversary-social-engineering) — *a social theft*
-   h) [*Adversary: Supply-Chain Attack*](#adversary-supply-chain-attack) — *a logistical theft*
+   * *Adversary: Physical Theft, Casual* — A casual theft will have no effect: you lose one key (but probably have a backup) and the thief gets one key (which is insufficient).
+   * *Adversary: Physical Theft, Sophisticated* — For a sophisticated theft to work would require knowledge of the location of multiple keys and their simultaneous theft. A much more likely situation would be a thief stealing one key and your instructions to heirs and then making plans to steal the others: which means that you have to regularly check your storage locales and immediately sweep funds to new keys if a theft occurs.
+   * *Adversary: Social Engineering* — There is no proof against social engineering. So, you still need to be careful.
+   * *Adversary: Supply-Chain Attack*] — Using the default scenario, your Passport is well protected against Supply-Chain Attack, but an iPhone could be more vulnerable. This is another reason that it's important to use two different iDevices for your active and recovery key. You can reduce the danger of a supply-chain attack by buying directly from an Apple Store.
 4.  **Loss by Crime, Other Attacks**
    a) [*Adversary: Blackmail*](#adversary-blackmail) — *threat of exposure*
    b) [*Adversary: Coercion*](#adversary-coercion) — *threat of death, disability, or detention*
@@ -1106,6 +1106,8 @@ The heart of #SmartCustody is a discussion of Adversaries that can oppose the Go
 ---
 
 [^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, the language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically internet connected. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
+
+[^sca]: **Supply-Chain Attacks.** When possible, buy your products directly from the manufacturers, preferably at a store you can walk into. Thus, for example, it's optimal to buy an iPhone directly from the Apple Store. This directly reduces the odds that someone has modified the device before you received it. To reduce privacy dangers, you can also choose to pay for items with cash, a pre-loaded debit card, or some other means that keeps your personal information separate from the purchase.
 
 [^2]: **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Thus, though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active and one as a backup, they should _not_ be done on the same device. For the permanent key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your recovery key, we suggest you use an older iPod Touch or even borrow a trusted partner's iPhone; you'll be deleting that key after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a recovery key and holding an active key, provided you were careful about deleting the recovery key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a SPOC.
 
