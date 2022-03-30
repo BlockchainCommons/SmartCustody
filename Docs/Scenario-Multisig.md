@@ -825,41 +825,43 @@ If you stored your Recovery Seed on MicroSDs, you should also create a new set o
 1. [  ] Output the second share to the MicroSD at your Secondary Storage.
 1. [  ] Output the third share to the MicroSD at your Home Storage.
 
-## Options I: Additional Steps
+## OPTIONS
+
+### Options I: Additional Steps
 
 _This section will contain additional steps that may be incorporated into the scenario to better address certain adversaries._
 
-### Optional Step: Use Bags (Fire-Resistant)
+#### Optional Step: Use Bags (Fire-Resistant)
 
 **Obstructed Adversary:** Disaster
 
 _This option will describe how to use fire-proof bags to protect paper._
 
-### Optional Step: Use Bags (Fire-Resistant)
+#### Optional Step: Use Bags (Fire-Resistant)
 
 **Obstructed Adversary:** Internal Theft, Institutional Theft, Physical Theft (Sophisticated)
 
 _This option will describe how to use tamper-proof bags to protect from theft._
 
-### Optional Step: Use Metal Storage
+#### Optional Step: Use Metal Storage
 
 **Obstructed Adversary:** Disaster, Key Fragility
 
 _This option will describe how to use a metal tile and engraver to protect information._
 
-### Optional Step: Use MicroSDs for SSKR Backup
+#### Optional Step: Use MicroSDs for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
 
 _This is already incorporated into the scenario as a strong option._
 
-### Optional Step: Use NFCs for SSKR Backup
+#### Optional Step: Use NFCs for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
 
 _This option will describe how to use NFCs with Gordian Seed Tool._
 
-## Options II: Alternative Signing Devices
+### Options II: Alternative Signing Devices
 
 Further discussions of why specific transaction coordinators or signing devices are desirable, or not, may be found in our [#SmartCustody Case Studies](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Case-Studies-Overview.md).
 
@@ -877,21 +879,23 @@ Further discussions of why specific transaction coordinators or signing devices 
 
   _**Optional Steps** (described later) may require  purchases of additional items._
 
-### Alternative Recovery Devices
+#### Alternative Recovery Devices
 
 _This will include elements like seed-tool CLI that can produce SSKR shares._
 
-### Alternative Signing Devices
+#### Alternative Signing Devices
 
 _This will include alternative signing devices such as Keystone and possibly older devices such as Ledger and Trezor_.
 
 _There may need to be some adjustments to the Storage check sections too._
 
-### Alternative Transaction Coordinators
+#### Alternative Transaction Coordinators
 
 _This may require new scenarios to fully lay out._
 
-## Appendix I: Gordian Principles & Adversaries
+## APPENDICES
+
+### Appendix I: Gordian Principles & Adversaries
 
 This #SmartCustody procedure is intended to highlight the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and address many [adversaries](https://www.smartcustody.com/) from #SmartCustody. Here's how it does so.
 
@@ -941,13 +945,13 @@ The heart of #SmartCustody is a discussion of Adversaries that can oppose the Go
    * *Adversary: Correlation* — If desired, a user could maintain an additional warm wallet in the Sparrow transaction coordinator to allow use of CoinJoin to foil any correlation.
    * *Adversary: Loss of Fungibility* — CoinJoin can also foil problems of loss of fungibility.
 
-## Appendix II: SPOFs & SPOCs in This Scenario
+### Appendix II: SPOFs & SPOCs in This Scenario
 
 The original #SmartCustody single-sig scenario ensured that there were no Single Points of Failure (SPOFs) where the loss of devices and data at a single site could result in the loss of digital funds. This multi-sig expands on that by also ensuring that there are no Single Points of Compromise (SPOCs) where the theft of devices and data at a single site could result in the loss of digital funds.
 
 Following are discussions of potential fail modes and how this scenario avoids them.
 
-### Single Points of Failure (SPOF)
+#### Single Points of Failure (SPOF)
 
 **Loss of Individual Data:**
 
@@ -987,7 +991,7 @@ TRIPLE LOSS: :red_square: LOSS! Only Gordian Seed Tool Potentially Remains
 
 _Note that the SSKR shares are usually not needed, except in the Home Loss scenario. They may also come into play for a loss of some material at a location, such as if the iPhone is lost along with the Primary Storage, which contains backup information. Nonetheless, they're important to ensure that the scenario remains robust for this sort of situation._
 
-### Single Points of Compromise (SPOC)
+#### Single Points of Compromise (SPOC)
 
 SPOF and SPOC inevitably lie in balance. The more SPOF is reduced, the greater SPOC is increased. Since this scenario does its best to minimize, it does have some vulnerability to SPOC, but it has been designed so that two locales must be attacked to provide an attacker with sufficient key material to create a compromise. This underlines the importance of separating locales where material is stored.
 
@@ -1015,7 +1019,7 @@ The addition of an optional cloud adds very little danger, except in the situati
 | Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys |:green_square: OK |  :green_square: .5 keys |
 | Cloud | :red_square: 2 keys | :green_square: .5 keys | :green_square: .5 keys | :green_square: OK |
 
-## Appendix III: Preserving Assets for Your Heirs
+### Appendix III: Preserving Assets for Your Heirs
 
 Being able to pass assets down to heirs is important for many. But, even if you don't have any heirs, making your funds available to someone else, whether it be a spouse or a lawyer, can be crucially important: if you are disabled to the point where you are unable to access your funds yourself, you may _need_ someone to access your funds for you, quite possibly to pay for the medical care that you need.
 
@@ -1027,7 +1031,7 @@ Ensuring that heirs, spouses, or lawyers can access digital access runs afoul of
 
 This scenario has been set up to minimize the possiblity of losing your authentication tokens, but you must still: reveal assets to heirs; tell them how to access them; and underline their value. That's what a letter does, which is why one of those is included in the scenario as well.
 
-## Appendix IV: Sample Letter to Heirs
+### Appendix IV: Sample Letter to Heirs
 
 ```
 Dear _________________,
