@@ -272,7 +272,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
    1. Choose "2 of 3" and touch "Next"
    1. "Print All Shares", using the default options, which call for a Summary Page and coupons printed on individual pages. Be sure you're not printing double-sided!
 
-**Suggested Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
+**Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
 1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
 1. [  ] Insert MicroSD Card #1[^18].
@@ -370,7 +370,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
    1. Place one printed share in your Primary Storage.
    1. Place one printed share in your Secondary Storage.
 
-**Suggested Resilience Improvement: Test MicroSD Cards for SSKR Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
+**Suggested Resilience Improvement: Test MicroSD Cards for SSKR Active Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
 1. [  ] Insert one of your MicroSD cards into your SD Card Reader for iPhone.
 1. [  ] In Gordian Seed Tool, touch the "QR" button to "Scan" and then choose "Files".
@@ -756,15 +756,21 @@ Leaving assets to children or other heirs is important for many of us. Digital a
 
 Your digital assets are only protected if you actively maintain your backups. Every Spring you're going to check your Primary Storage.
 
-1. [  ] Collect your Passport, your iPhone, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
+1. [  ] Collect your required signing devices, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
 2. [  ] Visit your Primary Storage.
 1. [  ] Make sure your printed SSKR share still exists.
 1. [  ] Make sure your printed account descriptor still exists.
 1. [  ] Make sure your instructions for heirs still exist.
+
+***GST Instructions:***
+
 1. [  ] Check your Apple Information Sheet.
    1. Use the PIN to log into your phone; if you realize it has changed, record the new PIN.
    2. Use the Apple Login & Password to log in to your Apple account; if you realize it has changed, record the new info.
    3. If you recorded an Apple Recovery Code, make sure it's still there and legible.
+
+***Passport Instructions:***
+
 1. [  ] Check your Passport PIN.
    1. Use the PIN to log into your Passport; if you realize it has changed, record the new PIN.
 1. [  ] Backup your Passport[^47].
@@ -791,13 +797,16 @@ Your digital assets are only protected if you actively maintain your backups. Ev
     K-->L
 ```
 
-Your Secondary storage may be with friends or family, so Fall is a great time to visit them, and simulataneously check on that online storage as well. (But make sure you do this _every fall_, whether you otherwise plan a visit or not!)
+Your Secondary storage may be with friends or family, so Fall is a great time to visit them, and simultaneously check on that storage as well. (But make sure you do this _every fall_, whether you otherwise plan a visit or not!)
 
-1. [  ] Collect your Passport, your iPhone, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
+1. [  ] Collect your required signing devices, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
 1. [  ] Visit your Secondary Storage.
 1. [  ] Make sure your printed SSKR share still exists.
 1. [  ] Make sure your printed account descriptor still exists.
 1. [  ] Make sure your instructions for heirs still exist.
+
+***Passport Instructions:***
+
 1. [  ] Backup your Passport[^47].
    1. Choose Settings > Backup > Create Backup
    2. Insert the MicroSD from the Secondary Storage into your Passport
@@ -826,23 +835,29 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 
 Our current expectation is that MicroSDs have a lifetime of 10 years. But, we're not sure if that's a minimum or actually a median or average. To be safe, we suggest replacing your MicroSD cards every three years. The following process should occur whenever your calendar reminder goes off.
 
+***Passport Instructions:***
+
 1. [  ] Order two new MicroSD cards (or three if you used the Suggested/Optional Resilience Improvements.)
 1. [  ] Bring your Passport to the Primary Storage.
 1. [  ] Create a new Backup on the new Card
-1. [  ] Store that Card at Primary storage.
+1. [  ] Store that Card at Primary Storage.
 1. [  ] Destroy the old Card[^48]
 1. [  ] Bring your Passport to the Secondary Storage.
 1. [  ] Create a new Backup on the new Card
 1. [  ] Store that Card at Secondary Storage.
 1. [  ] Destroy the old Card[^48]
 
-**Optional Resilience Improvement: Use MicroSD Cards for SSKR Backup.** 
+**Optional Resilience Improvement: Use MicroSD Cards for SSKR Active Backup.** 
+
+***Gordian Seed Tool Instructions:***
 
 If you stored your Active Seed from Gordian Seed Tool on MicroSDs, create a new set of shares on the MicroSDs _before_ you go to your Storage, as described in the _Optional_ section of Step F.
 
-**Suggested Resilience Improvement: Use MicroSD Cards for SSKR Backup.** 
+**Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** 
 
 If you stored your Recovery Seed on MicroSDs, you should also create a new set of shares on the MicroSDs, but this is slightly tricky because it's currently sharded. Here's the best way to do that!
+
+***Recovery ordian Seed Tool Instructions:***
 
 1. [  ] Grab your partner's iPhone, your iPod, or some other device running Gordian Seed Tool, separate from your main iPhone.
 1. [  ] Scan the first Recovery Shard from your Home Storage, as described in Step E.
