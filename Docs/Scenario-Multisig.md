@@ -187,7 +187,7 @@ graph LR;
 
 Because your computer never holds seeds, you don't need to do the same extensive work securing it as you might have with previous generations of signing devices. However, it's best to use a computer that you're careful with. If you have a computer that's not used much, and especially one that's not used for web browsing, that's a good choice[^10].
 
-**Transaction Coordinator Instructions:**
+***Transaction Coordinator Instructions:***
 
 Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Debian, Redhat, or Cenix).
 
@@ -221,7 +221,7 @@ graph LR;
 
 The creation of a multisig is initiated on your transaction coordinator. This scenario suggests a 2-of-3 multisig.
 
-**Transaction Coordinator Instructions:**
+***Transaction Coordinator Instructions:***
 
 1. [  ] Create a new multisig in Sparrow.
    1. "File -> New Wallet"[^12].
@@ -270,7 +270,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
    1. Touch "Authenticate".
    1. Touch "Backup" and Choose "Backup as SSKR Multi-Share".
    1. Choose "2 of 3" and touch "Next"
-   1. "Print All Shares", using the defaults for a Summary Page and coupons on individual pages. Be sure you're not printing double-sided!
+   1. "Print All Shares", using the default options, which call for a Summary Page and coupons printed on individual pages. Be sure you're not printing double-sided!
 
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
@@ -289,6 +289,7 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
 1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^18].
 1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
+1. [  ] Remove MicroSD Card #3.
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
@@ -315,7 +316,7 @@ _Default Recovery Device:_ Gordian Seed Tool.
     F-->H
 ```
 
-You want to remove the electronic version of your Recovery Seed, but then immediately make sure your SSKR shares are valid.
+You want to remove the electronic version of your Recovery Seed from Gordian Seed Tool, but then immediately make sure your SSKR shares are valid.
 
 1. [  ] Delete the Seed in Gordian Seed Tool by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
 1. [  ] Scan in Your SSKR
@@ -338,8 +339,10 @@ You want to remove the electronic version of your Recovery Seed, but then immedi
    1. Restore one more time, this time using the other of your two original shares from that first scan along with the one you didn't originally scan.
    1. In other words, you should have scanned all three combinations of two shares: AB, BC, and AC. If you're confused at which you've used, labeled them "A", "B", and "C".
    1. "Save" it, check it, and this time do *not* delete it (yet).
- 
-Now that you know you can recover your seed from the recovery shards, you should enter that seed into Sparrow.
+
+Now that you know you can recover your seed from the recovery shards, you should enter that seed into your transaction coordinator.
+
+**Transaction Coordinator Instructions:**
 
 1. [  ] Display the Account in Gordian Seed Tool
    1. Select the seed.
@@ -353,7 +356,10 @@ Now that you know you can recover your seed from the recovery shards, you should
    3. Click the "Scan" button for Gordian Seed Tool
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
-1. [  ] Change the label for Keystore One in Sparrow to be something meaningful like "SSKR Recovery Key"[^25].
+1. [  ] Change the label for Keystore One in Sparrow to be something meaningful, such as "SSKR Recovery Key"[^25].
+
+You can now close out this seed in Gordian Seed Tool:
+
 1. [  ] Delete the seed on Gordian Seed Tool.[^26]
 1. [  ] Delete Gordian Seed Tool.
 
@@ -366,18 +372,18 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
 **Suggested Resilience Improvement: Test MicroSD Cards for SSKR Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
-1. [  ] Insert one of your MicroSD cards into your iPhone Reader.
-1. [  ] Touch the "QR" button to "Scan" in Gordian Seed Tool and then choose "Files"
-1. [  ] Find your SSKR Share of the QR and Select It
-   1. You should see "Recover from SSKR" with one of your two shares recovered.
-1. [  ] Remove that first MicroSD and Replace It with Another
-1. [  ] Find your SSKR Share of the QR and Select It
-1. [  ] Verify That Your Seed Has Restored
-1. [  ] Best Practice is to Repeat This with the Other Two Potential Combos of Cards
-1. [  ] Delete Any Restored Seeds After Testing[^24].
-1. [  ] Do *not* yet store your Cards. You'll be using them again in Steps F and G.
+1. [  ] Insert one of your MicroSD cards into your SD Card Reader for iPhone.
+1. [  ] In Gordian Seed Tool, touch the "QR" button to "Scan" and then choose "Files".
+1. [  ] Find the file containing the QR Code of your SSKR Share and select it.
+   1. Afterward, you should see "Recover from SSKR" with one of your two shares recovered.
+1. [  ] Remove that first MicroSD and replace it with another.
+1. [  ] Find the file containing the QR Code of your SSKR Share and select it.
+1. [  ] Verify that your seed has restored.
+1. [  ] Best practice is to repeat this with the other two potential combos of cards[^22].
+1. [  ] Delete any restored seeds after testing[^24].
+1. [  ] Do *not* yet store your MicroSD Cards. You'll be using them again in Steps F and G.
 
-_Any Alternative SSKR Device may be used to replace Steps D + E._
+_Any Alternative Recovery Device may be used to replace Steps D + E._
 
 #### **Step F: Create & Test Active Seed #1**
 
@@ -1154,13 +1160,13 @@ Access Info: Password is at Safety Deposit Box
 
 [^14]: **Script Type.** Current options are "Legacy", "Nested Segwit", and "Native Segwit". Both "Legacy" and "Nested Segwit" are older Bitcoin scripts, while "Native Segwit" has been the current one for several years. It's always best to stick with the newest, to future-proof your funds, as long as it's been around for a year or two and is a mature technology.
 
-[^15]: **Computer or Mobile Device?** Generally, a mobile device is preferred over a computer because it reduces the attack surface. If you do choose to use a computer for creating your recovery key, be sure it's not the computer also running Sparrow. Generally, keep your keys and your transaction coordinator separate, or you begin to lose the advantages of this scenario.
+[^15]: **Computer or Mobile Device?** Generally, a mobile device is preferred over a computer because it reduces the attack surface. If you do choose to use a computer for creating your recovery key, be sure it's not the computer also running Sparrow. Generally, keep your keys and your transaction coordinator separate or you begin to lose the advantages of this procedure.
 
 [^16]: **Why Optional?** We encourage everyone to create MicroSD backups of their SSKR shares, as described here. The _only_ reason that this is listed as optional is because we don't want to discourage you from using this procedure if you don't have an SD Card Reader for iPhone and an extra MicroSD card on hand. So, if you can, get that Card Reader and that extra card. If you don't have them, just skip these parts, but we suggest that you come back and do them in the future.
 
-[^17]: **Why QR?** We choose QR as the most automated of the restore methods. You should be able to display two of the three QRs from these files (or load them directly in Seed Tool) and restore in a totally automated way. However, if you prefer to be able to see your backup words, choose ByteWords. Even better, backup in both formats.
+[^17]: **Why QR?** We choose QR as the most automated of the backup (and restore) methods. You should be able to display two of the three QRs from these files (or load them directly in Seed Tool) and restore in a totally automated way. However, if you prefer to be able to see your backup words, choose ByteWords. Even better, backup in both formats. 
 
-[^18]: **Which Card Is Which?** If you're using our standard procedure MicroSD Card #1 is the one you bought with the SD Adapter, while MicroSD Card #2 and #3 are the ones that came with your Passport. If you're using a Passport, it's important to differentiate them, because you will _not_ put a Passport backup on MicroSD Card #1, as it'll be stored the same place as the Passport Backup words.
+[^18]: **Which Card Is Which?** If you're using our standard procedure MicroSD Card #1 is the one you bought with the SD Adapter, while MicroSD Card #2 and #3 are the ones that came with your Passport. It's important to differentiate these three MicroSDs, because you will _not_ put a Passport backup on MicroSD Card #1, as it'll be stored the same place as the Passport Backup Words.
 
 [^19]: **Export Together!** One you have clicked the "Export Shares Individually" button do *not* click done until you have exported all three shares. Each times SSKR shares are generated, they're modified by new entropy. That means that SSKR shares may only be used with the other shares created at the exact same time.
 
@@ -1176,9 +1182,9 @@ Access Info: Password is at Safety Deposit Box
 
 [^25]: **Clear Labelling.** No security through obscurity.
 
-[^26]: **Seriously, Delete It!** It is very important that your recovery seed *not* be in Gordian Seed Tool as it creates an additional vector of action. This is especially important if you are using the same devie for your recovery seed and your active Gordian Seed Tool (not recommended!).
+[^26]: **Seriously, Delete It!** It is very important that your recovery seed *not* be in Gordian Seed Tool as it creates an additional vector of action. This is especially important if you are using the same device for your recovery seed and your active Gordian Seed Tool (not recommended!).
 
-[^27]: **Separating Shares.** Part of this scenario ensures that there are no Single Points of Compromise (SPOCs) for your funds by ensuring that none of the keys are ever left unprotected, But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Dela! 
+[^27]: **Separating Shares.** This scenario ensures that there are no Single Points of Compromise (SPOCs) for your keys by ensuring that no locale has both a key and the methodology for unlocking that key.But, your set of three SSKR shares represents an unprotected key when any two are put together. So, you need to immediately divide them up, as planned. Don't Delay! 
 
 [^28]: **SSKR Security.** Remember that no one can do anything with these shares unless they have two of them, so even if you have to just give one to a friend, that's probably fine. They'd need a second one to have your key, and even then they'd need a second key to access your funds.
 
