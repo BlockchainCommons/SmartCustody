@@ -607,11 +607,13 @@ _Any Alternative Signing Device may be used to replace this Step._
     K-->L
 ```
 
-After you have added three keys to Sparrow, either using the defaults of an SSKR Recovery Key and active keys on Passport and GST, or via Alternative Signing Devices, you are ready to finalize your multisig in Sparrow.
+After you have added three keys to your transaction coordinator, either using the defaults of an SSKR Recovery Key and active keys on Passport and GST, or via Alternative Signing Devices, you are ready to finalize your multisig.
 
-1. [  ] Click "Apply"
+**Transaction Coordinator Instructions:**
+
+1. [  ] Click "Apply" in Sparrow.
 1. [  ] Choose whether to add a password; you probably should not[^42].
-1. [  ] Export your account
+1. [  ] Export your account.
    1. Choose "Export".
    1. Click "Export File" next to "Output Descriptor".
 1. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
@@ -640,31 +642,33 @@ After you have added three keys to Sparrow, either using the defaults of an SSKR
 
 Particularly in the case of a multisig, you want to test your new account by both receiving and then sending back small amounts of funds 
 
+**Transaction Coordinator Instructions (for Passport and GST):**
+
 1. [  ] Send funds to your Multisig address from a remote wallet.
    1. Click "Receive" in Sparrow.
    1. Read the address or QR into a remote wallet.
    1. Send a _small_ amount of funds to the multisig address from your remote wallet.
 1. [  ] Wait for the funds to arrive.
    1. Click "Transactions" in Sparrow.
-   1. Wait for the "Uncomfirmed" funds to have at least one confirmation
+   1. Wait for the "Uncomfirmed" funds to have at least one confirmation.
 1. [  ] Prepare transaction to send funds back to a remote wallet[^43].
    1. Click "Send" in Sparrow.
    1. Copy in an address or read in a QR code.
    1. Add a label; it's required.
-   1. Choose an amount to send
+   1. Choose an amount to send.
    1. Choose a fee based on the priorities shown by Sparrow.
    1. Click "Create Transaction"
    1. Click "Finalize Transaction for Signing".
-1. [  ] Sign with your Passport[^43].
+1. [  ] ***Passport Instructions:*** Sign with your Passport[^43].
    1. Click "Show QR" in Sparrow
-   1. Power On your Passport, and sign in with your PIN.
+   1. Power on your Passport, and sign in with your PIN.
    1. Select "Sign with QR Code".
    1. Hit the right-button on your Passport to review the transaction[^44] and Sign.
    1. Hit "Cancel" on Sparrow to end the "Show QR", then click "Scan QR".
-   1. You may need to "Resize" the Passport QR to make it smaller and/or protect the screenf from glare.
+   1. You may need to "Resize" the Passport QR to make it smaller and/or protect the screen from glare.
    1. You should see a status bar slowly increase as the QR is read in, and eventually the screen should show "FDP Active Key" (or whatever the name) has signed.
-1. [  ] Sign with Gordian Seed Tool[^43].
-   1. Click "Show QR" in Sparrow
+1. [  ] ***GST Instructions:*** Sign with Gordian Seed Tool[^43].
+   1. Click "Show QR" in Sparrow.
    1. Start up Gordian Seed Tool and hit the "Scan" (QR Code) button
    1. Review the transaction[^44] and "Approve".
    1. Select "QR Code" under "ur:crypto-psbt"
@@ -726,9 +730,9 @@ Once you are confident in your control of an account, you can send the rest of y
     K-->L
 ```
 
-Leaving our assets to our children or other heirs is important for many of us. Digital assets can be hard to find and access, to instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost.
+Leaving assets to children or other heirs is important for many of us. Digital assets can be hard to find and access, so instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost. More on the topic can be found in **Appendix III**
 
-1. [  ] Prepare a sample letter for your heirs, such as the one found in Appendix III. Choose whether to be specific or vague[^45]. We suggest specific. Be sure to be clear of the scope of the assets if they are large[^46].
+1. [  ] Prepare a sample letter for your heirs, such as the one found in **Appendix IV**. Choose whether to be specific or vague[^45]. We suggest specific. Be sure to be clear of the scope of the assets if they are large[^46].
 1. [  ] Print your letter.
 1. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
 
@@ -1231,7 +1235,7 @@ Access Info: Password is at Safety Deposit Box
 
 [^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
 
-[^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises, for example if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more liekly and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
+[^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises. For example, if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more likely and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
 
 [^46]: **Funds Scope.** If you have a lot of assets, be sure your heirs know that. Retrieving your digital assets is going to be time consuming and alien to most people. It might be ignored if your heirs don't think it's worthwhile. So, be sure to let them know if it is!
 
