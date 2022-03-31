@@ -409,7 +409,7 @@ _Default Signing Device #1:_ Gordian Seed Tool.
     F2-->H
 ```
 
-In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of yur active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
+In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of your active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
 
 1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
@@ -419,39 +419,43 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
    3. Flipping coins to generate 128 bits of entropy takes 128 flips. That's a lot!
 1. [  ] "Save" it.
 
-You're now ready to read an xpub into Sparrow[^31]:
+You're now ready to read an xpub into your transaction coordinator[^31]:
 
-1. [  ] Display the Account in Gordian Seed Tool
+**Transaction Coordinator Instructions:**
+
+1. [  ] Display the Account in Gordian Seed Tool.
    1. Select the seed.
-   2. Touch "Authenticate"[^23]
+   2. Touch "Authenticate"[^23].
    3. Touch "Derive Key" and "Other Key Derivations".
-   4. Scroll down to "Secondary Derivation" and Choose "Account Descriptor"
+   4. Scroll down to "Secondary Derivation" and Choose "Account Descriptor".
    5. Export the Account Descriptor, which should show an Animated QR.
-1. [  ] Input the Account into Sparrow
+1. [  ] Input the Account into Sparrow.
    1. On Sparrow, Choose "Keystore 2", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
-   3. Click the "Scan" button for Gordian Seed Tool
+   3. Click the "Scan" button for Gordian Seed Tool.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
 1. [  ] Change the label for "Keystone 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
 
 You need to add a few things related to your Apple account to your Storage:
 
+**Transaction Coordinator Storage Instructions:**
+
 1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) on a piece of waterproof paper.
 2. [  ] Store your Apple information at your Primary Storage.
 
-**Optional Resilience Improvement: Store Apple Info in Cloud.** The following optional[^32] procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud
+**Optional Transaction Action Coordinator Resilience Improvement: Store Apple Info in Cloud.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud.
 
 1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) in encrypted cloud storage, such as at LastPass.
 
 **Optional Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^32] procedure will increase the resilience of your recovery backup by sharding your active seed from Gordian Seed Tool and saving those SSKRs to MicroSDs[^33].
 
-1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
+1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone.
 1. [  ] Insert MicroSD Card #1[^34].
 1. [  ] In Gordian Seed Tool, again choose your Seed and "Backup" as a "SSKR Multi-Share" of "2 of 3".
 1. [  ] Choose "Export Shares Individually".
 1. [  ] Select to Export Shares as "QR Code"[^17].
-1. [  ] Click on the Export Icon for "Share 1".
+1. [  ] Click on the export icon for "Share 1".
 1. [  ] Scroll down to "Save to Files" and select it.
 1. [  ] "Save" the file to your MicroSD Card.
    1. The MicroSD card will typically be on the files list after your iPhone and iCloud, visible as a drive icon.
@@ -495,7 +499,7 @@ If you have never before used your Passport, you'll need to set it up:
 1. [  ] Power on your Passport by holding down the bottom-left button.
 1. [  ] Do the bureaucratic steps.
    1. Call up the setup instructions with the QR.
-   2. Agree to the terms of service
+   2. Agree to the terms of service.
 1. [  ] Conduct the Supply-Chain Validation[^35].
    1. Scan the Validation Code from the setup instructions.
    2. Copy the four words that appear on your Passport back to the web page.
@@ -509,12 +513,12 @@ If you have never before used your Passport, you'll need to set it up:
 
 It is strongly recommended that you update the firmware on your Passport before you begin using it[^36].
 
-1. [  ] Check your Firmware version on your Passport: v___________.
+1. [  ] Check the Firmware version on your Passport: v___________.
    1. This can be found at Settings > Firmware > Firmware Version.
 1. [  ] Check the current Firmware version on the Setup Page: v____________.
    1. If the Passport Firmware is less than the current Firmware, then continue (otherwise you're done).
-1. [  ] Download the current Firmware from the Setup page.
-1. [  ] Copy the Firmware to a MicroSD card, using an adapter[^37].
+1. [  ] Download the current Firmware from the Setup page to a computer.
+1. [  ] Copy the Firmware to a MicroSD card inserted into your computer, using an adapter[^37].
 1. [  ] Install the Firmware on your Passport.
    1. Insert the MicroSD card into the top of your Passport.
    1. On your Passport, choose Settings > Firmware > Update Firmware
@@ -522,7 +526,7 @@ It is strongly recommended that you update the firmware on your Passport before 
 You're now ready to create a new seed on your Passport.
 
 1. [  ] Choose "Create New Seed" on your Passport.
-1. [  ] Backup Your Passport
+1. [  ] Back Up Your Passport
    1. Choose Continue with the right button.
    1. Insert the first MicroSD Card[^38] supplied with the Passport.
    1. Choose Continue with the right button.
@@ -533,7 +537,9 @@ You're now ready to create a new seed on your Passport.
    1. Insert the second MicroSD Card[^38] supplied with the Passport.
    1. Choose Continue to make the Backup.
 
-You can now import an account into Sparrow.
+You can now import an account into your transaction coordinator.
+
+**Transaction Coordinator Instructions:**
 
 1. [  ] Display a Public Cosigner QR for Your Seed on the Passport.
    1. Choose "Pair Wallet" on your Passport.
@@ -545,22 +551,27 @@ You can now import an account into Sparrow.
 1. [  ] Import the QR into Sparrow
    1. On Sparrow, Choose "Keystore 3", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
-   3. Click the "Scan" button for Passport Multisig
+   3. Click the "Scan" button for Passport Multisig.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
-   5. If your computer is having problems reading the QR, consider shading it to reduce glare and/or hitting the right button for Resize to display a smaller QR
+   5. If your computer is having problems reading the QR, consider shading it to reduce glare and/or hitting the right button for Resize, to display a smaller QR.
    6. An xpub of the appropriate key derivation should be imported.
-1. [  ] Verify the Seed on Sparrow
+1. [  ] Verify the seed from Sparrow
    1. Click "Export" on Sparrow.
    1. Select "Show" next to "Passport Multisig".
    1. Scan the animated QR into your Passport
    1. When it gives you the option to create a wallet, click the right-button on your Passport to do so.
+1. [  ] Verify an address from Sparrow.
    1. On Sparrow, cancel the "Export" and go to "Receive"
    1. Scan the address into your Passport.
    1. This should complete the two-stage verification that your Passport seed has been imported correctly
+1. [  ] Change the label for "Keystone 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
+
+There's one last bit of administrivia for Passport:
+
 1. [  ] Update your backups
    1. At this time, your Passport will suggest that you update the backups you just made.
-   1. You should do so, so that if your recover from backup, the backups include the Sparrow connection
-1. [  ] Change the label for "Keystone 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
+   1. You should do so, so that if your recover from backup, the backups include the Sparrow connection.
+   1. Be sure to also replace your second backup.
 
 Finally, you need to divy out the various backups and such you made[^39]:
 
@@ -568,7 +579,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
 1. [  ] Store one Passport MicroSD in your Primary Storage.
 1. [  ] Store your written Passport PIN in your Primary Storage.
 1. [  ] Store one Passport MicroSD in your Secondary Storage.
-1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store an extra copy of your Passport Backup Words there as well as your Passport PIN[^41].
+1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store an extra copy of your Passport Backup Words there, as well as your Passport PIN[^41].
 1. [  ] Put on your calendar a TODO to "Update MicroSD Storage (Step M)" three years in the future.
 
 _Any Alternative Signing Device may be used to replace this Step._
@@ -1196,17 +1207,17 @@ Access Info: Password is at Safety Deposit Box
 
 [^32]: **More Optional.** This is more optional than the previous reslience options. In fact, it may even be a trade-off. As is, you've got your active Gordian Seed Tool seed in two places: on your iPhone and in iCloud. So why back it up further? Because Apple could disappear. Because you could lose access to your Apple account. Because you could forget PINs to old Apple computers when you try to load a new one. And, if you've already got a trio of MicroSDs from the previous resilience options, this is easy to do. Why not do it? Because you're putting enough data on the MicroSD cards that any two of them could be used to compromise your account, without additional passwords. So, if you think it's more likely that Apple or your Apple account disappear, do this! If you think it's more likely a pair of MicroSDs cards are compromised, don't. SmartCustody is all about analyzing which risks are most likely to affect *you*.
 
-[^33]: **No Printing.** Do *not* create SSKR shares for your active GST seed by printing them, or at the last, not on the same network you printed the previous ones. If that network is compromised, an attacker can now empty your Bitcoin account.
+[^33]: **No Printing.** Do *not* create SSKR shares for your active GST seed by printing them, or at the least, not on the same network you printed the previous ones. If that network is compromised, an attacker could now empty your Bitcoin account.
 
-[^34]: **Which Card is Which (II)?** All that matters it that you continue to track which cards will not have the Passport backup, because that's the one to store with the backup words.
+[^34]: **Which Card is Which (II)?** All that matters it that you continue to track which cards will not have the Passport backup, because that's the one to store at your Home, which also has the Passport Backup Words.
 
-[^35]: **Supply-Chain Attack.** This is all fighting against the "Supply-Chain Attack" adversary, where the threat is that someone tampers with the device somewhere in the supply chain, between Foundation Devices shipping it out and you receiving it. The attacker could be a retailer, distributor, or someone in the postal system, depending on how you acquired your Passport. If your device were tampered with, it might supply a static seed that an attacker knows about or damage your security in any of a number of other ways.
+[^35]: **Supply-Chain Attacsk.** This is another example of fighting against the "Supply-Chain Attack" adversary, where the threat is that someone tampers with the device somewhere in the supply chain, between Foundation Devices shipping it out and you receiving it. The attacker could be a retailer, distributor, or someone in the postal system, depending on how you acquired your Passport. If your device were tampered with, it might supply a static seed that an attacker knows about or damage your security in any of a number of other ways.
 
 [^36]: **Why Upgrade?** You always want every piece of software and hardware you use to be the most up-to-date before you put digital assets on it. Older versions might have flaws or compromises that could lead to the loss of assets. So, even though it takes some real effort to upgrade your Passport, you should do so.
 
 [^37]: **MicroSDs & SDs.** A MicroSD card is about the size of a fingernail. It can fit in your Passport, your iPhone and other small devices. An SD card is about the size of your thumb. That's the size more typically used for computers. In order to use a MicroSD card on a computer, you'll typically need an [adapter](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), which is the size of an SD card. That'll let you read and write the MicroSD on your computer. You then remove the MicroSD card from the adapter, and you can use it with your Passport. 
 
-[^38]: **Which Card is Which? (Redux).** These two cards are the two that came with your Passport. If you are using the "Suggested Resilience Improvement" of this Scenario, where you also back up SSKR shares to MicroSD cards[^18], you will _not_ make a backup to the extra card you have, because that one is going to be stored with a copy of your backup words.
+[^38]: **Which Card is Which? (Redux).** These two cards are the two that came with your Passport. If you are using the "Suggested Resilience Improvement" of this Scenario, where you also back up SSKR shares to MicroSD cards[^18], you will _not_ make a backup to the extra card you have, because that one is going to be stored at home, which also has a copy of your backup words.
 
 [^39]: **Dividing Passport Assets.** If it's not obvious, the Passport assets are divided such that no storage unit becoems a single-point-of-compromise _for that key_. So, your Passport Backup Words are stored at Home because you don't keep either of your Passport Backups there. Thus, a thief would either (at home) get your Passport (which requires your PIN) and your Passport Backup Words (which require a Backup), and each of those are worthless on their own. Similarly, a thief at your Primary Storage would get your PIN (which requires your Passport) and a Backup (which requires the Passport Backup Words), and again each would be worthless on their own. If you are using Suggested Resilience Option, things are very slightly more complex[^40].
 
