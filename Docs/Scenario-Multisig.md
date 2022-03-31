@@ -125,7 +125,7 @@ Your material should be divided among four places: your home; secure storage in 
 | Sparrow Computer |
 | GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup<br>iPhone/Apple Info (opt.) |
 |  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
-| | Passport Backup Words |  Passport PIN |  | Passport PIN<br>Passport Backup Words (opt.) |
+| | Passport Backup Words |  Passport PIN |  | Passport PIN (opt.)<br>Passport Backup Words (opt.) |
 | | Account Descriptor | Account Descriptor | Account Descriptor | Account Descriptor (opt.) |
 | | Instructions for heirs | Instructions for heirs | Instructions for heirs |
 
@@ -154,7 +154,7 @@ graph LR;
     C-->D
 ```
 
-You will require two to three storage locales: Home Storage Locale, Primary Storage Locale, and Secondary Storage Locale[^6]. They will be used to store seeds and devices[^7]. 
+You will need two to three storage locales: Home Storage, Primary Storage, and Secondary Storage[^6]. They will be used to store seeds, devices, and information[^7]. 
 
 1. [  ] Install Home Safe[^8][^9]
    1. Ideally, it should be physically secured by mounting it to floor or wall joists, or even more securely, directly to a foundation
@@ -164,7 +164,7 @@ You will require two to three storage locales: Home Storage Locale, Primary Stor
    1. You will store an SSKR share in your Primary Store Locale, might store your Secondary Signing Device (by default: a Passport) if it's not in regular usage, and possibly other backup material
 3. [  ] Choose Secondary Storage Locale
    1. This may be a somewhat less secure locale that your Home Storage Locale and your Primary Storage Locale.
-   1. Options include your work, your parent's house, a trusted friend's house.
+   1. Options include your work, your parent's house, or a trusted friend's house.
    1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
 
 **Optional Resilience Improvement: Prepare Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. LastPass's "Notes" feature is one methodology.
@@ -187,7 +187,9 @@ graph LR;
 
 Because your computer never holds seeds, you don't need to do the same extensive work securing it as you might have with previous generations of signing devices. However, it's best to use a computer that you're careful with. If you have a computer that's not used much, and especially one that's not used for web browsing, that's a good choice[^10].
 
-**Sparrow Requirements:** Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Debian, Redhat, or Cenix).
+**Transaction Coordinator Instructions:**
+
+Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Debian, Redhat, or Cenix).
 
 1. [  ] Download [Sparrow Wallet](https://sparrowwallet.com/download/).
 1. [  ] Also download the manifest and the manifest signature from the same page.
@@ -219,15 +221,17 @@ graph LR;
 
 The creation of a multisig is initiated on your transaction coordinator. This scenario suggests a 2-of-3 multisig.
 
+**Transaction Coordinator Instructions:**
+
 1. [  ] Create a new multisig in Sparrow.
-   1. "File -> New Wallet"[^12]
-   1. Name it[^13]
+   1. "File -> New Wallet"[^12].
+   1. Name it[^13].
    1. "Create Wallet".
 1. [  ] Choose "Multi Signature" for "Policy Type".
-   1. Leave "Native Segwit" as the "Script Type"[^14]
+   1. Leave "Native Segwit" as the "Script Type"[^14].
 1. [  ] Choose "2/3" for the "M of N". This should be the default.
 
-At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport for your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signging Devices**. Choosing an alternative recovery device will replace steps D & E; choose an alternative active signing device will replace either step F or G. Just follow the separate steps in that section rather than the ones listed below in those cases.
+At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport as your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signing Devices**. Choosing an alternative recovery device will replace steps D & E; choosing an alternative active signing device will replace either step F or G. Just follow the separate steps in that option rather than the ones listed below in those cases.
 
 ### PART TWO: CREATE SEEDS
 
@@ -1134,9 +1138,9 @@ Access Info: Password is at Safety Deposit Box
 
 [^6]: **Locale Security.** Obviously, the more secure locations are, the better. Optimal setup would be to have a robust Home Safe and two safety deposit boxes in banks in two widely separated locales. However, we expect most people will choose their locales as home, bank, and work; or else as home, work, and family/friend home. The most important factor for the overall security of your scenario may not be physical security of the locale, but instead geographical separation, ensuring that no single disaster such as an earthquake or wildfire and no single event such as a war or civil unrest, could easily compromise two locales.
 
-[^7]: **Why Isn't Security the Biggest Factor?** No single locale should have enough information to access your funds in an unlocked way. Your home is the biggest danger because it holds two keys, but they should both be locked, either by PIN or biometrics. Each other locale holds at most one and a third keys, the full key locked.
+[^7]: **Why Isn't Security the Biggest Factor?** No single locale should have enough information to access your funds in an unlocked way. Your home is the biggest danger because it holds two keys, but they should both be locked, either by PIN or biometrics. Each other locale holds at most one and a third keys, the full key being locked.
 
-[^8]: **Safe Usage.** Note that most home safes do not offer enough [Disaster](#adversary-disaster) resistance to sufficiently protect your digital assets. At best they are rated to protect paper against fire. The primary goal of a home safe is to protect any Signing Device kept at home that is not in active use and to store one share of your SSKR, so that neither can easily be lost or stolen. Stealing would likely not compromise your funds, but it would put you on the path to losing control of those funds if disaster struck another locale.
+[^8]: **Safe Usage.** Note that most home safes do not offer enough Disaster resistance to sufficiently protect your digital assets. At best they are rated to protect paper against fire. The primary goal of a home safe is to protect any Signing Device kept at home that is not in active use and to store one share of your SSKR, so that neither can easily be lost or stolen. Stealing would likely not compromise your funds, but it would put you on the path to losing control of those funds if disaster struck another locale.
 
 [^9]: **Safe Optional.** The use of a safe is somewhat optional: you will have enough seeds at home to compromise your funds, but they should each be locked by PINs or biometrics, making such compromise unlikely. It's recommended, and it's better to have it, but don't give up on this procedure just because you don't have a home safe. 
 
