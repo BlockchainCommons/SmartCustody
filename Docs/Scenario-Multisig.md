@@ -1114,16 +1114,30 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 1. **Loss of Primary + Secondary.** Passport and Gordian Seed Tool remain available at home.
 1. **Loss of Home, Primary Storage, and Secondary Storage.** One key may still remain available in iCloud, if Gordian Seed Tool can be rebuilt, but that's insufficient to sign multisigs: the assets are definitely lost.
 
-**KEY LOSS BY LOCATION LOSS**
-| What's Lost? | Also ... Home | Primary | Secondary |
-| :--- | :--- | :--- | :--- |
-| Home | :green_square: Rebuild Passport (Cloud Dependent) & iPhone; or Rebuild iPhone and Restore SSKR | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
-| Primary | :yellow_square: Rebuild iPhone & Passport (Cloud Dependent) | :green_square: Recreate Backups | :green_square: Recreate Backups |
-| Secondary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone | :green_square: Recreate Backups |:green_square: Recreate Backups | 
+**SINGLE LOCATION LOSS: HOW TO REBUILD?**
 
-TRIPLE LOSS: :red_square: LOSS! Only Gordian Seed Tool Potentially Remains
+| What's Lost? | How to Resolve |
+| :--- | :--- |
+| Home | :green_square: Rebuild Passport (Cloud Dependent) & iPhone; or Rebuild iPhone and Restore SSKR |
+| Primary | :green_square: Recreate Backups |
+| Secondary | :green_square: Recreate Backups | 
 
-_Note that the SSKR shares are usually not needed, except in the Home Loss scenario. They may also come into play for a loss of some material at a location, such as if the iPhone is lost along with the Primary Storage, which contains backup information. Nonetheless, they're important to ensure that the scenario remains robust for this sort of situation._
+**DOUBLE LOCATION LOSS: HOW TO REBUILD?**
+
+| What's Lost? | How to Resolve |
+| :--- | :--- |
+| Home + Primary | yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | 
+| Home + Secondary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
+| Primary + Secondary | :green_square: Recreate Backups 
+
+
+**TRIPLE LOCATION LOSS: HOW TO REBUILD?**
+
+| What's Lost? | How to Resolve |
+| :--- | :--- |
+| Everything | :red_square: LOSS! Only Gordian Seed Tool Potentially Remains |
+
+_Note that the SSKR shares are usually not needed, except in the Home Storage loss scenario. They may also come into play for a loss of some but not all material at a location, such as if the iPhone is lost along with the Primary Storage, which contains backup information. They're important to ensure that the scenario remains robust for this sort of situation._
 
 #### Single Points of Compromise (SPOC)
 
