@@ -606,10 +606,11 @@ _Any Alternative Signing Device may be used to replace this Step._
     end
     subgraph 3[<h4>III. Finalize Setup</h4>]
     H[<b>H. Finalize Multisig</b>]
+    H1{<b>Backup?</b>}
     I[I. Test Transaction]
     J[J. Transfer Funds]
     K[K. Ensure Inheritance]
-    H-->I-->J-->K
+    H-->H1-->I-->J-->K
     end
     subgraph 4[IV. Revisit Backups]
     L[Steps L-N]
