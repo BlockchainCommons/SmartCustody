@@ -1126,10 +1126,9 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 
 | <div style="width:15%">What's Lost?</div> | <div style="width:65%">How to Resolve</div> |
 | :--- | :--- |
-| Home + Primary | yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | 
+| Home + Primary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | 
 | Home + Secondary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
-| Primary + Secondary | :green_square: Recreate Backups 
-
+| Primary + Secondary | :green_square: Recreate Backups |
 
 **TRIPLE LOCATION LOSS: HOW TO REBUILD?**
 
@@ -1143,29 +1142,47 @@ _Note that the SSKR shares are usually not needed, except in the Home Storage lo
 
 SPOF and SPOC inevitably lie in balance. The more SPOF is reduced, the greater SPOC is increased. Since this scenario does its best to minimize, it does have some vulnerability to SPOC, but it has been designed so that two locales must be attacked to provide an attacker with sufficient key material to create a compromise. This underlines the importance of separating locales where material is stored.
 
-Here's the key material loss in each situation:
+See above for how you recover if a particular locale is burgled. Meanwhile, here's the flip side: what key material a thief acquires in each situation:
 
-* **Theft at Home:** No key material: locked iPhone, locked Passport, 1 recovery share.
-* **Theft at Primary:** No key material: locked Passport Backup.
-* **Theft at Secondary:** No key material: locked Passport Backup.
-* **Theft at Home + Primary:** 3 keys: iPhone + PIN; Passport + PIN; 2 recovery shares.
-* **Theft at Home + Secondary:** 2 keys: locked iPhone; locked Passport; Passport Backup + Words; 2 recovery shares.
-* **Theft at Primary + Secondary:** 1.5 keys: locked Passport Backup; potential to highjack Apple account; 2 recovery shares.
+* **Theft at Home:** Locked iPhone, locked Passport, 1 recovery share. No usable key material.
+* **Theft at Primary:** Locked Passport Backup, 1 recovery share. No usable key material.
+* **Theft at Secondary:** Locked Passport Backup, 1 recovery share. No usable key material.
+* **Theft at Home + Primary:** iPhone + PIN; Passport + PIN; 2 recovery shares. Three keys stolen.
+* **Theft at Home + Secondary:* Locked iPhone; locked Passport; Passport Backup + Words; 2 recovery shares. Two keys stolen.
+* **Theft at Primary + Secondary:** Locked Passport Backup; 2 recovery shares; potential to highjack Apple account. One key stolen, potential for one other.
 
-The addition of an optional cloud adds very little danger, except in the situation where both Home and Cloud are compromised (which means: don't make your cloud login information available at home, or you're creating a SPOC.)
+The addition of an optional cloud adds very little danger, except in the situation where both Home and Cloud are compromised (which means: don't make your cloud login information available with your other material in your Home Storage, or you're creating a SPOC. Ideally when you're using it at home, it should be protected by your home computer's authentication.)
 
-* **Cloud:** .5 keys: potential to highjack Apple account.
-* **Home + Cloud:** 2 keys: unlocked iPhone, unlocked Passport, 1 recovery share.
-* **Primary + Cloud:** .5 keys: potential to highjack Apple account.
-* **Secondary + Cloud:** .5 keys: potential to highjack Apple account.
+* **Cloud:** Potential to highjack Apple account. Potential for one key stolen.
+* **Home + Cloud:** Unlocked iPhone, unlocked Passport, 1 recovery share. Two keys stolen.
+* **Primary + Cloud:** Potential to highjack Apple account. Potential for one key stolen.
+* **Secondary + Cloud:** Potential to highjack Apple account. Potential for one key stolen.
 
-**KEY THEFT BY LOCATION COMPROMISE**
-| Where's Compromised? | Also ... Home | Primary | Secondary | Cloud | 
-| :--- | :--- | :--- | :--- | :--- | 
-| Home | :green_square: OK | :red_square: 3 keys | :red_square: 2 keys | :red_square: 2 keys | 
-| Primary | :red_square: 3 keys | :green_square: OK | :yellow_square: 1.5 keys | :green_square: .5 keys |
-| Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys |:green_square: OK |  :green_square: .5 keys |
-| Cloud | :red_square: 2 keys | :green_square: .5 keys | :green_square: .5 keys | :green_square: OK |
+The following charts describe the potential to highjack an Apple account as a .5 key loss, because they require an attacker to be knowledgeable enough to access the Apple account and use it to restore a key to Gordian Seed Tool on a new device.
+    
+**SINGLE LOCATION LOSS: HOW MANY KEYS LOST?**
+
+| <div style="width:15%">What's Compromised?</div> | <div style="width:65%">How Many Keys?</div> |
+| :--- | :--- |
+| Home | :green_square: None |
+| Primary | :green_square: None |
+| Secondary | :green_square: None | 
+
+**SINGLE + CLOUD LOCATION LOSS: HOW MANY KEYS LOST?**
+
+| <div style="width:15%">What's Compromised?</div> | <div style="width:65%">How Many Keys?</div> |
+| :--- | :--- |
+| Home + Primary | :red_square: 2 keys | 
+| Home + Secondary | :green_square: .5 keys |
+| Primary + Secondary | :green_square: .5 keys |
+
+**DOUBLE LOCATION LOSS: HOW MANY KEYS LOST?**
+
+| <div style="width:15%">What's Compromised?</div> | <div style="width:65%">How Many Keys?</div> |
+| :--- | :--- |
+| Home + Primary | :red_square: 3 keys | 
+| Home + Secondary | :red_square: 2 keys |
+| Primary + Secondary | :yellow_square: 1.5 keys |
 
 ### Appendix IV: Preserving Assets for Your Heirs
 
