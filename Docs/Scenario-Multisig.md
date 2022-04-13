@@ -101,8 +101,8 @@ The following items are necessary for this procedure, and should be purchased[^s
 Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
 
 * [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/) for active seed.
-* [  ] iPhone or iPod to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed.
-* [  ] Separate[^2] iPhone or iPod to temporarily create and shard recovery seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229).
+* [  ] iPhone or iPod to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed[^noandroid]. Alternatively, a computer running MacOS[^nomacos].
+* [  ] Separate[^2] iPhone or iPod to temporarily create and shard recovery seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229). Alternatively, a computer running MacOS[^nomacos].
 
 The three devices selected are all second-generation signing device technology[^3][^4]. See the footnotes for discussions of why we choose these specifically[^5].  See **Step C** for making different choices.
 
@@ -158,7 +158,8 @@ graph LR;
 
 You will need two to three storage locales: Home Storage, Primary Storage, and Secondary Storage[^6]. They will be used to store seeds, devices, and information[^7]. 
 
-1. [  ] Install Home Safe[^8][^9]
+1. [  ] Set up Home Storage Locale.
+   1. Install Home Safe[^8][^9].
    1. Ideally, it should be physically secured by mounting it to floor or wall joists, or even more securely, directly to a foundation
    1. You will store an SSKR share in your Home Storage Locale, usually along with your Secondary Signing Device (by default: a Passport), if it's in regular usage.
 2. [  ] Choose Primary Storage Locale
@@ -262,12 +263,12 @@ _Default Recovery Device:_ Gordian Seed Tool.
 
 Your recovery seed will be created, printed as SSKR shares, and then deleted. This should _not_ be done on the same device that you will use for your active Gordian Seed Tool key, if at all possible. Do it on an old iPod Touch, an old iPhone, or even an old laptop computer[^15]. Alternatively, use your partner's iPhone temporarily.
 
-1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
+1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS[^nomacos] or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
 1. [  ] Go to the Gear icon, for Preferences, and turn OFF "Sync to iCloud".
 1. [  ] Click the "+" and Add a Seed with "Quick Create"[^ianc].
 1. [  ] "Save" it.
-1. [  ] Print the SSKR for the Seed.
+1. [  ] Print the SSKR for the Seed[^printingproblems].
    1. Touch the Seed.
    1. Touch "Authenticate".
    1. Touch "Backup" and Choose "Backup as SSKR Multi-Share".
@@ -288,11 +289,13 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
    1. The MicroSD card will typically be on the files list after your iPhone and iCloud, visible as a drive icon.
    1. You will typically want to create a folder, such as "Recovery SSKR" and save to that.
 1. [  ] Remove MicroSD Card #1; insert MicroSD Card #2[^18].
-1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
+1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicroSD card, preferably in a folder.
 1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^18].
-1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
+1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicroSD card, preferably in a folder.
 1. [  ] Remove MicroSD Card #3.
-
+    
+You can now put those MicroSDs away for the moment. You'll be testing them in the "Suggested Resilience Improvement" at the end of Step E.
+    
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
 #### **Step E: Test & Input Recovery Seed**
@@ -321,7 +324,7 @@ _Default Recovery Device:_ Gordian Seed Tool.
 You want to remove the electronic version of your Recovery Seed from Gordian Seed Tool, but then immediately make sure your SSKR shares are valid.
 
 1. [  ] Delete the Seed in Gordian Seed Tool by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
-1. [  ] Scan in Your SSKR
+1. [  ] Scan in Your SSKR from your printed shares.
    1. Select the "QR Scan" icon.
    1. Point it at the QR Code for one SSKR Share.
    1. Point it at the QR Code for another SSKR Share.
@@ -356,7 +359,7 @@ Now that you know you can recover your seed from the recovery shards, you should
    1. On Sparrow, Choose "Keystore 1", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
    3. Click the "Scan" button for Gordian Seed Tool
-   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
+   4. Hold your iPhone displaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
 1. [  ] Change the label for "Keystore 1" in Sparrow to be something meaningful, such as "SSKR Recovery Key"[^25].
 
@@ -414,7 +417,7 @@ _Default Signing Device #1:_ Gordian Seed Tool.
 
 In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of your active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
 
-1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
+1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS[^nomacos] or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
 1. [  ] Click the "+" and Add a Seed with "Coin Flips", "Die Rolls", or "Playing Cards" as you prefer[^29][^30][^ianc].
    1. Rolling dice is probably the quickest and least tedious method.
@@ -1197,6 +1200,10 @@ Access Info: Password is at Safety Deposit Box
 
 [^sca]: **Supply-Chain Attacks.** When possible, buy your products directly from the manufacturers, preferably at a store you can walk into. Thus, for example, it's optimal to buy an iPhone directly from the Apple Store. This reduces the odds that someone has modified the device before you received it. To reduce privacy dangers, you can also choose to pay for items with cash, a pre-loaded debit card, or some other means that keeps your personal information separate from the purchase.
 
+[^noandroid]: **No Androids.** Unfortunately, Gordian Seed Tool is not currently available for Android. Replacing the two uses of Gordian Seed Tool is this default scenario with Alternative Signing Devices that support Android is required if one or more iOS or MacOS[^nomacos] devices are not available.
+  
+[^nomacos]: **No Macs.** An iOS device is a much better choice than a MacOS device, as it has a smaller attack surface as was built from the start with more fundamental sandboxed security in mind. 
+    
 [^2]: **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active seed and one recovery seed, those seeds should _not_ be created on the same device. For the active key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your recovery key, we suggest you use an older iPod Touch or even borrow a trusted partner's iPhone; you'll be deleting that seed after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a recovery key and holding an active key, provided you were careful about deleting the recovery key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a SPOC.
 
 [^3]: **Signing Device Generations.** First-generation signing devices tended to focus on support for single-sig addresses and tended to be direct-connected devices. The original [Ledger](https://www.ledger.com/) and [Trezor](https://trezor.io/) both fit into that category. The [Coldcard](https://coldcard.com/) was transitional, offering some of the first options to connect across airgaps, with a MicroSD slot, while still maintaining the port-connection paradigm. Second-generation signing devices are fully airgapped, with no ability to directly connect them to other devices. They transmit data via QR codes or MicroSD cards. The [Foundation Devices Passport](https://foundationdevices.com/passport/details/) and the [Keystone Pro](https://keyst.one/) are both second-generation signing devices. 
@@ -1225,6 +1232,8 @@ Access Info: Password is at Safety Deposit Box
 
 [^15]: **Computer or Mobile Device?** Generally, a mobile device is preferred over a computer because it reduces the attack surface. If you do choose to use a computer for creating your recovery key, be sure it's not the computer also running Sparrow. Generally, keep your keys and your transaction coordinator separate or you begin to lose the advantages of this procedure.
 
+[^printingproblems]: **Printing Problems.** Printing things is really not secure. You print across a network that might not be secure, then to a device that's definitely not built to be secure. Worse, that device is actually designed to hold on to the stuff that you print, for at least some period of time. Nonetheless, we measure the threats of an attack on the printer (or even the network) as lower than the threat of incorrectly writing out your recovery words by hand (or worse: not writing them at all because it's too time consuming to do so). Obviously, you can reassess these threats for your own scenario. With that said, we do only print one key, so that even if it were compromised, it wouldn't compromise your assets. You definitely should _not_ transfer a second key across your network (which we talk about later). You also may be able to purposefully clear out the memory of your printer after printing, often by choosing to return it to factory defaults, which may be an option on the printer itself.
+    
 [^sskrscenarios]: **SSKR Scenarios.** We've chosen a 2-of-3 for this scenario, but see [Designing SSKR Share Scenarios](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/SSKR-Sharing.md) for more options on how to divide up SSKR shares.
 
 [^16]: **Why Optional?** We encourage everyone to create MicroSD backups of their SSKR shares, as described here. The _only_ reason that this is listed as optional is because we don't want to discourage you from using this procedure if you don't have an SD Card Reader for iPhone and an extra MicroSD card on hand. So, if you can, get that Card Reader and that extra card. If you don't have them, just skip these parts, but we suggest that you come back and do them in the future.
