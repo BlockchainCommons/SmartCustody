@@ -785,10 +785,12 @@ Leaving assets to children or other heirs is important for many of us. Digital a
 Your digital assets are only protected if you actively maintain your backups. Every Spring you're going to check your Primary Storage.
 
 1. [  ] Collect your required signing devices, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
-2. [  ] Visit your Primary Storage.
+1. [  ] Visit your Primary Storage.
 1. [  ] Make sure your printed SSKR share still exists.
 1. [  ] Make sure your printed account descriptor still exists.
 1. [  ] Make sure your instructions for heirs still exist.
+   1. If anything in the letter has changed, update it (or replace it), and redate it.
+   1. If you changed the letter, make a note to do the same at Home Storage.
 
 ***GST Instructions:***
 
@@ -841,6 +843,8 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 1. [  ] Make sure your printed SSKR share still exists.
 1. [  ] Make sure your printed account descriptor still exists.
 1. [  ] Make sure your instructions for heirs still exist.
+   1. If anything in the letter has changed, update it (or replace it), and redate it.
+   1. If you changed the letter, make a note to do the same at Home Storage.
 
 ***Passport Instructions:***
 
@@ -1250,6 +1254,8 @@ them before trying to move any funds.
 Love,
 
 ________________________
+    
+Date of This Letter: ________________________________
 ```
 
 This form should _not_ contain the access info, as doing so would create a SPOC. Instead, it should highlight the places where your information is stored. If you are using this scenario, it would look something like this:
@@ -1272,16 +1278,13 @@ Access Info: Scan them into Gordian Seed Tool on _your_ iPhone
 
 Account
 Kept In: Sparrow
-Run On: Old Laptop Computer (MacBook Air 2017 model)
+Run On: Old Laptop Computer (MacBook Air 2017 model with Grateful Dead sticker)
 Access Info: Password is at Safety Deposit Box
 ```
 
-
-
-
 ---
 
-[^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, the language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically internet connected. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
+[^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, the language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically fully networked. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
 
 [^sca]: **Supply-Chain Attacks.** When possible, buy your products directly from the manufacturers, preferably at a store you can walk into. Thus, for example, it's optimal to buy an iPhone directly from the Apple Store. This reduces the odds that someone has modified the device before you received it. To reduce privacy dangers, you can also choose to pay for items with cash, a pre-loaded debit card, or some other means that keeps your personal information separate from the purchase.
 
@@ -1297,7 +1300,7 @@ Access Info: Password is at Safety Deposit Box
 
 [^5]: **Why Passport and Seed Tool?** We choose Passport and Gordian Seed Tool as second-generation signing devices that have fully integrated backup mechanisms: Passport to MicroSD, Seed Tool to iCloud. We've thus combined the protection against SPOC implicit in an airgapped design  with the protection against SPOF supported by a backup that the user doesn't have to think (much) about. Caveats: Foundation Devices is a patron of Blockchain Commons. This likely impacted our familiarity with the device, but didn't impact our decision to choose it as the best signing device for this scenario. The Gordian Seed Tool is a reference app created by Blockchain Commons.
 
-[^6]: **Locale Security.** Obviously, the more secure locations are, the better. Optimal setup would be to have a robust Home Safe and two safety deposit boxes in banks in two widely separated locales. However, we expect most people will choose their locales as home, bank, and work; or else as home, work, and family/friend home. The most important factor for the overall security of your scenario may not be physical security of the locale, but instead geographical separation, ensuring that no single disaster such as an earthquake or wildfire and no single event such as a war or civil unrest, could easily compromise two locales.
+[^6]: **Locale Security.** Obviously, the more secure locations are, the better. Optimal setup would be to have a robust Home Safe and two safety deposit boxes in banks in two widely separated locales. However, we expect most people will choose their locales as home, bank, and work; or else as home, work, and family/friend home. The most important factor for the overall security of your scenario may not be physical security of the locale, but instead geographical separation, ensuring that no single disaster such as an earthquake or wildfire and no single event such as a war or civil unrest, could easily compromise two locales. Social separation is also a crucial factor. You don't want to choose two locales that are held by family members, coworkers, or some other social group that could either collude or suffer a mutual accident.
 
 [^7]: **Why Isn't Security the Biggest Factor?** No single locale should have enough information to access your funds in an unlocked way. Your home is the biggest danger because it holds two keys, but they should both be locked, either by PIN or biometrics. Each other locale holds at most one and a third keys, the full key being locked.
 
@@ -1353,7 +1356,7 @@ Access Info: Password is at Safety Deposit Box
 
 [^29]: **Why Dice, Coins, and Cards?** One of the potential adversaries for digital assets is "Systemic Key Compromise", where the methodology for creating a key was wrong. We don't want the key-generation process to be a SPOC, and since you used "Quick Create" for your recovery key, that means you should use a different methodology for creating the active key that you're going to use in Gordian Seed Tool.
 
-[^30]: **Do It Right!** Rolling dice, picking cards, and especially flipping coins can be tedious, but do it right! Actually engage in the activity until you have 128 bits of entropy. Do not just randomly hit buttons: that won't be random. If you're not going to correctly feed in the entropy from those dice, cards, or coins, you might as well just "Quick Create".
+[^30]: **Do It Right!** Rolling dice, picking cards, and especially flipping coins can be tedious, but do it right! Actually engage in the activity until you have 128 bits of entropy. Do not just "randomly" hit buttons: that won't actually be random. If you're not going to correctly feed in the entropy from those dice, cards, or coins, you might as well just "Quick Create".
 
 [^31]: **Don't Delete!** Note that unlike with the recovery key, you're not deleting either this key or Gordian Seed Tool on this device. This is one of your two active keys; it's what you'll regularly use to spend funds on your account.
 
