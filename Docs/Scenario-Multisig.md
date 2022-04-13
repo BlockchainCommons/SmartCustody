@@ -26,7 +26,7 @@ The base scenario presumes an audience with all of the following characteristics
 * A holder who lives in the first world, and thus is less concerned about issues like government attack, kidnapping, or privacy violations.
 * A holder who has sufficient computer skills to comfortably install and run apps.
 
-This scenario advocates its design to address most major types of adversaries, while **Options** can improve that protection. Additional categories of "Non-Financially-Motivated Attackers", "Loss by Government" and "Privacy-Related Problems" are not strongly considered in this scenario. See **Appendix I**.
+This scenario advocates its design to address most major types of adversaries, while **Options** can improve that protection. Additional categories of "Non-Financially-Motivated Attackers", "Loss by Government" and "Privacy-Related Problems" are not strongly considered in this scenario. See **Appendix II**.
 
 For simplicity, this document focuses on Bitcoin; adapting it to other cryptocurrencies may require choosing different signing devices.
 
@@ -86,10 +86,11 @@ This procedure incorporates the following steps:
 
 **APPENDICES: FURTHER INFORMATION**
 
-* **[Apendix I: Gordian Principles & Adversaries](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-i-gordian-principles--adversaries)** — What this procedure does.
-* **[Appendix II: SPOCs & SPOFs in This Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-ii-spofs--spocs-in-this-scenario)** — Compromise & failure.
-* **[Appendix III: Preserving Assets for Your Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iii-preserving-assets-for-your-heirs)** — Why asset preservation is important.
-* **[Appendix IV: Sample Letter to Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iv-sample-letter-to-heirs)** — What to say about your assets.
+* **[Appendix I: How This Scenario Was Created](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-i-how-this-scenario-was-created)** — The methodology for this procedure.
+* **[Appendix II: Gordian Principles & Adversaries](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-ii-gordian-principles--adversaries)** — What this procedure does.
+* **[Appendix III: SPOCs & SPOFs in This Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iii-spofs--spocs-in-this-scenario)** — Compromise & failure.
+* **[Appendix IV: Preserving Assets for Your Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iv-preserving-assets-for-your-heirs)** — Why asset preservation is important.
+* **[Appendix V: Sample Letter to Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-v-sample-letter-to-heirs)** — What to say about your assets.
 
 ### Requirements
 
@@ -755,9 +756,9 @@ Once you are confident in your control of an account, you can send the rest of y
     K-->L
 ```
 
-Leaving assets to children or other heirs is important for many of us. Digital assets can be hard to find and access, so instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost. More on the topic can be found in **Appendix III**
+Leaving assets to children or other heirs is important for many of us. Digital assets can be hard to find and access, so instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost. More on the topic can be found in **Appendix IV**
 
-1. [  ] Prepare a sample letter for your heirs, such as the one found in **Appendix IV**. Choose whether to be specific or vague[^45]. We suggest specific. Be sure to be clear of the scope of the assets if they are large[^46].
+1. [  ] Prepare a sample letter for your heirs, such as the one found in **Appendix V**. Choose whether to be specific or vague[^45]. We suggest specific. Be sure to be clear of the scope of the assets if they are large[^46].
    1. If you are specific, be very aware that this letter is very sensitive, because it contains the blueprint to where all the puzzle pieces are for accessing your digital assets. If it should fall into the wrong hands, you would likely need to revamp your entire system of storage.
 3. [  ] Print your letter.
 4. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
@@ -975,9 +976,62 @@ _This may require new scenarios to fully lay out._
 
 ## APPENDICES: FURTHER INFORMATION
 
-### Appendix I: Gordian Principles & Adversaries
+### Appendix I: How This Scenario Was Created
+    
+#SmarCustody, and thus this scenario, is built to serve two major purposes.
+    
+First, it's intended to address the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which require that digital-asset solutions support independence, privacy, resilience, and openness. The next appendix covers the specifics in more detail, but this is the fundamental reasoning behind the scenario being self-sovereign, where the user has total control over their keys, and thus their assets. It's a foundation of the scenario.
+    
+Second, it's intended to largely eliminate Single Points of Compromise (SPOCs) and Single Points of Failure (SPOFs). These are the places where your assets might be stolen (SPOC) or lost (SPOF). This is the biggest part of the scenario's creation and is a complex and iterative process that depends not just on rigorous analysis, but also intuition. Following are the largest steps in creating a scenario of this sort, though they are steps that are likely to be casually intermingled by someone who has worked through these issues in the past:
+    
+    1. **Ensure No Secret Forms a SPOC or SPOF.** _There should be no individual secret that can be stolen to compromise funds or that can be lost to lose funds._ This can include not just seeds or private keys, but also PINs, passwords, account access, and other means for accessing those seeds or private keys. In modern cryptocurrencies, we have two major means for preventing SPOCs and SPOFs: multisigs and Shamir's Secret Sharing. They are both utilized in this scenario to ensure that there is no single point that has enough unprotected keys to give access to the digital assets, and simultaneously that access to the digital assets can be recovered without needing to know additional access info if sufficient locales are accessed. See **Appendix III** for the specifics of this.
 
-This #SmartCustody procedure is intended to highlight the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and address many [adversaries](https://www.smartcustody.com/) from #SmartCustody. Here's how it does so.
+    _Example:_ Each of the Primary and Secondary Storage locales were constructed such that two keys were not accessible at the individual locale. Similarly, the Home Storage was setup so that access information was required to use both of the keys there, but that information was retrievable from other locales if needed. 
+
+    2. **Assess How Adversaries Can Form SPOCs and SPOFs.** _Adversaries should be used to figure out other ways that key material could be compromised or lost._ Many ways to lose secrets are obvious: you throw away a piece of paper or a thief steals it. But the adversaries listed in [Smart Custody](https://www.smartcustody.com/) present more devious ways that key material (or other secrets) could be lost. Each one should be considered, and its opportunity for secret loss assessed.
+    
+    _Example:_ "Bitrot" details how your software or hardware could become obsolete. "Coercion" describes how you could be forced to give up secrets. "Supply-Chain Attack" notes how your hardware could be compromised before you receive it. All of these should be considered.
+    
+    3. **Make Assumptions for Acceptable Risks.** _Some risks should be accepted based on assumptions made about the situation of the asset holder._ No scenario will ever be perfect. Risks revealed by adversaries may be considered acceptable if an asset holder is considered not at threat from them — or if solving them is likely to create more problems that it protects against. Major assumptions should be documented.
+    
+    _Example:_ The threat of "Nation-State Actor" was considered unnotable in a first-world country. The threat of "Social Engineering" was considered notable, but its solution (for example, requiring a quorum to spend funds) was considered more problematic than the threat of the adversary.
+    
+    4. **Create Solutions for Unacceptable Risks.** _Some risks need to be solved._ If a risk is considered real for the intended class of users and if there are elegant solutions that are not worse than the problem, they should be applied. Generally, every notable risk should be brainstormed for solutions.
+    
+    _Example:_ The threat of "Systemic Key Compromise" addresses the problem of a specific method of key generation being flawed. It's a notable threat because [it's happened](https://cointelegraph.com/news/white-hat-hacker-returns-missing-bitcoins-to-blockchaininfo). If two of our keys were created by the same methodology, this presented a SPOC, and this could have been the case because we generate two keys with Gordian Seed Tool in our default scenario. We addressed the problem by using two different methodologies withing Gordian Seed Tool: one using Apple's randomness, one using the user's own randomness of rolling dice or flipping coins (each of which can be checked against an external source) or else drawning cards.
+    
+    5. **Iterate Solutions.** _Finding solutions for all SPOCs and SPOFs related to secrets or to adversaries isn't enough: those solutions must also be checked for SPOCs or SPOF or even for multiple points of failure or compromise._ Each new solution may have a SPOC or SPOF, usually smaller than the one being solved, or else the possibility of failure with multiple comrpomises or failures. They need to be iterated through until the failure points have become small enough, unnotable enough, or unlikely enough that they are considered acceptable.
+    
+    _Example:_ Using a two-of-three multisig removes the original SPOC/SPOF for a single key, but creates a new possibility of multiple failure for any two keys. That's then reduced by making backups of the two active keys, to iCloud for Gordian Seed Tool key and to a MicroSD for the Passport key. The iCloud backup creates a new possibility for "Internal Theft", but we decide it's acceptable based on our assumption. However, there's also a new SPOC/SPOF for each of those backups: the Apple account for the iCloud backup and the backup words for the Passport backup. Each of those are then backed up too. At that point the iCloud backup is considered safe enough, because Apple has redundant backups for their whole iCloud system, but the MicroSDs may still be an issue, so we end up placing them in multiple locations (and even backing up their words to the cloud, if possible).
+   
+#### Scenario Assumptions
+    
+The following assumptions were made while making this scenario. If you don't agree with these assumptions, you might need to create new solutions to solve these potential risks.
+    
+Some are assumptions bout the user:
+    
+    * **Loss is More Likeley than Theft.** Though it addresses both SPOCs and SPOFs, this scenario focuses most on accidental loss, with any tradeoffs balanced to protect against loss over theft.
+    * **Laziness is a Threat.** Generally, laziness (or busyness, or anything that might make you succumb to convenience) is considered a threat that might prevent people from properly following a security procedure. Thus, everything possible is done to make this procedure convenient without taking away from its core security.
+    * **Life is More Important than Money.** Some methodologies could be used to make this scenario more secure against threats such as coercion, but with possible threats to life as a result. Life was generally considered the more important commodity, and so these methodologies were not considered.
+    * **Inheritance is Desirable.** We assume that the asset holder cares about benefiting heirs after their own passing. Omiting this option would create better security.
+    * **The User is Not a Known Target.** Obviously, any cryptocurrency holding can be a target, but we assume that the user themselves isn't a target for personal, financial, or political reasons. If this weren't true, stronger privacy protections would be needed, to better isolate the user's public persona from their funds.
+    * **The User is Acting Legally.** We assume that the user is a legal actor within their community and nation-state.
+ 
+Some are assumptions about their environment:
+    
+    * **The Government is Not a Threat to Law-Abiding Citizens.** We do generally assume that the government is not a large threat to the average digital asset holder, which means that we presume a law-abiding first-world country. 
+    * **The Government's Threat to Digital Assets is Less Than Their Threat to Our Physicality.** Even if we assumed that there were areas where the government was untrustworthy, we assume that their physical threat (of imprisoning an individual) is much greater than their threat of seizing assets.
+
+Some are assumptions about our tools:
+    
+    * **Apple is Secure.** Due to their proven track record in resisting government overreach and the high visibility of their security design, we generally consider Apple's security measures to be strong. Due to their huge size, we generally consider their iCloud to be resilient.
+    * **Selected Signing Devices are Secure & Reliable.** We generally assume that any signing devices that we list in this scenario to be from proven creators who are less likely to have accidentally incorporated insecurity and who are very unlikely to have done so purposefully.
+    * **Bitcoin Protocols Are Secure.** As of this writing, we presume that Bitcoin assets can not be taken without knowing the seed or private key information. Moreso, we presume that any breaking of Bitcoin's secrets would come piecemeal, with old pay-to-public-key addresses being drained before pay-to-public-key-hash or newer methodologies, giving asset holders time to secure their coins.
+    * **Shamir's Secret Sharing is Secure.** We assume that Shamir's Secret Sharing is very safe (and that our implementation of it in Gordian Seed Tool is proper, as the biggest problems with Shamir in the past have been inexpert implementations). TO be precise, we assume that holding one share gives an attacker zero information about other shares.
+    
+### Appendix II: Gordian Principles & Adversaries
+
+Here's how this #SmartCustody procedure highlights the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles) and addresses the points of failure and compromise suggested by [adversaries](https://www.smartcustody.com/) from #SmartCustody.
 
 ### Gordian Principles
 
@@ -1025,7 +1079,7 @@ The heart of #SmartCustody is a discussion of Adversaries that can oppose the Go
    * *Adversary: Correlation* — If desired, a user could maintain an additional warm wallet in the Sparrow transaction coordinator to allow use of CoinJoin to foil any correlation.
    * *Adversary: Loss of Fungibility* — CoinJoin can also foil problems of loss of fungibility.
 
-### Appendix II: SPOFs & SPOCs in This Scenario
+### Appendix III: SPOFs & SPOCs in This Scenario
 
 The original #SmartCustody single-sig scenario ensured that there were no Single Points of Failure (SPOFs) where the loss of devices and data at a single site could result in the loss of digital funds. This multi-sig expands on that by also ensuring that there are no Single Points of Compromise (SPOCs) where the theft of devices and data at a single site could result in the loss of digital funds.
 
@@ -1099,7 +1153,7 @@ The addition of an optional cloud adds very little danger, except in the situati
 | Secondary | :red_square: 2 keys | :yellow_square: 1.5 keys |:green_square: OK |  :green_square: .5 keys |
 | Cloud | :red_square: 2 keys | :green_square: .5 keys | :green_square: .5 keys | :green_square: OK |
 
-### Appendix III: Preserving Assets for Your Heirs
+### Appendix IV: Preserving Assets for Your Heirs
 
 Being able to pass assets down to heirs is important for many. But, even if you don't have any heirs, making your funds available to someone else, whether it be a spouse or a lawyer, can be crucially important: if you are disabled to the point where you are unable to access your funds yourself, you may _need_ someone to access your funds for you, quite possibly to pay for the medical care that you need.
 
@@ -1111,7 +1165,7 @@ Ensuring that heirs, spouses, or lawyers can access digital access runs afoul of
 
 This scenario has been set up to minimize the possiblity of losing your authentication tokens, but you must still: reveal assets to heirs; tell them how to access them; and underline their value. That's what a letter does, which is why one of those is included in the scenario as well.
 
-### Appendix IV: Sample Letter to Heirs
+### Appendix V: Sample Letter to Heirs
 
 ```
 Dear _________________,
