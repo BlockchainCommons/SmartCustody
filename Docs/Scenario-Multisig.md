@@ -101,7 +101,7 @@ The following items are necessary for this procedure, and should be purchased[^s
 Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
 
 * [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/) for active seed.
-* [  ] iPhone or iPod to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed[^noandroid]. Alternatively, a computer running MacOS[^nomacos].
+* [  ] iPhone or iPod Touch to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed[^noandroid]. Alternatively, a computer running MacOS[^nomacos].
 * [  ] Separate[^2] iPhone or iPod to temporarily create and shard recovery seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229). Alternatively, a computer running MacOS[^nomacos].
 
 The three devices selected are all second-generation signing device technology[^3][^4]. See the footnotes for discussions of why we choose these specifically[^5].  See **Step C** for making different choices.
@@ -109,7 +109,7 @@ The three devices selected are all second-generation signing device technology[^
 The following items are recommended, but don't let their absence stop you from securing your digital assets:
 
 * [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) )
-* [  ] Safety Deposit Box at Bank or other institution
+* [  ] Safety Deposit Box at Bank[^safetydeposit] or other institution
 
 The following items are even more optional, but will increase the resilience of your scenario:
 
@@ -1000,12 +1000,12 @@ The heart of #SmartCustody is a discussion of Adversaries that can oppose the Go
 3.  **Loss by Crime, Theft**
    * *Adversary: Institutional Theft* — The joy of self-sovereign control of assets is that you don't have to trust an institution. To a certain extent, this depends on where your Primary and Secondary Storage locales are, but the fact that no single locale contains enough keys to steal your funds should be sufficient protection even if a work or bank[^safetydeposit] locale were to prove prone to theft.
    * *Adversary: Internal Theft* — Theoretically, revealing information about your digital assets to your heirs does create a threat of internal theft. However, as long as you maintain sole control over the locales with at least two of the keys, your assets should remain protected. Nonetheless, be aware of the potential issue.
-   * *Adversary: Network Attack, Personal* — None of your keys are online, so the only network attack surface is your network coordinator. This simply means that you need to carefully review the details of any PSBTs that you sign with your airgapped signing devices.
+   * *Adversary: Network Attack, Personal* — None of your keys are online, so the main network attack surface is your transaction coordinator. If an attacker were to seize control of your coordinator, it could create PSBTs for your signing that go to the wrong addresses. This means that you need to carefully review the details of any PSBTs that you sign with your airgapped signing devices. It also could engage in censorship by refusing to send transaction, perhaps even telling you that the transactions were sent. The very narrow space for a network attack on your signing devices involves an attack on firmware or software updates. However, any serious signing device is going to be protected by private key signatures: they're required for upload of new iOS software to the Apple App Store, but for something like a Passport you need to verify the signatures yourself. (Of course, a signing device could be compromised before you receive it, but that's a supply-chain attack.)
    * *Adversary: Network Attack, Systemic* — By avoiding the use of exchanges or other online services, you entirely protect yourself from more systemic attacks.
    * *Adversary: Physical Theft, Casual* — A casual theft will have no effect: you lose one key (but probably have a backup) and the thief gets one key (which is insufficient).
    * *Adversary: Physical Theft, Sophisticated* — For a sophisticated theft to work would require knowledge of the location of multiple keys and their simultaneous theft. A much more likely situation would be a thief stealing one key and your instructions to heirs and then making plans to steal the others: which means that you have to regularly check your storage locales and immediately sweep funds to new keys if a theft occurs.
-   * *Adversary: Social Engineering* — There is no proof against social engineering. So, you still need to be careful.
-   * *Adversary: Supply-Chain Attack*] — Using the default scenario, your Passport is well protected against Supply-Chain Attack, but an iPhone could be more vulnerable. This is another reason that it's important to use two different iDevices for your active and recovery key. You can reduce the danger of a supply-chain attack by buying directly from an Apple Store.
+   * *Adversary: Social Engineering* — There is no proof against social engineering. So, you still need to be careful. Don't tell people about your key locations (except as outlined in this scenario to protect your heirs). Don't give out your keys. Don't sign transactions created by other people. Especially don't reveal any information via email, message, or any medium other than face-to-face (ideally in person). As a self-sovereign key holder, you are the originator and XXXXXXXXXXXXXXX
+   * *Adversary: Supply-Chain Attack* — Using the default scenario, your Passport is well protected against Supply-Chain Attack, but an iPhone could be more vulnerable. This is another reason that it's important to use two different iDevices for your active and recovery key. You can reduce the danger of a supply-chain attack by buying directly from an Apple Store.
 4.  **Loss by Crime, Other Attacks**
    * *Adversary: Blackmail* — Blackmail isn't as immediate as coercion, but remains something not well controlled by a cryptocurrency procedure.
    * *Adversary: Coercion* — Coercion is generally a social threat that can't be controlled by a cryptocurrency procedure. Not linking your cryptocurrency to a real-world identity is one of the best solutions.
@@ -1200,7 +1200,7 @@ Access Info: Password is at Safety Deposit Box
 
 [^sca]: **Supply-Chain Attacks.** When possible, buy your products directly from the manufacturers, preferably at a store you can walk into. Thus, for example, it's optimal to buy an iPhone directly from the Apple Store. This reduces the odds that someone has modified the device before you received it. To reduce privacy dangers, you can also choose to pay for items with cash, a pre-loaded debit card, or some other means that keeps your personal information separate from the purchase.
 
-[^noandroid]: **No Androids.** Unfortunately, Gordian Seed Tool is not currently available for Android. Replacing the two uses of Gordian Seed Tool is this default scenario with Alternative Signing Devices that support Android is required if one or more iOS or MacOS[^nomacos] devices are not available.
+[^noandroid]: **No Androids.** Gordian Seed Tool is not currently available for Android. Replacing the two uses of Gordian Seed Tool is this default scenario with Alternative Signing Devices that support Android is required if one or more iOS or MacOS[^nomacos] devices are not available. However, our general assumption is that Apple's walled garden of the App store and Apple's high-profile development of iOS (and MacOS) results in an ecosystem that is safer, and so we generally prefer an iOS device over an Android device for safety and security. At minimum, the purchase of two iPod Touches seems like a worthwhile investment to protect a large sum of digital assets
   
 [^nomacos]: **No Macs.** An iOS device is a much better choice than a MacOS device, as it has a smaller attack surface as was built from the start with more fundamental sandboxed security in mind. 
     
