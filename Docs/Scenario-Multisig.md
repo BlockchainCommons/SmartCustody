@@ -1116,7 +1116,7 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 
 **SINGLE LOCATION LOSS: HOW TO REBUILD?**
 
-| <div style="width:15%">What's Lost?</div> | How to Resolve |
+| <div style="width:15%">What's Lost?</div> | <div style="width:65%">How to Resolve</div> |
 | :--- | :--- |
 | Home | :green_square: Rebuild Passport (Cloud Dependent) & iPhone; or Rebuild iPhone and Restore SSKR |
 | Primary | :green_square: Recreate Backups |
@@ -1124,7 +1124,7 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 
 **DOUBLE LOCATION LOSS: HOW TO REBUILD?**
 
-| <div style="width:15%">What's Lost?</div> | How to Resolve |
+| <div style="width:15%">What's Lost?</div> | <div style="width:65%">How to Resolve</div> |
 | :--- | :--- |
 | Home + Primary | yellow_square: Rebuild Passport (Cloud Dependent) & iPhone (Cloud Dependent) | 
 | Home + Secondary | :yellow_square: Rebuild Passport (Cloud Dependent) & iPhone |
@@ -1133,7 +1133,7 @@ Loss of multiple sites can cause asset loss, depending on how much optional resi
 
 **TRIPLE LOCATION LOSS: HOW TO REBUILD?**
 
-| <div style="width:15%">What's Lost?</div> | How to Resolve |
+| <div style="width:15%">What's Lost?</div> | <div style="width 65%">How to Resolve</div> |
 | :--- | :--- |
 | Everything | :red_square: LOSS! Only Gordian Seed Tool Potentially Remains |
 
