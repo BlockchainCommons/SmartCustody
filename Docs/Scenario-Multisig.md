@@ -1093,19 +1093,18 @@ Following are discussions of potential fail modes and how this scenario avoids t
 
 **Loss of Individual Data:**
 
-Loss of individual data causes no asset loss because of careful storage in locales.
+Loss of individual data causes no asset loss because of careful storage in locales. This is especially important for Death / Incapacitation scenarios.
 
 1. **Lost Apple ID.** The Apple account can be recovered using the data stored at the Primary Storage. 
 1. **Forgot Passport PIN.** The Passport PIN at the Secondary Storage may be used to access the Passport. 
-1. **Forgot Passport Backup Words.** This is not an issue unless the Passport is lost from Home Storage. Optionally, Backup Words can be stored in Cloud storage and restored to Home Storage if lost. If there is a loss, new backups should be made immediately, with new Backup Words. 
-
+1. **Forgot Passport Backup Words.** If there is a loss, new backups should be made immediately, with new Backup Words. Optionally, Backup Words can be stored in Cloud storage and restored to Home Storage if lost, which can be helpful if the Home Storage is entirely lost, resulting in the loss of both the Passport and the Backup Words.
 This makes the locales the ultimate measure for SPOF.
 
 **Loss of Individual Locale:**
 
-Loss of individual locales results in no loss of assets[^A1]:
+Loss of singular locales results in no loss of assets[^A1]:
 
-1. **Loss of Home.** New phone can be rebuilt with login info at Primary Storage; ideally new Passport is loaded with MicroSD at Primary Storage and Passport Backup Words from Cloud, but if Backup Words are not available, instead: Recovery Key is rebuilt from  SSKR Shares at Primary and Secondary Storage.
+1. **Loss of Home.** New phone can be rebuilt with login info at Primary Storage; ideally new Passport is loaded with MicroSD at Primary Storage and Passport Backup Words from Cloud, but if Backup Words are not available, instead: Recovery Key is rebuilt from  SSKR Shares at Primary and Secondary Storage. In this case, the Passport Key has been lost, so funds should immediately be swept forward.
 1. **Loss of Primary.** Passport and Gordian Seed Tool remain available at home.
 1. **Loss of Second.** Passport and Gordian Seed Tool remain available at home.
 
@@ -1114,8 +1113,8 @@ Loss of individual locales results in no loss of assets[^A1]:
 Loss of multiple sites can cause asset loss, depending on how much optional resilience was used:
 
 1. **Loss of Home + Primary.** The only things left are a MicroSD at Secondary Storage and whatever's in the Cloud. Recovery is only possible if care was taken in backing up access info to the cloud. If the user has the Passport Backup Words in the Cloud and if they have Apple login information somewhere such as Lastpass, and if they know the PIN to a previous apple device, then they can restore one seed off the MicroSD at the Secondary Storage and another from iCloud. But without optional Cloud backup, the assets are lost.
-1. **Loss of Home + Secondary.** The Passport MicroSD at Primary Storage may be used to recover a seed provided Passport Backup Words were put in Cloud; Gordian Seed Tool can be rebuilt from iCloud, possibly requiring login information at Primary Storage. If the Passport Backup Words were not backed up to the Cloud, and they are not known, the assets are lost.
-1. **Loss of Primary + Secondary.** Passport and Gordian Seed Tool remain available at home.
+1. **Loss of Home + Secondary.** The Passport MicroSD at Primary Storage may be used to recover a seed provided Passport Backup Words were put in Cloud; Gordian Seed Tool can be rebuilt from iCloud, possibly requiring login information also stored at Primary Storage. If the Passport Backup Words were not backed up to the Cloud, and they are not known, the assets are lost.
+1. **Loss of Primary + Secondary.** Passport and Gordian Seed Tool remain available at home. Lots of new backups should be made.
 1. **Loss of Home, Primary Storage, and Secondary Storage.** One key may still remain available in iCloud, if Gordian Seed Tool can be rebuilt, but that's insufficient to sign multisigs: the assets are definitely lost.
 
 **SINGLE LOCATION LOSS: HOW TO REBUILD?**
@@ -1144,7 +1143,7 @@ _Note that the SSKR shares are usually not needed, except in the Home Storage lo
 
 #### Single Points of Compromise (SPOC)
 
-SPOF and SPOC inevitably lie in balance. The more SPOF is reduced, the greater SPOC is increased. Since this scenario does its best to minimize, it does have some vulnerability to SPOC, but it has been designed so that two locales must be attacked to provide an attacker with sufficient key material to create a compromise. This underlines the importance of separating locales where material is stored.
+SPOF and SPOC inevitably lie in balance. The more SPOF is reduced, the greater SPOC is increased. Since this scenario does its best to minimize SPOF, it does have some vulnerability to SPOC, but it has been designed so that two locales must be attacked to provide an attacker with sufficient key material to create a compromise. This underlines the importance of separating locales where material is stored.
 
 See above for how you recover if a particular locale is burgled. Meanwhile, here's the flip side: what key material a thief acquires in each situation:
 
@@ -1155,7 +1154,7 @@ See above for how you recover if a particular locale is burgled. Meanwhile, here
 * **Theft at Home + Secondary:* Locked iPhone; locked Passport; Passport Backup + Words; 2 recovery shares. Two keys stolen.
 * **Theft at Primary + Secondary:** Locked Passport Backup; 2 recovery shares; potential to highjack Apple account. One key stolen, potential for one other.
 
-The addition of an optional cloud adds very little danger, except in the situation where both Home and Cloud are compromised (which means: don't make your cloud login information available with your other material in your Home Storage, or you're creating a SPOC. Ideally when you're using it at home, it should be protected by your home computer's authentication.)
+The addition of an optional cloud adds very little danger, except in the situation where both Home and Cloud are compromised (which means: don't make your cloud login information available with your other material in your Home Storage, or you're creating a SPOC. Ideally when you're using it at home, your cloud login information should be protected by your home computer's authentication.)
 
 * **Cloud:** Potential to highjack Apple account. Potential for one key stolen.
 * **Home + Cloud:** Unlocked iPhone, unlocked Passport, 1 recovery share. Two keys stolen.
@@ -1190,15 +1189,15 @@ The following charts describe the potential to highjack an Apple account as a .5
 
 ### Appendix IV: Preserving Assets for Your Heirs
 
-Being able to pass assets down to heirs is important for many. But, even if you don't have any heirs, making your funds available to someone else, whether it be a spouse or a lawyer, can be crucially important: if you are disabled to the point where you are unable to access your funds yourself, you may _need_ someone to access your funds for you, quite possibly to pay for the medical care that you need.
+Being able to pass assets down to heirs is important for many. But, even if you don't have any heirs, making your funds available to someone else, whether it be a spouse or a lawyer, can be crucially important: if you are disabled to the point where you are unable to access your funds yourself, you may _need_ someone to access your funds for you, quite possibly to pay for your medical care.
 
-Ensuring that heirs, spouses, or lawyers can access digital access runs afoul of three large problems:
+Generally, ensuring that heirs, spouses, or lawyers can access digital access runs afoul of three large problems:
 
 1. **The Invisibility of Digital Assets.** It's relatively easy to discover most physical assets, but because of their decentralization, no one is ever going to contact an heir about digital assets and why they're not being used.
 2. **The Lack of Authorities.** Because many digital assets, including cryptocurrencies, are self-sovereign, there's no one to unlock funds. Instead, that can only be done with control of private keys, which themselves may be locked by PINs, passwords, or biometrics. Information on this authentication information must be left to heirs, but it also must be done in a way that the funds can't be stolen.
 3. **The Difficulty of Access.** Accessing digital assets can be a pain if someone is not familiar with the process. This itself can cause loss, especially if heirs don't realize the value of the assets.
 
-This scenario has been set up to minimize the possiblity of losing your authentication tokens, but you must still: reveal assets to heirs; tell them how to access them; and underline their value. That's what a letter does, which is why one of those is included in the scenario as well.
+This scenario has been set up to minimize the possiblity of losing your authentication tokens, but you must still: reveal assets to heirs; tell them how to access them; and underline their value. That's what a letter does, such as the one described below, in **Appendix V**.
 
 ### Appendix V: Sample Letter to Heirs
 
@@ -1281,10 +1280,11 @@ Kept In: Sparrow
 Run On: Old Laptop Computer (MacBook Air 2017 model with Grateful Dead sticker)
 Access Info: Password is at Safety Deposit Box
 ```
-
+As noted previously, please consider whether this letter should be specific or opaque, depending on the security of the locations where you're storing it. You may even need to have multiple versions of the letter: one for high-security locales (such as a safe), one for low-security locales (such as mom's bookshelf).
+    
 ---
 
-[^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, the language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically fully networked. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
+[^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, that language discourages thinking about functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically fully networked. The software used in this scenario is typically called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
 
 [^sca]: **Supply-Chain Attacks.** When possible, buy your products directly from the manufacturers, preferably at a store you can walk into. Thus, for example, it's optimal to buy an iPhone directly from the Apple Store. This reduces the odds that someone has modified the device before you received it. To reduce privacy dangers, you can also choose to pay for items with cash, a pre-loaded debit card, or some other means that keeps your personal information separate from the purchase.
 
