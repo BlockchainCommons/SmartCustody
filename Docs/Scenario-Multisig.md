@@ -11,7 +11,7 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either through accident or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to support strong usability, it can be used to simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
 
-This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. SSKR shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergenices.
+This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergenices. By using Shamir's Secret Sharing, it ensures there is a copy of the recovery key, but that it's also split up so that it can't be used.
 
 ***Warning:*** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
 
@@ -26,7 +26,7 @@ The base scenario presumes an audience with all of the following characteristics
 * A holder who lives in the first world, and thus is less concerned about issues like government attack, kidnapping, or privacy violations.
 * A holder who has sufficient computer skills to comfortably install and run apps.
 
-This scenario advocates is design to address most major types of adversaries, while **Options** can improve that protection. Additional categories of "Non-Financially-Motivated Attackers", "Loss by Government" and "Privacy-Related Problems" are not strongly considered in this scenario. See **Appendix I**.
+This scenario advocates its design to address most major types of adversaries, while **Options** can improve that protection. Additional categories of "Non-Financially-Motivated Attackers", "Loss by Government" and "Privacy-Related Problems" are not strongly considered in this scenario. See **Appendix I**.
 
 For simplicity, this document focuses on Bitcoin; adapting it to other cryptocurrencies may require choosing different signing devices.
 
@@ -114,7 +114,7 @@ The following items are recommended, but don't let their absence stop you from s
 The following items are even more optional, but will increase the resilience of your scenario:
 
 * [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
-* [  ] MicroSD Adapter with an extra MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overall, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter and have two others from your Passport.
+* [  ] MicroSD Adapter with an extra, industrial grade MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overall, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter (be sure it's industrial-grade!) and have two others from your Passport.
 * [  ] Encrypted Cloud-based note storage, such as [LastPass](https://www.lastpass.com/)
 
 ### Final State
@@ -265,13 +265,13 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
 1. [  ] Go to the Gear icon, for Preferences, and turn OFF "Sync to iCloud".
-1. [  ] Click the "+" and Add a Seed with "Quick Create".
+1. [  ] Click the "+" and Add a Seed with "Quick Create"[^ianc].
 1. [  ] "Save" it.
 1. [  ] Print the SSKR for the Seed.
    1. Touch the Seed.
    1. Touch "Authenticate".
    1. Touch "Backup" and Choose "Backup as SSKR Multi-Share".
-   1. Choose "2 of 3" and touch "Next"
+   1. Choose "2 of 3" and touch "Next"[^sskrscenarios].
    1. "Print All Shares", using the default options, which call for a Summary Page and coupons printed on individual pages. Be sure you're not printing double-sided!
 
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
@@ -367,10 +367,11 @@ You can now close out this seed in Gordian Seed Tool:
 
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
-1. [  ] Separate and store the shares[^27][^28]. 
+1. [  ] Separate and store the shares[^27][^28].
    1. Place the overview page and one printed share in your Home Storage.
    1. Place one printed share in your Primary Storage.
    1. Place one printed share in your Secondary Storage.
+   1. 
 
 **Suggested Resilience Improvement: Test MicroSD Cards for SSKR Active Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
@@ -415,7 +416,7 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
 
 1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
-1. [  ] Click the "+" and Add a Seed with "Coin Flips", "Die Rolls", or "Playing Cards" as you prefer[^29][^30].
+1. [  ] Click the "+" and Add a Seed with "Coin Flips", "Die Rolls", or "Playing Cards" as you prefer[^29][^30][^ianc].
    1. Rolling dice is probably the quickest and least tedious method.
    2. Drawing cards can take time because it's done with replacement: reshuffle after each draw.
    3. Flipping coins to generate 128 bits of entropy takes 128 flips. That's a lot!
@@ -520,6 +521,14 @@ It is strongly recommended that you update the firmware on your Passport before 
 1. [  ] Check the current Firmware version on the Setup Page: v____________.
    1. If the Passport Firmware is less than the current Firmware, then continue (otherwise you're done).
 1. [  ] Download the current Firmware from the Setup page to a computer.
+1. [  ] Verify the firmware with `gpg`[^verifypassport].
+   1. Download the [foundation key](https://docs.foundationdevices.com/foundation_key.pgp).
+   2. Import it with `gpg --import foundation_key.pgp`.
+   3. Watch for key id `57C004A520148A68` with fingerprint `E7FA 9F9E 3477 BA54 9091 B6A7 57C0 04A5 2014 8A68`.
+   4. Download the signature file from [Github](https://github.com/Foundation-Devices/passport-firmware/releases) for the version you downloaded.
+   5. Test the signature file `gpg --verify passport-fw-X.Y.Z.bin.sig` (where X.Y.Z is the version)
+   6. Check the `shasum`: `shasum -b -a 256 passport-fw-X.Y.Z.bin`.
+   7. If the signatures and sums match up, then you can feel good about installing.
 1. [  ] Copy the Firmware to a MicroSD card inserted into your computer, using an adapter[^37].
 1. [  ] Install the Firmware on your Passport.
    1. Insert the MicroSD card into the top of your Passport.
@@ -527,7 +536,7 @@ It is strongly recommended that you update the firmware on your Passport before 
   
 You're now ready to create a new seed on your Passport.
 
-1. [  ] Choose "Create New Seed" on your Passport.
+1. [  ] Choose "Create New Seed" on your Passport[^ianc].
 1. [  ] Back Up Your Passport
    1. Choose Continue with the right button.
    1. Insert the first MicroSD Card[^38] supplied with the Passport.
@@ -1194,11 +1203,15 @@ Access Info: Password is at Safety Deposit Box
 
 [^15]: **Computer or Mobile Device?** Generally, a mobile device is preferred over a computer because it reduces the attack surface. If you do choose to use a computer for creating your recovery key, be sure it's not the computer also running Sparrow. Generally, keep your keys and your transaction coordinator separate or you begin to lose the advantages of this procedure.
 
+[^sskrscenarios]: **SSKR Scenarios.** We've chosen a 2-of-3 for this scenario, but see [Designing SSKR Share Scenarios](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/SSKR-Sharing.md) for more options on how to divide up SSKR shares.
+
 [^16]: **Why Optional?** We encourage everyone to create MicroSD backups of their SSKR shares, as described here. The _only_ reason that this is listed as optional is because we don't want to discourage you from using this procedure if you don't have an SD Card Reader for iPhone and an extra MicroSD card on hand. So, if you can, get that Card Reader and that extra card. If you don't have them, just skip these parts, but we suggest that you come back and do them in the future.
 
 [^17]: **Why QR?** We choose QR as the most automated of the backup (and restore) methods. You should be able to display two of the three QRs from these files (or load them directly in Seed Tool) and restore in a totally automated way. However, if you prefer to be able to see your backup words, choose ByteWords. Even better, backup in both formats. 
 
 [^18]: **Which Card Is Which?** If you're using our standard procedure MicroSD Card #1 is the one you bought with the SD Adapter, while MicroSD Card #2 and #3 are the ones that came with your Passport. It's important to differentiate these three MicroSDs, because you will _not_ put a Passport backup on MicroSD Card #1, as it'll be stored the same place as the Passport Backup Words.
+
+[^ianc]: **Testing Seeds.** You can always test seeds with [Ian Coleman's web tool](https://iancoleman.io/bip39/). This is a handy way to ensure that valid and random seeds are being generated. Obviously, you should only do so with an _offline_ version of the code, downloaded to a local computer that is afterward pulled off the network.
 
 [^19]: **Export Together!** One you have clicked the "Export Shares Individually" button do *not* click done until you have exported all three shares. Each times SSKR shares are generated, they're modified by new entropy. That means that SSKR shares may only be used with the other shares created at the exact same time.
 
@@ -1235,6 +1248,8 @@ Access Info: Password is at Safety Deposit Box
 [^35]: **Supply-Chain Attacsk.** This is another example of fighting against the "Supply-Chain Attack" adversary, where the threat is that someone tampers with the device somewhere in the supply chain, between Foundation Devices shipping it out and you receiving it. The attacker could be a retailer, distributor, or someone in the postal system, depending on how you acquired your Passport. If your device were tampered with, it might supply a static seed that an attacker knows about or damage your security in any of a number of other ways.
 
 [^36]: **Why Upgrade?** You always want every piece of software and hardware you use to be the most up-to-date before you put digital assets on it. Older versions might have flaws or compromises that could lead to the loss of assets. So, even though it takes some real effort to upgrade your Passport, you should do so.
+
+[^verifypassport]: **Verifying Passport's Firmware.** See ["Verifying the Firmware"](https://docs.foundationdevices.com/firmware-update) at Foundation Devices.
 
 [^37]: **MicroSDs & SDs.** A MicroSD card is about the size of a fingernail. It can fit in your Passport, your iPhone and other small devices. An SD card is about the size of your thumb. That's the size more typically used for computers. In order to use a MicroSD card on a computer, you'll typically need an [adapter](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), which is the size of an SD card. That'll let you read and write the MicroSD on your computer. You then remove the MicroSD card from the adapter, and you can use it with your Passport. 
 
