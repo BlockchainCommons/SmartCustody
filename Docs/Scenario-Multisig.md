@@ -126,7 +126,7 @@ Your material should be divided among four places: your home; secure storage in 
 |  | Recovery SSKR Overview<br>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
 | Sparrow Computer |
 | GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup<br>iPhone/Apple Info (opt.) |
-|  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
+|  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.)<br>with Sparrow wallet backup (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
 | | Passport Backup Words |  Passport PIN |  | Passport PIN (opt.)<br>Passport Backup Words (opt.) |
 | | Account Descriptor | Account Descriptor | Account Descriptor | Account Descriptor (opt.) |
 | | Instructions for heirs | Instructions for heirs | Instructions for heirs |
@@ -358,7 +358,7 @@ Now that you know you can recover your seed from the recovery shards, you should
    3. Click the "Scan" button for Gordian Seed Tool
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
-1. [  ] Change the label for Keystore One in Sparrow to be something meaningful, such as "SSKR Recovery Key"[^25].
+1. [  ] Change the label for "Keystore 1" in Sparrow to be something meaningful, such as "SSKR Recovery Key"[^25].
 
 You can now close out this seed in Gordian Seed Tool:
 
@@ -438,7 +438,7 @@ You're now ready to read an xpub into your transaction coordinator[^31]:
    3. Click the "Scan" button for Gordian Seed Tool.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
-1. [  ] Change the label for "Keystone 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
+1. [  ] Change the label for "Keystore 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
 
 You need to add a few things related to your Apple account to your Storage:
 
@@ -566,7 +566,7 @@ You can now import an account into your transaction coordinator.
    4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. If your computer is having problems reading the QR, consider shading it to reduce glare and/or hitting the right button for Resize, to display a smaller QR.
    6. An xpub of the appropriate key derivation should be imported.
-1. [  ] Verify the seed from Sparrow
+1. [  ] Verify the multisig from Sparrow[^sharing].
    1. Click "Export" on Sparrow.
    1. Select "Show" next to "Passport Multisig".
    1. Scan the animated QR into your Passport
@@ -575,7 +575,7 @@ You can now import an account into your transaction coordinator.
    1. On Sparrow, cancel the "Export" and go to "Receive"
    1. Scan the address into your Passport.
    1. This should complete the two-stage verification that your Passport seed has been imported correctly
-1. [  ] Change the label for "Keystone 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
+1. [  ] Change the label for "Keystore 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
 
 There's one last bit of administrivia for Passport:
 
@@ -587,7 +587,7 @@ There's one last bit of administrivia for Passport:
 Finally, you need to divy out the various backups and such you made[^39]:
 
 1. [  ] Store your Passport and your listing of the Passport Backup Words in your Home Storage.
-1. [  ] Store one Passport MicroSD in your Primary Storage.
+1. [  ] Store one Passport MicroSD in your Primary Storage (though you may want to delay this until Step H if you are undertaking the *Optional Resilience Improvement* listed there).
 1. [  ] Store your written Passport PIN in your Primary Storage.
 1. [  ] Store one Passport MicroSD in your Secondary Storage.
 1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store an extra copy of your Passport Backup Words there, as well as your Passport PIN[^41].
@@ -627,8 +627,17 @@ After you have added three keys to your transaction coordinator, either using th
 1. [  ] Export your account.
    1. Choose "Export".
    1. Click "Export File" next to "Output Descriptor".
-1. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
-1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store a copy of the descriptor there too.
+3. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
+4. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store a copy of the descriptor there too.
+
+**Optional Resilience Improvement: Backup Sparrow Wallet.** You may choose to also backup your Sparrow wallet, particularly if you decided to put a password on the wallet.
+
+**Transaction Coordinator Instructions:**
+
+1. [  ] Back up the Sparrow wallet file
+   1. This may be done with "Export" and then "Export File" next to Sparrow
+   1. This file will be encrypted _if and only if_ you have a password on your wallet, which we recommend against[^sparrowwallet]. 
+   1. Save or Copy that file to the MicroSD at Primary Storage. 
 
 #### **Step I: Test Transaction**
 
@@ -657,8 +666,9 @@ Particularly in the case of a multisig, you want to test your new account by bot
 
 1. [  ] Send funds to your Multisig address from a remote wallet.
    1. Click "Receive" in Sparrow.
-   1. Read the address or QR into a remote wallet.
-   1. Send a _small_ amount of funds to the multisig address from your remote wallet.
+   2. **Passport Instructions:** Test the address in Passport by choosing "Verify Address" and scanning it.
+   3. Read the address or QR into a remote wallet.
+   4. Send a _small_ amount of funds to the multisig address from your remote wallet.
 1. [  ] Wait for the funds to arrive.
    1. Click "Transactions" in Sparrow.
    1. Wait for the "Uncomfirmed" funds to have at least one confirmation.
@@ -744,8 +754,10 @@ Once you are confident in your control of an account, you can send the rest of y
 Leaving assets to children or other heirs is important for many of us. Digital assets can be hard to find and access, so instructions for your heirs and/or executors will go a long way to ensuring the funds aren't lost. More on the topic can be found in **Appendix III**
 
 1. [  ] Prepare a sample letter for your heirs, such as the one found in **Appendix IV**. Choose whether to be specific or vague[^45]. We suggest specific. Be sure to be clear of the scope of the assets if they are large[^46].
-1. [  ] Print your letter.
-1. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
+   1. If you are specific, be very aware that this letter is very sensitive, because it contains the blueprint to where all the puzzle pieces are for accessing your digital assets. If it should fall into the wrong hands, you would likely need to revamp your entire system of storage.
+3. [  ] Print your letter.
+4. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
+   1. If some of these Storages are secured (such as safes and safety deposit boxes) and some are not (such as a drawer), you may want to have two variants of your letter: put a specific one in secure locations and a vague one in insecure locations.
 
 ### PART FOUR: REVISIT BACKUPS
 
@@ -783,7 +795,7 @@ Your digital assets are only protected if you actively maintain your backups. Ev
 ***Passport Instructions:***
 
 1. [  ] Check your Passport PIN.
-   1. Use the PIN to log into your Passport; if you realize it has changed, record the new PIN.
+   1. Use the PIN to log into your Passport.
 1. [  ] Backup your Passport[^47].
    1. Choose Settings > Backup > Create Backup
    2. Insert the MicroSD from the Primary Storage into your Passport
@@ -791,6 +803,15 @@ Your digital assets are only protected if you actively maintain your backups. Ev
 1. Check your MicroSD on your Computer
    1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
    2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
+
+**Optional Resilience Improvement: Backup Sparrow Wallet.** If you are using the Sparrow wallet and you previously backed it up as a resilience improvement, you should renew that backup every Spring[^renewsparrow].
+
+**Transaction Coordinator Instructions:**
+
+1. [  ] Back up the Sparrow wallet file
+   1. This may be done with "Export" and then "Export File" next to Sparrow
+   1. This file will be encrypted _if and only if_ you have a password on your wallet, which we recommend against[^sparrowwallet]. 
+   1. Save or Copy that file to the MicroSD at Primary Storage.
 
 #### **Step M: Check Secondary Storage (Fall)**
 
@@ -868,7 +889,7 @@ If you stored your Active Seed from Gordian Seed Tool on MicroSDs, create a new 
 
 If you stored your Recovery Seed on MicroSDs, you should also create a new set of shares on the MicroSDs, but this is slightly tricky because it's currently sharded. Here's the best way to do that!
 
-***Recovery ordian Seed Tool Instructions:***
+***Recovery Gordian Seed Tool Instructions:***
 
 1. [  ] Grab your partner's iPhone, your iPod, or some other device running Gordian Seed Tool, separate from your main iPhone.
 1. [  ] Scan the first Recovery Shard from your Home Storage, as described in Step E.
@@ -1225,6 +1246,8 @@ Access Info: Password is at Safety Deposit Box
 
 [^24]: **Why Crypto Account?** A crypto-account includes outputs of descriptors for a number of different key derivations. It allows Gordian Seed Tool to output a single packet of information and for the recipient to pull the specific derivation that they need (in this case, a cosigner key). So, it minimizes user errors when passing over xpubs. But, our preferred solution if for the recipient to make a `ur:crypto-request` for exactly what they need and Gordian Seed Tool to use a `ur:crypto-request` to send it.
 
+[^sharing]: **Sharing Your Multisig.** This will share the read-only multisig account with your Passport. This has some slight privacy repercussions, but it's likely that your Passport is more secure that your Sparrow. On the upside, it'll allow you to verify addresses generated by the multisig account on your Passport.
+
 [^25]: **Clear Labelling.** No security through obscurity.
 
 [^26]: **Seriously, Delete It!** It is very important that your recovery seed *not* be in Gordian Seed Tool as it creates an additional vector of action. This is especially important if you are using the same device for your recovery seed and your active Gordian Seed Tool (not recommended!).
@@ -1263,11 +1286,15 @@ Access Info: Password is at Safety Deposit Box
 
 [^42]: **Why No Password?** Every time you add a password to your system, you add a new SPOF (Single Point of Failure). In this case, all you'd be protecting is a watch-only wallet, which could compromise your privacy, but not your digital assets, so it's not worth it unless you have strong reasons for privacy protection.
 
+[^sparrowwallet]: **The Sparrow Wallet.** If the file is encrypted, this is obviously safe. If the file is not encrypted, it's a privacy concern, because any stealing it would have read-only access to your wallet. But, under no condition is it a SPOC for your actual assets, because the keys are offline.
+
 [^43]: **Sending Funds.** This procedure can be used whenever you want to send funds from your wallet.
 
 [^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
 
 [^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises. For example, if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more likely and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
+
+[^renewsparrow]: **Why Renew?** The Sparrow wallet backup includes your transaction labels. Updating it will ensure you havee those if you ever lose your Sparrow computer.
 
 [^46]: **Funds Scope.** If you have a lot of assets, be sure your heirs know that. Retrieving your digital assets is going to be time consuming and alien to most people. It might be ignored if your heirs don't think it's worthwhile. So, be sure to let them know if it is!
 
