@@ -119,11 +119,11 @@ The following items are even more optional, but will increase the resilience of 
 
 ### Final State
 
-Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows the layout of materials that you'll keep in each if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
+Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows which materials  you'll keep at each location, if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
 | Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
 | :--- | :--- | :--- | :--- | :--- | 
-|  | Recovery SSKR Overview<br>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
+|  | <li>Recovery SSKR Overview<li>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
 | Sparrow Computer |
 | GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup<br>iPhone/Apple Info (opt.) |
 |  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.)<br>with Sparrow wallet backup (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
