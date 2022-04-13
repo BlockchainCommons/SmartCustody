@@ -123,13 +123,13 @@ Your material should be divided among four places: your home; secure storage in 
 
 | Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
 | :--- | :--- | :--- | :--- | :--- | 
-|  | <li>Recovery SSKR Overview<li>Recovery SSKR Share #1 | Recovery SSKR Share #2 | Recovery SSKR Share #3 |
-| Sparrow Computer |
-| GST iPhone | GST SSKR Share #1 (opt.) | iPhone PIN<br>Apple Account & Password<br>Apple Recovery Code | | GST Backup<br>iPhone/Apple Info (opt.) |
-|  | Passport | Passport MicroSD #1<br>w/GST SSKR Share #2 (opt.)<br>with Sparrow wallet backup (opt.) | Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
-| | Passport Backup Words |  Passport PIN |  | Passport PIN (opt.)<br>Passport Backup Words (opt.) |
-| | Account Descriptor | Account Descriptor | Account Descriptor | Account Descriptor (opt.) |
-| | Instructions for heirs | Instructions for heirs | Instructions for heirs |
+|  | <li>Recovery SSKR Overview<li>Recovery SSKR Share #1 | <li>Recovery SSKR Share #2 | <li>Recovery SSKR Share #3 |
+| <li>Sparrow Computer |
+| <li>GST iPhone | <li>GST SSKR Share #1 (opt.) | <li>iPhone PIN<li>Apple Account & Password<li>Apple Recovery Code | | <li>GST Backup<li>iPhone/Apple Info (opt.) |
+|  | <li>Passport | <li>Passport MicroSD #1<li>w/GST SSKR Share #2 (opt.)<li>with Sparrow wallet backup (opt.) | <li>Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
+| | <li>Passport Backup Words | <li>Passport PIN |  | <li>Passport PIN (opt.)<li>Passport Backup Words (opt.) |
+| | <li>Account Descriptor | <li>Account Descriptor | <li>Account Descriptor | <li>Account Descriptor (opt.) |
+| | <li>Instructions for heirs | <li>Instructions for heirs | <li>Instructions for heirs |
 
 Obviously this state will vary if alternative signing devices are chosen.
 
