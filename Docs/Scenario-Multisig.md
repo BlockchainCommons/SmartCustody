@@ -914,26 +914,96 @@ If you stored your Recovery Seed on MicroSDs, you should also create a new set o
 
 ### Options I: Additional Steps
 
-_This section will contain additional steps that may be incorporated into the scenario to better address certain adversaries._
+**Created Adversary:** [Process Fatigue](#adversary-process-fatigue)
+
+_The following optional steps can be added to this procedure to improve its robustness and its security. Each optional step addresses certain adversaries: they might be added if you know those adversaries to be a problem for your personal custody scenario (for which, see **Appendix II**, or if you identify the adversaries through the risk-modeling system outlined in the [#SmartCustody book](https://bit.ly/SmartCustodyBookV101). However, beware: adding optional steps ultimately adds to the Process Fatigue of the entire procedure, so care should be taken to ensure that new steps are both important and understood._
+
+**_Optional Steps:_**
+
+* Hire a Lawyer — for Death / Incapacitation, Institutional Theft
+* Use Bags (Fire-Resistant) — for Disaster
+* Use Bags (Tamper-Evident) — for Internal Theft, Institutional Theft, Physical Theft (Sophisticated)
+* Use Metal Storage —  for Disaster, Key Fragility
+* Use MicroSDs for SSKR Backup — for Key Fragility
+* Use NFCs for SSKR Backup — for Key Fragility
+    
+#### Optional Step: Hire a Lawyer
+
+**Obstructed Adversary:** Death / Incapacitation, Institutional Theft
+
+**Created Adversary:** Process Fatigue, Institutional Theft
+
+_A lawyer can store sealed files for you and will have a fiduciary responsibility to maintain them safely and privately[^lawyer]. This can reduce the problem of [Institutional Theft](#adversary-institutional-theft) for those concerned about various privacy or legal issues regarding safety deposit boxes, but you obviously must ensure the lawyer is trusted. This option can also increase the odds of your heirs or family accessing your digital assets, because the lawyer will know what to do if [Death / Incapacitation](#adversary-death--incapacitation) occurs. But there is new danger of [Process Fatigue](#adversary-process-fatigue), if nothing else because a lawyer is an ongoing cost._
+
+**_Use your lawyer's office as an alternative to your Primary Storage or your Cloud Storage._**
 
 #### Optional Step: Use Bags (Fire-Resistant)
 
 **Obstructed Adversary:** Disaster
 
-_This option will describe how to use fire-proof bags to protect paper._
+**Created Adversary:** Process Fatigue
 
-#### Optional Step: Use Bags (Fire-Resistant)
+_Fire-resistant bags can increase the fire resistance of printed materials, and thus protect against Disaster. If used in combination with a fireproof safe, they may add to the rated time. However, note that fire-resistant bags are not specifically designed for protecting electronics: they are intended to protect non-electronic materials. They may not add any additional protections to signing devices or MicroSD cards, and they may not even protect InkJet-printed material. So, don't overly depend on this optional step._
+
+**_Add the following action whenever you store material in your Home, Primary, or Secondary Storage._**
+
+1. [  ] Store all materials in fire-resistant bags.
+
+**_Add the following to your requirements list:_**
+
+* 3 Fireproof Bags — [11 x 15"](https://www.amazon.com/COLCASE-Fireproof-Non-Itchy-Resistant-Documents/dp/B074S2H4H9/) or [11 x 7"](https://www.amazon.com/gp/product/B01KWTE9ZU)
+
+#### Optional Step: Use Bags (Tamper-Evident)
 
 **Obstructed Adversary:** Internal Theft, Institutional Theft, Physical Theft (Sophisticated)
 
-_This option will describe how to use tamper-proof bags to protect from theft._
+**Created Adversary:** Process Fatigue
+
+_Tamper-evident bags can be used to reduce Internal Theft, Institutional Theft, Physical Theft (Sophisticated) because it becomes more difficult to surreptitiously look at key material. For paper materials tamper-evident bags also slightly decrease the risk of damage due to water used by firefighters, and thus may help a little in Disaster._
+
+_They can also increaseProcess Fatigue because of the need to replace the bags whenever examining the key material._
+
+**_Add the following action whenever you store material in your Home, Primary, or Secondary Storage._**
+
+1. [  ] Store materials in tamper-evident bag, record the serial number, and sign it.
+
+**_Add the following to your requirements list:_**
+
+* [2 Opaque Tamper-Evident Deposit Bags](https://www.amazon.com/MMF-Industries-Tamper-Evident-Deposit-2362011N06/dp/B000J09BRO/ref=dp_prsubs_3?pd_rd_i=B000J09BRO&psc=1)
+
+_One bag is used for your home safe, one for your safety deposit box._
 
 #### Optional Step: Use Metal Storage
 
 **Obstructed Adversary:** Disaster, Key Fragility
 
-_This option will describe how to use a metal tile and engraver to protect information._
+**Created Adversary:** User Error
+    
+_Instead of printing or writing secrets on waterproof paper, it can instead be engraved on a metal tile. This increase protection against Disaster and Key Fragility. It's also cheap to use, but it's prone to User Error, as it can be hard to read the letters. (If you prefer, stamp it [by hand](https://stampingblanks.com/Stamp-Sets/). Both Steel and Titanium options are available: be aware that Steel has a slightly lower melting point than Titanium, and beware that some tiles advertised as steel are actually aluminum, which has an even lower melting point._
+ 
+_This step can be used for your SSKR shares and for secrets like PINs, Passport Backup Words, and account passwords. For elements such as BIP-39 words or ByteWords, you can choose more precise methods such as a [CryptoTag](https://cryptotag.io/products/cryptotag-starter-kit/), but those are built for 24-word recovery phrases, which is longer than you need for your Passport and shorter than you need for your SSKR[^sskrwords]. So, ingenuity would be required._
+    
+**_Replace any instance of printing out or writing a secret with:**
 
+1. [ ] Use Steel or Titanium Tile & Engraving Pen to record the secret.
+   1.  Write in ALL CAPS for clarity.
+   1. Separate words with "/"s or some other mark.
+   1. Push hard enough to make a solid, readable mark, but not quite hard enough to stop the engraving pen's motor.
+   1. It can be very challenging to write clearly with an engraving pen. You'll get better with practice. If something isn't clear, cross-out and repeat.
+    
+**_Store the result as you would the waterproof paper._**
+    
+**_Add one of the following metal tiles to your requirements list:_**
+
+* Design Ideas Identity Plate [https://shop.designideas.net/product/identitycase-holder-give-taketake](https://shop.designideas.net/product/identitycase-holder-give-taketake) or(
+* ColdTi Titanium Tile [https://www.amazon.com/TopHat-Technologies-ColdTi-Cryptocurrency-Storage/dp/B077CYKHZ6](https://www.amazon.com/TopHat-Technologies-ColdTi-Cryptocurrency-Storage/dp/B077CYKHZ6)
+
+**_AND add one of the following engravers to your requirements list:_**
+
+* Manual scribe [https://www.amazon.com/gp/product/B06XYZVJJ6](https://www.amazon.com/gp/product/B06XYZVJJ6) or
+* Battery-powered engraver [https://www.amazon.com/gp/product/B075Z2QR1](https://www.amazon.com/gp/product/B075Z2QR1) or
+* Dremel Industrial Engraver [https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/](https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/) with Dremel Diamond Tip [https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU](https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU)
+    
 #### Optional Step: Use MicroSDs for SSKR Backup
 
 **Obstructed Adversary:** Key Fragility
@@ -944,7 +1014,7 @@ _This is already incorporated into the scenario as a strong option._
 
 **Obstructed Adversary:** Key Fragility
 
-_This option will describe how to use NFCs with Gordian Seed Tool._
+_Writing NFTs is currently only available in the testflight of Gordian Seed Tool. It'll be incorporated as an alternative to using MicrOSDs when it's fully released.__
 
 ### Options II: Alternative Signing Devices
 
@@ -1399,6 +1469,8 @@ As noted previously, please consider whether this letter should be specific or o
 [^47]: **Why Backup?** Pragmatically, it's good to always make sure your backup is up-to-date. But, we also don't have a lot of data on the longevity of MicroSD cards. Our current belief is that they last 10 years (but is that a median, an average, a minimum? we're not sure) and that they remain fresher if exercised. So, every year you make sure you read and write to your card. And every three years, you replace it.
 
 [^48]: **Destroying MicroSD Cards.** We like scissors. See [How to Destroy a Memory Card](https://www.askcybersecurity.com/how-to-destroy-memory-card/) for more.
+
+[^lawyer]: **Lawyerly Precautions.** Before giving any materials to a lawyer, make sure they are sealed in an opaque envelope in a tamper-evident bag. Tell your lawyer to never reveal the information except in person to you or an heir following your death / incapacitation.
 
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority. Similarly, if you ever entirely lose a key, sweep your funds.
 
