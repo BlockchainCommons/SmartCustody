@@ -1,6 +1,8 @@
 # Multisig Self-Custody Scenario
 ## Procedure for Gordian Seed Tool & Passport
 
+#### by Christopher Allen & Shannon Appelcline
+
 _**WARNING:** This is currently a raw draft, undergoing review._
 
 _This is one of several possible scenarios for digital-asset storage. Other scenarios may use different default hardware and address different adversaries._
@@ -1351,7 +1353,13 @@ Run On: Old Laptop Computer (MacBook Air 2017 model with Grateful Dead sticker)
 Access Info: Password is at Safety Deposit Box
 ```
 As noted previously, please consider whether this letter should be specific or opaque, depending on the security of the locations where you're storing it. You may even need to have multiple versions of the letter: one for high-security locales (such as a safe), one for low-security locales (such as mom's bookshelf).
+ 
+## Credits
     
+**Authors:** Christopher Allen, Shannon Appelcline
+    
+**Reviewers:** Joe Andrieu
+
 ---
 
 [^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, that language discourages thinking about the functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically fully networked. The software used as a transaction coordinator in this scenario is most often called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
