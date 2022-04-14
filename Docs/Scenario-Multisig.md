@@ -1358,7 +1358,7 @@ As noted previously, please consider whether this letter should be specific or o
     
 **Authors:** Christopher Allen, Shannon Appelcline
     
-**Reviewers:** Joe Andrieu
+**Reviewers:** Joe Andrieu, Foundation Devices Staff
 
 ---
 
