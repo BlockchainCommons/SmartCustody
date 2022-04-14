@@ -1001,7 +1001,7 @@ _This step can be used for your SSKR shares and for secrets like PINs, Passport 
 **_AND add one of the following engravers to your requirements list:_**
 
 * Manual scribe [https://www.amazon.com/gp/product/B06XYZVJJ6](https://www.amazon.com/gp/product/B06XYZVJJ6) or
-* Battery-powered engraver [https://www.amazon.com/gp/product/B075Z2QR1](https://www.amazon.com/gp/product/B075Z2QR1) or
+* Battery-powered engraver [https://www.amazon.com/Beadsmith-MCR01-Micro-Engraver/dp/B004OUK1RY) or
 * Dremel Industrial Engraver [https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/](https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/) with Dremel Diamond Tip [https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU](https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU)
     
 #### Optional Step: Use MicroSDs for SSKR Backup
