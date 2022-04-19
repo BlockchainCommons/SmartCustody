@@ -21,7 +21,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
     A["💻 Transaction Coordinator"]
     B["📱 🔑 Signing Device"]
     C["🛡️ 🔑 Signing Device"]
-    D["📄 🔑 Recovery Key"]
+    D["📄 📄 📄 🔑 Recovery Key"]
     A-->B;
     A-->C;
     A-->D;
