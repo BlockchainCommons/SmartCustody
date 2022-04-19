@@ -15,13 +15,6 @@ Digital assets held personally ("self-custody") face two major dangers: single p
 
 This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergenices. By using Shamir's Secret Sharing, it ensures there is a copy of the recovery key, but that it's also split up so that it can't be used.
 
-<table width="100%">
-  <caption>
-      Figure 1: Architecture Overview
-  </caption>
-  <tr>
-    <td>
-      
 ```mermaid
     graph BT;
     A["💻 Transaction Coordinator"]
@@ -37,12 +30,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 style D fill:#ffcccc;
 style E fill:#ffcccc;
 ```
-      
-    </td>
-  </tr>
-</table>
-
-#### 
+#### Figure 1: Architecture Overview
 
 ***Warning:*** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
 
@@ -215,7 +203,7 @@ style B fill:#ffcccc;
 style C fill:#ffcccc;
 style D fill:#e6ffff;
 ```
-#### Figure 3: Location Overview"
+#### Figure 3: Location Overview
 
 
 #### **Step B: Prepare Computer**
