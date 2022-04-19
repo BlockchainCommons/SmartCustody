@@ -19,9 +19,12 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 %%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '50'}}}%%
     graph TD;
     A["💻"]
-    B[:page_facing_up:]
-    C[:iphone:]
-    D[Начало]
+    B["📄
+    🔑"]
+    C["📱
+    🔑"]
+    D["🛡️
+    🔑"]
     A-->B;
     A-->C;
     A-->D;
