@@ -111,6 +111,25 @@ This procedure incorporates the following steps:
 * **[Appendix IV: Preserving Assets for Your Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iv-preserving-assets-for-your-heirs)** — Why asset preservation is important.
 * **[Appendix V: Sample Letter to Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-v-sample-letter-to-heirs)** — What to say about your assets.
 
+### Initial Questions
+
+The following decisions are required for this procedure. You will be prompted in individual steps, but may wish to prepare by making the decisions now.
+
+1. What will be your primary storage location for your key backups? (**Step A**)
+   * More information is included in the Step, but a bank is recommended.
+2. What will be your secondary storage locale for your key backups? (**Step A**)
+   * More information is included in the Step, but work or a friend's house is recommended.
+3. Do you want to use the default software and hardware setup? (**Steps B-F**)
+   * The default scenario uses Sparrow as a transaction coordinator.
+   * The default scenario requires two iOS or MacOS devices and a Foundation Devices Passport.
+   * The **Alternative Signing Devices** section lists other devices that can be plugged in if you don't own the defaults.
+4. Do you have an extra MicroSD for backing up your SSKR shares? (**Steps D-E**)
+   * If so, use the "Suggested Resilience Improvement" to "Use MicroSD Cards for SSKR Recovery Backup". 
+5. Do you have a trusted cloud account for storing encrypted documents? (**Steps A, F-G**)
+   * If so, use the "Suggested Resilience Improvement" to "Use Cloud Backup"
+
+If you are an experiened user, you may wish to also consult the **Alternative Steps** for other options.
+
 ### Requirements
 
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
@@ -190,7 +209,7 @@ You will need two to three storage locales: Home Storage, Primary Storage, and S
    1. Options include your work, your parent's house, or a trusted friend's house.
    1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
 
-**Optional Resilience Improvement: Prepare Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. LastPass's "Notes" feature is one methodology.
+**Suggested Resilience Improvement: Use Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. LastPass's "Notes" feature is one methodology.
 
 ```mermaid
     graph BT;
@@ -353,7 +372,17 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 1. [  ] Remove MicroSD Card #3.
     
 You can now put those MicroSDs away for the moment. You'll be testing them in the "Suggested Resilience Improvement" at the end of Step E.
-    
+
+```mermaid
+    graph TD;
+    A["📱 iPhone"]
+    B["📱 🔑 Signing Device"]
+    C["📱 🔑 Seed"]
+
+style D fill:#ffcccc;
+style E fill:#ffcccc;
+```
+
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
 #### **Step E: Test & Input Recovery Seed**
@@ -434,7 +463,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
    1. Place one printed share in your Secondary Storage.
    1. 
 
-**Suggested Resilience Improvement: Test MicroSD Cards for SSKR Active Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
+**Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
 1. [  ] Insert one of your MicroSD cards into your SD Card Reader for iPhone.
 1. [  ] In Gordian Seed Tool, touch the "QR" button to "Scan" and then choose "Files".
@@ -463,8 +492,7 @@ _Default Signing Device #1:_ Gordian Seed Tool.
     E[E. Test & Input Recovery Seed]
     F[<b>F-G. Create Active Seeds</b>]
     F1{<b>Cloud?</b>}
-    F2{<b>MicroSDs?</b>}
-    D-->E-->F-->F1-->F2
+    D-->E-->F-->F1
     end
     subgraph 3[III. Finalize Setup]
     H[Steps H-K]
@@ -509,28 +537,9 @@ You need to add a few things related to your Apple account to your Storage:
 1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) on a piece of waterproof paper.
 2. [  ] Store your Apple information at your Primary Storage.
 
-**Optional Transaction Action Coordinator Resilience Improvement: Store Apple Info in Cloud.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud.
+**Suggested Resilience Improvement: Use Cloud Backup.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud.
 
 1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) in encrypted cloud storage, such as at LastPass.
-
-**Optional Resilience Improvement: Use MicroSD Cards for SSKR Backup.** The following optional[^32] procedure will increase the resilience of your recovery backup by sharding your active seed from Gordian Seed Tool and saving those SSKRs to MicroSDs[^33].
-
-1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone.
-1. [  ] Insert MicroSD Card #1[^34].
-1. [  ] In Gordian Seed Tool, again choose your Seed and "Backup" as a "SSKR Multi-Share" of "2 of 3".
-1. [  ] Choose "Export Shares Individually".
-1. [  ] Select to Export Shares as "QR Code"[^17].
-1. [  ] Click on the export icon for "Share 1".
-1. [  ] Scroll down to "Save to Files" and select it.
-1. [  ] "Save" the file to your MicroSD Card.
-   1. The MicroSD card will typically be on the files list after your iPhone and iCloud, visible as a drive icon.
-   1. You will typically want to create a folder, such as "GST Active SSKR" and save to that.
-1. [  ] Remove MicroSD Card #1; insert MicroSD Card #2[^33].
-1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
-1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^33].
-1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
-1. [  ] At this point you can store MicroSD Card #1 in your Home Storage.
-3. [  ] Do not yet store your MicroSD Cards #2 and #3. You'll be using them again in Step G.
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -652,8 +661,11 @@ Finally, you need to divy out the various backups and such you made[^39]:
 1. [  ] Store one Passport MicroSD in your Primary Storage (though you may want to delay this until Step H if you are undertaking the *Optional Resilience Improvement* listed there).
 1. [  ] Store your written Passport PIN in your Primary Storage.
 1. [  ] Store one Passport MicroSD in your Secondary Storage.
-1. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store an extra copy of your Passport Backup Words there, as well as your Passport PIN[^41].
 1. [  ] Put on your calendar a TODO to "Update MicroSD Storage (Step M)" three years in the future.
+
+**Suggested Resilience Improvement: Use Cloud Backup.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Passport in the cloud.
+
+    1. [  ] Store an extra copy of your Passport Backup Words and your Passport PIN[^41] in the cloud backup.
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -1062,7 +1074,32 @@ _This step can be used for your SSKR shares and for secrets like PINs, Passport 
 * Battery-powered engraver [https://www.amazon.com/Beadsmith-MCR01-Micro-Engraver/dp/B004OUK1RY) or
 * Dremel Industrial Engraver [https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/](https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/) with Dremel Diamond Tip [https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU](https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU)
     
-#### Optional Step: Use MicroSDs for SSKR Backup
+#### Optional Step: Use MicroSDs for SSKR Recovery Backup
+
+**Obstructed Adversary:** Key Fragility
+
+You may have already used MicroSDs to back up your recovery key, as strongly suggested in the core procedure. If you are using Gordian Seed Tool to store one of your active seeds, you can use the same procedure, and the same MicroSDs[^33], to back up one of your active keys.
+
+**_Add the following to the end of Step F:_**
+    
+1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone.
+1. [  ] Insert MicroSD Card #1[^34].
+1. [  ] In Gordian Seed Tool, again choose your Seed and "Backup" as a "SSKR Multi-Share" of "2 of 3".
+1. [  ] Choose "Export Shares Individually".
+1. [  ] Select to Export Shares as "QR Code"[^17].
+1. [  ] Click on the export icon for "Share 1".
+1. [  ] Scroll down to "Save to Files" and select it.
+1. [  ] "Save" the file to your MicroSD Card.
+   1. The MicroSD card will typically be on the files list after your iPhone and iCloud, visible as a drive icon.
+   1. You will typically want to create a folder, such as "GST Active SSKR" and save to that.
+1. [  ] Remove MicroSD Card #1; insert MicroSD Card #2[^33].
+1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
+1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^33].
+1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
+1. [  ] At this point you can store MicroSD Card #1 in your Home Storage.
+3. [  ] Do not yet store your MicroSD Cards #2 and #3. You'll be using them again in Step G.
+    
+#### Optional Step: Use MicroSDs for SSKR Recovery Backup
 
 **Obstructed Adversary:** Key Fragility
 
