@@ -17,7 +17,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '50'}}}%%
-    graph BU;
+    graph BT;
     A["💻 Transaction Coordinator"]
     B["📱 🔑 Signing Device"]
     C["🛡️ 🔑 Signing Device"]
