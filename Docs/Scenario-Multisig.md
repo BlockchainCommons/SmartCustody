@@ -241,6 +241,15 @@ Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Deb
    1. **Linux:** `sha256sum --check sparrow-X.X.X-manifest.txt --ignore-missing` and look for OK.
 1. [  ] If the program verified, install as appropraite for your OS.
 
+```mermaid
+    graph BT;
+    A["💻 Computer"]
+    B["🪶 Sparrow Wallet"]
+    B-->A;
+```
+##### _Figure 4: Transaction Coordinator Setup_
+
+
 #### **Step C: Create Multisig**
 
 ```mermaid
@@ -270,6 +279,20 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
 1. [  ] Choose "2/3" for the "M of N". This should be the default.
 
 At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport as your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signing Devices**. Choosing an alternative recovery device will replace steps D & E; choosing an alternative active signing device will replace either step F or G. Just follow the separate steps in that option rather than the ones listed below in those cases.
+
+```mermaid
+    graph BT;
+    A["💻🪶 Transaction Coordinator"]
+    B[" "]
+    C[" "]
+    D[" "]    
+    B-->A;
+    C-->A;
+    D-->A;
+    
+style D fill:#ffcccc;
+```
+##### _Figure 5: Multisig Setup_
 
 ### PART TWO: CREATE SEEDS
 
