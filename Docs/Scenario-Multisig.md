@@ -13,7 +13,7 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either through accident or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to support strong usability, it can be used to simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
 
-This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergenices. By using Shamir's Secret Sharing, it ensures there is a copy of the recovery key, but that it's also split up so that it can't be used.
+This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergencies. By using Shamir's Secret Sharing, it ensures there is a copy of the recovery key, but that it's also split up so that it can't be used.
 
 ```mermaid
     graph BT;
@@ -42,7 +42,7 @@ The base scenario presumes an audience with all of the following characteristics
     - with full and legal custody of the assets and no fiduciary responsibility to others;
     - and 100% of those assets shared with a spouse, if present, in estate planning.
 * A holder who might be trading those assets actively or might be holding them long term.
-* A holder who lives in the first world, and thus is less concerned about issues like government attack, kidnapping, or privacy violations.
+* A holder who lives in developed countries, and thus is usually less concerned about issues like government attack, kidnapping, or privacy violations.
 * A holder who has sufficient computer skills to comfortably install and run apps.
 
 This scenario advocates its design to address most major types of adversaries, while **Options** can improve that protection. Additional categories of "Non-Financially-Motivated Attackers", "Loss by Government" and "Privacy-Related Problems" are not strongly considered in this scenario. See **Appendix II**.
@@ -53,7 +53,7 @@ For simplicity, this document focuses on Bitcoin; adapting it to other cryptocur
 
 ## Procedure Overview
 
-This procedure incorporates the following steps:
+This procedure incorporates 14 steps, divided in four logical parts:
 
 ```mermaid
     graph LR;
@@ -154,11 +154,11 @@ The following items are even more optional, but will increase the resilience of 
 
 * [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
 * [  ] MicroSD Adapter with an extra, industrial grade MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overall, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter (be sure it's industrial-grade!) and have two others from your Passport.
-* [  ] Encrypted Cloud-based note storage, such as [LastPass](https://www.lastpass.com/)
+* [  ] Encrypted Cloud-based note storage, such as [BitWarden](https://bitwarden.com/)
 
 ### Final State
 
-Your material should be divided among four places: your home; secure storage in your home; offsite primary storage; and offsite secondary storage. The following shows which materials  you'll keep at each location, if you use the default scenario with Sparrow as transaction coordinator and a Foundation Devices Passport and Gordon Seed Tool (GST) as signing devices, with a third, recovery key sharded.
+Your material should be divided among four places: your home, a secure storage in your home, an offsite primary storage, and an offsite secondary storage. The following shows which materials you'll keep at each location if you use the default scenario with Sparrow as the transaction coordinator and a Foundation Devices Passport and Gordian Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
 | Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
 | :--- | :--- | :--- | :--- | :--- | 
@@ -170,7 +170,7 @@ Your material should be divided among four places: your home; secure storage in 
 | | <li>Account Descriptor | <li>Account Descriptor | <li>Account Descriptor | <li>Account Descriptor (opt.) |
 | | <li>Instructions for heirs | <li>Instructions for heirs | <li>Instructions for heirs |
 
-Obviously this state will vary if alternative signing devices are chosen.
+***Note:*** The state above will vary if you chose alternative signing devices.
 
 {pagebreak}
 
