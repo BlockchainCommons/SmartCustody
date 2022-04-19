@@ -200,7 +200,7 @@ You will need two to three storage locales: Home Storage, Primary Storage, and S
     
 style B fill:#ffcccc;
 style C fill:#ffcccc;
-style C fill:#e6ffff;
+style D fill:#e6ffff;
 ```
 
 #### **Step B: Prepare Computer**
