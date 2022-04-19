@@ -195,13 +195,14 @@ You will need two to three storage locales: Home Storage, Primary Storage, and S
 ```mermaid
     graph BT;
     A["🏠 Home"]
-    B["🏦 Primary"]
-    C["🏢 Secondary"]
-    D["🌩️ Cloud"]
+    B["🏠🔒 Home Safe"]
+    C["🏦 Primary"]
+    D["🏢 Secondary"]
+    E["🌩️ Cloud"]
     
-style B fill:#ffcccc;
 style C fill:#ffcccc;
-style D fill:#e6ffff;
+style D fill:#ffcccc;
+style E fill:#e6ffff;
 ```
 ##### _Figure 3: Location Overview_
 
