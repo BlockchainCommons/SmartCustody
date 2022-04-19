@@ -17,7 +17,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 
 ```mermaid
     graph BT;
-    subgraph Figure 1: Architecture Overview
+    0["Figure 1: Architecture Overview"]
     A["💻 Transaction Coordinator"]
     B["📱 🔑 Signing Device"]
     C["🛡️ 🔑 Signing Device"]
@@ -30,7 +30,6 @@ This scenario explains how to do so. It does so by using a transaction coordinat
     
 style D fill:#ffcccc;
 style E fill:#ffcccc;
-    end
 ```
 
 ***Warning:*** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
