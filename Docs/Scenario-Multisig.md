@@ -283,9 +283,9 @@ At this point, you will need to finalize your decision for which Signing Devices
 ```mermaid
     graph BT;
     A["💻🪶 Transaction Coordinator"]
-    B[" "]
-    C[" "]
-    D[" "]    
+    B["🔑 Planned Key #1"]
+    C["🔑 Planned Key #2"]
+    D["🔑 Planned Key #3"]    
     B-->A;
     C-->A;
     D-->A;
