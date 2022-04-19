@@ -22,9 +22,9 @@ This scenario explains how to do so. It does so by using a transaction coordinat
     B["📱 🔑 Signing Device"]
     C["🛡️ 🔑 Signing Device"]
     D["📄 📄 📄 🔑 Recovery Key"]
-    A-->B;
-    A-->C;
-    A-->D;
+    B-->A;
+    C-->A;
+    D-->A;
     
 style D fill:#ffcccc;
 ```
