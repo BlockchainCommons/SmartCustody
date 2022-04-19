@@ -30,7 +30,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 style D fill:#ffcccc;
 style E fill:#ffcccc;
 ```
-#### Figure 1: Architecture Overview
+##### Figure 1: Architecture Overview
 
 ***Warning:*** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
 
@@ -203,7 +203,7 @@ style B fill:#ffcccc;
 style C fill:#ffcccc;
 style D fill:#e6ffff;
 ```
-#### Figure 3: Location Overview
+##### Figure 3: Location Overview
 
 
 #### **Step B: Prepare Computer**
