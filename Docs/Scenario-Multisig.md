@@ -209,7 +209,7 @@ You will need two to three storage locales: Home Storage, Primary Storage, and S
    1. Options include your work, your parent's house, or a trusted friend's house.
    1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
 
-**Suggested Resilience Improvement: Use Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. LastPass's "Notes" feature is one methodology.
+**Suggested Resilience Improvement: Use Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. Bitwarden's "Secure Notes" feature is one methodology.
 
 ```mermaid
     graph BT;
@@ -539,7 +539,7 @@ You need to add a few things related to your Apple account to your Storage:
 
 **Suggested Resilience Improvement: Use Cloud Backup.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud.
 
-1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) in encrypted cloud storage, such as at LastPass.
+1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) in encrypted cloud storage, such as at Bitwarden.
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -698,12 +698,15 @@ After you have added three keys to your transaction coordinator, either using th
 **Transaction Coordinator Instructions:**
 
 1. [  ] Click "Apply" in Sparrow.
-1. [  ] Choose whether to add a password; you probably should not[^42].
-1. [  ] Export your account.
+2. [  ] Choose whether to add a password; you probably should not[^42].
+3. [  ] Export your account.
    1. Choose "Export".
    1. Click "Export File" next to "Output Descriptor".
-3. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
-4. [  ] If you have access to encrypted cloud storage, such as the "Notes" feature on LastPass, store a copy of the descriptor there too.
+4. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
+    
+**Suggested Resilience Improvement: Use Cloud Backup:**  If you have access to encrypted cloud storage, such as the "Secure Notes" feature on Bitwarden, you can use that to back up the output descriptor fromy our transaction coordinator as well.
+    
+1. [  ] Atore a copy of the descriptor in your encrypted cloud notes.
 
 **Optional Resilience Improvement: Backup Sparrow Wallet.** You may choose to also backup your Sparrow wallet, particularly if you decided to put a password on the wallet.
 
@@ -1277,7 +1280,7 @@ Loss of singular locales results in no loss of assets[^A1]:
 
 Loss of multiple sites can cause asset loss, depending on how much optional resilience was used:
 
-1. **Loss of Home + Primary.** The only things left are a MicroSD at Secondary Storage and whatever's in the Cloud. Recovery is only possible if care was taken in backing up access info to the cloud. If the user has the Passport Backup Words in the Cloud and if they have Apple login information somewhere such as Lastpass, and if they know the PIN to a previous apple device, then they can restore one seed off the MicroSD at the Secondary Storage and another from iCloud. But without optional Cloud backup, the assets are lost.
+1. **Loss of Home + Primary.** The only things left are a MicroSD at Secondary Storage and whatever's in the Cloud. Recovery is only possible if care was taken in backing up access info to the cloud. If the user has the Passport Backup Words in the Cloud and if they have Apple login information somewhere such as Bitwarden, and if they know the PIN to a previous apple device, then they can restore one seed off the MicroSD at the Secondary Storage and another from iCloud. But without optional Cloud backup, the assets are lost.
 1. **Loss of Home + Secondary.** The Passport MicroSD at Primary Storage may be used to recover a seed provided Passport Backup Words were put in Cloud; Gordian Seed Tool can be rebuilt from iCloud, possibly requiring login information also stored at Primary Storage. If the Passport Backup Words were not backed up to the Cloud, and they are not known, the assets are lost.
 1. **Loss of Primary + Secondary.** Passport and Gordian Seed Tool remain available at home. Lots of new backups should be made.
 1. **Loss of Home, Primary Storage, and Secondary Storage.** One key may still remain available in iCloud, if Gordian Seed Tool can be rebuilt, but that's insufficient to sign multisigs: the assets are definitely lost.
