@@ -997,9 +997,35 @@ _The following optional steps can be added to this procedure to improve its robu
 * Use Bags (Fire-Resistant) — for Disaster
 * Use Bags (Tamper-Evident) — for Internal Theft, Institutional Theft, Physical Theft (Sophisticated)
 * Use Metal Storage —  for Disaster, Key Fragility
-* Use MicroSDs for SSKR Backup — for Key Fragility
+* Use MicroSDs for SSKR Active Backup — for Key Fragility
+* Use MicroSDs for SSKR Recovery Backup — for Key Fragility
 * Use NFCs for SSKR Backup — for Key Fragility
     
+#### Optional Questions
+
+Any additional step that you could add to your procedure will primarily hinge on two questions:
+   
+1. Can I undertake this option without becoming less likely to initiate or manage the procedure?
+2. Do I have the parts necessary for this procedure?
+    
+If the answer to both of those questions is **Yes**, then consider adding the optional step. However, the following questions may offer more nuance to the individual options.
+    
+* Do I already have a lawyer that I trust?
+   * If so, add **Hire a Lawyer**.
+* Do I have extra concerns about fire at any of my storage locales?
+   * If so, add **Use Bags (Fire-Resistant)** to that locale.
+* Do I have extra concerns about furtive inspection of my secrets at any of my storage locales?
+   * If so, add **Use Bags (Tamper-Evident)** to that locale.
+* Am I comfortable with the security and independence of a cloud service I have that has secure notes?
+   * If so, add **Use Cloud Backup**.
+* Do I have concerns about fire, water, or other natural destruction at one of my locales?
+   * If so, add **Use Metal Storage** to that locale.
+* Am I technically comfortable with backing up from an iPhone to a MicroSD. (And do I prefer MicroSDs to NFCS?)
+    * If so, add **Use MicroSDs for SSKR Recovery Backup**.
+    * If that wasn't a big deal, also add **Use MicroSDs for SSKR Active Backup**.
+* Am I technically comfortable with backing up from an iPhone to a NFC? (And do I prefer NFCs to MicroSDs?)
+  * If so, add **Use NFCs for SSKR Backup**.
+
 #### Optional Step: Hire a Lawyer
 
 **Obstructed Adversary:** Death / Incapacitation, Institutional Theft
@@ -1077,7 +1103,7 @@ _This step can be used for your SSKR shares and for secrets like PINs, Passport 
 * Battery-powered engraver [https://www.amazon.com/Beadsmith-MCR01-Micro-Engraver/dp/B004OUK1RY) or
 * Dremel Industrial Engraver [https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/](https://www.amazon.com/Dremel-290-05-120-Volt-Industrial-Engraver/dp/B000VZIGA0/) with Dremel Diamond Tip [https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU](https://www.amazon.com/Dremel-9929-Engraver-Diamond-Point/dp/B00004UDJU)
     
-#### Optional Step: Use MicroSDs for SSKR Recovery Backup
+#### Optional Step: Use MicroSDs for SSKR Active Backup
 
 **Obstructed Adversary:** Key Fragility
 
