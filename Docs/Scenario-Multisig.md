@@ -16,7 +16,6 @@ Digital assets held personally ("self-custody") face two major dangers: single p
 This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergenices. By using Shamir's Secret Sharing, it ensures there is a copy of the recovery key, but that it's also split up so that it can't be used.
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '50'}}}%%
     graph BT;
     A["💻 Transaction Coordinator"]
     B["📱 🔑 Signing Device"]
@@ -191,6 +190,18 @@ You will need two to three storage locales: Home Storage, Primary Storage, and S
    1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
 
 **Optional Resilience Improvement: Prepare Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. LastPass's "Notes" feature is one methodology.
+
+```mermaid
+    graph BT;
+    A["🏠 Home"]
+    B["🏦 Primary"]
+    C["🏢 Secondary"]
+    D["🌩️ Cloud"]
+    
+style B fill:#ffcccc;
+style C fill:#ffcccc;
+style C fill:#e6ffff;
+```
 
 #### **Step B: Prepare Computer**
 
