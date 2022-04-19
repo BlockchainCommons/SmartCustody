@@ -243,7 +243,7 @@ Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Deb
 
 ```mermaid
     graph BT;
-    A["💻 Computer"]
+    A["🏠 💻 Computer"]
     B["🪶 Sparrow Wallet"]
     B-->A;
 ```
@@ -282,7 +282,7 @@ At this point, you will need to finalize your decision for which Signing Devices
 
 ```mermaid
     graph BT;
-    A["💻🪶 Transaction Coordinator"]
+    A["🏠 💻 🪶 Transaction Coordinator"]
     B["🔑 Planned Key #1"]
     C["🔑 Planned Key #2"]
     D["🔑 Planned Key #3"]    
