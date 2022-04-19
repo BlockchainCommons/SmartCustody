@@ -205,6 +205,9 @@ style C fill:#ffcccc;
 style D fill:#e6ffff;
     
     0["Figure 3: Location Overview"]
+    
+    style 0 fill:#ffffff;
+
 ```
 
 #### **Step B: Prepare Computer**
