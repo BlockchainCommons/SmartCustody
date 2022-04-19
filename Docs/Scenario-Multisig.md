@@ -21,6 +21,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
   </caption>
   <tr>
     <td>
+      
 ```mermaid
     graph BT;
     A["💻 Transaction Coordinator"]
@@ -36,6 +37,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 style D fill:#ffcccc;
 style E fill:#ffcccc;
 ```
+      
         </td>
     </tr>
 </table>
