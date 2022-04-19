@@ -20,7 +20,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
     A[:computer:]
     B[:page_facing_up:]
     C[:iphone:]
-    D[TEST]
+    D[Начало]
     A-->B;
     A-->C;
     A-->D;
