@@ -17,7 +17,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 
 ```mermaid
     graph TD;
-    A["<font size="200%">💻</font>"]
+    A["<font size="2em">💻</font>"]
     B[:page_facing_up:]
     C[:iphone:]
     D[Начало]
