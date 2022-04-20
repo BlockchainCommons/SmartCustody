@@ -1144,9 +1144,9 @@ Particularly in the case of a multisig, you want to test your new account by bot
     subgraph receive ["Receiving Funds"]
     A["🌐 Sender"]
     A1["#️⃣ Transaction"]
+    B["🏠 💻 🪶 Transaction Coordinator"]
     end
     subgraph send ["Sending Funds"]
-    B["🏠 💻 🪶 Transaction Coordinator"]
     C["📱🌱 Your iPhone with GST"]
     C1["🖋️ Signature"]
     D["🛡️ Your Passport"]
