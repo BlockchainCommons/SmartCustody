@@ -566,13 +566,12 @@ Finally, you need to divy out your shares, which is how you will recover this se
       C["📄 SSKR Share #2"]
       end
     end
-    subgraph "Home Storage"
+    subgraph "Home Storage" TD
       AMeta["🏠🔒"]
       subgraph homerecovery["Recovery Key Package"]
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
       end
-      AMeta-->A
     end
     
     style A fill:#ffcccc;
