@@ -261,10 +261,10 @@ Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Deb
 1. [  ] If the program verified, install as appropraite for your OS.
 
 ```mermaid
-    graph TD;
+    graph BT;
     A["🏠 💻 Computer"]
     B["🪶 Sparrow Wallet"]
-    A-->B;
+    B-->A;
 ```
 ##### _Figure 4: Transaction Coordinator Setup_
 
@@ -300,14 +300,14 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
 At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport as your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signing Devices**. Choosing an alternative recovery device will replace steps D & E; choosing an alternative active signing device will replace either step F or G. Just follow the separate steps in that option rather than the ones listed below in those cases.
 
 ```mermaid
-    graph TD;
+    graph BT;
     A["🏠 💻 🪶 Transaction Coordinator"]
     B["🔐 Planned Seed #1"]
     C["🔐 Planned Seed #2"]
     D["🔐 Planned Seed #3"]    
-    A-->B
-    A-->C;
-    A-->D;
+    B-->A
+    C-->A;
+    D-->A;
     
 style D color:#000,fill:#ffaaaa;
 ```
@@ -534,12 +534,12 @@ You can now close out this seed in Gordian Seed Tool:
 1. [  ] Delete Gordian Seed Tool.
 
 ```mermaid
-    graph TD;
+    graph BT;
     A["🏠 💻 🪶 Transaction Coordinator"]
     B["🔑 Pub Key (Account Descriptor)"]
     C["📱🌱 Old iPhone with GST"]
 
-    A-->B-->C
+    C-->B-->A
     
     style B color:#000,fill:#ffaaaa;
     style C color:#000,fill:#ffaaaa;
