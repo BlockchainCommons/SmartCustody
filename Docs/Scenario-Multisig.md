@@ -219,9 +219,9 @@ You will need three storage locales: Home Storage, Primary Storage, and Secondar
     D["🏢 Secondary"]
     E["🌩️ Cloud"]
     
-style C color:#000,fill:#ff8888;
-style D fill:#ff8888;
-style E fill:#00ccff;
+style C color:#000,fill:#ff9999;
+style D color:#000,fill:#ff9999;
+style E color:#000,fill:#00ccff;
 ```
 ##### _Figure 3: Location Overview_
 
@@ -368,13 +368,13 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
     D-->F
     D-->G
   
-    style A fill:#ff8888;
-style B fill:#ff8888;
-style C fill:#ff8888;
-style D fill:#ff8888;
-style E fill:#ff8888;
-style F fill:#ff8888;
-style G fill:#ff8888;
+    style A color:#000,fill:#ff9999;
+style B color:#000,fill:#ff9999;
+style C color:#000,fill:#ff9999;
+style D color:#000,fill:#ff9999;
+style E color:#000,fill:#ff9999;
+style F color:#000,fill:#ff9999;
+style G color:#000,fill:#ff9999;
 ```
 ##### _Figure 6: Recovery Key Creation_
     
@@ -415,13 +415,13 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
     H-->J
     H-->K
   
-    style A fill:#ff8888;
-style B fill:#ff8888;
-style C fill:#ff8888;
-style H fill:#e6ffff;
-style I fill:#e6ffff;
-style J fill:#e6ffff;
-style K fill:#e6ffff;
+style A color:#000,fill:#ff9999;
+style B color:#000,fill:#ff9999;
+style C color:#000,fill:#ff9999;
+style H color:#000,fill:#00ccff;
+style I color:#000,fill:#00ccff;
+style J color:#000,fill:#00ccff;
+style K color:#000,fill:#00ccff;
 ```
 ##### _Figure 6a: Recovery Key Creation (Resilience Improvement)_
 
@@ -499,16 +499,16 @@ Now that you know you can recover your seed from the recovery shards, you should
     I-->H
     J-->H
   
-    style A fill:#ff8888;
-    style B fill:#ff8888;
-    style C fill:#ff8888;
-    style D fill:#ff8888;
-    style E fill:#ff8888;
-    style F fill:#ff8888;
-    style G fill:#ff8888;
-    style H fill:#ff8888;
-    style I fill:#ff8888;
-    style J fill:#ff8888;
+    style A color:#000,fill:#ff9999;
+    style B color:#000,fill:#ff9999;
+    style C color:#000,fill:#ff9999;
+    style D color:#000,fill:#ff9999;
+    style E color:#000,fill:#ff9999;
+    style F color:#000,fill:#ff9999;
+    style G color:#000,fill:#ff9999;
+    style H color:#000,fill:#ff9999;
+    style I color:#000,fill:#ff9999;
+    style J color:#000,fill:#ff9999;
 ```
 ##### _Figure 7: Recovery Key Test_
     
@@ -541,8 +541,8 @@ You can now close out this seed in Gordian Seed Tool:
 
     A-->B-->C
     
-    style B fill:#ff8888;
-    style C fill:#ff8888;
+    style B color:#000,fill:#ff9999;
+    style C color:#000,fill:#ff9999;
 ```
 ##### _Figure 8: Recovery Key Entry_
     
@@ -561,9 +561,9 @@ Finally, you need to divy out your shares, which is how you will recover this se
       B["📄 SSKR Share #1"]
       end
     end
-    style home fill:#ffffff;
-    style A fill:#ff8888;
-    style B fill:#ff8888;
+    style home fill:#cccccc;
+    style A color:#000,fill:#ff9999;
+    style B color:#000,fill:#ff9999;
     ```
 
     ```mermaid
@@ -573,8 +573,8 @@ Finally, you need to divy out your shares, which is how you will recover this se
       C["📄 SSKR Share #2"]
       end
     end
-    style primary fill:#ffffff;
-    style C fill:#ff8888;
+    style primary fill:#cccccc;
+    style C color:#000,fill:#ff9999;
     ```
 
     ```mermaid
@@ -584,8 +584,8 @@ Finally, you need to divy out your shares, which is how you will recover this se
       D["📄 SSKR Share #3"]
       end
     end        
-    style secondary fill:#ffffff;
-    style D fill:#ff8888;
+    style secondary fill:#cccccc;
+    style D color:#000,fill:#ff9999;
     ```
     
 ##### _Figure 9: Recovery Key Storage_
