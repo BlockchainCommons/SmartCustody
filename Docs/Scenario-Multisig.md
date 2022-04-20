@@ -844,8 +844,8 @@ You're now ready to create a new seed on your Passport.
     graph TD;
     A["🛡️ Your Passport"]
     C["🔐 Seed"]
-    D["💿 Backup"]
-    E["💿 Backup"]
+    D["💿 Backup #1"]
+    E["💿 Backup #2"]
   
     A-->C
     C-->D
@@ -902,8 +902,8 @@ There's one last bit of administrivia for Passport:
 ```mermaid
     graph TD;
     A["🛡️ Your Passport"]
-    D["💿 Backup"]
-    E["💿 Backup"]
+    D["💿 Backup #1"]
+    E["💿 Backup #2"]
   
     A-->D
     A-->E
@@ -913,15 +913,68 @@ There's one last bit of administrivia for Passport:
 Finally, you need to divy out the various backups and such you made[^39]:
 
 1. [  ] Store your Passport and your listing of the Passport Backup Words in your Home Storage.
-1. [  ] Store one Passport MicroSD in your Primary Storage (though you may want to delay this until Step H if you are undertaking the *Optional Resilience Improvement* listed there).
+1. [  ] Store one Passport MicroSD in your Primary Storage.
+    1. If you took advantage of the Suggested Resilience Improvement, this MicroSD will also contain SSKR Share #2.
 1. [  ] Store your written Passport PIN in your Primary Storage.
 1. [  ] Store one Passport MicroSD in your Secondary Storage.
+    1. If you took advantage of the Suggested Resilience Improvement, this MicroSD will also contain SSKR Share #3.
 1. [  ] Put on your calendar a TODO to "Update MicroSD Storage (Step M)" three years in the future.
 
 **Suggested Resilience Improvement: Use Cloud Backup.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Passport in the cloud.
 
     1. [  ] Store an extra copy of your Passport Backup Words and your Passport PIN[^41] in the cloud backup.
 
+    
+```mermaid
+    graph TD
+    subgraph home["🏠🔒 Home Storage"]
+      subgraph "Passport Package"
+      A["🛡️ Your Passport"]
+      B["🔡 Passport Words"]
+      end
+    end
+    ```
+
+    ```mermaid
+    graph TD
+    subgraph primary["🏦 Primary Storage"]
+      subgraph "Passport Package"
+      C["💿 Passport Backup #1"]
+      D["🔢 Passport PIN"]
+      end
+      subgraph "Recovery Key Package"
+      E["💿 SSKR Share #2]
+      end
+    style E color:#000,fill:#99ebff;
+    end
+    ```
+
+    ```mermaid
+    graph TD;
+    subgraph secondary ["🏢 Secondary Storage"]
+      subgraph "Passport Package"
+      F["💿 Passport Backup #2"]
+      end
+      subgraph "Recovery Key Package"
+      G["💿 SSKR Share #3]
+      end    
+    style G color:#000,fill:#99ebff;
+    end        
+    ```
+    
+    ```mermaid
+    graph TD
+    subgraph cloud["🌩️ Cloud Storage"]
+      subgraph "Passport Package"
+      H["🔡 Passport Words"]
+      I["🔢 Passport PIN"]
+      end
+    end
+    style H color:#000,fill:#99ebff;
+    style I color:#000,fill:#99ebff;
+    ```
+##### _Figure 17: Active Seed #2 Storage_
+    
 _Any Alternative Signing Device may be used to replace this Step._
 
 ### PART THREE: FINALIZE SETUP
