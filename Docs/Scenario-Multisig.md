@@ -376,7 +376,7 @@ style E color:#000,fill:#ffaaaa;
 style F color:#000,fill:#ffaaaa;
 style G color:#000,fill:#ffaaaa;
 ```
-##### _Figure 6: Recovery Key Creation_
+##### _Figure 6: Recovery Seed Creation_
     
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
@@ -423,7 +423,7 @@ style I color:#000,fill:#99ebff;
 style J color:#000,fill:#99ebff;
 style K color:#000,fill:#99ebff;
 ```
-##### _Figure 6a: Recovery Key Creation (Resilience Improvement)_
+##### _Figure 6a: Recovery Seed Creation (Resilience Improvement)_
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
@@ -510,7 +510,7 @@ Now that you know you can recover your seed from the recovery shards, you should
     style I color:#000,fill:#ffaaaa;
     style J color:#000,fill:#ffaaaa;
 ```
-##### _Figure 7: Recovery Key Test_
+##### _Figure 7: Recovery Seed Test_
     
 **Transaction Coordinator Instructions:**
 
@@ -544,7 +544,7 @@ You can now close out this seed in Gordian Seed Tool:
     style B color:#000,fill:#ffaaaa;
     style C color:#000,fill:#ffaaaa;
 ```
-##### _Figure 8: Recovery Key Entry_
+##### _Figure 8: Recovery Seed Entry_
     
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
@@ -585,7 +585,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
     style D color:#000,fill:#ffaaaa;
     ```
     
-##### _Figure 9: Recovery Key Storage_
+##### _Figure 9: Recovery Seed Storage_
 
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
@@ -673,6 +673,16 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
    3. Flipping coins to generate 128 bits of entropy takes 128 flips. That's a lot!
 1. [  ] "Save" it.
 
+```mermaid
+    graph TD;
+    A["📱 Your iPhone"]
+    B["🌱 Gordian Seed Tool"]
+    C["🔐 Seed"]
+    
+    A-->B-->C
+  ```
+##### _Figure 10: Active Seed #1 Creation_
+
 You're now ready to read an xpub into your transaction coordinator[^31]:
 
 **Transaction Coordinator Instructions:**
@@ -691,14 +701,50 @@ You're now ready to read an xpub into your transaction coordinator[^31]:
    5. An xpub of the appropriate key derivation should be imported.
 1. [  ] Change the label for "Keystore 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
 
+```mermaid
+    graph BT;
+    A["🏠 💻 🪶 Transaction Coordinator"]
+    B["🔑 Pub Key (Account Descriptor)"]
+    C["📱🌱 Your iPhone"]
+
+    C-->B-->A
+```
+##### _Figure 11: Active Seed #1 Entry_
+
 You need to add a few things related to your Apple account to your Storage:
 
-1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) on a piece of waterproof paper.
+1. [  ] Record your iPhone PIN, your Apple account and password, and your Apple recovery code (if you have one) on a piece of waterproof paper.
 2. [  ] Store your Apple information at your Primary Storage.
 
 **Suggested Resilience Improvement: Use Cloud Backup.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud.
 
-1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) in encrypted cloud storage, such as at Bitwarden.
+1. [  ] Record your iPhone PIN, your Apple account and password, and your Apple recovery code (if you have one) in encrypted cloud storage, such as at Bitwarden.
+
+    ```mermaid
+    graph TD
+    subgraph primary["🏦 Primary Storage"]
+      subgraph "Apple Info Package"
+      A["🔢 iPhone PIN"]
+      B["🔏 Apple Account"]
+      C["🛟 Apple Recovery"]    
+      end
+    end
+    style C color:#000,fill:#99ebff;
+    ```
+
+    ```mermaid
+    graph TD
+    subgraph primary["🏦 Primary Storage"]
+      subgraph "Apple Info Package"
+      D["🔢 iPhone PIN"]
+      E["🔏 Apple Account"]
+      F["🛟 Apple Recovery"]    
+      end
+    end
+    style D color:#000,fill:#99ebff;
+    style E color:#000,fill:#99ebff;
+    style F color:#000,fill:#99ebff;
+    ```
 
 _Any Alternative Signing Device may be used to replace this Step._
 
