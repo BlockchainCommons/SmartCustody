@@ -568,11 +568,12 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
     ```mermaid
     graph TD
-    subgraph "🏦 Primary Storage"
+    subgraph primary["🏦 Primary Storage"]
       subgraph "Recovery Key Package"
       C["📄 SSKR Share #2"]
       end
     end
+    style primary fill:#ffffff;
     style C fill:#ffcccc;
     ```
 
@@ -583,6 +584,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
       D["📄 SSKR Share #3"]
       end
     end        
+    style secondary fill:#ffffff;
     style D fill:#ffcccc;
     ```
     
