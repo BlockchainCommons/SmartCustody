@@ -707,7 +707,7 @@ You're now ready to read an xpub into your transaction coordinator[^31]:
     graph BT;
     A["🏠 💻 🪶 Transaction Coordinator"]
     B["🔑 Pub Key (Account Descriptor)"]
-    C["📱🌱 Your iPhone"]
+    C["📱🌱 Your iPhone with GST"]
 
     C-->B-->A
 ```
@@ -1139,12 +1139,33 @@ Particularly in the case of a multisig, you want to test your new account by bot
    1. Click "Transactions" in Sparrow.
    1. Wait for the "Uncomfirmed" funds to have at least one confirmation.
 
+```mermaid
+    graph LR;
+    A["🌐 Sender"]
+    A1["#️⃣ Transaction"]
+    B["🏠 💻 🪶 Transaction Coordinator"]
+    C["📱🌱 Your iPhone with GST"]
+    C1["🖋️ Signature"]
+    D["🛡️ Your Passport"]
+    D1["🖋️ Signature"]
+    E["🏠 💻 🪶 Transaction Coordinator"]
+    E1["#️⃣ Transaction"]
+    F["🌐 Recipient"]
+
+    
+    A-->A1-->B
+    C-->C1-->E
+    D-->D1-->E
+    E-->E1-->F
+```
+    
 If you were able to receive and send a transaction, you should feel confident in your new wallet.
 
 #### **Step J: Transfer Funds**
 
 ```mermaid
     graph LR;
+    
     subgraph 2[II. Create Seeds]
     G[Steps D-G]
     end
@@ -1161,6 +1182,7 @@ If you were able to receive and send a transaction, you should feel confident in
     G-->H
     K-->L
 ```
+##### _Figure 20: Receiving & Sending Funds_
 
 Once you are confident in your control of an account, you can send the rest of your funds to it, preferably in an iterative way as described below.
 
