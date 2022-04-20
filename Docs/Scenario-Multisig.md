@@ -1146,6 +1146,10 @@ Particularly in the case of a multisig, you want to test your new account by bot
     A1["#️⃣ Transaction"]
     B["🏠 💻 🪶 Transaction Coordinator"]
     end
+    
+    A-->A1-->B
+```
+```mermaid
     subgraph send ["Sending Funds"]
     C["📱🌱 Your iPhone with GST"]
     C1["🖋️ Signature"]
@@ -1156,7 +1160,6 @@ Particularly in the case of a multisig, you want to test your new account by bot
     F["🌐 Recipient"]
     end
     
-    A-->A1-->B
     C-->C1-->E
     D-->D1-->E
     E-->E1-->F
