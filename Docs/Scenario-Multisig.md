@@ -1150,6 +1150,7 @@ Particularly in the case of a multisig, you want to test your new account by bot
     A-->A1-->B
 ```
 ```mermaid
+    graph LR;
     subgraph send ["Sending Funds"]
     C["📱🌱 Your iPhone with GST"]
     C1["🖋️ Signature"]
