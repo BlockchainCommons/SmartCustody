@@ -925,7 +925,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     1. [  ] Store an extra copy of your Passport Backup Words and your Passport PIN[^41] in the cloud backup.
 
     
-    ```mermaid
+```mermaid
     graph TD
     subgraph home["🏠🔒 Home Storage"]
       subgraph "Passport Package"
@@ -933,9 +933,9 @@ Finally, you need to divy out the various backups and such you made[^39]:
       B["🔡 Passport Words"]
       end
     end
-    ```
+```
 
-    ```mermaid
+```mermaid
     graph TD
     subgraph primary["🏦 Primary Storage"]
       subgraph "Passport Package"
@@ -947,9 +947,9 @@ Finally, you need to divy out the various backups and such you made[^39]:
       end
     style E color:#000,fill:#99ebff;
     end
-    ```
+```
 
-    ```mermaid
+```mermaid
     graph TD;
     subgraph secondary ["🏢 Secondary Storage"]
       subgraph "Passport Package"
@@ -960,9 +960,9 @@ Finally, you need to divy out the various backups and such you made[^39]:
       end    
     style G color:#000,fill:#99ebff;
     end        
-    ```
+```
     
-    ```mermaid
+```mermaid
     graph TD
     subgraph cloud["🌩️ Cloud Storage"]
       subgraph "Passport Package"
@@ -972,7 +972,8 @@ Finally, you need to divy out the various backups and such you made[^39]:
     end
     style H color:#000,fill:#99ebff;
     style I color:#000,fill:#99ebff;
-    ```
+```
+
 ##### _Figure 17: Active Seed #2 Storage_
     
 _Any Alternative Signing Device may be used to replace this Step._
