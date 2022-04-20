@@ -942,7 +942,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
       D["🔢 Passport PIN"]
       end
       subgraph "Recovery Key Package"
-      E["💿 SSKR Share #2]
+      E["💿 SSKR Share #2"]
       end
     style E color:#000,fill:#99ebff;
     end
@@ -955,7 +955,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
       F["💿 Passport Backup #2"]
       end
       subgraph "Recovery Key Package"
-      G["💿 SSKR Share #3]
+      G["💿 SSKR Share #3"]
       end    
     style G color:#000,fill:#99ebff;
     end        
