@@ -818,7 +818,7 @@ It is strongly recommended that you update the firmware on your Passport before 
     A["🛡️ Your Passport"]
     B["💿 MicroSD"]
     C["🧪 GPG + shasum"]
-    D["▶️ Firmware"
+    D["▶️ Firmware"]
     E["🌐 GitHub"]
     
     E-->D-->C
