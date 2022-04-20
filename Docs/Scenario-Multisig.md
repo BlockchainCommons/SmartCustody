@@ -221,7 +221,7 @@ You will need three storage locales: Home Storage, Primary Storage, and Secondar
     
 style C color:#000,fill:#ff9999;
 style D color:#000,fill:#ff9999;
-style E color:#000,fill:#00ccff;
+style E color:#000,fill:#99ebff;
 ```
 ##### _Figure 3: Location Overview_
 
