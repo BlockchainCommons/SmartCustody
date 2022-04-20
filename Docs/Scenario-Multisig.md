@@ -813,6 +813,19 @@ It is strongly recommended that you update the firmware on your Passport before 
    1. Insert the MicroSD card into the top of your Passport.
    1. On your Passport, choose Settings > Firmware > Update Firmware
   
+```mermaid
+    graph LR;
+    A["🛡️ Your Passport"]
+    B["💿 MicroSD"]
+    C["🧪 GPG + shasum"]
+    D["▶️ Firmware"
+    E["🌐 GitHub"]
+    
+    E-->D-->C
+    D-->B-->A
+```
+##### _Figure 13: Passport Firmware Update_
+
 You're now ready to create a new seed on your Passport.
 
 1. [  ] Choose "Create New Seed" on your Passport[^ianc].
@@ -826,6 +839,15 @@ You're now ready to create a new seed on your Passport.
    1. Choose "Yes" to make a second Backup.
    1. Insert the second MicroSD Card[^38] supplied with the Passport.
    1. Choose Continue to make the Backup.
+
+```mermaid
+    graph TD;
+    A["🛡️ Your Passport"]
+    C["🔐 Seed"]
+    
+    A-->C
+  ```
+##### _Figure 14: Active Seed #1 Creation_
 
 You can now import an account into your transaction coordinator.
 
@@ -855,6 +877,16 @@ You can now import an account into your transaction coordinator.
    1. Scan the address into your Passport.
    1. This should complete the two-stage verification that your Passport seed has been imported correctly
 1. [  ] Change the label for "Keystore 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
+
+```mermaid
+    graph BT;
+    A["🏠 💻 🪶 Transaction Coordinator"]
+    B["🔑 Cosigner Pub Key"]
+    C["🛡️ Your Passport"]
+
+    C-->B-->A
+```
+##### _Figure 15: Active Seed #1 Entry_
 
 There's one last bit of administrivia for Passport:
 
