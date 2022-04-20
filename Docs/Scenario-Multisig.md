@@ -18,10 +18,10 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 ```mermaid
     graph BT;
     A["💻 Transaction Coordinator"]
-    B["📱 🔑 Signing Device"]
-    C["🛡️ 🔑 Signing Device"]
+    B["📱 🔐 Signing Device"]
+    C["🛡️ 🔐 Signing Device"]
     D["📱 Recovery Device"]
-    E["📄 📄 📄 🔑 Recovery Key"]
+    E["📄 📄 📄 🔐 Recovery Key"]
     B-->A;
     C-->A;
     D-->A;
@@ -261,10 +261,10 @@ Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Deb
 1. [  ] If the program verified, install as appropraite for your OS.
 
 ```mermaid
-    graph BT;
+    graph TD;
     A["🏠 💻 Computer"]
     B["🪶 Sparrow Wallet"]
-    B-->A;
+    A-->B;
 ```
 ##### _Figure 4: Transaction Coordinator Setup_
 
@@ -300,14 +300,14 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
 At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport as your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signing Devices**. Choosing an alternative recovery device will replace steps D & E; choosing an alternative active signing device will replace either step F or G. Just follow the separate steps in that option rather than the ones listed below in those cases.
 
 ```mermaid
-    graph BT;
+    graph TD;
     A["🏠 💻 🪶 Transaction Coordinator"]
-    B["🔑 Planned Key #1"]
-    C["🔑 Planned Key #2"]
-    D["🔑 Planned Key #3"]    
-    B-->A;
-    C-->A;
-    D-->A;
+    B["🔐 Planned Seed #1"]
+    C["🔐 Planned Seed #2"]
+    D["🔐 Planned Seed #3"]    
+    A-->B
+    A-->C;
+    A-->D;
     
 style D fill:#ffcccc;
 ```
@@ -352,6 +352,32 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
    1. Choose "2 of 3" and touch "Next"[^sskrscenarios].
    1. "Print All Shares", using the default options, which call for a Summary Page and coupons printed on individual pages. Be sure you're not printing double-sided!
 
+```mermaid
+    graph TD;
+    A["📱 Old iPhone"]
+    B["🌱 Gordian Seed Tool"]
+    C["🔐 Seed"]
+    D["🖨️ Printer"]
+    E["📄 Share #1"]
+    F["📄 Share #2"]
+    G["📄 Share #3"]
+    
+    A-->B-->C
+    C-->D
+    D-->E
+    D-->F
+    D-->G
+  
+    style A fill:#ffcccc;
+style B fill:#ffcccc;
+style C fill:#ffcccc;
+style D fill:#ffcccc;
+style E fill:#ffcccc;
+style F fill:#ffcccc;
+style G fill:#ffcccc;
+```
+##### _Figure 6: Recovery Key Creation_
+    
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
 1. [  ] Attach Your SD Card Reader for iPhone to Your iPhone
@@ -377,21 +403,13 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
     graph TD;
     A["📱 Old iPhone"]
     B["🌱 Gordian Seed Tool"]
-    C["🔑 Seed"]
-    D["🖨️ Printer"]
-    E["📄 Share #1"]
-    F["📄 Share #2"]
-    G["📄 Share #3"]
+    C["🔐 Seed"]
     H["💽 MicroSD Adapter"]
     I["💿 Share #1"]
     J["💿 Share #2"]
     K["💿 Share #3"]
     
     A-->B-->C
-    C-->D
-    D-->E
-    D-->F
-    D-->G
     C-->H
     H-->I
     H-->J
@@ -400,16 +418,12 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
     style A fill:#ffcccc;
 style B fill:#ffcccc;
 style C fill:#ffcccc;
-style D fill:#ffcccc;
-style E fill:#ffcccc;
-style F fill:#ffcccc;
-style G fill:#ffcccc;
 style H fill:#e6ffff;
 style I fill:#e6ffff;
 style J fill:#e6ffff;
 style K fill:#e6ffff;
 ```
-##### _Figure 6: Recovery Key Creation_
+##### _Figure 6a: Recovery Key Creation (Resilience Improvement)_
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
@@ -462,6 +476,42 @@ You want to remove the electronic version of your Recovery Seed from Gordian See
 
 Now that you know you can recover your seed from the recovery shards, you should enter that seed into your transaction coordinator.
 
+```mermaid
+    graph BT;
+    A["📱🌱 Old iPhone with GST"]
+    B["🔐 Recovered Seed"]
+    C["📄 Share #1"]
+    D["📄 Share #2"]
+    E["🔐 Recovered Seed"]
+    F["📄 Share #1"]
+    G["📄 Share #3"]
+    H["🔐 Recovered Seed"]
+    I["📄 Share #2"]
+    J["📄 Share #3"]
+    
+    B-->A
+    E-->A
+    H-->A
+    C-->B
+    D-->B
+    F-->E
+    G-->E
+    I-->H
+    J-->H
+  
+    style A fill:#ffcccc;
+    style B fill:#ffcccc;
+    style C fill:#ffcccc;
+    style D fill:#ffcccc;
+    style E fill:#ffcccc;
+    style F fill:#ffcccc;
+    style G fill:#ffcccc;
+    style H fill:#ffcccc;
+    style I fill:#ffcccc;
+    style J fill:#ffcccc;
+```
+##### _Figure 7: Recovery Key Test
+    
 **Transaction Coordinator Instructions:**
 
 1. [  ] Display the Account in Gordian Seed Tool
@@ -483,13 +533,49 @@ You can now close out this seed in Gordian Seed Tool:
 1. [  ] Delete the seed on Gordian Seed Tool.[^26]
 1. [  ] Delete Gordian Seed Tool.
 
+```mermaid
+    graph TD;
+    A["🏠 💻 🪶 Transaction Coordinator"]
+    B["🔑 Pub Key (Account Descriptor)"]
+    C["📱🌱 Old iPhone with GST"]
+
+    style B fill:#ffcccc;
+    style C fill:#ffcccc;
+```
+##### _Figure 8: Recovery Key Entry_
+    
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
 1. [  ] Separate and store the shares[^27][^28].
    1. Place the overview page and one printed share in your Home Storage.
    1. Place one printed share in your Primary Storage.
    1. Place one printed share in your Secondary Storage.
-   1. 
+
+    ```mermaid
+    graph LR;
+    subgraph "🏠 Home Storage"
+      subgraph "Recovery Key Package"
+      A["📗 SSKR Overview"]
+      B["📄 SSKR Share #1"]
+      end
+    end
+    subgraph "🏦 Primary Storage"
+      subgraph "Recovery Key Package"
+      C["📄 SSKR Share #2"]
+      end
+    end
+    subgraph "🏢 Secondary Storage"
+      subgraph "Recovery Key Package"
+      D["📄 SSKR Share #3"]
+      end
+    end
+    
+    style A fill:#ffcccc;
+    style B fill:#ffcccc;
+    style C fill:#ffcccc;
+    style D fill:#ffcccc;
+    ```
+##### _Figure 9: Recovery Key Storage_
 
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
