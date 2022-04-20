@@ -561,7 +561,6 @@ Finally, you need to divy out your shares, which is how you will recover this se
       B["📄 SSKR Share #1"]
       end
     end
-    style home fill:#333;
     style A color:#000,fill:#ff9999;
     style B color:#000,fill:#ff9999;
     ```
@@ -573,7 +572,6 @@ Finally, you need to divy out your shares, which is how you will recover this se
       C["📄 SSKR Share #2"]
       end
     end
-    style primary fill:#333;
     style C color:#000,fill:#ff9999;
     ```
 
@@ -584,7 +582,6 @@ Finally, you need to divy out your shares, which is how you will recover this se
       D["📄 SSKR Share #3"]
       end
     end        
-    style secondary fill:#333;
     style D color:#000,fill:#ff9999;
     ```
     
