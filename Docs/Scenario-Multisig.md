@@ -1141,11 +1141,11 @@ Particularly in the case of a multisig, you want to test your new account by bot
 
 ```mermaid
     graph LR;
-    subgraph ["Receiving Funds"]
+    subgraph receive ["Receiving Funds"]
     A["🌐 Sender"]
     A1["#️⃣ Transaction"]
     end
-    subgraph ["Sending Funds"]
+    subgraph send ["Sending Funds"]
     B["🏠 💻 🪶 Transaction Coordinator"]
     C["📱🌱 Your iPhone with GST"]
     C1["🖋️ Signature"]
