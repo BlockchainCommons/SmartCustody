@@ -510,7 +510,7 @@ Now that you know you can recover your seed from the recovery shards, you should
     style I fill:#ffcccc;
     style J fill:#ffcccc;
 ```
-##### _Figure 7: Recovery Key Test
+##### _Figure 7: Recovery Key Test_
     
 **Transaction Coordinator Instructions:**
 
@@ -555,12 +555,13 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
     ```mermaid
     graph TD
-    subgraph "🏠🔒 Home Storage"
+    subgraph home["🏠🔒 Home Storage"]
       subgraph "Recovery Key Package"
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
       end
     end
+    style home fill:#ffffff;
     style A fill:#ffcccc;
     style B fill:#ffcccc;
     ```
