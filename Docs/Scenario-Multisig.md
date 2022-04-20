@@ -1141,8 +1141,11 @@ Particularly in the case of a multisig, you want to test your new account by bot
 
 ```mermaid
     graph LR;
+    subgraph ["Receiving Funds"]
     A["🌐 Sender"]
     A1["#️⃣ Transaction"]
+    end
+    subgraph ["Sending Funds"]
     B["🏠 💻 🪶 Transaction Coordinator"]
     C["📱🌱 Your iPhone with GST"]
     C1["🖋️ Signature"]
@@ -1151,14 +1154,15 @@ Particularly in the case of a multisig, you want to test your new account by bot
     E["🏠 💻 🪶 Transaction Coordinator"]
     E1["#️⃣ Transaction"]
     F["🌐 Recipient"]
-
+    end
     
     A-->A1-->B
     C-->C1-->E
     D-->D1-->E
     E-->E1-->F
 ```
-    
+##### _Figure 20: Receiving & Sending Funds_
+
 If you were able to receive and send a transaction, you should feel confident in your new wallet.
 
 #### **Step J: Transfer Funds**
