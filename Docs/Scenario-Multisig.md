@@ -601,7 +601,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
 1. [  ] You can store one of the MicroSD cards in your Home Storage at this point.
 1. [  ] Hold on to the other two cards, which are likely the ones you received with your Passport, for usage in Step G.
 
-    ```mermaid
+```mermaid
     graph BT;
     A["📱🌱 Old iPhone with GST"]
     B["🔐 Recovered Seed"]
