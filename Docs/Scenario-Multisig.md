@@ -571,8 +571,8 @@ Finally, you need to divy out your shares, which is how you will recover this se
       subgraph homerecovery["Recovery Key Package"]
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
-      AMeta-->homerecovery
       end
+      AMeta-->homerecovery
     end
     
     style A fill:#ffcccc;
@@ -618,7 +618,7 @@ _Default Signing Device #1:_ Gordian Seed Tool.
     H[Steps H-K]
     end
     C-->D
-    F2-->H
+    F1-->H
 ```
 
 In the default Blockchain Commons scenario, Gordian Seed Tool is used to create and store one of your active seeds. For optimal security, this Gordian Seed Tool should be on a separate device from the one you used to generate your recovery seed in steps D & E. If you used your partner's iPhone or an old iPhone, or an iPod Touch for your recovery seed, now use your own actively used iPhone for this one.
