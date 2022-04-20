@@ -219,9 +219,9 @@ You will need three storage locales: Home Storage, Primary Storage, and Secondar
     D["🏢 Secondary"]
     E["🌩️ Cloud"]
     
-style C fill:#ff9999;
+style C fill:#ff8888;
 style D fill:#ff8888;
-style E fill:#66e0ff;
+style E fill:#00ccff;
 ```
 ##### _Figure 3: Location Overview_
 
@@ -309,7 +309,7 @@ At this point, you will need to finalize your decision for which Signing Devices
     A-->C;
     A-->D;
     
-style D fill:#ffcccc;
+style D fill:#ff8888;
 ```
 ##### _Figure 5: Multisig Setup_
 
@@ -368,13 +368,13 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
     D-->F
     D-->G
   
-    style A fill:#ffcccc;
-style B fill:#ffcccc;
-style C fill:#ffcccc;
-style D fill:#ffcccc;
-style E fill:#ffcccc;
-style F fill:#ffcccc;
-style G fill:#ffcccc;
+    style A fill:#ff8888;
+style B fill:#ff8888;
+style C fill:#ff8888;
+style D fill:#ff8888;
+style E fill:#ff8888;
+style F fill:#ff8888;
+style G fill:#ff8888;
 ```
 ##### _Figure 6: Recovery Key Creation_
     
@@ -415,9 +415,9 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
     H-->J
     H-->K
   
-    style A fill:#ffcccc;
-style B fill:#ffcccc;
-style C fill:#ffcccc;
+    style A fill:#ff8888;
+style B fill:#ff8888;
+style C fill:#ff8888;
 style H fill:#e6ffff;
 style I fill:#e6ffff;
 style J fill:#e6ffff;
@@ -499,16 +499,16 @@ Now that you know you can recover your seed from the recovery shards, you should
     I-->H
     J-->H
   
-    style A fill:#ffcccc;
-    style B fill:#ffcccc;
-    style C fill:#ffcccc;
-    style D fill:#ffcccc;
-    style E fill:#ffcccc;
-    style F fill:#ffcccc;
-    style G fill:#ffcccc;
-    style H fill:#ffcccc;
-    style I fill:#ffcccc;
-    style J fill:#ffcccc;
+    style A fill:#ff8888;
+    style B fill:#ff8888;
+    style C fill:#ff8888;
+    style D fill:#ff8888;
+    style E fill:#ff8888;
+    style F fill:#ff8888;
+    style G fill:#ff8888;
+    style H fill:#ff8888;
+    style I fill:#ff8888;
+    style J fill:#ff8888;
 ```
 ##### _Figure 7: Recovery Key Test_
     
@@ -541,8 +541,8 @@ You can now close out this seed in Gordian Seed Tool:
 
     A-->B-->C
     
-    style B fill:#ffcccc;
-    style C fill:#ffcccc;
+    style B fill:#ff8888;
+    style C fill:#ff8888;
 ```
 ##### _Figure 8: Recovery Key Entry_
     
@@ -562,8 +562,8 @@ Finally, you need to divy out your shares, which is how you will recover this se
       end
     end
     style home fill:#ffffff;
-    style A fill:#ffcccc;
-    style B fill:#ffcccc;
+    style A fill:#ff8888;
+    style B fill:#ff8888;
     ```
 
     ```mermaid
@@ -574,7 +574,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
       end
     end
     style primary fill:#ffffff;
-    style C fill:#ffcccc;
+    style C fill:#ff8888;
     ```
 
     ```mermaid
@@ -585,7 +585,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
       end
     end        
     style secondary fill:#ffffff;
-    style D fill:#ffcccc;
+    style D fill:#ff8888;
     ```
     
 ##### _Figure 9: Recovery Key Storage_
