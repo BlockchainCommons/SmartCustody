@@ -166,7 +166,10 @@ Your material should be divided among four places: your home, a secure storage i
     A1["💻 🪶 Computer with Sparrow"]
     A2["📱🌱 Your iPhone with GST"]
     end
+    end
+```
 
+```mermaid
     graph TD
     subgraph home["🏠🔒 Home Storage"]
 
@@ -186,7 +189,7 @@ Your material should be divided among four places: your home, a secure storage i
       B3["💿 SSKR Share #1"]
       end
 
-	style B1 color:#000,fill:#ffaaaa;
+      style B1 color:#000,fill:#ffaaaa;
       style B2 color:#000,fill:#ffaaaa;
       style B3 color:#000,fill:#99ebff;
 
