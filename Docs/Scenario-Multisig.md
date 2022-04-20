@@ -173,19 +173,19 @@ Your material should be divided among four places: your home, a secure storage i
 
 ```mermaid
     graph TD
-    subgraph homestorage LR["🏠🔒 Home Storage"]
+    subgraph homestorage ["🏠🔒 Home Storage"]
 
-      subgraph "General Info Package"
+      subgraph "General Info Package" LR
       B6["🛅 Descriptor"]
       B7["📃 Letter to Heirs"]
       end
 
-      subgraph "Passport Package"
+      subgraph "Passport Package" LR
       B4["🛡️ Your Passport"]
       B5["🔡 Passport Words"]
       end
 
-      subgraph "Recovery Key Package"
+      subgraph "Recovery Key Package" LR
       B1["📗 SSKR Overview"]
       B2["📄 SSKR Share #1"]
       B3["💿 SSKR Share #1"]
