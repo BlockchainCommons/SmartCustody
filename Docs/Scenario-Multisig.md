@@ -1190,7 +1190,6 @@ If you were able to receive and send a transaction, you should feel confident in
     G-->H
     K-->L
 ```
-##### _Figure 20: Receiving & Sending Funds_
 
 Once you are confident in your control of an account, you can send the rest of your funds to it, preferably in an iterative way as described below.
 
@@ -1228,6 +1227,45 @@ Leaving assets to children or other heirs is important for many of us. Digital a
 4. [  ] Put copies of your letter in your Home, Primary, and Secondary Storage.
    1. If some of these Storages are secured (such as safes and safety deposit boxes) and some are not (such as a drawer), you may want to have two variants of your letter: put a specific one in secure locations and a vague one in insecure locations.
 
+```mermaid
+    graph TD
+    subgraph home["🏠🔒 Home Storage"]
+      subgraph "General Info Package"
+      A["📃 Letter to Heirs"]
+      end
+    end
+```
+
+```mermaid
+    graph TD
+    subgraph primary["🏦 Primary Storage"]
+      subgraph "General Info Package"
+      C["📃 Letter to Heirs"]
+      end
+    end
+```
+
+```mermaid
+    graph TD;
+    subgraph secondary ["🏢 Secondary Storage"]
+      subgraph "General Info Package"
+      F["📃 Letter to Heirs"]
+      end
+    end        
+```
+    
+```mermaid
+    graph TD
+    subgraph cloud["🌩️ Cloud Storage"]
+      subgraph "General Info Package"
+      H["📃 Letter to Heirs"]
+      end
+    end
+    style H color:#000,fill:#99ebff;
+```
+    
+##### _Figure 21: Letter Storage_
+    
 ### PART FOUR: REVISIT BACKUPS
 
 #### **Step L: Check Primary Storage (Spring)**
