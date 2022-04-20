@@ -734,7 +734,7 @@ You need to add a few things related to your Apple account to your Storage:
 
     ```mermaid
     graph TD
-    subgraph primary["🏦 Primary Storage"]
+    subgraph cloud["🌩️ Cloud Storage"]
       subgraph "Apple Info Package"
       D["🔢 iPhone PIN"]
       E["🔏 Apple Account"]
@@ -745,6 +745,7 @@ You need to add a few things related to your Apple account to your Storage:
     style E color:#000,fill:#99ebff;
     style F color:#000,fill:#99ebff;
     ```
+##### _Figure 12: Active Seed #1 Storage_
 
 _Any Alternative Signing Device may be used to replace this Step._
 
