@@ -624,14 +624,13 @@ Finally, you need to divy out your shares, which is how you will recover this se
     I-->H
     J-->H
   
-    style A color:#000,fill:#99ebff;
-    style B color:#000,fill:#99ebff;
+    style B color:#000,fill:#ff9999;
     style C color:#000,fill:#99ebff;
     style D color:#000,fill:#99ebff;
-    style E color:#000,fill:#99ebff;
+    style E color:#000,fill:#ff9999;
     style F color:#000,fill:#99ebff;
     style G color:#000,fill:#99ebff;
-    style H color:#000,fill:#99ebff;
+    style H color:#000,fill:#ff9999;
     style I color:#000,fill:#99ebff;
     style J color:#000,fill:#99ebff;
 ```
