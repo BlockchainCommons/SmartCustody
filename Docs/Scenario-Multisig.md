@@ -474,7 +474,8 @@ Finally, you need to divy out your shares, which is how you will recover this se
 1. [  ] Verify that your seed has restored.
 1. [  ] Best practice is to repeat this with the other two potential combos of cards[^22].
 1. [  ] Delete any restored seeds after testing[^24].
-1. [  ] Do *not* yet store your MicroSD Cards. You'll be using them again in Steps F and G.
+1. [  ] You can store one of the MicroSD cards in your Home Storage at this point.
+1. [  ] Hold on to the other two cards, which are likely the ones you received with your Passport, for usage in Step G.
 
 _Any Alternative Recovery Device may be used to replace Steps D + E._
 
@@ -531,8 +532,6 @@ You're now ready to read an xpub into your transaction coordinator[^31]:
 1. [  ] Change the label for "Keystore 2" in Sparrow to be something meaningful like "GST Active Key"[^25].
 
 You need to add a few things related to your Apple account to your Storage:
-
-**Transaction Coordinator Storage Instructions:**
 
 1. [  ] Record your iPhone PIN, your Apple account and password, a PIN to an Apple device, and your Apple recovery code (if you have one) on a piece of waterproof paper.
 2. [  ] Store your Apple information at your Primary Storage.
@@ -634,7 +633,7 @@ You can now import an account into your transaction coordinator.
    1. On Sparrow, Choose "Keystore 3", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
    3. Click the "Scan" button for Passport Multisig.
-   4. Hold your iPhone desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
+   4. Hold your Passport desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
    5. If your computer is having problems reading the QR, consider shading it to reduce glare and/or hitting the right button for Resize, to display a smaller QR.
    6. An xpub of the appropriate key derivation should be imported.
 1. [  ] Verify the multisig from Sparrow[^sharing].
@@ -1003,12 +1002,13 @@ _The following optional steps can be added to this procedure to improve its robu
     
 #### Optional Questions
 
-Any additional step that you could add to your procedure will primarily hinge on two questions:
+Any additional step that you could add to your procedure will primarily hinge on three questions:
    
-1. Can I undertake this option without becoming less likely to initiate or manage the procedure?
-2. Do I have the parts necessary for this procedure?
+1. Do I have the parts necessary for this procedure?
+2. Can I undertake this option without becoming less likely to initiate or manage the procedure?
+3. Do I feel that the adversaries offset by this option are greater than the adversaries created by this option?
     
-If the answer to both of those questions is **Yes**, then consider adding the optional step. However, the following questions may offer more nuance to the individual options.
+If the answer to all of those questions is **Yes**, then consider adding the optional step. However, the following questions may offer more nuance to the individual options.
     
 * Do I already have a lawyer that I trust?
    * If so, add **Hire a Lawyer**.
@@ -1112,8 +1112,12 @@ _This step can be used for your SSKR shares and for secrets like PINs, Passport 
 #### Optional Step: Use MicroSDs for SSKR Active Backup
 
 **Obstructed Adversary:** Key Fragility
+    
+**Created Adversary:** Internal Theft, Sophisticated Physical Theft
 
-You may have already used MicroSDs to back up your recovery key, as strongly suggested in the core procedure. If you are using Gordian Seed Tool to store one of your active seeds, you can use the same procedure, and the same MicroSDs[^33], to back up one of your active keys.
+You may have already used MicroSDs to back up your recovery key, as strongly suggested in the core procedure. If you are using Gordian Seed Tool to store one of your active seeds, you can use the same procedure, and the same MicroSDs[^33], to back up that active seed.
+    
+Be aware, this can create a shift in the risk profile of your setup. As discussed in **Appendix III**, the default scenario has one situation where theft at two locales does not compromise your assets: when both the Primary and Secondary locales are burgled. Because this optional step places shares of two keys on each MicroSD, theft at two locations is now _guaranteed_ to offer the opportunity to compromise your assets. It's ultimately a question of how you balance the threat of loss vs. theft. If you still are concerned about accidental loss, add on this step, but if you are concerned about theft, don't. A more sophisticated scenario where shares from different keys were stored at different places could entirely obviate this threat, but that complexity is beyond the scope of this scenario.
 
 **_Add the following to the end of Step F:_**
     
@@ -1131,8 +1135,6 @@ You may have already used MicroSDs to back up your recovery key, as strongly sug
 1. [  ] Click on the Export Icon for "Share 2"[^19], and export it to your new MicrOSD card, preferably in a folder.
 1. [  ] Remove MicroSD Card #2; insert MicroSD Card #3[^33].
 1. [  ] Click on the Export Icon for "Share 3"[^19], and export it to your new MicrOSD card, preferably in a folder.
-1. [  ] At this point you can store MicroSD Card #1 in your Home Storage.
-3. [  ] Do not yet store your MicroSD Cards #2 and #3. You'll be using them again in Step G.
     
 #### Optional Step: Use MicroSDs for SSKR Recovery Backup
 
