@@ -376,12 +376,33 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
 ```mermaid
     graph TD;
     A["📱 iPhone"]
-    B["📱 🔑 Signing Device"]
-    C["📱 🔑 Seed"]
-
-style D fill:#ffcccc;
-style E fill:#ffcccc;
+    B["🌱 Gordian Seed Tool"]
+    C["🔑 Seed"]
+    D["🖨️ Printer"]
+    E["📄 Share #1"]
+    F["📄 Share #2"]
+    G["📄 Share #3"]
+    H["💽 MicroSD Adapter"]
+    I["💿 Share #1"]
+    J["💿 Share #2"]
+    K["💿 Share #3"]
+    
+    A-->B-->C
+    C-->D
+    D-->E
+    D-->F
+    D-->G
+    C-->H
+    H-->I
+    H-->J
+    H-->K
+  
+style H fill:#e6ffff;
+style I fill:#e6ffff;
+style J fill:#e6ffff;
+style K fill:#e6ffff;
 ```
+##### _Figure 6: Recovery Key Creation_
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
