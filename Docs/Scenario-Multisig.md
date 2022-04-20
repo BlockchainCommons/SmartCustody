@@ -220,8 +220,8 @@ You will need three storage locales: Home Storage, Primary Storage, and Secondar
     E["🌩️ Cloud"]
     
 style C fill:#ff9999;
-style D fill:#ffcccc;
-style E fill:#e6ffff;
+style D fill:#ff8888;
+style E fill:#66e0ff;
 ```
 ##### _Figure 3: Location Overview_
 
