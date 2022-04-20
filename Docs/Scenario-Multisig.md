@@ -174,9 +174,10 @@ Your material should be divided among four places: your home, a secure storage i
     graph TD
     subgraph homestorage ["🏠🔒 Home Storage"]
 
-      subgraph LR
+      subgraph "General Info Package"
       B6["🛅 Descriptor"]
       B7["📃 Letter to Heirs"]
+      B6--B7
       end
 
       subgraph "Passport Package"
