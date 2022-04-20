@@ -418,10 +418,10 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
 style A color:#000,fill:#ff9999;
 style B color:#000,fill:#ff9999;
 style C color:#000,fill:#ff9999;
-style H color:#000,fill:#00ccff;
-style I color:#000,fill:#00ccff;
-style J color:#000,fill:#00ccff;
-style K color:#000,fill:#00ccff;
+style H color:#000,fill:#99ebff;
+style I color:#000,fill:#99ebff;
+style J color:#000,fill:#99ebff;
+style K color:#000,fill:#99ebff;
 ```
 ##### _Figure 6a: Recovery Key Creation (Resilience Improvement)_
 
@@ -601,7 +601,43 @@ Finally, you need to divy out your shares, which is how you will recover this se
 1. [  ] You can store one of the MicroSD cards in your Home Storage at this point.
 1. [  ] Hold on to the other two cards, which are likely the ones you received with your Passport, for usage in Step G.
 
-_Any Alternative Recovery Device may be used to replace Steps D + E._
+    ```mermaid
+    graph BT;
+    A["📱🌱 Old iPhone with GST"]
+    B["🔐 Recovered Seed"]
+    C["💿 Share #1"]
+    D["💿 Share #2"]
+    E["🔐 Recovered Seed"]
+    F["💿 Share #1"]
+    G["💿 Share #3"]
+    H["🔐 Recovered Seed"]
+    I["💿 Share #2"]
+    J["💿 Share #3"]
+    
+    B-->A
+    E-->A
+    H-->A
+    C-->B
+    D-->B
+    F-->E
+    G-->E
+    I-->H
+    J-->H
+  
+    style A color:#000,fill:#99ebff;
+    style B color:#000,fill:#99ebff;
+    style C color:#000,fill:#99ebff;
+    style D color:#000,fill:#99ebff;
+    style E color:#000,fill:#99ebff;
+    style F color:#000,fill:#99ebff;
+    style G color:#000,fill:#99ebff;
+    style H color:#000,fill:#99ebff;
+    style I color:#000,fill:#99ebff;
+    style J color:#000,fill:#99ebff;
+```
+##### _Figure 7a: Recovery Key Test (Resilience Improvement)_
+
+    _Any Alternative Recovery Device may be used to replace Steps D + E._
 
 #### **Step F: Create & Test Active Seed #1**
 
