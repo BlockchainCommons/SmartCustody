@@ -555,7 +555,8 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
     ```mermaid
     graph LR;
-    subgraph "🏢 Secondary Storage<br>"
+    subgraph secondary ["🏢 Secondary Storage"]
+      style secondary stroke-dasharray: 5 5
       subgraph "Recovery Key Package"
       D["📄 SSKR Share #3"]
       end
