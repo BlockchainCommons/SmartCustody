@@ -568,9 +568,10 @@ Finally, you need to divy out your shares, which is how you will recover this se
     end
     subgraph "Home Storage"
       AMeta["🏠🔒"]
-      subgraph "Recovery Key Package"
+      subgraph homerecovery["Recovery Key Package"]
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
+      AMeta->homerecovery
       end
     end
     
