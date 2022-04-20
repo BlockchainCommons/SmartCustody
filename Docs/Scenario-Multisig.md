@@ -559,10 +559,12 @@ Finally, you need to divy out your shares, which is how you will recover this se
       subgraph "Recovery Key Package"
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
+      B1["💿 SSKR Share #1"]
       end
     end
     style A color:#000,fill:#ffaaaa;
     style B color:#000,fill:#ffaaaa;
+    style B1 color:#000,fill:#99ebff;
     ```
 
     ```mermaid
@@ -586,7 +588,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
     ```
     
 ##### _Figure 9: Recovery Seed Storage_
-
+    
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
 1. [  ] Insert one of your MicroSD cards into your SD Card Reader for iPhone.
@@ -636,7 +638,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
     style J color:#000,fill:#99ebff;
 ```
 ##### _Figure 7a: Recovery Key Test (Resilience Improvement)_
-
+    
 _Any Alternative Recovery Device may be used to replace Steps D + E._
 
 #### **Step F: Create & Test Active Seed #1**
