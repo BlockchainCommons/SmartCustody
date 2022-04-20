@@ -167,13 +167,13 @@ Your material should be divided among four places: your home, a secure storage i
       A1["💻 🪶 Computer with Sparrow"]
       A2["📱🌱 Your iPhone with GST"]
       end
-      
+
     end
 ```
 
 ```mermaid
-    graph LR
-    subgraph homestorage["🏠🔒 Home Storage"]
+    graph TD
+    subgraph homestorage LR["🏠🔒 Home Storage"]
 
       subgraph "General Info Package"
       B6["🛅 Descriptor"]
