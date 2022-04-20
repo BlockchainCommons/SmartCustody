@@ -160,15 +160,130 @@ The following items are even more optional, but will increase the resilience of 
 
 Your material should be divided among four places: your home, a secure storage in your home, an offsite primary storage, and an offsite secondary storage. The following shows which materials you'll keep at each location if you use the default scenario with Sparrow as the transaction coordinator and a Foundation Devices Passport and Gordian Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
-| Home | Home Storage | Primary Storage | Secondary Storage | Cloud |
-| :--- | :--- | :--- | :--- | :--- | 
-|  | <li>Recovery SSKR Overview<li>Recovery SSKR Share #1 | <li>Recovery SSKR Share #2 | <li>Recovery SSKR Share #3 |
-| <li>Sparrow Computer |
-| <li>GST iPhone | <li>GST SSKR Share #1 (opt.) | <li>iPhone PIN<li>Apple Account & Password<li>Apple Recovery Code | | <li>GST Backup<li>iPhone/Apple Info (opt.) |
-|  | <li>Passport | <li>Passport MicroSD #1<li>w/GST SSKR Share #2 (opt.)<li>with Sparrow wallet backup (opt.) | <li>Passport MicroSD #2<br>w/GST SSKR Share #3 (opt.) |
-| | <li>Passport Backup Words | <li>Passport PIN |  | <li>Passport PIN (opt.)<li>Passport Backup Words (opt.) |
-| | <li>Account Descriptor | <li>Account Descriptor | <li>Account Descriptor | <li>Account Descriptor (opt.) |
-| | <li>Instructions for heirs | <li>Instructions for heirs | <li>Instructions for heirs |
+    ```mermaid
+    graph TD
+    subgraph home1["🏠 Home"]
+    A1["💻 🪶 Computer with Sparrow"]
+    A2["📱🌱 Your iPhone with GST"]
+    end
+
+    graph TD
+    subgraph home["🏠🔒 Home Storage"]
+
+      subgraph "General Info Package"
+      B6["🛅 Descriptor"]
+      B7["📃 Letter to Heirs"]
+      end
+
+      subgraph "Passport Package"
+      B4["🛡️ Your Passport"]
+      B5["🔡 Passport Words"]
+      end
+
+      subgraph "Recovery Key Package"
+      B1["📗 SSKR Overview"]
+      B2["📄 SSKR Share #1"]
+      B3["💿 SSKR Share #1"]
+      end
+
+	style B1 color:#000,fill:#ffaaaa;
+      style B2 color:#000,fill:#ffaaaa;
+      style B3 color:#000,fill:#99ebff;
+
+    end
+    ```
+
+    ```mermaid
+    graph TD
+    subgraph primary["🏦 Primary Storage"]
+
+      subgraph "Apple Info Package"
+      C3["🔢 iPhone PIN"]
+      C4["🔏 Apple Account"]
+      C5["🛟 Apple Recovery"]    
+      end
+
+      style C5 color:#000,fill:#99ebff;
+
+      subgraph "General Info Package"
+	C9["🛅 Descriptor"]
+      C10["📃 Letter to Heirs"]
+      C8["💿 Sparrow Account Backup"]
+      end
+
+      style C8 color:#000,fill:#99ebff;
+
+      subgraph "Passport Package"
+      C7["🔢 Passport PIN"]
+      C6["💿 Passport Backup #1"]
+      end
+
+      subgraph "Recovery Key Package"
+      C1["📄 SSKR Share #2"]
+      C2["💿 SSKR Share #2"]
+      end
+
+      style C1 color:#000,fill:#ffaaaa;
+      style C2 color:#000,fill:#99ebff;
+
+    end
+
+    ```
+
+    ```mermaid
+    graph TD;
+    subgraph secondary ["🏢 Secondary Storage"]
+
+      subgraph "General Info Package"
+      D4["🛅 Descriptor"]
+      D5["📃 Letter to Heirs"]
+      end
+
+      subgraph "Passport Package"
+      D3["💿 Passport Backup #2"]
+      end
+
+      subgraph "Recovery Key Package"
+      D1["📄 SSKR Share #3"]
+      D2["💿 SSKR Share #3"]
+      end
+
+      style D1 color:#000,fill:#ffaaaa;
+      style D2 color:#000,fill:#99ebff;
+  
+    end        
+
+    ```
+
+    ```mermaid
+    graph TD
+    subgraph cloud["🌩️ Cloud Storage"]
+      subgraph "Apple Info Package"
+      E1["🔢 iPhone PIN"]
+      E2["🔏 Apple Account"]
+      E3["🛟 Apple Recovery"]    
+      E4["🌱 GST in iCloud"]
+      end
+
+      subgraph "General Info Package"
+	E7["🛅 Descriptor"]
+      E8["📃 Letter to Heirs"]
+      end
+
+      subgraph "Passport Package"
+      E5["🔡 Passport Words"]
+      E6["🔢 Passport PIN"]
+      end
+    end
+    style E1 color:#000,fill:#99ebff;
+    style E2 color:#000,fill:#99ebff;
+    style E3 color:#000,fill:#99ebff;
+    style E5 color:#000,fill:#99ebff;
+    style E6 color:#000,fill:#99ebff;
+    style E7 color:#000,fill:#99ebff;
+    style E8 color:#000,fill:#99ebff;
+
+    ```
 
 ***Note:*** The state above will vary if you chose alternative signing devices.
 
