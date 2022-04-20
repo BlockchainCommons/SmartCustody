@@ -27,8 +27,8 @@ This scenario explains how to do so. It does so by using a transaction coordinat
     D-->A;
     E-->D;
     
-style D color:#000,fill:#ffcccc;
-style E color:#000,fill:#ffcccc;
+style D color:#000,fill:#ff9999;
+style E color:#000,fill:#ff9999;
 ```
 ##### _Figure 1: Architecture Overview_
 
