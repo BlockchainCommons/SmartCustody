@@ -986,7 +986,7 @@ If you stored your Recovery Seed on MicroSDs, you should also create a new set o
 
 ### Options I: Additional Steps
 
-**Created Adversary:** [Process Fatigue](#adversary-process-fatigue)
+**Created Adversary:** Process Fatigue
 
 _The following optional steps can be added to this procedure to improve its robustness and its security. Each optional step addresses certain adversaries: they might be added if you know those adversaries to be a problem for your personal custody scenario (for which, see **Appendix II**, or if you identify the adversaries through the risk-modeling system outlined in the [#SmartCustody book](https://bit.ly/SmartCustodyBookV101). However, beware: adding optional steps ultimately adds to the Process Fatigue of the entire procedure, so care should be taken to ensure that new steps are both important and understood._
 
@@ -1275,7 +1275,7 @@ The heart of #SmartCustody is a discussion of Adversaries. Here are some of the 
    * *Adversary: Legal Forfeiture* — This scenario generally does not attempt to protect against legal forfeiture where the state takes your assets due to a successful legal action. In the United States, courts are undecided on whether [PINs](https://www.law.com/newyorklawjournal/2021/06/09/hey-siri-does-the-fifth-amendment-protect-my-passcode/?slreturn=20220313161008) or [biometrics](https://www.concordlawschool.edu/blog/constitutional-law/fifth-amendment-biometrics/) can be required by law enforcement. However, that's largely about fifth-amendment protections against self-incrimination: if a court says your assets are forfeit, you have to turn them over or face contempt of court.
    * *Adversary: Nation-State Actor* — This scenario assumes a first-world government that is not a threat, though a self-sovereign scenario such as this would provide good protection against a rogue government, if the assets were kept secret.
 6.  **Loss by Mistakes**
-   * *Adversary: Convenience* — There is certainly some friction built into the scenario, such as the need to occasionally replace MicroSDs, and the suggestion to keep keys in widely separated locations. Giving in to convenience by ignoring some of the core tenets of the procedure could dramatically reduce its usefulness and protections.
+   * *Adversary: Convenience* — There is certainly some friction built into the scenario, such as the need to occasionally replace MicroSDs, and the suggestion to keep keys in widely separated locations. Similarly, there are restrictions to where transactions can be conducted, which must be done at the location with the transaction coordinator and the signing devices (which is most likely to be a home). Giving in to convenience by ignoring some of the core tenets of the procedure could dramatically reduce its usefulness and protections.
    * *Adversary: Key Fragility* — This procedure dramatically reduces the possibility of accidental key lost _provided_ that funds are swept forward immediately if one key is ever misplaced.
    * *Adversary: Process Fatigue* — As noted under Convenience, there is some real possibility for Process Fatigue, particularly in the semi-yearly checks. But, that's all about the proper storage of your keys. The actual usage of two devices to sign PSBTs is quite fast and simple, and should not cause process fatigue itself.
    * *Adversary: Transaction Error* — Errors in fees or amounts sent are increasingly not an issue when using modern transaction coordinators such as Sparrow and modern signing devices (which repeat information about a transaction).
@@ -1345,7 +1345,9 @@ _Note that the SSKR shares are usually not needed, except in the Home Storage lo
 
 #### Single Points of Compromise (SPOC)
 
-SPOF and SPOC inevitably lie in balance. The more SPOF is reduced, the greater SPOC is increased. Since this scenario does its best to minimize SPOF, it does have some vulnerability to SPOC, but it has been designed so that two locales must be attacked to provide an attacker with sufficient key material to create a compromise. This underlines the importance of separating locales where material is stored.
+SPOF and SPOC inevitably lie in balance. The more SPOF is reduced, the greater SPOC is increased. Since this scenario does its best to minimize SPOF because of the assumption that "Loss is More Likeley than Theft", it does have some vulnerability to SPOC, but it has been designed so that two locales must be attacked to provide an attacker with sufficient key material to create a compromise. This underlines the importance of separating locales where material is stored.
+    
+If a user had the converse assumption, that theft were more likely than loss, an alternative scenario could be created where theft at two locales would provide at most one key and some additional information. This would most likely require creating a larger set of SSKR shares (probably a 3 of 5) and also splitting up the Password Backup Words. Doing so would increase Process Fatigue and possibly Key Fragility. But, #SmartCustody is about making those assessments for yourself, and deciding which adversaries are the most important.
 
 See above for how you recover if a particular locale is burgled. Meanwhile, here's the flip side: what key material a thief acquires in each situation:
 
