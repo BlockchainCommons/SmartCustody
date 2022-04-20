@@ -219,7 +219,7 @@ You will need three storage locales: Home Storage, Primary Storage, and Secondar
     D["🏢 Secondary"]
     E["🌩️ Cloud"]
     
-style C fill:#ff8888;
+style C color:#000,fill:#ff8888;
 style D fill:#ff8888;
 style E fill:#00ccff;
 ```
