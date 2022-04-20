@@ -925,7 +925,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     1. [  ] Store an extra copy of your Passport Backup Words and your Passport PIN[^41] in the cloud backup.
 
     
-```mermaid
+    ```mermaid
     graph TD
     subgraph home["🏠🔒 Home Storage"]
       subgraph "Passport Package"
