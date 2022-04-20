@@ -13,7 +13,7 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either through accident or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to support strong usability, it can be used to simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
 
-This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage the receipt and spending of funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergencies. By using Shamir's Secret Sharing, it ensures there is a copy of the recovery key, but that it's also split up so that it can't be used.
+This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage receiving and spending funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergencies so that funds can be recovered if another key is lost. By using Shamir's Secret Sharing, this scenario ensures that the recovery keys remains accessible (even if a part of it is lost) but that it's not usable (unless multiple parts are stolen).
 
 ```mermaid
     graph BT;
@@ -134,7 +134,7 @@ If you are an experiened user, you may wish to also consult the **Alternative St
 
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
 
-* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/).
+* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/), with a webcam (or built-in camera).
 * [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)
 
 Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
@@ -195,7 +195,7 @@ graph LR;
     C-->D
 ```
 
-You will need two to three storage locales: Home Storage, Primary Storage, and Secondary Storage[^6]. They will be used to store seeds, devices, and information[^7]. 
+You will need three storage locales: Home Storage, Primary Storage, and Secondary Storage[^6]. They will be used to store seeds, devices, and information[^7]. 
 
 1. [  ] Set up Home Storage Locale.
    1. Install Home Safe[^8][^9].
@@ -203,11 +203,11 @@ You will need two to three storage locales: Home Storage, Primary Storage, and S
    1. You will store an SSKR share in your Home Storage Locale, usually along with your Secondary Signing Device (by default: a Passport), if it's in regular usage.
 2. [  ] Choose Primary Storage Locale
    1. Ideally, this should be a bank safety deposit box. But, if you don't have one, choose the most secure location you can think of outside of your house.
-   1. You will store an SSKR share in your Primary Store Locale, might store your Secondary Signing Device (by default: a Passport) if it's not in regular usage, and possibly other backup material
+   1. You will store an SSKR share in your Primary Store Locale as well as a variety of other backup material.
 3. [  ] Choose Secondary Storage Locale
    1. This may be a somewhat less secure locale that your Home Storage Locale and your Primary Storage Locale.
    1. Options include your work, your parent's house, or a trusted friend's house.
-   1. You will only store backups at your Secondary Storage Locale: an SSKR share and possibly other backup material
+   1. You will store an SSKR share in your Primary Store Locale as well as a variety of other backup material.
 
 **Suggested Resilience Improvement: Use Cloud Backup.** Optionally, prepare encrypted cloud storage that will allow you to back up some minimal textual data in case of a physical disaster. Bitwarden's "Secure Notes" feature is one methodology.
 
