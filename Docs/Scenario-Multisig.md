@@ -164,6 +164,7 @@ Your material should be divided among four places: your home, a secure storage i
     graph TD
     subgraph home["🏠 Home"]
     
+      subgraph
       A1["💻 🪶 Computer with Sparrow"]
       A2["📱🌱 Your iPhone with GST"]
       end
@@ -175,17 +176,17 @@ Your material should be divided among four places: your home, a secure storage i
     graph TD
     subgraph homestorage ["🏠🔒 Home Storage"]
 
-      subgraph "General Info Package" LR
+      subgraph LR "General Info Package"
       B6["🛅 Descriptor"]
       B7["📃 Letter to Heirs"]
       end
 
-      subgraph "Passport Package" LR
+      subgraph "Passport Package"
       B4["🛡️ Your Passport"]
       B5["🔡 Passport Words"]
       end
 
-      subgraph "Recovery Key Package" LR
+      subgraph "Recovery Key Package"
       B1["📗 SSKR Overview"]
       B2["📄 SSKR Share #1"]
       B3["💿 SSKR Share #1"]
