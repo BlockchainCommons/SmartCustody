@@ -160,7 +160,7 @@ The following items are even more optional, but will increase the resilience of 
 
 Your material should be divided among four places: your home, a secure storage in your home, an offsite primary storage, and an offsite secondary storage. The following shows which materials you'll keep at each location if you use the default scenario with Sparrow as the transaction coordinator and a Foundation Devices Passport and Gordian Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
-    ```mermaid
+```mermaid
     graph TD
     subgraph home1["🏠 Home"]
     A1["💻 🪶 Computer with Sparrow"]
@@ -191,9 +191,9 @@ Your material should be divided among four places: your home, a secure storage i
       style B3 color:#000,fill:#99ebff;
 
     end
-    ```
+```
 
-    ```mermaid
+```mermaid
     graph TD
     subgraph primary["🏦 Primary Storage"]
 
@@ -228,9 +228,9 @@ Your material should be divided among four places: your home, a secure storage i
 
     end
 
-    ```
+```
 
-    ```mermaid
+```mermaid
     graph TD;
     subgraph secondary ["🏢 Secondary Storage"]
 
@@ -253,9 +253,9 @@ Your material should be divided among four places: your home, a secure storage i
   
     end        
 
-    ```
+```
 
-    ```mermaid
+```mermaid
     graph TD
     subgraph cloud["🌩️ Cloud Storage"]
       subgraph "Apple Info Package"
@@ -282,8 +282,7 @@ Your material should be divided among four places: your home, a secure storage i
     style E6 color:#000,fill:#99ebff;
     style E7 color:#000,fill:#99ebff;
     style E8 color:#000,fill:#99ebff;
-
-    ```
+```
 
 ***Note:*** The state above will vary if you chose alternative signing devices.
 
