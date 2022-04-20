@@ -28,7 +28,7 @@ This scenario explains how to do so. It does so by using a transaction coordinat
     E-->D;
     
 style D color:#000,fill:#ffaaaa;
-style E color:#000,fill:#ff9999;
+style E color:#000,fill:#ffaaaa;
 ```
 ##### _Figure 1: Architecture Overview_
 
@@ -219,8 +219,8 @@ You will need three storage locales: Home Storage, Primary Storage, and Secondar
     D["🏢 Secondary"]
     E["🌩️ Cloud"]
     
-style C color:#000,fill:#ff9999;
-style D color:#000,fill:#ff9999;
+style C color:#000,fill:#ffaaaa;
+style D color:#000,fill:#ffaaaa;
 style E color:#000,fill:#99ebff;
 ```
 ##### _Figure 3: Location Overview_
@@ -309,7 +309,7 @@ At this point, you will need to finalize your decision for which Signing Devices
     A-->C;
     A-->D;
     
-style D color:#000,fill:#ff9999;
+style D color:#000,fill:#ffaaaa;
 ```
 ##### _Figure 5: Multisig Setup_
 
@@ -368,13 +368,13 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
     D-->F
     D-->G
   
-    style A color:#000,fill:#ff9999;
-style B color:#000,fill:#ff9999;
-style C color:#000,fill:#ff9999;
-style D color:#000,fill:#ff9999;
-style E color:#000,fill:#ff9999;
-style F color:#000,fill:#ff9999;
-style G color:#000,fill:#ff9999;
+    style A color:#000,fill:#ffaaaa;
+style B color:#000,fill:#ffaaaa;
+style C color:#000,fill:#ffaaaa;
+style D color:#000,fill:#ffaaaa;
+style E color:#000,fill:#ffaaaa;
+style F color:#000,fill:#ffaaaa;
+style G color:#000,fill:#ffaaaa;
 ```
 ##### _Figure 6: Recovery Key Creation_
     
@@ -415,9 +415,9 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
     H-->J
     H-->K
   
-style A color:#000,fill:#ff9999;
-style B color:#000,fill:#ff9999;
-style C color:#000,fill:#ff9999;
+style A color:#000,fill:#ffaaaa;
+style B color:#000,fill:#ffaaaa;
+style C color:#000,fill:#ffaaaa;
 style H color:#000,fill:#99ebff;
 style I color:#000,fill:#99ebff;
 style J color:#000,fill:#99ebff;
@@ -499,16 +499,16 @@ Now that you know you can recover your seed from the recovery shards, you should
     I-->H
     J-->H
   
-    style A color:#000,fill:#ff9999;
-    style B color:#000,fill:#ff9999;
-    style C color:#000,fill:#ff9999;
-    style D color:#000,fill:#ff9999;
-    style E color:#000,fill:#ff9999;
-    style F color:#000,fill:#ff9999;
-    style G color:#000,fill:#ff9999;
-    style H color:#000,fill:#ff9999;
-    style I color:#000,fill:#ff9999;
-    style J color:#000,fill:#ff9999;
+    style A color:#000,fill:#ffaaaa;
+    style B color:#000,fill:#ffaaaa;
+    style C color:#000,fill:#ffaaaa;
+    style D color:#000,fill:#ffaaaa;
+    style E color:#000,fill:#ffaaaa;
+    style F color:#000,fill:#ffaaaa;
+    style G color:#000,fill:#ffaaaa;
+    style H color:#000,fill:#ffaaaa;
+    style I color:#000,fill:#ffaaaa;
+    style J color:#000,fill:#ffaaaa;
 ```
 ##### _Figure 7: Recovery Key Test_
     
@@ -541,8 +541,8 @@ You can now close out this seed in Gordian Seed Tool:
 
     A-->B-->C
     
-    style B color:#000,fill:#ff9999;
-    style C color:#000,fill:#ff9999;
+    style B color:#000,fill:#ffaaaa;
+    style C color:#000,fill:#ffaaaa;
 ```
 ##### _Figure 8: Recovery Key Entry_
     
@@ -561,8 +561,8 @@ Finally, you need to divy out your shares, which is how you will recover this se
       B["📄 SSKR Share #1"]
       end
     end
-    style A color:#000,fill:#ff9999;
-    style B color:#000,fill:#ff9999;
+    style A color:#000,fill:#ffaaaa;
+    style B color:#000,fill:#ffaaaa;
     ```
 
     ```mermaid
@@ -572,7 +572,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
       C["📄 SSKR Share #2"]
       end
     end
-    style C color:#000,fill:#ff9999;
+    style C color:#000,fill:#ffaaaa;
     ```
 
     ```mermaid
@@ -582,7 +582,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
       D["📄 SSKR Share #3"]
       end
     end        
-    style D color:#000,fill:#ff9999;
+    style D color:#000,fill:#ffaaaa;
     ```
     
 ##### _Figure 9: Recovery Key Storage_
@@ -624,14 +624,14 @@ Finally, you need to divy out your shares, which is how you will recover this se
     I-->H
     J-->H
 
-    style A color:#000,fill:#ff9999;
-    style B color:#000,fill:#ff9999;
+    style A color:#000,fill:#ffaaaa;
+    style B color:#000,fill:#ffaaaa;
     style C color:#000,fill:#99ebff;
     style D color:#000,fill:#99ebff;
-    style E color:#000,fill:#ff9999;
+    style E color:#000,fill:#ffaaaa;
     style F color:#000,fill:#99ebff;
     style G color:#000,fill:#99ebff;
-    style H color:#000,fill:#ff9999;
+    style H color:#000,fill:#ffaaaa;
     style I color:#000,fill:#99ebff;
     style J color:#000,fill:#99ebff;
 ```
