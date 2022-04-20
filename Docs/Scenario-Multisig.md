@@ -821,8 +821,8 @@ It is strongly recommended that you update the firmware on your Passport before 
     D["▶️ Firmware"]
     E["🌐 GitHub"]
     
-    E-->D-->C
     D-->B-->A
+    E-->D-->C
 ```
 ##### _Figure 13: Passport Firmware Update_
 
@@ -844,10 +844,14 @@ You're now ready to create a new seed on your Passport.
     graph TD;
     A["🛡️ Your Passport"]
     C["🔐 Seed"]
-    
+    D["💿 Backup"]
+    E["💿 Backup"]
+  
     A-->C
+    C-->D
+    C-->E
   ```
-##### _Figure 14: Active Seed #1 Creation_
+##### _Figure 14: Active Seed #2 Creation_
 
 You can now import an account into your transaction coordinator.
 
@@ -886,7 +890,7 @@ You can now import an account into your transaction coordinator.
 
     C-->B-->A
 ```
-##### _Figure 15: Active Seed #1 Entry_
+##### _Figure 15: Active Seed #2 Entry_
 
 There's one last bit of administrivia for Passport:
 
@@ -894,6 +898,17 @@ There's one last bit of administrivia for Passport:
    1. At this time, your Passport will suggest that you update the backups you just made.
    1. You should do so, so that if your recover from backup, the backups include the Sparrow connection.
    1. Be sure to also replace your second backup.
+
+```mermaid
+    graph TD;
+    A["🛡️ Your Passport"]
+    D["💿 Backup"]
+    E["💿 Backup"]
+  
+    A-->D
+    A-->E
+  ```
+##### _Figure 16: Passport Backup_
 
 Finally, you need to divy out the various backups and such you made[^39]:
 
