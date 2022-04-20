@@ -1011,10 +1011,22 @@ After you have added three keys to your transaction coordinator, either using th
    1. Choose "Export".
    1. Click "Export File" next to "Output Descriptor".
 4. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
+
+```mermaid
+    graph TB;
+    A["🏠 💻 🪶 Transaction Coordinator"]
+    B["🛅 Descriptor"]
+    C["💿 Sparrow Account Backup"]
+    A-->B    
+    A-->C
     
+    style C color:#000,fill:#99ebff;
+```
+##### _Figure 18: Descriptor Creation_
+
 **Suggested Resilience Improvement: Use Cloud Backup:**  If you have access to encrypted cloud storage, such as the "Secure Notes" feature on Bitwarden, you can use that to back up the output descriptor fromy our transaction coordinator as well.
     
-1. [  ] Atore a copy of the descriptor in your encrypted cloud notes.
+1. [  ] Store a copy of the descriptor in your encrypted cloud notes.
 
 **Optional Resilience Improvement: Backup Sparrow Wallet.** You may choose to also backup your Sparrow wallet, particularly if you decided to put a password on the wallet.
 
@@ -1025,6 +1037,47 @@ After you have added three keys to your transaction coordinator, either using th
    1. This file will be encrypted _if and only if_ you have a password on your wallet, which we recommend against[^sparrowwallet]. 
    1. Save or Copy that file to the MicroSD at Primary Storage. 
 
+```mermaid
+    graph TD
+    subgraph home["🏠🔒 Home Storage"]
+      subgraph "General Info Package"
+      A["🛅 Descriptor"]
+      end
+    end
+```
+
+```mermaid
+    graph TD
+    subgraph primary["🏦 Primary Storage"]
+      subgraph "General Info Package"
+      C["🛅 Descriptor"]
+      D["💿 Sparrow Account Backup"]
+      end
+    end
+```
+
+```mermaid
+    graph TD;
+    subgraph secondary ["🏢 Secondary Storage"]
+      subgraph "General Info Package"
+      F["🛅 Descriptor"]
+      end
+    end        
+```
+    
+```mermaid
+    graph TD
+    subgraph cloud["🌩️ Cloud Storage"]
+      subgraph "General Info Package"
+      H["🛅 Descriptor"]
+      end
+    end
+    style D color:#000,fill:#99ebff;
+    style H color:#000,fill:#99ebff;
+```
+    
+##### _Figure 19: Descriptor Storage_
+ 
 #### **Step I: Test Transaction**
 
 ```mermaid
