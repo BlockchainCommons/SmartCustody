@@ -922,8 +922,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
 
 **Suggested Resilience Improvement: Use Cloud Backup.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Passport in the cloud.
 
-    1. [  ] Store an extra copy of your Passport Backup Words and your Passport PIN[^41] in the cloud backup.
-
+1. [  ] Store an extra copy of your Passport Backup Words and your Passport PIN[^41] in the cloud backup.
     
 ```mermaid
     graph TD
