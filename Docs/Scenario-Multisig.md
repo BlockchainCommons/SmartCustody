@@ -162,16 +162,18 @@ Your material should be divided among four places: your home, a secure storage i
 
 ```mermaid
     graph TD
-    subgraph home1["🏠 Home"]
-    A1["💻 🪶 Computer with Sparrow"]
-    A2["📱🌱 Your iPhone with GST"]
-    end
+    subgraph home["🏠 Home"]
+    
+      A1["💻 🪶 Computer with Sparrow"]
+      A2["📱🌱 Your iPhone with GST"]
+      end
+      
     end
 ```
 
 ```mermaid
-    graph TD
-    subgraph home["🏠🔒 Home Storage"]
+    graph LR
+    subgraph homestorage["🏠🔒 Home Storage"]
 
       subgraph "General Info Package"
       B6["🛅 Descriptor"]
