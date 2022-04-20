@@ -555,8 +555,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
     ```mermaid
     graph TD
-    subgraph "Home Storage"
-      AMeta["🏠🔒"]
+    subgraph "🏠🔒 Home Storage"
       subgraph "Recovery Key Package"
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
