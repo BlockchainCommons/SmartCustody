@@ -375,7 +375,7 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
 
 ```mermaid
     graph TD;
-    A["📱 iPhone"]
+    A["📱 Old iPhone"]
     B["🌱 Gordian Seed Tool"]
     C["🔑 Seed"]
     D["🖨️ Printer"]
@@ -397,6 +397,13 @@ You can now put those MicroSDs away for the moment. You'll be testing them in th
     H-->J
     H-->K
   
+    style A fill:#ffcccc;
+style B fill:#ffcccc;
+style C fill:#ffcccc;
+style D fill:#ffcccc;
+style E fill:#ffcccc;
+style F fill:#ffcccc;
+style G fill:#ffcccc;
 style H fill:#e6ffff;
 style I fill:#e6ffff;
 style J fill:#e6ffff;
