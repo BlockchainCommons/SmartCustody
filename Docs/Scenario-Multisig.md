@@ -554,7 +554,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
    1. Place one printed share in your Secondary Storage.
 
     ```mermaid
-    graph LR;
+    graph TD;
     classDef subgraph_padding fill:none,stroke:none
     subgraph secondary ["🏢 Secondary Storage"]
       subgraph "Recovery Key Package"
@@ -571,7 +571,6 @@ Finally, you need to divy out your shares, which is how you will recover this se
       subgraph homerecovery["Recovery Key Package"]
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
-      AMeta->homerecovery
       end
     end
     
