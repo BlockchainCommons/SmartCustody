@@ -572,6 +572,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
       end
+    AMeta-->A
     end
     
     style A fill:#ffcccc;
