@@ -936,12 +936,12 @@ Finally, you need to divy out the various backups and such you made[^39]:
 
 ```mermaid
     graph TD
-    subgraph primary["🏦 Primary Storage"]
-      subgraph "Passport Package"
+    subgraph primary["🏦 Primary Storage"] LR
+      subgraph "Passport Package" TD
       C["💿 Passport Backup #1"]
       D["🔢 Passport PIN"]
       end
-      subgraph "Recovery Key Package"
+      subgraph "Recovery Key Package" TD
       E["💿 SSKR Share #2"]
       end
     style E color:#000,fill:#99ebff;
