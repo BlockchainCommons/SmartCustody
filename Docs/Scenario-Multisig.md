@@ -1072,6 +1072,12 @@ _They can also increaseProcess Fatigue because of the need to replace the bags w
 
 _One bag is used for your home safe, one for your safety deposit box._
 
+#### Optional Step: Use Cloud backup
+    
+**Obstructed Adversary:** Key Fragility
+
+_This is already incorporated into the scenario as a strong option._
+
 #### Optional Step: Use Metal Storage
 
 **Obstructed Adversary:** Disaster, Key Fragility
