@@ -817,12 +817,12 @@ It is strongly recommended that you update the firmware on your Passport before 
     graph LR;
     A["🛡️ Your Passport"]
     B["💿 MicroSD"]
-    C["🧪 GPG + shasum"]
-    D["▶️ Firmware"]
+    D["🧪 GPG + shasum"]
+    C["▶️ Firmware"]
     E["🌐 GitHub"]
     
-    D-->B-->A
-    E-->D-->C
+    E-->C-->D
+    C-->B-->A
 ```
 ##### _Figure 13: Passport Firmware Update_
 
