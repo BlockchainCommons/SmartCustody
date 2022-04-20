@@ -556,19 +556,16 @@ Finally, you need to divy out your shares, which is how you will recover this se
     ```mermaid
     graph LR;
     subgraph "🏢 Secondary Storage<br>"
-      graph TB;
       subgraph "Recovery Key Package"
       D["📄 SSKR Share #3"]
       end
     end
     subgraph "🏦 Primary Storage<br>"
-      graph TB;
       subgraph "Recovery Key Package"
       C["📄 SSKR Share #2"]
       end
     end
-    subgraph "🏠 Home Storage<br>"
-      graph TB;
+    subgraph "🏠🔒 Home Storage<br>"
       subgraph "Recovery Key Package"
       A["📗 SSKR Overview"]
       B["📄 SSKR Share #1"]
