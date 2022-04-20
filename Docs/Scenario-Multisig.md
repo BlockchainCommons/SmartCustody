@@ -1053,6 +1053,7 @@ After you have added three keys to your transaction coordinator, either using th
       C["🛅 Descriptor"]
       D["💿 Sparrow Account Backup"]
       end
+      style D color:#000,fill:#99ebff;
     end
 ```
 
@@ -1072,7 +1073,6 @@ After you have added three keys to your transaction coordinator, either using th
       H["🛅 Descriptor"]
       end
     end
-    style D color:#000,fill:#99ebff;
     style H color:#000,fill:#99ebff;
 ```
     
