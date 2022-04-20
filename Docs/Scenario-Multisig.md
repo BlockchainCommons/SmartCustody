@@ -539,6 +539,8 @@ You can now close out this seed in Gordian Seed Tool:
     B["🔑 Pub Key (Account Descriptor)"]
     C["📱🌱 Old iPhone with GST"]
 
+    A-->B-->C
+    
     style B fill:#ffcccc;
     style C fill:#ffcccc;
 ```
@@ -553,20 +555,20 @@ Finally, you need to divy out your shares, which is how you will recover this se
 
     ```mermaid
     graph LR;
-    subgraph "🏠 Home Storage"
+    subgraph TB "🏢 Secondary Storage<br>"
       subgraph "Recovery Key Package"
-      A["📗 SSKR Overview"]
-      B["📄 SSKR Share #1"]
+      D["📄 SSKR Share #3"]
       end
     end
-    subgraph "🏦 Primary Storage"
+    subgraph TB "🏦 Primary Storage<br>"
       subgraph "Recovery Key Package"
       C["📄 SSKR Share #2"]
       end
     end
-    subgraph "🏢 Secondary Storage"
+    subgraph TB "🏠 Home Storage<br>"
       subgraph "Recovery Key Package"
-      D["📄 SSKR Share #3"]
+      A["📗 SSKR Overview"]
+      B["📄 SSKR Share #1"]
       end
     end
     
