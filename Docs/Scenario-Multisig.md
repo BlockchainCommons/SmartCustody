@@ -938,8 +938,8 @@ Finally, you need to divy out the various backups and such you made[^39]:
     graph TD
     subgraph primary["🏦 Primary Storage"]
       subgraph "Passport Package"
-      C["💿 Passport Backup #1"]
-      D["🔢 Passport PIN"]
+      C["🔢 Passport PIN"]
+      D["💿 Passport Backup #1"]
       end
       subgraph "Recovery Key Package"
       E["💿 SSKR Share #2"]
