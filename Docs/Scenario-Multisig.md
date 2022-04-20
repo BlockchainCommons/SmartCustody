@@ -637,7 +637,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
 ```
 ##### _Figure 7a: Recovery Key Test (Resilience Improvement)_
 
-    _Any Alternative Recovery Device may be used to replace Steps D + E._
+_Any Alternative Recovery Device may be used to replace Steps D + E._
 
 #### **Step F: Create & Test Active Seed #1**
 
