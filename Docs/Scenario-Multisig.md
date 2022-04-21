@@ -1538,7 +1538,9 @@ F["🛡️ ✍🏽 : 🛡️ ( 💿 )"]
 G["💻 🔎 : 🛡️ ( 💿 )"]
 H["💻 ✍🏽 : 🪶 ( 💿 )"]
 
-A-->B-->C-->D-->E-->F-->G-->H;
+A-->B
+C-->D
+E-->F-->G
 style B color:#000,fill:#99ebff;
 style D color:#000,fill:#99ebff;
 style H color:#000,fill:#99ebff;
