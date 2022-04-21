@@ -318,7 +318,7 @@ Your material should be divided among four places: your home, a secure storage i
     graph BT
     linkStyle default stroke-width: 0px
 
-    subgraph cloud["🌩️ Legend"]
+    subgraph cloud["Legend"]
     A["Standard Material"]
     B["Recovery Material"]
     C["Optional Material"]
