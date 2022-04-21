@@ -314,6 +314,21 @@ Your material should be divided among four places: your home, a secure storage i
     style E8 color:#000,fill:#99ebff;
 ```
 
+```mermaid
+    graph BT
+    linkStyle default stroke-width: 0px
+
+    subgraph cloud["🌩️ Legend"]
+    A["Standard Material"]
+    B["Recovery Material"]
+    C["Optional Material"]
+    end
+    
+    style B color:#000,fill:#ffaaaa;
+    style C color:#000,fill:#99ebff;
+```
+    
+
 ***Note:*** The state above will vary if you chose alternative signing devices.
 
 {pagebreak}
@@ -1466,6 +1481,50 @@ Your digital assets are only protected if you actively maintain your backups. Ev
    1. This file will be encrypted _if and only if_ you have a password on your wallet, which we recommend against[^sparrowwallet]. 
    1. Save or Copy that file to the MicroSD at Primary Storage.
 
+```mermaid
+    graph BT
+    linkStyle default stroke-width: 0px
+
+    subgraph primary["🏦 Primary Storage"]
+
+      subgraph "Apple Info Package"
+      C3["🔢 iPhone PIN"]
+      C4["🔏 Apple Account"]
+      C5["🛟 Apple Recovery"]    
+      C5---C4---C3
+      end
+
+      style C5 color:#000,fill:#99ebff;
+
+      subgraph "General Info Package"
+      C9["🛅 Descriptor"]
+      C10["📃 Letter to Heirs"]
+      C8["💿 Sparrow Account Backup"]
+      C8---C10---C9
+      end
+
+      style C8 color:#000,fill:#99ebff;
+
+      subgraph "Passport Package"
+      C7["🔢 Passport PIN"]
+      C6["💿 Passport Backup #1"]
+      C6---C7
+      end
+
+      subgraph "Recovery Key Package"
+      C1["📄 SSKR Share #2"]
+      C2["💿 SSKR Share #2"]
+      C2---C1
+      end
+
+      style C1 color:#000,fill:#ffaaaa;
+      style C2 color:#000,fill:#99ebff;
+
+    end
+
+```
+##### _Figure 22: Primary Storage Contents_
+
 #### **Step M: Check Secondary Storage (Fall)**
 
 ```mermaid
@@ -1501,6 +1560,36 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 1. Check your MicroSD on your Computer
    1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
    2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
+
+```mermaid
+    graph BT;
+    linkStyle default stroke-width: 0px
+
+    subgraph secondary ["🏢 Secondary Storage"]
+
+      subgraph "General Info Package"
+      D4["🛅 Descriptor"]
+      D5["📃 Letter to Heirs"]
+      D5---D4
+      end
+
+      subgraph "Passport Package"
+      D3["💿 Passport Backup #2"]
+      end
+
+      subgraph "Recovery Key Package"
+      D1["📄 SSKR Share #3"]
+      D2["💿 SSKR Share #3"]
+      D2---D1
+      end
+
+      style D1 color:#000,fill:#ffaaaa;
+      style D2 color:#000,fill:#99ebff;
+  
+    end        
+
+```
+##### _Figure 22: Secondary Storage Contents_
 
 #### **Step N: Update MicroSDs**
 
