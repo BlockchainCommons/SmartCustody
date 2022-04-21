@@ -328,6 +328,7 @@ Your material should be divided among four places: your home, a secure storage i
     style C color:#000,fill:#99ebff;
 ```
     
+##### _Figure 2: Final State Overview_
 
 ***Note:*** The state above will vary if you chose alternative signing devices.
 
