@@ -1447,39 +1447,6 @@ Your digital assets are only protected if you actively maintain your backups. Ev
 
 1. [  ] Collect your required signing devices, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
 1. [  ] Visit your Primary Storage.
-1. [  ] Make sure your printed SSKR share still exists.
-1. [  ] Make sure your printed account descriptor still exists.
-1. [  ] Make sure your instructions for heirs still exist.
-   1. If anything in the letter has changed, update it (or replace it), and redate it.
-   1. If you changed the letter, make a note to do the same at Home Storage.
-
-***GST Instructions:***
-
-1. [  ] Check your Apple Information Sheet.
-   1. Use the PIN to log into your phone; if you realize it has changed, record the new PIN.
-   2. Use the Apple Login & Password to log in to your Apple account; if you realize it has changed, record the new info.
-   3. If you recorded an Apple Recovery Code, make sure it's still there and legible.
-
-***Passport Instructions:***
-
-1. [  ] Check your Passport PIN.
-   1. Use the PIN to log into your Passport.
-1. [  ] Backup your Passport[^47].
-   1. Choose Settings > Backup > Create Backup
-   2. Insert the MicroSD from the Primary Storage into your Passport
-   3. Create a New Backup
-1. Check your MicroSD on your Computer
-   1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
-   2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
-
-**Optional Resilience Improvement: Backup Sparrow Wallet.** If you are using the Sparrow wallet and you previously backed it up as a resilience improvement, you should renew that backup every Spring[^renewsparrow].
-
-**Transaction Coordinator Instructions:**
-
-1. [  ] Back up the Sparrow wallet file
-   1. This may be done with "Export" and then "Export File" next to Sparrow
-   1. This file will be encrypted _if and only if_ you have a password on your wallet, which we recommend against[^sparrowwallet]. 
-   1. Save or Copy that file to the MicroSD at Primary Storage.
 
 ```mermaid
     graph BT
@@ -1524,6 +1491,59 @@ Your digital assets are only protected if you actively maintain your backups. Ev
 
 ```
 ##### _Figure 22: Primary Storage Contents_
+
+3. [  ] Make sure your printed SSKR share still exists.
+4. [  ] Make sure your printed account descriptor still exists.
+5. [  ] Make sure your instructions for heirs still exist.
+   1. If anything in the letter has changed, update it (or replace it), and redate it.
+   1. If you changed the letter, make a note to do the same at Home Storage.
+
+***GST Instructions:***
+
+1. [  ] Check your Apple Information Sheet.
+   1. Use the PIN to log into your phone; if you realize it has changed, record the new PIN.
+   2. Use the Apple Login & Password to log in to your Apple account; if you realize it has changed, record the new info.
+   3. If you recorded an Apple Recovery Code, make sure it's still there and legible.
+
+***Passport Instructions:***
+
+1. [  ] Check your Passport PIN.
+   1. Use the PIN to log into your Passport.
+1. [  ] Backup your Passport[^47].
+   1. Choose Settings > Backup > Create Backup
+   2. Insert the MicroSD from the Primary Storage into your Passport
+   3. Create a New Backup
+1. Check your MicroSD on your Computer
+   1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
+   2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
+
+**Optional Resilience Improvement: Backup Sparrow Wallet.** If you are using the Sparrow wallet and you previously backed it up as a resilience improvement, you should renew that backup every Spring[^renewsparrow].
+
+**Transaction Coordinator Instructions:**
+
+1. [  ] Back up the Sparrow wallet file
+   1. This may be done with "Export" and then "Export File" next to Sparrow
+   1. This file will be encrypted _if and only if_ you have a password on your wallet, which we recommend against[^sparrowwallet]. 
+   1. Save or Copy that file to the MicroSD at Primary Storage.
+
+```mermaid
+Graph LR
+
+A["🔎 : 📄 🛅 📃"]
+B["✍🏽 : 📃"]
+C["🔎 : 🌱 ( 🔢 🔏 🛟 )"]
+D["✍🏽 : 🔏"]
+E["🔎 : 🛡️ ( 🔢 )"]
+F["🛡️ ✍🏽 : 🛡️ ( 💿 )"]
+G["💻 🔎 : 🛡️ ( 💿 )"]
+H["💻 ✍🏽 : 🪶 ( 💿 )"]
+
+A-->B-->C-->D-->E-->F-->G-->H
+style B color:#000,fill:#99ebff;
+style D color:#000,fill:#99ebff;
+style H color:#000,fill:#99ebff;
+```
+##### _Figure 23: Primary Storage Tasks_
 
 #### **Step M: Check Secondary Storage (Fall)**
 
