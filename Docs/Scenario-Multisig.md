@@ -162,7 +162,7 @@ Your material should be divided among four places: your home, a secure storage i
 
 ```mermaid
     graph TD
-    classDef stroke-width: 0px
+    linkStyle default stroke-width: 0px
 
     subgraph home["🏠 Home"]
     
@@ -174,7 +174,7 @@ Your material should be divided among four places: your home, a secure storage i
 ```
 
 ```mermaid
-    graph TD
+    graph BT
     subgraph homestorage["🏠🔒 Home Storage"]
 
       subgraph "General Info Package"
