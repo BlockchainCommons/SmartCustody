@@ -1527,7 +1527,7 @@ Your digital assets are only protected if you actively maintain your backups. Ev
    1. Save or Copy that file to the MicroSD at Primary Storage.
 
 ```mermaid
-Graph LR;
+graph LR;
 
 A["🔎 : 📄 🛅 📃"]
 B["✍🏽 : 📃"]
