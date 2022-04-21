@@ -161,7 +161,7 @@ The following items are even more optional, but will increase the resilience of 
 Your material should be divided among four places: your home, a secure storage in your home, an offsite primary storage, and an offsite secondary storage. The following shows which materials you'll keep at each location if you use the default scenario with Sparrow as the transaction coordinator and a Foundation Devices Passport and Gordian Seed Tool (GST) as signing devices, with a third, recovery key sharded.
 
 ```mermaid
-    graph TD
+    graph BT
     linkStyle default stroke-width: 0px
 
     subgraph home["🏠 Home"]
@@ -175,6 +175,8 @@ Your material should be divided among four places: your home, a secure storage i
 
 ```mermaid
     graph BT
+    linkStyle default stroke-width: 0px
+
     subgraph homestorage["🏠🔒 Home Storage"]
 
       subgraph "General Info Package"
@@ -204,21 +206,25 @@ Your material should be divided among four places: your home, a secure storage i
 ```
 
 ```mermaid
-    graph TD
+    graph BT
+    linkStyle default stroke-width: 0px
+
     subgraph primary["🏦 Primary Storage"]
 
       subgraph "Apple Info Package"
       C3["🔢 iPhone PIN"]
       C4["🔏 Apple Account"]
       C5["🛟 Apple Recovery"]    
+      C3---C4---C5
       end
 
       style C5 color:#000,fill:#99ebff;
 
       subgraph "General Info Package"
-	C9["🛅 Descriptor"]
+      C9["🛅 Descriptor"]
       C10["📃 Letter to Heirs"]
       C8["💿 Sparrow Account Backup"]
+      C9---C10---C8
       end
 
       style C8 color:#000,fill:#99ebff;
@@ -226,11 +232,13 @@ Your material should be divided among four places: your home, a secure storage i
       subgraph "Passport Package"
       C7["🔢 Passport PIN"]
       C6["💿 Passport Backup #1"]
+      C7---C6
       end
 
       subgraph "Recovery Key Package"
       C1["📄 SSKR Share #2"]
       C2["💿 SSKR Share #2"]
+      C1---C2
       end
 
       style C1 color:#000,fill:#ffaaaa;
@@ -241,12 +249,15 @@ Your material should be divided among four places: your home, a secure storage i
 ```
 
 ```mermaid
-    graph TD;
+    graph BT;
+    linkStyle default stroke-width: 0px
+
     subgraph secondary ["🏢 Secondary Storage"]
 
       subgraph "General Info Package"
       D4["🛅 Descriptor"]
       D5["📃 Letter to Heirs"]
+      D4---D5
       end
 
       subgraph "Passport Package"
@@ -256,6 +267,7 @@ Your material should be divided among four places: your home, a secure storage i
       subgraph "Recovery Key Package"
       D1["📄 SSKR Share #3"]
       D2["💿 SSKR Share #3"]
+      D1---D2
       end
 
       style D1 color:#000,fill:#ffaaaa;
