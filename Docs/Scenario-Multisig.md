@@ -1532,7 +1532,7 @@ graph LR;
 A["🔎 : 📄 🛅 📃"]
 B["✍🏽 : 📃"]
 C["🔎 : 🌱 ( 🔢 🔏 🛟 )"]
-D["✍🏽 : 🔏"]
+D["✍🏽 : 🌱 ( 🔏 )"]
 E["🔎 : 🛡️ ( 🔢 )"]
 F["🛡️ ✍🏽 : 🛡️ ( 💿 )"]
 G["💻 🔎 : 🛡️ ( 💿 )"]
@@ -1567,21 +1567,6 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 
 1. [  ] Collect your required signing devices, and ideally also a laptop Computer with a MicroSD Adapter. You'll also need a pen.
 1. [  ] Visit your Secondary Storage.
-1. [  ] Make sure your printed SSKR share still exists.
-1. [  ] Make sure your printed account descriptor still exists.
-1. [  ] Make sure your instructions for heirs still exist.
-   1. If anything in the letter has changed, update it (or replace it), and redate it.
-   1. If you changed the letter, make a note to do the same at Home Storage.
-
-***Passport Instructions:***
-
-1. [  ] Backup your Passport[^47].
-   1. Choose Settings > Backup > Create Backup
-   2. Insert the MicroSD from the Secondary Storage into your Passport
-   3. Create a New Backup
-1. Check your MicroSD on your Computer
-   1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
-   2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
 
 ```mermaid
     graph BT;
@@ -1611,7 +1596,39 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
     end        
 
 ```
-##### _Figure 22: Secondary Storage Contents_
+##### _Figure 24: Secondary Storage Contents_
+
+3. [  ] Make sure your printed SSKR share still exists.
+4. [  ] Make sure your printed account descriptor still exists.
+5. [  ] Make sure your instructions for heirs still exist.
+   1. If anything in the letter has changed, update it (or replace it), and redate it.
+   1. If you changed the letter, make a note to do the same at Home Storage.
+
+***Passport Instructions:***
+
+1. [  ] Backup your Passport[^47].
+   1. Choose Settings > Backup > Create Backup
+   2. Insert the MicroSD from the Secondary Storage into your Passport
+   3. Create a New Backup
+1. Check your MicroSD on your Computer
+   1. If you were able to bring a laptop and MicroSD adapter, insert the MicroSD into the adapter and the adapter into the computer.
+   2. Look through the filesystem, make sure that the backups and (optional) SSKR shares are there as expected.
+
+```mermaid
+graph LR;
+
+A["🔎 : 📄 🛅 📃"]
+B["✍🏽 : 📃"]
+F["🛡️ ✍🏽 : 🛡️ ( 💿 )"]
+G["💻 🔎 : 🛡️ ( 💿 )"]
+
+A-->B
+F-->G
+style B color:#000,fill:#99ebff;
+style D color:#000,fill:#99ebff;
+style H color:#000,fill:#99ebff;
+```
+##### _Figure 25: Secondary Storage Tasks_
 
 #### **Step N: Update MicroSDs**
 
