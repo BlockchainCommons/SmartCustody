@@ -1625,8 +1625,6 @@ G["💻 🔎 : 🛡️ ( 💿 )"]
 A-->B
 F-->G
 style B color:#000,fill:#99ebff;
-style D color:#000,fill:#99ebff;
-style H color:#000,fill:#99ebff;
 ```
 ##### _Figure 25: Secondary Storage Tasks_
 
