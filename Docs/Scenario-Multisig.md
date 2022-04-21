@@ -166,10 +166,13 @@ Your material should be divided among four places: your home, a secure storage i
 
     subgraph home["🏠 Home"]
     
+      subgraph "Hardware Devices"
+
       A1["💻 🪶 Computer with Sparrow"]
       A2["📱🌱 Your iPhone with GST"]
 
-      A1---A2
+      A2---A1
+      end
     end
 ```
 
@@ -182,7 +185,7 @@ Your material should be divided among four places: your home, a secure storage i
       subgraph "General Info Package"
       B6["🛅 Descriptor"]
       B7["📃 Letter to Heirs"]
-      B6---B7
+      B7---B6
       end
 
       subgraph "Passport Package"
@@ -195,7 +198,7 @@ Your material should be divided among four places: your home, a secure storage i
       B1["📗 SSKR Overview"]
       B2["📄 SSKR Share #1"]
       B3["💿 SSKR Share #1"]
-      B1---B2---B3
+      B3---B2---B1
       end
 
       style B1 color:#000,fill:#ffaaaa;
@@ -215,7 +218,7 @@ Your material should be divided among four places: your home, a secure storage i
       C3["🔢 iPhone PIN"]
       C4["🔏 Apple Account"]
       C5["🛟 Apple Recovery"]    
-      C3---C4---C5
+      C5---C4---C3
       end
 
       style C5 color:#000,fill:#99ebff;
@@ -224,7 +227,7 @@ Your material should be divided among four places: your home, a secure storage i
       C9["🛅 Descriptor"]
       C10["📃 Letter to Heirs"]
       C8["💿 Sparrow Account Backup"]
-      C9---C10---C8
+      C8---C10---C9
       end
 
       style C8 color:#000,fill:#99ebff;
@@ -232,13 +235,13 @@ Your material should be divided among four places: your home, a secure storage i
       subgraph "Passport Package"
       C7["🔢 Passport PIN"]
       C6["💿 Passport Backup #1"]
-      C7---C6
+      C6---C7
       end
 
       subgraph "Recovery Key Package"
       C1["📄 SSKR Share #2"]
       C2["💿 SSKR Share #2"]
-      C1---C2
+      C2---C1
       end
 
       style C1 color:#000,fill:#ffaaaa;
@@ -257,7 +260,7 @@ Your material should be divided among four places: your home, a secure storage i
       subgraph "General Info Package"
       D4["🛅 Descriptor"]
       D5["📃 Letter to Heirs"]
-      D4---D5
+      D5---D4
       end
 
       subgraph "Passport Package"
@@ -267,7 +270,7 @@ Your material should be divided among four places: your home, a secure storage i
       subgraph "Recovery Key Package"
       D1["📄 SSKR Share #3"]
       D2["💿 SSKR Share #3"]
-      D1---D2
+      D2---D1
       end
 
       style D1 color:#000,fill:#ffaaaa;
@@ -278,23 +281,28 @@ Your material should be divided among four places: your home, a secure storage i
 ```
 
 ```mermaid
-    graph TD
+    graph BT
+    linkStyle default stroke-width: 0px
+
     subgraph cloud["🌩️ Cloud Storage"]
       subgraph "Apple Info Package"
       E1["🔢 iPhone PIN"]
       E2["🔏 Apple Account"]
       E3["🛟 Apple Recovery"]    
       E4["🌱 GST in iCloud"]
+      E4---E3---E2---E1
       end
 
       subgraph "General Info Package"
-	E7["🛅 Descriptor"]
+      E7["🛅 Descriptor"]
       E8["📃 Letter to Heirs"]
+      E8---E7
       end
 
       subgraph "Passport Package"
       E5["🔡 Passport Words"]
       E6["🔢 Passport PIN"]
+      E6---E5
       end
     end
     style E1 color:#000,fill:#99ebff;
