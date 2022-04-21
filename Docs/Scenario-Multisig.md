@@ -167,6 +167,7 @@ Your material should be divided among four places: your home, a secure storage i
       A1["💻 🪶 Computer with Sparrow"]
       A2["📱🌱 Your iPhone with GST"]
 
+      A1---A2
     end
 ```
 
