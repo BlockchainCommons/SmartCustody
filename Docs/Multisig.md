@@ -705,7 +705,7 @@ Ultimately a multisig is defined by a set of keys:
 
 In modern, hierarchical wallets, these keys are dependent on a seed:
 
-* **Master Seed.** A cryptographic secret that that is the root for creating a whole sequence of hierarchical (HD) _public_ and _private keys_.
+* **Master Seed.** A cryptographic secret that is the root for creating a whole sequence of hierarchical (HD) _public_ and _private keys_.
 
 Public and private keys come in two sorts:
 
