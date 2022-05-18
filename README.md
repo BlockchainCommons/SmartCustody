@@ -10,6 +10,12 @@
 
 * [#SmartCustody 1.01](https://github.com/BlockchainCommons/SmartCustodyBook) (July 2019) — Original book on how to model your risks and maintain the safety of your digital assets (released). Also see the original [GitHub files](https://github.com/BlockchainCommons/SmartCustodyBook).
    * [#SmartCustody 2.0 Plans](https://github.com/BlockchainCommons/SmartCustodyBook/blob/master/TODO.md) — Outline & notes for revision & expansion.
+
+## SmartCustody Scenarios
+
+We've recently supplemented the Cold-Storage scenario found in #SC 1.01 with a new multisig scenario:
+
+* [Multisig Self-Custody Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md) (April 2022) — _Draft_ of a specific scenario for multisig, currently seeking feedback on the overall thinking. Will be expanded in the future to support more signing devices and even transaction coordinators.
  
 ## SmartCustody Tools
 
