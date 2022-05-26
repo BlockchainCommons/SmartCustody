@@ -32,6 +32,9 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 style D color:#000,fill:#ffaaaa;
 style E color:#000,fill:#ffaaaa;
 ```
+
+> _You can verify the authenticity of this scenario by looking at the [history of this file](https://github.com/BlockchainCommons/SmartCustody/commits/master/README.md) and seeing that all recent commits were made by @shannona or @ChristopherA and that they are **Verified**, which means they were signed with a registered GPG key. We may offer a more formal signing of this file or the #SmartCustody book in the future.
+ 
 ##### _Figure 1: Architecture Overview_
 
 ***Warning:*** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
@@ -149,7 +152,7 @@ The three devices selected are all second-generation signing device technology[^
 
 The following items are recommended, but don't let their absence stop you from securing your digital assets:
 
-* [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) )
+* [  ] Small Home Safe (For example a cheap option is [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) and a more secure option, better able to protect your materials is [SentrySafe](https://www.amazon.com/SentrySafe-SFW123DSB-Fireproof-Waterproof-Combination/dp/B005P12F2K?th=1)[^whichsafe].
 * [  ] Safety Deposit Box at Bank[^safetydeposit] or other institution
 
 The following items are even more optional, but will increase the resilience of your scenario:
@@ -157,6 +160,8 @@ The following items are even more optional, but will increase the resilience of 
 * [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
 * [  ] MicroSD Adapter with an extra, industrial grade MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overall, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter (be sure it's industrial-grade!) and have two others from your Passport.
 * [  ] Encrypted Cloud-based note storage, such as [BitWarden](https://bitwarden.com/)
+
+Finally, see [Additional Steps](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#options-i-additional-steps) for some additional purchases you could make to improve resilience even more, at the cost of some complexity. We think that [fire-resistant bags](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-bags-fire-resistant), [tamper-evident bags](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-bags-tamper-evident), and [metal storage](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-metal-storage) can all give notable improvements without a lot of cost.
 
 ### Final State
 
@@ -1495,10 +1500,12 @@ Your digital assets are only protected if you actively maintain your backups. Ev
 ```
 ##### _Figure 22: Primary Storage Contents_
 
-3. [  ] Make sure your printed SSKR share still exists.
-4. [  ] Make sure your printed account descriptor still exists.
-5. [  ] Make sure your instructions for heirs still exist.
-   1. If anything in the letter has changed, update it (or replace it), and redate it.
+1. [  ] Make sure your printed SSKR share still exists and that the ink is still dark and easy to read.
+   1. If your SSKR share is becoming hard to read you will need to reprint _all three of them_ (as SSKR shares from different times cannot be used together). Schedule a time in the near future to collect your three shares, read them into Gordian Seed Tool on your secondary device, and then generate new ones. Be sure to destroy the old ones afterward, to avoid confusion.
+3. [  ] Make sure your printed account descriptor still exists and that the ink is still dark and easy to read.
+   1. If your account description is becoming hard to read, enter a TODO item on your calendar to reprint it before next year's trip to this storage unit (or schedule it for the near future for optimal resilience).
+5. [  ] Make sure your instructions for heirs still exist and that the ink is still dark and easy to read.
+   1. If anything in the letter has changed, or it's becoming hard to read, update it (or replace it), and redate it.
    1. If you changed the letter, make a note to do the same at Home Storage.
 
 ***GST Instructions:***
@@ -1601,10 +1608,12 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
 ```
 ##### _Figure 24: Secondary Storage Contents_
 
-3. [  ] Make sure your printed SSKR share still exists.
-4. [  ] Make sure your printed account descriptor still exists.
-5. [  ] Make sure your instructions for heirs still exist.
-   1. If anything in the letter has changed, update it (or replace it), and redate it.
+1. [  ] Make sure your printed SSKR share still exists and that the ink is still dark and easy to read.
+   1. If your SSKR share is becoming hard to read you will need to reprint _all three of them_ (as SSKR shares from different times cannot be used together). Schedule a time in the near future to collect your three shares, read them into Gordian Seed Tool on your secondary device, and then generate new ones. Be sure to destroy the old ones afterward, to avoid confusion.
+1. [  ] Make sure your printed account descriptor still exists and that the ink is still dark and easy to read.
+   1. If your account description is becoming hard to read, enter a TODO item on your calendar to reprint it before next year's trip to this storage unit (or schedule it for the near future for optimal resilience).
+1. [  ] Make sure your instructions for heirs still exist and that the ink is still dark and easy to read.
+   1. If anything in the letter has changed, or it's becoming hard to read, update it (or replace it), and redate it.
    1. If you changed the letter, make a note to do the same at Home Storage.
 
 ***Passport Instructions:***
@@ -2206,6 +2215,8 @@ As noted previously, please consider whether this letter should be specific or o
 [^noandroid]: **No Androids.** Gordian Seed Tool is not currently available for Android. Replacing the two uses of Gordian Seed Tool is this default scenario with Alternative Signing Devices that support Android is required if one or more iOS or MacOS[^nomacos] devices are not available. However, our general assumption is that Apple's walled garden of the App store and Apple's high-profile development of iOS (and MacOS) results in an ecosystem that is safer, and so we generally prefer an iOS device over an Android device for safety and security. At minimum, the purchase of two iPod Touches seems like a worthwhile investment to protect a large sum of digital assets
   
 [^nomacos]: **No Macs.** An iOS device is a much better choice than a MacOS device, as it has a smaller attack surface and was built from the start with more fundamental sandboxed security in mind. 
+
+[^whichsafe]: **Which Safe?** Our fundamental belief is that the main purpose of a safe is to deter casual theft, so that someone doesn't idly pick up one of your keys or signing devices and make off with them. Even for a break-in, all a safe has to do is be more than [8-12 minutes](https://www.apialarm.com/blog/protection/how-long-does-the-average-burglary-last/) worth of trouble, and it'll keep your material safe. On the flipside, if a burglar is purposefully going after your key material, no safe, not even one bolted down, will keep it protected from a determined attack. So which safe do we recommend? A cheap safe is likely to meet most of the basic criteria, but if you've got a substantial cryptocurrency holding, then obviously you should spend the money on a more expensive safe to help protect it.
     
 [^2]: **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds (or their associated private keys) on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active seed and one recovery seed, those seeds should _not_ be created on the same device. For the active key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your recovery key, we suggest you use an older iPod Touch or even borrowing a trusted partner's iPhone; you'll be deleting that seed after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a recovery key and holding an active key, provided you were careful about deleting the recovery key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a Single Point of Compromise (SPOC).
 
