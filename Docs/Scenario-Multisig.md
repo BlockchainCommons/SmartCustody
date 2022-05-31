@@ -141,7 +141,7 @@ If you are an experiened user, you may wish to also consult the **Alternative St
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
 
 * [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/), with a webcam (or built-in camera).
-* [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)
+* [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)[^inkjet][^acidfree]
 
 Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
 
@@ -2221,6 +2221,9 @@ As noted previously, please consider whether this letter should be specific or o
 **Reviewers:** Joe Andrieu, Eric Schuh, Foundation Devices Staff
 
 ---
+[^inkjet]: **Ink Jet Warning.** These papers will not work well with Inkjets. You may need a specific solution for your specific printing setup. We generally suggest archival/acid-free paper[^acidfree] that is waterproof, to maximize life and to protect against some disasters.
+
+[^acidfree]: **Why Acid Free?** These papers are [Acid Free](https://whattheythink.com/articles/33566-not-acid-free/), which we recommend to ensure the longevity of your paper. We certainly recommend checking and recopying your printed material regularly, but we're well aware that five decades may go by, and then your papers are found by your great-grandchildren, at which point we'd like them to still be readable.
 
 [^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, that language discourages thinking about the functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically fully networked. The software used as a transaction coordinator in this scenario is most often called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
 
