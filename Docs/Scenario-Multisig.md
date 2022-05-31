@@ -1209,7 +1209,7 @@ After you have added three keys to your transaction coordinator, either using th
     
 1. [  ] Store a copy of the descriptor in your encrypted cloud notes.
 
-**Optional Resilience Improvement: Backup Sparrow Wallet.** You may choose to also backup your Sparrow wallet, particularly if you decided to put a password on the wallet.
+**Optional Resilience Improvement: Backup Sparrow Wallet.** You may choose to also backup your Sparrow wallet, to improve resilience, particularly for heirs and executors[^sparrowbackup].
 
 **Transaction Coordinator Instructions:**
 
@@ -2331,7 +2331,9 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^41]: **Cloud Words.** The Passport Backup Words are probably the scariest Single Point of Failure in this whole scenario. As noted in **Appendix III**, there are situations where a dual-loss can result in the loss of your assets if you don't have a cloud backup of your words, but you can save them if you do. If you have any large amount of funds you should _ensure_ that your Passport Backup Words and preferably your PIN as well are doubled-up in some secure storage, such as the encrypted cloud.
 
-[^42]: **Why No Password?** Every time you add a password to your system, you add a new SPOF (Single Point of Failure). In this case, all you'd be protecting is a watch-only wallet, which could compromise your privacy, but not your digital assets, so it's not worth it unless you have strong reasons for privacy protection.
+[^42]: **Why No Password?** Passwords create friction for accessing your system. Often that results in a SPOF, where the loss of the password can cause the loss of your secrets. In this case, all you'd lose is access to your read-only wallet, but that might be a crucial loss for your heirs or executors, who could find it much more difficult to access your assets without the ease-of-use of a transaction coordinator that already has your account information preloaded.
+
+[^sparrowbackup]: **Why Backup?** Theoretically, this isn't required: there's no secret information kept in your transaction coordinator. The backup is to make it easier to reconstruct your multisig account, particularly if that's done by an executor or heir who might not have the same knowledge of digital assets as you do.
 
 [^sparrowwallet]: **Sparrow Wallet Backups.** If the file is encrypted, this is obviously safe. If the file is not encrypted, it's a privacy concern, because anyone stealing it would have read-only access to your account. But, under no condition is it a SPOC for your actual assets, because the keys are offline.
 
@@ -2339,7 +2341,7 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
 
-[^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises. For example, if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more likely and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
+[^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises. For example, if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is at a friend's house, you could be very specific about the bank (because they'll need a death certificate to access the box), but just mention your friend by name without saying where he has it. Ultimately, you need to decide whether theft or loss is more likely and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
 
 [^renewsparrow]: **Why Renew?** The Sparrow wallet backup includes your transaction labels. Updating it will ensure you have those if you ever lose your Sparrow computer.
 
