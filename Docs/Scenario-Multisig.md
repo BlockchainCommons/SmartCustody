@@ -11,6 +11,8 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 ***Disclaimer:*** The information below is intended to inform a set of best practices. It may not address risks specific to your situation, and if it does not, you should modify appropriately. While this information may inform best practices, there is no guarantee that following this advice will sufficiently ensure the security of your digital assets. In addition, this information is only a window on best practices at a specific moment in time. Be aware that the Bitcoin & blockchain ecosystems may have evolved and the risk assessments of specific products may have changed since the publication of this draft. In other words: be cautious, be careful, and be aware of the current Bitcoin & blockchain landscape before you use this information.
 
+> _You can verify the authenticity of this scenario by looking at the [history of this file](https://github.com/BlockchainCommons/SmartCustody/commits/master/README.md) and seeing that all recent commits were made by @shannona or @ChristopherA and that they are **Verified**, which means they were signed with a registered GPG key. We may offer a more formal signing of this file or the #SmartCustody book in the future._
+
 ## Introduction to the Multisig Scenario
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either through accident or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to support strong usability, it can be used to simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
@@ -33,9 +35,7 @@ style D color:#000,fill:#ffaaaa;
 style E color:#000,fill:#ffaaaa;
 ```
 
-> _You can verify the authenticity of this scenario by looking at the [history of this file](https://github.com/BlockchainCommons/SmartCustody/commits/master/README.md) and seeing that all recent commits were made by @shannona or @ChristopherA and that they are **Verified**, which means they were signed with a registered GPG key. We may offer a more formal signing of this file or the #SmartCustody book in the future.
- 
-##### _Figure 1: Architecture Overview_
+<p align="center"><b><i>Figure 1: Architecture Overview</i></b></p>
 
 ***Warning:*** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
 
