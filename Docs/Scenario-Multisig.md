@@ -336,7 +336,7 @@ Your material should be divided among four places: your home, a secure storage i
     style C color:#000,fill:#99ebff;
 ```
     
-##### _Figure 2: Final State Overview_
+<p align="center"><b><i>Figure 2: Final State Overview</i></b></p>
 
 ***Note:*** The state above will vary if you chose alternative signing devices.
 
@@ -391,8 +391,8 @@ style C color:#000,fill:#ffaaaa;
 style D color:#000,fill:#ffaaaa;
 style E color:#000,fill:#99ebff;
 ```
-##### _Figure 3: Location Overview_
 
+<p align="center"><b><i>Figure 3: Location Overview</i></b></p>
 
 #### **Step B: Prepare Computer**
 
@@ -434,7 +434,8 @@ Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Deb
     B["🪶 Sparrow Wallet"]
     B-->A;
 ```
-##### _Figure 4: Transaction Coordinator Setup_
+
+<p align="center"><b><i>Figure 4: Transaction Coordinator Setup</i></b></p>
 
 
 #### **Step C: Create Multisig**
@@ -479,7 +480,8 @@ At this point, you will need to finalize your decision for which Signing Devices
     
 style D color:#000,fill:#ffaaaa;
 ```
-##### _Figure 5: Multisig Setup_
+
+<p align="center"><b><i>Figure 5: Multisig Setup</i></b></p>
 
 ### PART TWO: CREATE SEEDS
 
@@ -544,7 +546,8 @@ style E color:#000,fill:#ffaaaa;
 style F color:#000,fill:#ffaaaa;
 style G color:#000,fill:#ffaaaa;
 ```
-##### _Figure 6: Recovery Seed Creation_
+
+<p align="center"><b><i>Figure 6: Recovery Seed Creation</i></b></p>
     
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
@@ -591,7 +594,8 @@ style I color:#000,fill:#99ebff;
 style J color:#000,fill:#99ebff;
 style K color:#000,fill:#99ebff;
 ```
-##### _Figure 6a: Recovery Seed Creation (Resilience Improvement)_
+
+<p align="center"><b><i>Figure 6a: Recovery Seed Creation (Resilience Improvement)</i></b></p>
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
@@ -678,7 +682,8 @@ Now that you know you can recover your seed from the recovery shards, you should
     style I color:#000,fill:#ffaaaa;
     style J color:#000,fill:#ffaaaa;
 ```
-##### _Figure 7: Recovery Seed Test_
+
+<p align="center"><b><i>Figure 7: Recovery Seed Test</i></b></p>
     
 **Transaction Coordinator Instructions:**
 
@@ -712,7 +717,8 @@ You can now close out this seed in Gordian Seed Tool:
     style B color:#000,fill:#ffaaaa;
     style C color:#000,fill:#ffaaaa;
 ```
-##### _Figure 8: Recovery Seed Entry_
+
+<p align="center"><b><i>Figure 8: Recovery Seed Entry</i></b></p>
     
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
@@ -755,7 +761,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
     style D color:#000,fill:#ffaaaa;
     ```
     
-##### _Figure 9: Recovery Seed Storage_
+<p align="center"><b><i>Figure 9: Recovery Seed Storage</i></b></p>
     
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
@@ -805,8 +811,9 @@ Finally, you need to divy out your shares, which is how you will recover this se
     style I color:#000,fill:#99ebff;
     style J color:#000,fill:#99ebff;
 ```
-##### _Figure 7a: Recovery Key Test (Resilience Improvement)_
-    
+
+<p align="center"><b><i>Figure 9a: Recovery Key Test (Resilience Improvement)</i></b></p>
+
 _Any Alternative Recovery Device may be used to replace Steps D + E._
 
 #### **Step F: Create & Test Active Seed #1**
@@ -851,7 +858,8 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
     
     A-->B-->C
   ```
-##### _Figure 10: Active Seed #1 Creation_
+  
+<p align="center"><b><i>Figure 10: Active Seed #1 Creation</i></b></p>
 
 You're now ready to read an xpub into your transaction coordinator[^31]:
 
@@ -879,7 +887,8 @@ You're now ready to read an xpub into your transaction coordinator[^31]:
 
     C-->B-->A
 ```
-##### _Figure 11: Active Seed #1 Entry_
+
+<p align="center"><b><i>Figure 11: Active Seed #1 Entry</i></b></p>
 
 You need to add a few things related to your Apple account to your Storage:
 
@@ -915,7 +924,8 @@ You need to add a few things related to your Apple account to your Storage:
     style E color:#000,fill:#99ebff;
     style F color:#000,fill:#99ebff;
     ```
-##### _Figure 12: Active Seed #1 Storage_
+    
+<p align="center"><b><i>Figure 12: Active Seed #1 Storage</i></b></p>
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -992,7 +1002,8 @@ It is strongly recommended that you update the firmware on your Passport before 
     E-->C-->D
     C-->B-->A
 ```
-##### _Figure 13: Passport Firmware Update_
+
+<p align="center"><b><i>Figure 13: Passport Firmware Update</i></b></p>
 
 You're now ready to create a new seed on your Passport.
 
@@ -1019,7 +1030,8 @@ You're now ready to create a new seed on your Passport.
     C-->D
     C-->E
   ```
-##### _Figure 14: Active Seed #2 Creation_
+  
+<p align="center"><b><i>Figure 14: Active Seed #2 Creation</i></b></p>
 
 You can now import an account into your transaction coordinator.
 
@@ -1058,7 +1070,8 @@ You can now import an account into your transaction coordinator.
 
     C-->B-->A
 ```
-##### _Figure 15: Active Seed #2 Entry_
+
+<p align="center"><b><i>Figure 15: Active Seed #2 Entry</i></b></p>
 
 There's one last bit of administrivia for Passport:
 
@@ -1076,7 +1089,7 @@ There's one last bit of administrivia for Passport:
     A-->D
     A-->E
   ```
-##### _Figure 16: Passport Backup_
+<p align="center"><b><i>Figure 16: Passport Backup</i></b></p>
 
 Finally, you need to divy out the various backups and such you made[^39]:
 
@@ -1141,7 +1154,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     style I color:#000,fill:#99ebff;
 ```
 
-##### _Figure 17: Active Seed #2 Storage_
+<p align="center"><b><i>Figure 17: Active Seed #2 Storage</i></b></p>
     
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -1190,7 +1203,7 @@ After you have added three keys to your transaction coordinator, either using th
     
     style C color:#000,fill:#99ebff;
 ```
-##### _Figure 18: Descriptor Creation_
+<p align="center"><b><i>Figure 18: Descriptor Creation</i></b></p>
 
 **Suggested Resilience Improvement: Use Cloud Backup:**  If you have access to encrypted cloud storage, such as the "Secure Notes" feature on Bitwarden, you can use that to back up the output descriptor fromy our transaction coordinator as well.
     
@@ -1244,7 +1257,7 @@ After you have added three keys to your transaction coordinator, either using th
     style H color:#000,fill:#99ebff;
 ```
     
-##### _Figure 19: Descriptor Storage_
+<p align="center"><b><i>Figure 19: Descriptor Storage</i></b></p>
  
 #### **Step I: Test Transaction**
 
@@ -1333,7 +1346,8 @@ Particularly in the case of a multisig, you want to test your new account by bot
     D-->D1-->E
     E-->E1-->F
 ```
-##### _Figure 20: Receiving & Sending Funds_
+
+<p align="center"><b><i>Figure 20: Receiving & Sending Funds</i></b></p>
 
 If you were able to receive and send a transaction, you should feel confident in your new wallet.
 
@@ -1431,9 +1445,9 @@ Leaving assets to children or other heirs is important for many of us. Digital a
     end
     style H color:#000,fill:#99ebff;
 ```
-    
-##### _Figure 21: Letter Storage_
-    
+ 
+<p align="center"><b><i>Figure 21: Letter Storage</i></b></p>
+
 ### PART FOUR: REVISIT BACKUPS
 
 #### **Step L: Check Primary Storage (Spring)**
@@ -1499,7 +1513,7 @@ Your digital assets are only protected if you actively maintain your backups. Ev
     end
 
 ```
-##### _Figure 22: Primary Storage Contents_
+<p align="center"><b><i>Figure 22: Primary Storage Contents</i></b></p>
 
 1. [  ] Make sure your printed SSKR share still exists and that the ink is still dark and easy to read.
    1. If your SSKR share is becoming hard to read you will need to reprint _all three of them_ (as SSKR shares from different times cannot be used together). Schedule a time in the near future to collect your three shares, read them into Gordian Seed Tool on your secondary device, and then generate new ones. Be sure to destroy the old ones afterward, to avoid confusion.
@@ -1556,7 +1570,7 @@ style B color:#000,fill:#99ebff;
 style D color:#000,fill:#99ebff;
 style H color:#000,fill:#99ebff;
 ```
-##### _Figure 23: Primary Storage Tasks_
+<p align="center"><b><i>Figure 23: Primary Storage Tasks</i></b></p>
 
 #### **Step M: Check Secondary Storage (Fall)**
 
@@ -1607,7 +1621,7 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
     end        
 
 ```
-##### _Figure 24: Secondary Storage Contents_
+<p align="center"><b><i>Figure 24: Secondary Storage Contents</i></b></p>
 
 1. [  ] Make sure your printed SSKR share still exists and that the ink is still dark and easy to read.
    1. If your SSKR share is becoming hard to read you will need to reprint _all three of them_ (as SSKR shares from different times cannot be used together). Schedule a time in the near future to collect your three shares, read them into Gordian Seed Tool on your secondary device, and then generate new ones. Be sure to destroy the old ones afterward, to avoid confusion.
@@ -1639,7 +1653,7 @@ A-->B
 F-->G
 style B color:#000,fill:#99ebff;
 ```
-##### _Figure 25: Secondary Storage Tasks_
+<p align="center"><b><i>Figure 25: Secondary Storage Tasks</i></b></p>
 
 #### **Step N: Update MicroSDs**
 
