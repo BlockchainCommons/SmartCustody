@@ -837,7 +837,7 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
    1. This time, we strongly suggest that "Sync to iCloud" be left on[^icloudsync].
 1. [  ] Click the "+" and Add a Seed with "Coin Flips", "Die Rolls", or "Playing Cards" as you prefer[^29][^30][^ianc].
-   1. Rolling dice is probably the quickest and least tedious method.
+   1. Rolling dice is probably the quickest and least tedious method[^debias].
    2. Drawing cards can take time because it's done with replacement: reshuffle after each draw.
    3. Flipping coins to generate 128 bits of entropy takes 128 flips. That's a lot!
 1. [  ] "Save" it.
@@ -953,7 +953,7 @@ If you have never before used your Passport, you'll need to set it up:
    1. Scan the Validation Code from the setup instructions.
    2. Copy the four words that appear on your Passport back to the web page.
    3. Verify that the result is a "Success!"
-1. [  ] Enter a PIN. 
+1. [  ] Enter a PIN[^pins]. 
    1. Start out by entering four numbers.
    2. Note the two words shown; these will be shown any time you enter the start of your PIN, so that you know your Passport has not been compromised or swapped.
    3. Enter at least two more digits and hit the right button to store your PIN.
@@ -2258,6 +2258,8 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^ianc]: **Testing Seeds.** You can always test seeds with [Ian Coleman's web tool](https://iancoleman.io/bip39/). This is a handy way to ensure that valid and random seeds are being generated. Obviously, you should only do so with an _offline_ version of the code, downloaded to a local computer that is afterward pulled off the network.
 
+[^debias]: **Debiasing Dice.** Dice can be biased! (So can cards and coins for that matter, but especially dice.) You can improve the quality of your dice by buying [Casino-Quality Dice](https://www.amazon.com/Trademark-Poker-Grade-Serialized-Casino/dp/B00157YFJE?th=1) or [Gamescience Dice](https://www.dicedepot.com/Set-of-12-D6s_c_8.html). If it's a large concern, you can also (or alternatively) debias your rolls as [Andrew Poelstra describes in this paper](https://github.com/apoelstra/SSS32/blob/new-complete/SSS32.ps#L509). However, the main goal here is for you to use a safe means to generate the entropy for this seed, so if any of that sounds reasonable _do it_, and if any of that doesn't, then just use your dice rolls as they come.
+
 [^19]: **Export Together!** One you have clicked the "Export Shares Individually" button do *not* click done until you have exported all three shares. Each times SSKR shares are generated, they're modified by new entropy. That means that SSKR shares may only be used with the other shares created at the exact same time.
 
 [^20]: **No Restore?** If it didn't restore, you have a problem. You're probably going to need to go back to Step D and create a new seed. But this really shouldn't happen.
@@ -2297,6 +2299,8 @@ As noted previously, please consider whether this letter should be specific or o
 [^34]: **Which Card is Which (II)?** All that matters it that you continue to track which cards will not have the Passport backup, because you can't store those your Home, because it also has the Passport Backup Words.
 
 [^35]: **Supply-Chain Attacsk.** This is another example of fighting against the "Supply-Chain Attack" adversary, where the threat is that someone tampers with the device somewhere in the supply chain, between Foundation Devices shipping it out and you receiving it. The attacker could be a retailer, distributor, or someone in the postal system, depending on how you acquired your Passport. If your device were tampered with, it might supply a static seed that an attacker knows about or damage your security in any of a number of other ways.
+
+[^pins]: **Safe PINs.** Obviously, you should use different PINs for different device whenever you're able. You especially need to use different PINs for your Apple iPhone and your Passport, so that a single PIN doesn't become a single point of failure. These two PINs should also be different from any other PINs you have (for bank accounts, door entry, etc.) since you're going to write them down.
 
 [^36]: **Why Upgrade?** You always want every piece of software and hardware you use to be the most up-to-date before you put digital assets on it. Older versions might have flaws or compromises that could lead to the loss of assets. So, even though it takes some real effort to upgrade your Passport, you should do so.
 
