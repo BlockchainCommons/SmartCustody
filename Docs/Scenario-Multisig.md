@@ -11,11 +11,13 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 ***Disclaimer:*** The information below is intended to inform a set of best practices. It may not address risks specific to your situation, and if it does not, you should modify appropriately. While this information may inform best practices, there is no guarantee that following this advice will sufficiently ensure the security of your digital assets. In addition, this information is only a window on best practices at a specific moment in time. Be aware that the Bitcoin & blockchain ecosystems may have evolved and the risk assessments of specific products may have changed since the publication of this draft. In other words: be cautious, be careful, and be aware of the current Bitcoin & blockchain landscape before you use this information.
 
+> _You can verify the authenticity of this scenario by looking at the [history of this file](https://github.com/BlockchainCommons/SmartCustody/commits/master/README.md) and seeing that all recent commits were made by @shannona or @ChristopherA and that they are **Verified**, which means they were signed with a registered GPG key. We may offer a more formal signing of this file or the #SmartCustody book in the future._
+
 ## Introduction to the Multisig Scenario
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either through accident or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to support strong usability, it can be used to simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
 
-This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage receiving and spending funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergencies so that funds can be recovered if another key is lost. By using Shamir's Secret Sharing, this scenario ensures that the recovery keys remains accessible (even if a part of it is lost) but that it's not usable (unless multiple parts are stolen).
+This scenario explains how to do so. It does so by using a transaction coordinator on a computer, to manage receiving and spending funds while holding no keys, alongside two second-generation signing devices[^1] that hold those keys and that connect with other devices across airgaps[^airgaps]. Sharded Secret Key Reconstruction ("SSKR") shares are then used to divide up a third, recovery, key — mainly intended for unlikely emergencies so that funds can be recovered if another key is lost. By using Shamir's Secret Sharing, this scenario ensures that the recovery keys remains accessible (even if a part of it is lost) but that it's not usable (unless multiple parts are stolen).
 
 ```mermaid
     graph BT;
@@ -32,7 +34,8 @@ This scenario explains how to do so. It does so by using a transaction coordinat
 style D color:#000,fill:#ffaaaa;
 style E color:#000,fill:#ffaaaa;
 ```
-##### _Figure 1: Architecture Overview_
+
+<p align="center"><b><i>Figure 1: Architecture Overview</i></b></p>
 
 ***Warning:*** It is important that you initiate this scenario when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
 
@@ -46,6 +49,7 @@ The base scenario presumes an audience with all of the following characteristics
 * A holder who might be trading those assets actively or might be holding them long term.
 * A holder who lives in developed countries, and thus is usually less concerned about issues like government attack, kidnapping, or privacy violations.
 * A holder who has sufficient computer skills to comfortably install and run apps.
+* A holder who cares about leaving assets to heirs or trusted parties in the case of death or disability.
 
 This scenario advocates its design to address most major types of adversaries, while **Options** can improve that protection. Additional categories of "Non-Financially-Motivated Attackers", "Loss by Government" and "Privacy-Related Problems" are not strongly considered in this scenario. See **Appendix II**.
 
@@ -137,7 +141,7 @@ If you are an experiened user, you may wish to also consult the **Alternative St
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
 
 * [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/), with a webcam (or built-in camera).
-* [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)
+* [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)[^inkjet][^acidfree]
 
 Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
 
@@ -149,7 +153,7 @@ The three devices selected are all second-generation signing device technology[^
 
 The following items are recommended, but don't let their absence stop you from securing your digital assets:
 
-* [  ] Small Home Safe (For example: [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) )
+* [  ] Small Home Safe (For example a cheap option is [https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/](https://www.amazon.com/AmazonBasics-Security-Safe-0-5-Cubic-Feet/dp/B00UG9HB1Q/) and a more secure option, better able to protect your materials is [SentrySafe](https://www.amazon.com/SentrySafe-SFW123DSB-Fireproof-Waterproof-Combination/dp/B005P12F2K?th=1)[^whichsafe].
 * [  ] Safety Deposit Box at Bank[^safetydeposit] or other institution
 
 The following items are even more optional, but will increase the resilience of your scenario:
@@ -157,6 +161,8 @@ The following items are even more optional, but will increase the resilience of 
 * [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
 * [  ] MicroSD Adapter with an extra, industrial grade MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overall, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter (be sure it's industrial-grade!) and have two others from your Passport.
 * [  ] Encrypted Cloud-based note storage, such as [BitWarden](https://bitwarden.com/)
+
+Finally, see [Additional Steps](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#options-i-additional-steps) for some additional purchases you could make to improve resilience even more, at the cost of some complexity. We think that [fire-resistant bags](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-bags-fire-resistant), [tamper-evident bags](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-bags-tamper-evident), and [metal storage](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-metal-storage) can all give notable improvements without a lot of cost.
 
 ### Final State
 
@@ -192,7 +198,7 @@ Your material should be divided among four places: your home, a secure storage i
 
       subgraph "Passport Package"
       B4["🛡️ Your Passport"]
-      B5["🔡 Passport Words"]
+      B5["🔡 Passport Backup Words"]
       B4---B5
       end
 
@@ -302,7 +308,7 @@ Your material should be divided among four places: your home, a secure storage i
       end
 
       subgraph "Passport Package"
-      E5["🔡 Passport Words"]
+      E5["🔡 Passport Backup Words"]
       E6["🔢 Passport PIN"]
       E6---E5
       end
@@ -330,7 +336,7 @@ Your material should be divided among four places: your home, a secure storage i
     style C color:#000,fill:#99ebff;
 ```
     
-##### _Figure 2: Final State Overview_
+<p align="center"><b><i>Figure 2: Final State Overview</i></b></p>
 
 ***Note:*** The state above will vary if you chose alternative signing devices.
 
@@ -385,8 +391,8 @@ style C color:#000,fill:#ffaaaa;
 style D color:#000,fill:#ffaaaa;
 style E color:#000,fill:#99ebff;
 ```
-##### _Figure 3: Location Overview_
 
+<p align="center"><b><i>Figure 3: Location Overview</i></b></p>
 
 #### **Step B: Prepare Computer**
 
@@ -428,7 +434,8 @@ Sparrow Wallet requires Windows 7+; OSX 10.13+; or Linux (especially Ubuntu, Deb
     B["🪶 Sparrow Wallet"]
     B-->A;
 ```
-##### _Figure 4: Transaction Coordinator Setup_
+
+<p align="center"><b><i>Figure 4: Transaction Coordinator Setup</i></b></p>
 
 
 #### **Step C: Create Multisig**
@@ -473,7 +480,8 @@ At this point, you will need to finalize your decision for which Signing Devices
     
 style D color:#000,fill:#ffaaaa;
 ```
-##### _Figure 5: Multisig Setup_
+
+<p align="center"><b><i>Figure 5: Multisig Setup</i></b></p>
 
 ### PART TWO: CREATE SEEDS
 
@@ -538,7 +546,8 @@ style E color:#000,fill:#ffaaaa;
 style F color:#000,fill:#ffaaaa;
 style G color:#000,fill:#ffaaaa;
 ```
-##### _Figure 6: Recovery Seed Creation_
+
+<p align="center"><b><i>Figure 6: Recovery Seed Creation</i></b></p>
     
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** The following optional[^16] procedure will increase the resilience of your recovery backup by making an additional copy of your SSKR shares to MicroSD.
 
@@ -585,7 +594,8 @@ style I color:#000,fill:#99ebff;
 style J color:#000,fill:#99ebff;
 style K color:#000,fill:#99ebff;
 ```
-##### _Figure 6a: Recovery Seed Creation (Resilience Improvement)_
+
+<p align="center"><b><i>Figure 6a: Recovery Seed Creation (Resilience Improvement)</i></b></p>
 
 _Any Alternative SSKR Device may be used to replace Steps D + E._
 
@@ -672,7 +682,8 @@ Now that you know you can recover your seed from the recovery shards, you should
     style I color:#000,fill:#ffaaaa;
     style J color:#000,fill:#ffaaaa;
 ```
-##### _Figure 7: Recovery Seed Test_
+
+<p align="center"><b><i>Figure 7: Recovery Seed Test</i></b></p>
     
 **Transaction Coordinator Instructions:**
 
@@ -706,7 +717,8 @@ You can now close out this seed in Gordian Seed Tool:
     style B color:#000,fill:#ffaaaa;
     style C color:#000,fill:#ffaaaa;
 ```
-##### _Figure 8: Recovery Seed Entry_
+
+<p align="center"><b><i>Figure 8: Recovery Seed Entry</i></b></p>
     
 Finally, you need to divy out your shares, which is how you will recover this seed if you ever need to use it again
 
@@ -749,7 +761,7 @@ Finally, you need to divy out your shares, which is how you will recover this se
     style D color:#000,fill:#ffaaaa;
     ```
     
-##### _Figure 9: Recovery Seed Storage_
+<p align="center"><b><i>Figure 9: Recovery Seed Storage</i></b></p>
     
 **Suggested Resilience Improvement: Use MicroSD Cards for SSKR Recovery Backup.** If you chose the optional[^16] step of also saving your Recovery Key SSKR shares to MicroSD, you should now check those.
 
@@ -799,8 +811,9 @@ Finally, you need to divy out your shares, which is how you will recover this se
     style I color:#000,fill:#99ebff;
     style J color:#000,fill:#99ebff;
 ```
-##### _Figure 7a: Recovery Key Test (Resilience Improvement)_
-    
+
+<p align="center"><b><i>Figure 9a: Recovery Key Test (Resilience Improvement)</i></b></p>
+
 _Any Alternative Recovery Device may be used to replace Steps D + E._
 
 #### **Step F: Create & Test Active Seed #1**
@@ -832,7 +845,7 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
    1. This time, we strongly suggest that "Sync to iCloud" be left on[^icloudsync].
 1. [  ] Click the "+" and Add a Seed with "Coin Flips", "Die Rolls", or "Playing Cards" as you prefer[^29][^30][^ianc].
-   1. Rolling dice is probably the quickest and least tedious method.
+   1. Rolling dice is probably the quickest and least tedious method[^debias].
    2. Drawing cards can take time because it's done with replacement: reshuffle after each draw.
    3. Flipping coins to generate 128 bits of entropy takes 128 flips. That's a lot!
 1. [  ] "Save" it.
@@ -845,7 +858,8 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
     
     A-->B-->C
   ```
-##### _Figure 10: Active Seed #1 Creation_
+  
+<p align="center"><b><i>Figure 10: Active Seed #1 Creation</i></b></p>
 
 You're now ready to read an xpub into your transaction coordinator[^31]:
 
@@ -873,11 +887,12 @@ You're now ready to read an xpub into your transaction coordinator[^31]:
 
     C-->B-->A
 ```
-##### _Figure 11: Active Seed #1 Entry_
+
+<p align="center"><b><i>Figure 11: Active Seed #1 Entry</i></b></p>
 
 You need to add a few things related to your Apple account to your Storage:
 
-1. [  ] Record your iPhone PIN, your Apple account and password, and your Apple recovery code (if you have one) on a piece of waterproof paper.
+1. [  ] Record your iPhone PIN, your Apple account and password, and your Apple recovery code (if you have one)[^passwords] on a piece of waterproof paper.
 2. [  ] Store your Apple information at your Primary Storage.
 
 **Suggested Resilience Improvement: Use Cloud Backup.** The following optional procedure will increase the resilience of your recovery backup by storing access info for your Apple account in the cloud.
@@ -909,7 +924,8 @@ You need to add a few things related to your Apple account to your Storage:
     style E color:#000,fill:#99ebff;
     style F color:#000,fill:#99ebff;
     ```
-##### _Figure 12: Active Seed #1 Storage_
+    
+<p align="center"><b><i>Figure 12: Active Seed #1 Storage</i></b></p>
 
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -948,12 +964,12 @@ If you have never before used your Passport, you'll need to set it up:
    1. Scan the Validation Code from the setup instructions.
    2. Copy the four words that appear on your Passport back to the web page.
    3. Verify that the result is a "Success!"
-1. [  ] Enter a PIN. 
+1. [  ] Enter a PIN[^pins]. 
    1. Start out by entering four numbers.
    2. Note the two words shown; these will be shown any time you enter the start of your PIN, so that you know your Passport has not been compromised or swapped.
    3. Enter at least two more digits and hit the right button to store your PIN.
    4. Verify your PIN.
-   5. Record your PIN to a piece of waterproof paper.
+   5. Record your PIN[^passwords] to a piece of waterproof paper.
 
 It is strongly recommended that you update the firmware on your Passport before you begin using it[^36].
 
@@ -986,7 +1002,8 @@ It is strongly recommended that you update the firmware on your Passport before 
     E-->C-->D
     C-->B-->A
 ```
-##### _Figure 13: Passport Firmware Update_
+
+<p align="center"><b><i>Figure 13: Passport Firmware Update</i></b></p>
 
 You're now ready to create a new seed on your Passport.
 
@@ -997,6 +1014,7 @@ You're now ready to create a new seed on your Passport.
    1. Choose Continue with the right button.
    1. Write down the six backup password onto a piece of waterproof paper.
    1. Verify your knowledge of the six words.
+   1 These "Passport Backup Words" are required to unlock your backup.
 1. [  ] Make a second backup
    1. Choose "Yes" to make a second Backup.
    1. Insert the second MicroSD Card[^38] supplied with the Passport.
@@ -1013,7 +1031,8 @@ You're now ready to create a new seed on your Passport.
     C-->D
     C-->E
   ```
-##### _Figure 14: Active Seed #2 Creation_
+  
+<p align="center"><b><i>Figure 14: Active Seed #2 Creation</i></b></p>
 
 You can now import an account into your transaction coordinator.
 
@@ -1052,7 +1071,8 @@ You can now import an account into your transaction coordinator.
 
     C-->B-->A
 ```
-##### _Figure 15: Active Seed #2 Entry_
+
+<p align="center"><b><i>Figure 15: Active Seed #2 Entry</i></b></p>
 
 There's one last bit of administrivia for Passport:
 
@@ -1070,7 +1090,7 @@ There's one last bit of administrivia for Passport:
     A-->D
     A-->E
   ```
-##### _Figure 16: Passport Backup_
+<p align="center"><b><i>Figure 16: Passport Backup</i></b></p>
 
 Finally, you need to divy out the various backups and such you made[^39]:
 
@@ -1091,7 +1111,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     subgraph home["🏠🔒 Home Storage"]
       subgraph "Passport Package"
       A["🛡️ Your Passport"]
-      B["🔡 Passport Words"]
+      B["🔡 Passport Backup Words"]
       end
     end
 ```
@@ -1127,7 +1147,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     graph TD
     subgraph cloud["🌩️ Cloud Storage"]
       subgraph "Passport Package"
-      H["🔡 Passport Words"]
+      H["🔡 Passport Backup Words"]
       I["🔢 Passport PIN"]
       end
     end
@@ -1135,7 +1155,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     style I color:#000,fill:#99ebff;
 ```
 
-##### _Figure 17: Active Seed #2 Storage_
+<p align="center"><b><i>Figure 17: Active Seed #2 Storage</i></b></p>
     
 _Any Alternative Signing Device may be used to replace this Step._
 
@@ -1184,13 +1204,13 @@ After you have added three keys to your transaction coordinator, either using th
     
     style C color:#000,fill:#99ebff;
 ```
-##### _Figure 18: Descriptor Creation_
+<p align="center"><b><i>Figure 18: Descriptor Creation</i></b></p>
 
 **Suggested Resilience Improvement: Use Cloud Backup:**  If you have access to encrypted cloud storage, such as the "Secure Notes" feature on Bitwarden, you can use that to back up the output descriptor fromy our transaction coordinator as well.
     
 1. [  ] Store a copy of the descriptor in your encrypted cloud notes.
 
-**Optional Resilience Improvement: Backup Sparrow Wallet.** You may choose to also backup your Sparrow wallet, particularly if you decided to put a password on the wallet.
+**Optional Resilience Improvement: Backup Sparrow Wallet.** You may choose to also backup your Sparrow wallet, to improve resilience, particularly for heirs and executors[^sparrowbackup].
 
 **Transaction Coordinator Instructions:**
 
@@ -1238,7 +1258,7 @@ After you have added three keys to your transaction coordinator, either using th
     style H color:#000,fill:#99ebff;
 ```
     
-##### _Figure 19: Descriptor Storage_
+<p align="center"><b><i>Figure 19: Descriptor Storage</i></b></p>
  
 #### **Step I: Test Transaction**
 
@@ -1327,7 +1347,8 @@ Particularly in the case of a multisig, you want to test your new account by bot
     D-->D1-->E
     E-->E1-->F
 ```
-##### _Figure 20: Receiving & Sending Funds_
+
+<p align="center"><b><i>Figure 20: Receiving & Sending Funds</i></b></p>
 
 If you were able to receive and send a transaction, you should feel confident in your new wallet.
 
@@ -1425,9 +1446,9 @@ Leaving assets to children or other heirs is important for many of us. Digital a
     end
     style H color:#000,fill:#99ebff;
 ```
-    
-##### _Figure 21: Letter Storage_
-    
+ 
+<p align="center"><b><i>Figure 21: Letter Storage</i></b></p>
+
 ### PART FOUR: REVISIT BACKUPS
 
 #### **Step L: Check Primary Storage (Spring)**
@@ -1493,12 +1514,14 @@ Your digital assets are only protected if you actively maintain your backups. Ev
     end
 
 ```
-##### _Figure 22: Primary Storage Contents_
+<p align="center"><b><i>Figure 22: Primary Storage Contents</i></b></p>
 
-3. [  ] Make sure your printed SSKR share still exists.
-4. [  ] Make sure your printed account descriptor still exists.
-5. [  ] Make sure your instructions for heirs still exist.
-   1. If anything in the letter has changed, update it (or replace it), and redate it.
+1. [  ] Make sure your printed SSKR share still exists and that the ink is still dark and easy to read.
+   1. If your SSKR share is becoming hard to read you will need to reprint _all three of them_ (as SSKR shares from different times cannot be used together). Schedule a time in the near future to collect your three shares, read them into Gordian Seed Tool on your secondary device, and then generate new ones. Be sure to destroy the old ones afterward, to avoid confusion.
+3. [  ] Make sure your printed account descriptor still exists and that the ink is still dark and easy to read.
+   1. If your account description is becoming hard to read, enter a TODO item on your calendar to reprint it before next year's trip to this storage unit (or schedule it for the near future for optimal resilience).
+5. [  ] Make sure your instructions for heirs still exist and that the ink is still dark and easy to read.
+   1. If anything in the letter has changed, or it's becoming hard to read, update it (or replace it), and redate it.
    1. If you changed the letter, make a note to do the same at Home Storage.
 
 ***GST Instructions:***
@@ -1548,7 +1571,7 @@ style B color:#000,fill:#99ebff;
 style D color:#000,fill:#99ebff;
 style H color:#000,fill:#99ebff;
 ```
-##### _Figure 23: Primary Storage Tasks_
+<p align="center"><b><i>Figure 23: Primary Storage Tasks</i></b></p>
 
 #### **Step M: Check Secondary Storage (Fall)**
 
@@ -1599,12 +1622,14 @@ Your Secondary storage may be with friends or family, so Fall is a great time to
     end        
 
 ```
-##### _Figure 24: Secondary Storage Contents_
+<p align="center"><b><i>Figure 24: Secondary Storage Contents</i></b></p>
 
-3. [  ] Make sure your printed SSKR share still exists.
-4. [  ] Make sure your printed account descriptor still exists.
-5. [  ] Make sure your instructions for heirs still exist.
-   1. If anything in the letter has changed, update it (or replace it), and redate it.
+1. [  ] Make sure your printed SSKR share still exists and that the ink is still dark and easy to read.
+   1. If your SSKR share is becoming hard to read you will need to reprint _all three of them_ (as SSKR shares from different times cannot be used together). Schedule a time in the near future to collect your three shares, read them into Gordian Seed Tool on your secondary device, and then generate new ones. Be sure to destroy the old ones afterward, to avoid confusion.
+1. [  ] Make sure your printed account descriptor still exists and that the ink is still dark and easy to read.
+   1. If your account description is becoming hard to read, enter a TODO item on your calendar to reprint it before next year's trip to this storage unit (or schedule it for the near future for optimal resilience).
+1. [  ] Make sure your instructions for heirs still exist and that the ink is still dark and easy to read.
+   1. If anything in the letter has changed, or it's becoming hard to read, update it (or replace it), and redate it.
    1. If you changed the letter, make a note to do the same at Home Storage.
 
 ***Passport Instructions:***
@@ -1629,7 +1654,7 @@ A-->B
 F-->G
 style B color:#000,fill:#99ebff;
 ```
-##### _Figure 25: Secondary Storage Tasks_
+<p align="center"><b><i>Figure 25: Secondary Storage Tasks</i></b></p>
 
 #### **Step N: Update MicroSDs**
 
@@ -1767,8 +1792,8 @@ _They can also increaseProcess Fatigue because of the need to replace the bags w
 
 **_Add the following action whenever you store material in your Home, Primary, or Secondary Storage._**
 
-1. [  ] Store materials in tamper-evident bag, record the serial number, and sign it.
-
+1. [  ] Store materials in tamper-evident bag, record the serial number, and sign it. Also mark a date about five years in the future to open it up, so that you can check everything is still readable (and replace if not).
+2. 
 **_Add the following to your requirements list:_**
 
 * [2 Opaque Tamper-Evident Deposit Bags](https://www.amazon.com/MMF-Industries-Tamper-Evident-Deposit-2362011N06/dp/B000J09BRO/ref=dp_prsubs_3?pd_rd_i=B000J09BRO&psc=1)
@@ -1893,7 +1918,7 @@ First, it's intended to address the [Gordian Principles](https://github.com/Bloc
     
 Second, it's intended to largely eliminate Single Points of Compromise (SPOCs) and Single Points of Failure (SPOFs). These are the places where your assets might be stolen (by a SPOC) or lost (by a SPOF). Resolving these was the largest part in the scenario's creation; it's a complex and iterative process that depends not just on rigorous analysis, but also intuition. Following are the major steps in creating a scenario of this sort, though they are steps that are likely to be casually intermingled by someone who has worked through these issues in the past:
     
-1. **Ensure No Secret Forms a SPOC or SPOF.** _There should be no individual secret that can be stolen to compromise funds or that can be misplaced to lose funds._ This can include not just seeds or private keys, but also PINs, passwords, account access, and other means for accessing those seeds or private keys. In modern cryptocurrencies, there are two major technological means for preventing SPOCs and SPOFs: multisigs and Shamir's Secret Sharing. They are both utilized in this scenario to ensure that there is no single location that contains enough unprotected keys to give access to the digital assets, and simultaneously that access to the digital assets can be recovered without needing to know additional information, provided that sufficient locales are accessed. See **Appendix III** for the specifics of this.
+1. **Ensure No Secret Forms a SPOC or SPOF.** _There should be no individual secret that can be stolen to compromise funds or that can be misplaced to lose funds._ This can include not just seeds or private keys, but also PINs, passwords, account access, and other means for accessing those seeds or private keys. Even if you feel like you'll remember your passwords and PINs (and both case studies and personal experience say that's not the case), we want to make sure those secrets are available to heirs in case of death or disability. In modern cryptocurrencies, there are two major technological means for preventing SPOCs and SPOFs: multisigs and Shamir's Secret Sharing. They are both utilized in this scenario to ensure that there is no single location that contains enough unprotected keys to give access to the digital assets, and simultaneously that access to the digital assets can be recovered without needing to know additional information, provided that sufficient locales are accessed. See **Appendix III** for the specifics of this.
 
 > _Example:_ Each of the locales was constructed such that no unprotected key is accessible, but the scenario was also built such that any two locales always restores the key material.
 
@@ -1971,7 +1996,7 @@ The heart of #SmartCustody is a discussion of Adversaries. Here are some of the 
    * *Adversary: Supply-Chain Attack* — Using the default scenario, your Passport is well protected against Supply-Chain Attack, but an iPhone could be more vulnerable. This is another reason that it's important to use two different iDevices for your active and recovery keys. You can further reduce the danger of a supply-chain attack by buying directly from an Apple Store, in-person.
 4.  **Loss by Crime, Other Attacks**
    * *Adversary: Blackmail* — Blackmail isn't as immediate as coercion, but remains something not well controlled by a cryptocurrency procedure.
-   * *Adversary: Coercion* — Coercion is generally a social threat that can't be controlled by a cryptocurrency procedure. Not linking your cryptocurrency to a real-world identity is one of the best solutions.
+   * *Adversary: Coercion* — Coercion is generally a social threat that can't be controlled by a cryptocurrency procedure[^coercion]. Not linking your cryptocurrency to a real-world identity is one of the best solutions.
    * *Adversary: Non-Financially Motivated Attackers* — Funds are well protected against theft of any sort, so a non-financially motivated attack is similarly unlikely to succeed.
    * *Adversary: Terrorist / Mob* — This is another variation of coercion, subject to those dangers.
 5.  **Loss by Government**
@@ -2196,14 +2221,21 @@ As noted previously, please consider whether this letter should be specific or o
 **Reviewers:** Joe Andrieu, Eric Schuh, Foundation Devices Staff
 
 ---
+[^inkjet]: **Ink Jet Warning.** These papers will not work well with Inkjets. You may need a specific solution for your specific printing setup. We generally suggest archival/acid-free paper[^acidfree] that is waterproof, to maximize life and to protect against some disasters.
+
+[^acidfree]: **Why Acid Free?** These papers are [Acid Free](https://whattheythink.com/articles/33566-not-acid-free/), which we recommend to ensure the longevity of your paper. We certainly recommend checking and recopying your printed material regularly, but we're well aware that five decades may go by, and then your papers are found by your great-grandchildren, at which point we'd like them to still be readable.
 
 [^1]: **What about the Wallets?** The term "wallet" has generally been horribly overloaded in the digital-asset space. Worse, that language discourages thinking about the functional partition of different elements — such as partitioning key signing from transaction creation. This scenario thus avoids the term wallet, replacing its traditional usage with "transaction coordinator" and "signing device". The transaction coordinator is the software that creates transactions, manages signing, and sends the transaction. It's typically fully networked. The software used as a transaction coordinator in this scenario is most often called the "Sparrow wallet", or a "software wallet", but it doesn't hold any keys in this example: it's a pure coordinator. Signing devices sign transactions that they're given, usually because they hold keys. The majority of signing devices, such as Ledger, Trezor, Keystone, and Passport have typically been called "hardware wallets".
+
+[^airgaps]: **Airgap Security.** Are airgaps _really_ more secure? We believe so, and we believe that's why the newest generation of hardware wallets is using them rather than the linked but limited connections of the first generation. For us the biggest security gain of airgaps is bilateral control. The user makes the decision to affirm and send the data from his computer to his signing device and from the signing device to his computer. Assuming good UX designs, he should get confirmation on what's contained in the message on each side for each transfer. The second biggest gain is the lack of connected interactivity. Though a buffer overflow is certainly still possible while transmitting across an airgap, the lack of direct interactivity for an attacker makes it much harder to see the results of that overflow, to gain information from that overflow, or to gain control due to that overflow. It's like controlling army battallions with letters rather than a walkie talkie: possible, but at a much higher level of difficulty. Finally, we see gains in the fact that an airgap massively slows down any attack. The infamous buffer-overflow of the Morris Worm crippled the internet because of its high speed of spread. Airgapped attacks spread only at a user's speed of transfer. There are certainly people in the space who have decided not to implement airgaps [because they believe otherwise](https://shiftcrypto.ch/blog/does-airgap-make-bitcoin-hardware-wallets-more-secure/). And, they do point out some continued vulnerabilities, like the attack surface of firmware upgrades. But we believe that multiple and important security improvements exist due to airgaps, and that there is fundamentally no loss of convenience (possibly even a gain, with there no longer being a need to hunt up cables). Though other methodologies could choose to introduce many of these advantages, they are implicit to airgaps, making them nearly a requirement of the methodology.
 
 [^sca]: **Supply-Chain Attacks.** When possible, buy your products directly from the manufacturers, preferably at a store you can walk into. Thus, for example, it's optimal to buy an iPhone directly from the Apple Store. This reduces the odds that someone has modified the device before you received it. To reduce privacy dangers, you can also choose to pay for items with cash, a pre-loaded debit card, or some other means that keeps your personal information separate from the purchase.
 
 [^noandroid]: **No Androids.** Gordian Seed Tool is not currently available for Android. Replacing the two uses of Gordian Seed Tool is this default scenario with Alternative Signing Devices that support Android is required if one or more iOS or MacOS[^nomacos] devices are not available. However, our general assumption is that Apple's walled garden of the App store and Apple's high-profile development of iOS (and MacOS) results in an ecosystem that is safer, and so we generally prefer an iOS device over an Android device for safety and security. At minimum, the purchase of two iPod Touches seems like a worthwhile investment to protect a large sum of digital assets
   
 [^nomacos]: **No Macs.** An iOS device is a much better choice than a MacOS device, as it has a smaller attack surface and was built from the start with more fundamental sandboxed security in mind. 
+
+[^whichsafe]: **Which Safe?** Our fundamental belief is that the main purpose of a safe is to deter casual theft, so that someone doesn't idly pick up one of your keys or signing devices and make off with them. Even for a break-in, all a safe has to do is be more than [8-12 minutes](https://www.apialarm.com/blog/protection/how-long-does-the-average-burglary-last/) worth of trouble, and it'll keep your material safe. On the flipside, if a burglar is purposefully going after your key material, no safe, not even one bolted down, will keep it protected from a determined attack. So which safe do we recommend? A cheap safe is likely to meet most of the basic criteria, but if you've got a substantial cryptocurrency holding, then obviously you should spend the money on a more expensive safe to help protect it.
     
 [^2]: **Separating Keys.** This multisig scenario suggests the use of three keys, any two of which can be combined to use funds. A basic rule of thumb is to _never_ place seeds (or their associated private keys) on the same device or network, because doing so turns it into a SPOC where a compromise of that network or device could then compromise your multisig, and thus your assets. Though this scenario suggests the use of Gordian Seed Tool to create two different seeds, one active seed and one recovery seed, those seeds should _not_ be created on the same device. For the active key, we suggest use of your personal iPhone or else a brand-new iPod Touch, to make it optimally accessible and also optimally protected. For your recovery key, we suggest you use an older iPod Touch or even borrowing a trusted partner's iPhone; you'll be deleting that seed after you create it. In a pinch, you _could_ use the same iPhone or iPod Touch for both creating a recovery key and holding an active key, provided you were careful about deleting the recovery key, per the scenario instructions. However, if you're holding any notable funds, it's better to invest some money at the start to do this right: using the same device for two seeds, even chronologically separated, creates a Single Point of Compromise (SPOC).
 
@@ -2245,13 +2277,17 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^ianc]: **Testing Seeds.** You can always test seeds with [Ian Coleman's web tool](https://iancoleman.io/bip39/). This is a handy way to ensure that valid and random seeds are being generated. Obviously, you should only do so with an _offline_ version of the code, downloaded to a local computer that is afterward pulled off the network.
 
+[^debias]: **Debiasing Dice.** Dice can be biased! (So can cards and coins for that matter, but especially dice.) You can improve the quality of your dice by buying [Casino-Quality Dice](https://www.amazon.com/Trademark-Poker-Grade-Serialized-Casino/dp/B00157YFJE?th=1) or [Gamescience Dice](https://www.dicedepot.com/Set-of-12-D6s_c_8.html). If it's a large concern, you can also (or alternatively) debias your rolls as [Andrew Poelstra describes in this paper](https://github.com/apoelstra/SSS32/blob/new-complete/SSS32.ps#L509). However, the main goal here is for you to use a safe means to generate the entropy for this seed, so if any of that sounds reasonable _do it_, and if any of that doesn't, then just use your dice rolls as they come.
+
 [^19]: **Export Together!** One you have clicked the "Export Shares Individually" button do *not* click done until you have exported all three shares. Each times SSKR shares are generated, they're modified by new entropy. That means that SSKR shares may only be used with the other shares created at the exact same time.
 
 [^20]: **No Restore?** If it didn't restore, you have a problem. You're probably going to need to go back to Step D and create a new seed. But this really shouldn't happen.
 
 [^21]: **OIB Name.** The default Object Identity Block name has one or two words that describe the color of the Lifehash and two words that are random. So the last two words _will_ change. That's expected. The color words should _not_ change, but since they are not a standard, they could in rare cases, but if so they'd shift to a very similar description, such as from "Yinmn Blue" to "Dark Purple".
 
-[^22]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares.
+[^22]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares[^22a].
+
+[^22a]: **The Third Check.** But is the third check really necessary when we already know all three shares are valid from our previous checks? Probably not in any reasonable situation. But responsible key management means checking out the _unreasonable_ situations when it's reasonable to do so. We don't just want to know that all three shares are valid in _some_ situations, but that all three shares are valid in _all_ situations, and that there's not some bizarre bug that keeps the third combination from being combined. Because there's a 1/3 chance that it might be the combination you need to restore your recovery key. So, in this situation, where we can scan QRs back into Gordian Seed Tool in 60 seconds or less, we take the time to do so.
 
 [^23]: **Authenticate?** Needing to authenticate suggests that you're passing private information, but `ur:crypto-account`[^24] and its `ur:crypto-outputs` are [defined](https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-015-account.md) to only pass public-key info. So why is authentication required? Because they're derived from the master private key.
 
@@ -2283,6 +2319,8 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^35]: **Supply-Chain Attacsk.** This is another example of fighting against the "Supply-Chain Attack" adversary, where the threat is that someone tampers with the device somewhere in the supply chain, between Foundation Devices shipping it out and you receiving it. The attacker could be a retailer, distributor, or someone in the postal system, depending on how you acquired your Passport. If your device were tampered with, it might supply a static seed that an attacker knows about or damage your security in any of a number of other ways.
 
+[^pins]: **Safe PINs.** Obviously, you should use different PINs for different device whenever you're able. You especially need to use different PINs for your Apple iPhone and your Passport, so that a single PIN doesn't become a single point of failure. These two PINs should also be different from any other PINs you have (for bank accounts, door entry, etc.) since you're going to write them down.
+
 [^36]: **Why Upgrade?** You always want every piece of software and hardware you use to be the most up-to-date before you put digital assets on it. Older versions might have flaws or compromises that could lead to the loss of assets. So, even though it takes some real effort to upgrade your Passport, you should do so.
 
 [^verifypassport]: **Verifying Passport's Firmware.** See ["Verifying the Firmware"](https://docs.foundationdevices.com/firmware-update) at Foundation Devices. This is important to ensure that Foundation Devices' web page hasn't been compromised.
@@ -2297,7 +2335,9 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^41]: **Cloud Words.** The Passport Backup Words are probably the scariest Single Point of Failure in this whole scenario. As noted in **Appendix III**, there are situations where a dual-loss can result in the loss of your assets if you don't have a cloud backup of your words, but you can save them if you do. If you have any large amount of funds you should _ensure_ that your Passport Backup Words and preferably your PIN as well are doubled-up in some secure storage, such as the encrypted cloud.
 
-[^42]: **Why No Password?** Every time you add a password to your system, you add a new SPOF (Single Point of Failure). In this case, all you'd be protecting is a watch-only wallet, which could compromise your privacy, but not your digital assets, so it's not worth it unless you have strong reasons for privacy protection.
+[^42]: **Why No Password?** Passwords create friction for accessing your system. Often that results in a SPOF, where the loss of the password can cause the loss of your secrets. In this case, all you'd lose is access to your read-only wallet, but that might be a crucial loss for your heirs or executors, who could find it much more difficult to access your assets without the ease-of-use of a transaction coordinator that already has your account information preloaded.
+
+[^sparrowbackup]: **Why Backup?** Theoretically, this isn't required: there's no secret information kept in your transaction coordinator. The backup is to make it easier to reconstruct your multisig account, particularly if that's done by an executor or heir who might not have the same knowledge of digital assets as you do.
 
 [^sparrowwallet]: **Sparrow Wallet Backups.** If the file is encrypted, this is obviously safe. If the file is not encrypted, it's a privacy concern, because anyone stealing it would have read-only access to your account. But, under no condition is it a SPOC for your actual assets, because the keys are offline.
 
@@ -2305,7 +2345,7 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^44]: **Review the Transaction.** _Never_ treat this as a rubber stamp. Always look carefully at all data shown by your signing device, including how much is being sent and where. This is your main defense against a man-in-the-middle attack or corruption of Sparrow.
 
-[^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises. For example, if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is a locked drawer at your work, you could choose to be really specific by naming the bank and the place of work, or you could be only somewhat vague and say "bank" and "work". Ultimately, you need to decide whether theft or loss is more likely and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
+[^45]: **Specific or Vague?** When you are writing your letter to your heirs, you can be either very specific, listing exactly how they can access your funds, and where all the puzzle pieces to do so are; or you can be vague, saying what they'll need but not where they are. Being specific means that a thief breaking into any of your storage then has a blueprint for where the rest are and how to access your digital assets. Though there's still no Single Point of Compromise, there's now a Single Blueprint of Compromise. Being vague means that your heirs might fail to access your funds if they don't know where all the pieces might be kept. There _are_ compromises. For example, if your Primary Storage is your Bank Safety Deposit Box and your Secondary Storage is at a friend's house, you could be very specific about the bank (because anyone else would need a death certificate to access the box), but just mention your friend by name without saying where he has it. Ultimately, you need to decide whether theft or loss is more likely and plan accordingly. Our general analysis is accidental loss is a lot more common than individual theft, and so we suggest moving toward the "specific" side of the equation.
 
 [^renewsparrow]: **Why Renew?** The Sparrow wallet backup includes your transaction labels. Updating it will ensure you have those if you ever lose your Sparrow computer.
 
@@ -2317,10 +2357,14 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^lawyer]: **Lawyerly Precautions.** Before giving any materials to a lawyer, make sure they are sealed in an opaque envelope in a tamper-evident bag. Tell your lawyer to never reveal the information except in person to you or an heir following your death / incapacitation.
 
+[^passwords]: **Writing Passwords.** We suggest the recording of passwords and PINs, but you should be aware this does create a potential danger. Our purpose is twofold: (1) we don't want you to lose your own PIN or password, and we've lost enough over the years to know this is a real danger; and (2) we want your heirs to be able to recover your funds. We consider the latter particularly important, because heirs will have _no guaranteed way_ to otherwise know your access info. (How many times has my wife told me the PIN to her phone? Pretty much every time I have to use it.) If your heirs don't have your Passport PIN, they cannot access your Passport (though maybe they can access the Passport backup, with that password); if they don't have your Apple PIN, they have no way to access your Gordian Seed Tool key. Basically, every lost password can result in a lost key, though that's not guaranteed because of our other backups, and with two lost keys, it's game over. We offset the danger of recording your PINs and passwords in two ways: (1) by never placing an object and the key that unlocks it in the same place; and (2) by the implicit conceit of the scenario, that two keys are required to do anything. The biggest danger in this setup is that you're leaving bare an Apple login that _might_ be used for other purposes, so consider that, but also consider the dangers if you're killed or incapacitated (or just forgetful).
+
 [^A1]: **Locale Lossage.** The biggest danger to resilience is ignoring the loss of a single locale. There are no SPOFs for locations, so it's OK if you suddenly find your Primary Storage or even your Home unavialable. Potential problems arise when a second locale loss stacks atop the first one. That means: if you lose a single locale, you should immediately replace it as a top priority. Similarly, if you ever entirely lose a key, sweep your funds.
 
 [^A2]: **Access Lossage.** And also, if you lose a single piece of data, such as access to your Apple account, you must immediately rectify that before a second loss stacks atop it, resulting in much more serious consequences.
     
 [^appleinfo]: **Apple Info Theft.** We say that most people won't know what to do with access information for an Apple account. And we think that's true. But on the other hand there are sophisticated attackers who are [purposefully seeking out Apple access information in order to attack cryptocurrency holdings](https://twitter.com/serpent/status/1515545806857990149?s=21&t=JjMXGdO1X1VCl0_B4SUcVQ). The two-of-three setup in this scenario is likely to confound them, especially if they don't have the account map that describes how the various signatures fit together into an account, but this underlines why you need to take it very seriously and respond immediately if you lose "1.5 keys".
+
+[^coercion]: **Stopping Coercion.** We are aware of some solutions, such as the fact that the [Keystone wallet](https://keyst.one/) can create passphrase wallets that only become visible if you know the passphrase. Generally, we feel these accentuate other problems, specifically: (1) there is higher chance of loss for an "invisible" wallet, especially to heirs; and (2) there is a real chance of personal death for refusing to turn over a secret wallet under coercion. As with everything, it's a question of balance, and we balance vulnerability to this adversary as less important than loss or death.
 
 [^safetydeposit]: **Are Safety Deposit Boxes Safe?** Generally, yes, a safety deposit box is likely to be safer than anything but an unmovable safe that you personally control. Theoretically any safety deposit box requires dual control where you have one key and the bank the other. And theoretically your box is in a vault which is highly secured. But, safety deposit boxes are not fireproof. They're not waterproof. You don't know if a copy of a key has been made. Finally, they're not covered by FDIC protections, which can reduce a bank's incentives to keep them safe. A lot depends on both the trustworthiness of the bank and its adherence to security protocols. But even a great bank may not be enough: some states have become very aggressive about seizing (stealing) material from safety deposit boxes if they're "abandoned" ... which it turns out can mean that they're [not accessed for a few years](https://abcnews.go.com/GMA/story?id=4832471&page=1). California made news with seizures after a mere three years, but other states have given themselves the right to do so after ten years. Overall, this scenario should keep you protected from the worst potential problems, because you'll visit your safety deposit box every year, and because it doesn't contain enough keys to access your digital assets. Just be aware that it might be less safe than you think.
