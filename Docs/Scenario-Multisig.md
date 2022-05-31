@@ -198,7 +198,7 @@ Your material should be divided among four places: your home, a secure storage i
 
       subgraph "Passport Package"
       B4["🛡️ Your Passport"]
-      B5["🔡 Passport Words"]
+      B5["🔡 Passport Backup Words"]
       B4---B5
       end
 
@@ -308,7 +308,7 @@ Your material should be divided among four places: your home, a secure storage i
       end
 
       subgraph "Passport Package"
-      E5["🔡 Passport Words"]
+      E5["🔡 Passport Backup Words"]
       E6["🔢 Passport PIN"]
       E6---E5
       end
@@ -1014,6 +1014,7 @@ You're now ready to create a new seed on your Passport.
    1. Choose Continue with the right button.
    1. Write down the six backup password onto a piece of waterproof paper.
    1. Verify your knowledge of the six words.
+   1 These "Passport Backup Words" are required to unlock your backup.
 1. [  ] Make a second backup
    1. Choose "Yes" to make a second Backup.
    1. Insert the second MicroSD Card[^38] supplied with the Passport.
@@ -1110,7 +1111,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     subgraph home["🏠🔒 Home Storage"]
       subgraph "Passport Package"
       A["🛡️ Your Passport"]
-      B["🔡 Passport Words"]
+      B["🔡 Passport Backup Words"]
       end
     end
 ```
@@ -1146,7 +1147,7 @@ Finally, you need to divy out the various backups and such you made[^39]:
     graph TD
     subgraph cloud["🌩️ Cloud Storage"]
       subgraph "Passport Package"
-      H["🔡 Passport Words"]
+      H["🔡 Passport Backup Words"]
       I["🔢 Passport PIN"]
       end
     end
