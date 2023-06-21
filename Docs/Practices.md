@@ -12,6 +12,14 @@ Yes, you may feel that this makes you vulnerable, but practically you are much m
 
 At the least, write them down somewhere and store it ... but it's better to have them in your transaction coordinator to maximize its accessibility to you.
 
+### Lose a Multisig Key, Move the Funds
+
+If you have a multisig account, such as a 2-of-3, you can often lose one or more keys and still access the money. Don't count on this, especially if you only have the minimum number of keys to access the account remaining.
+
+As _soon_ as you notice the missing key or keys, move all of the funds to a new account that you have all the keys for.
+
+Otherwise, you may now be facing a SPOF, where a single key loss could result in the loss of your account.
+
 ### Keep Your Cords
 
 If your hardware wallets have special cords (anything but USB-A or USB-C), keep those cords with the wallets. Do this even if means that you have to buy extra cords. Having to search for cords when you want to use a wallet will just discourage you from maintaining the #SmartCustody of your assets.
