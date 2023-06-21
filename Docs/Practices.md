@@ -14,7 +14,7 @@ At the least, write them down somewhere and store it ... but it's better to have
 
 ### Keep Your Cords
 
-If your hardware wallets have special cords (anything but USB-A or USB-C), keep those cords with the wallets. Do this even if means that you have to buy extra cords. Having to search for cords when you want to use a wallet will just discourage you from maintaing the #SmartCustody of your assets.
+If your hardware wallets have special cords (anything but USB-A or USB-C), keep those cords with the wallets. Do this even if means that you have to buy extra cords. Having to search for cords when you want to use a wallet will just discourage you from maintaining the #SmartCustody of your assets.
 
 ## Developer Practices
 
