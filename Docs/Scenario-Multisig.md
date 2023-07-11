@@ -463,7 +463,7 @@ The creation of a multisig is initiated on your transaction coordinator. This sc
    1. Name it[^13].
    1. "Create Wallet".
 1. [  ] Choose "Multi Signature" for "Policy Type".
-   1. Leave "Native Segwit" as the "Script Type"[^14].
+   1. Leave "Native Segwit (P2WSH)" as the "Script Type"[^14].
 1. [  ] Choose "2/3" for the "M of N". This should be the default.
 
 At this point, you will need to finalize your decision for which Signing Devices to use. If you're following the default setup suggested here, you'll use Gordian Seed Tool on an iPhone and a Passport as your two active signing devices and Gordian Seed Tool on a separate iDevice to create your recovery key. However, you may choose **Alternative Signing Devices**. Choosing an alternative recovery device will replace steps D & E; choosing an alternative active signing device will replace either step F or G. Just follow the separate steps in that option rather than the ones listed below in those cases.
@@ -512,13 +512,14 @@ Your recovery seed will be created, printed as SSKR shares, and then deleted. Th
 
 1. [  ] Load [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for MacOS[^nomacos] or iOS.
    1. If you prefer, build it yourself from [source](https://github.com/BlockchainCommons/GordianSeedTool-iOS).
-1. [  ] Go to the Gear icon, for Preferences, and turn OFF "Sync to iCloud".
+1. [  ] Go to the Gear icon, for Setting, and turn OFF "Sync to iCloud", then click "Done".
 1. [  ] Click the "+" and Add a Seed with "Quick Create"[^ianc].
 1. [  ] "Save" it.
 1. [  ] Print the SSKR for the Seed[^printingproblems].
    1. Touch the Seed.
    1. Touch "Authenticate".
    1. Touch "Backup" and Choose "Backup as SSKR Multi-Share".
+   1. Leave the format as "Gordian Envelope".
    1. Choose "2 of 3" and touch "Next"[^sskrscenarios].
    1. "Print All Shares", using the default options, which call for a Summary Page and coupons printed on individual pages. Be sure you're not printing double-sided!
 
@@ -624,7 +625,7 @@ _Default Recovery Device:_ Gordian Seed Tool.
 
 You want to remove the electronic version of your Recovery Seed from Gordian Seed Tool, but then immediately make sure your SSKR shares are valid.
 
-1. [  ] Delete the Seed in Gordian Seed Tool by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
+1. [  ] Delete the Seed in Gordian Seed Tool from the main "Seeds" page by either swiping left on it and clicking "Delete" or by touching "Edit", then "-", then "Delete".
 1. [  ] Scan in Your SSKR from your printed shares.
    1. Select the "QR Scan" icon.
    1. Point it at the QR Code for one SSKR Share.
@@ -633,8 +634,8 @@ You want to remove the electronic version of your Recovery Seed from Gordian See
 1. [  ] Check Your Seed
    1. "Save" The Restored Seed
    1. Touch it to open it.
-   1. Does the shortened hex code match?
-   1. Does the Lifehash image match?
+   1. Does the shortened hex code match your printed SSKR shares?
+   1. Does the Lifehash image match your printed SSKR shares?
    1. Do the first one or two words of the name, describing a color, match?[^21]
    1. If anything is wrong, go back to Step D, but that shouldn't happen[^20].
 1. [  ] Again, delete your Seed.
@@ -687,7 +688,7 @@ Now that you know you can recover your seed from the recovery shards, you should
     
 **Transaction Coordinator Instructions:**
 
-1. [  ] Display the Account in Gordian Seed Tool
+1. [  ] Display the Descriptor in Gordian Seed Tool
    1. Select the seed.
    2. Touch "Authenticate"[^23]
    3. Touch "Derive Key" and "Other Key Derivations".
@@ -697,8 +698,9 @@ Now that you know you can recover your seed from the recovery shards, you should
    1. On Sparrow, Choose "Keystore 1", which should already be selected.
    2. Select "Airgapped Hardware Wallet".
    3. Click the "Scan" button for Gordian Seed Tool
-   4. Hold your iPhone displaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
+   4. Hold your iPhone displaying the Account Descriptor in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
+   6. A new Lifehash will be shown; it will be different from the one shown in GST[^lifehashchange].
 1. [  ] Change the label for "Keystore 1" in Sparrow to be something meaningful, such as "SSKR Recovery Key"[^25].
 
 You can now close out this seed in Gordian Seed Tool:
@@ -848,6 +850,7 @@ In the default Blockchain Commons scenario, Gordian Seed Tool is used to create 
    1. Rolling dice is probably the quickest and least tedious method[^debias].
    2. Drawing cards can take time because it's done with replacement: reshuffle after each draw.
    3. Flipping coins to generate 128 bits of entropy takes 128 flips. That's a lot!
+   4. Whichever method you use, keep going until you see at least 128 bits of entropy
 1. [  ] "Save" it.
 
 ```mermaid
@@ -865,7 +868,7 @@ You're now ready to read an xpub into your transaction coordinator[^31]:
 
 **Transaction Coordinator Instructions:**
 
-1. [  ] Display the Account in Gordian Seed Tool.
+1. [  ] Display the Descriptor in Gordian Seed Tool.
    1. Select the seed.
    2. Touch "Authenticate"[^23].
    3. Touch "Derive Key" and "Other Key Derivations".
@@ -2283,7 +2286,7 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^20]: **No Restore?** If it didn't restore, you have a problem. You're probably going to need to go back to Step D and create a new seed. But this really shouldn't happen.
 
-[^21]: **OIB Name.** The default Object Identity Block name has one or two words that describe the color of the Lifehash and two words that are random. So the last two words _will_ change. That's expected. The color words should _not_ change, but since they are not a standard, they could in rare cases, but if so they'd shift to a very similar description, such as from "Yinmn Blue" to "Dark Purple".
+[^21]: **OIB Name.** The default Object Identity Block name has one or two words that describe the color of the Lifehash and two words that are random. If you used Gordian Envelope as your backup format, those random words should be the same, because it preserves metadata such as names. (That's one of its big advantages!) If you used the legacy `ur:crypto-sskr` format, those last two words _will_ change. That's expected, because they'd need to be regenerated as part of a new name. However, even if you used the old format, or some other methodology that doesn't store metadata, color words should _not_ change. However, since they are not a standard, they could in rare cases, but if so they'd shift to a very similar description, such as from "Yinmn Blue" to "Dark Purple".
 
 [^22]: **Tedious Rechecks.** Tedious double- and triple-checking keeps your assets safe. And really, it should only take a minute to run through all three combinations of your shares[^22a].
 
@@ -2366,5 +2369,7 @@ As noted previously, please consider whether this letter should be specific or o
 [^appleinfo]: **Apple Info Theft.** We say that most people won't know what to do with access information for an Apple account. And we think that's true. But on the other hand there are sophisticated attackers who are [purposefully seeking out Apple access information in order to attack cryptocurrency holdings](https://twitter.com/serpent/status/1515545806857990149?s=21&t=JjMXGdO1X1VCl0_B4SUcVQ). The two-of-three setup in this scenario is likely to confound them, especially if they don't have the account map that describes how the various signatures fit together into an account, but this underlines why you need to take it very seriously and respond immediately if you lose "1.5 keys".
 
 [^coercion]: **Stopping Coercion.** We are aware of some solutions, such as the fact that the [Keystone wallet](https://keyst.one/) can create passphrase wallets that only become visible if you know the passphrase. Generally, we feel these accentuate other problems, specifically: (1) there is higher chance of loss for an "invisible" wallet, especially to heirs; and (2) there is a real chance of personal death for refusing to turn over a secret wallet under coercion. As with everything, it's a question of balance, and we balance vulnerability to this adversary as less important than loss or death.
+
+[^lifehashchange]: **Lifehash Differences.** Though the Lifehash libraries standardize the visual hash output for a specific input, different apps and devices and can choose to show Lifehashes for different objects. Gordian Seed Tool's main Lifehash is for the seed, while Sparrow shows a Lifehash for its master fingerprint. This makes sense for the two different programs, because GST was specifically built to store seeds, while Sparrow will often just have a key (and perhaps just a public key, for a read-only wallet). That means the two Lifehashes will differ. But, once you see a Lifehash on Sparrow, it should always be the same, just like the Lifehash should always be the same in Gordian Seed Tool. So how do you know the correct key got transferred from Gordian Seed Tool to Sparrow? You test it out by sending a small transaction back from Sparrow, later in this procedure.
 
 [^safetydeposit]: **Are Safety Deposit Boxes Safe?** Generally, yes, a safety deposit box is likely to be safer than anything but an unmovable safe that you personally control. Theoretically any safety deposit box requires dual control where you have one key and the bank the other. And theoretically your box is in a vault which is highly secured. But, safety deposit boxes are not fireproof. They're not waterproof. You don't know if a copy of a key has been made. Finally, they're not covered by FDIC protections, which can reduce a bank's incentives to keep them safe. A lot depends on both the trustworthiness of the bank and its adherence to security protocols. But even a great bank may not be enough: some states have become very aggressive about seizing (stealing) material from safety deposit boxes if they're "abandoned" ... which it turns out can mean that they're [not accessed for a few years](https://abcnews.go.com/GMA/story?id=4832471&page=1). California made news with seizures after a mere three years, but other states have given themselves the right to do so after ten years. Overall, this scenario should keep you protected from the worst potential problems, because you'll visit your safety deposit box every year, and because it doesn't contain enough keys to access your digital assets. Just be aware that it might be less safe than you think.
