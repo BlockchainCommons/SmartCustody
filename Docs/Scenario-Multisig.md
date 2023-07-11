@@ -140,14 +140,14 @@ If you are an experiened user, you may wish to also consult the **Alternative St
 
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
 
-* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/), with a webcam (or built-in camera).
+* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/), with a webcam (or built-in camera). [Last test: Sparrow 1.7.7]
 * [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)[^inkjet][^acidfree]
 
 Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
 
-* [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/) for active seed.
+* [  ] [Foundation Devices Passport](https://foundationdevices.com/passport/details/) for active seed. [Last test: Passport batch 2]
 * [  ] iPhone or iPod Touch to run [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229) for active seed[^noandroid]. Alternatively, a computer running MacOS[^nomacos].
-* [  ] Separate[^2] iPhone or iPod to temporarily create and shard recovery seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229). Alternatively, a computer running MacOS[^nomacos].
+* [  ] Separate[^2] iPhone or iPod to temporarily create and shard recovery seed using [Gordian Seed Tool](https://apps.apple.com/us/app/gordian-seed-tool/id1545088229). Alternatively, a computer running MacOS[^nomacos]. [Last test: GST 1.6]
 
 The three devices selected are all second-generation signing device technology[^3][^4]. See the footnotes for discussions of why we choose these specifically[^5].  See **Step C** for making different choices.
 
@@ -959,7 +959,7 @@ In the default Blockchain Commons scenario, a Foundation Devices Passport is use
 If you have never before used your Passport, you'll need to set it up:
 
 1. [  ] Open up your Passport, being sure that security seals are all still present[^35].
-1. [  ] Power on your Passport by holding down the bottom-left button.
+1. [  ] Power on your Passport by holding down the right-hand button.
 1. [  ] Do the bureaucratic steps.
    1. Call up the setup instructions with the QR.
    2. Agree to the terms of service.
