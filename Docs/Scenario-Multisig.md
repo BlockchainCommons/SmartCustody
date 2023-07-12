@@ -13,6 +13,8 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 > _You can verify the authenticity of this scenario by looking at the [history of this file](https://github.com/BlockchainCommons/SmartCustody/commits/master/README.md) and seeing that all recent commits were made by @shannona or @ChristopherA and that they are **Verified**, which means they were signed with a registered GPG key. We may offer a more formal signing of this file or the #SmartCustody book in the future._
 
+***History:*** This procedure was updated in July 2023 for Gordian Seed Tool 1.6, Foundation Passport Batch 2 (the bronze-colored one), and Sparrow 1.7.7.
+
 ## Introduction to the Multisig Scenario
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either through accident or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to support strong usability, it can be used to simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
@@ -159,7 +161,7 @@ The following items are recommended, but don't let their absence stop you from s
 The following items are even more optional, but will increase the resilience of your scenario:
 
 * [  ] SD Card Reader for iPhone (For example [https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09CKZ41XP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) )
-* [  ] MicroSD Adapter with an extra, industrial grade MicroSD card (For example [https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) ): though not required for the procedure, this will allow you to read MicroSD cards, such as those used by the Passport, on other devices. Overall, you will want to have 3 MicroSD cards. If you use the default procedure, you will purchase one with this Adapter (be sure it's industrial-grade!) and have two others from your Passport.
+* [  ] Two extra, industrial grade MicroSD cards (For example [https://www.amazon.com/SanDisk-Industrial-MicroSD-SDSDQAF3-008G-I-Adapter/dp/B07BZ5SY18/](https://www.amazon.com/SanDisk-Industrial-MicroSD-SDSDQAF3-008G-I-Adapter/dp/B07BZ5SY18/)). Overall, you will want to have 3 MicroSD cards. If you use the default procedure, you will get one (plus a USB-C adapter) with your Passport, and purchase two more. If you have an older computer that doesn't support USB-C, you may need an older adapter such as [this MiniSD adapter](https://www.amazon.com/gp/product/B08K8H6Q6T).
 * [  ] Encrypted Cloud-based note storage, such as [BitWarden](https://bitwarden.com/)
 
 Finally, see [Additional Steps](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#options-i-additional-steps) for some additional purchases you could make to improve resilience even more, at the cost of some complexity. We think that [fire-resistant bags](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-bags-fire-resistant), [tamper-evident bags](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-bags-tamper-evident), and [metal storage](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#optional-step-use-metal-storage) can all give notable improvements without a lot of cost.
@@ -960,39 +962,42 @@ If you have never before used your Passport, you'll need to set it up:
 
 1. [  ] Open up your Passport, being sure that security seals are all still present[^35].
 1. [  ] Power on your Passport by holding down the right-hand button.
-1. [  ] Do the bureaucratic steps.
+   1. If this is a new Passport, you may actually need to charge it up. Hopefully you did this in advance of the procedure.
+1. [  ] See that the Firmware validates.
+   1. The Passport light should go blue.
+1. [  ] Choose a "Manual Setup" of your Passport.
    1. Call up the setup instructions with the QR.
    2. Agree to the terms of service.
 1. [  ] Conduct the Supply-Chain Validation[^35].
-   1. Scan the Validation Code from the setup instructions.
-   2. Copy the four words that appear on your Passport back to the web page.
-   3. Verify that the result is a "Success!"
+   1. Choose your Passport type in the setup instructions.
+   2. Scroll down to "Supply Chain Validation" on the website and click through to setup without Envoy.
+   3. Choose your Passport type again.
+   4. Scan the QR code displayed in the setup with your Passport.
+   5. Copy the four words that appear on your Passport back to the web page and click "Validate".
+   6. Verify that your Passport "Passed".
+   7. Continue forward on your Passport and acknowledge it "Passed"[^passed].
 1. [  ] Enter a PIN[^pins]. 
-   1. Start out by entering four numbers.
-   2. Note the two words shown; these will be shown any time you enter the start of your PIN, so that you know your Passport has not been compromised or swapped.
-   3. Enter at least two more digits and hit the right button to store your PIN.
+   1. Enter your PIN.
    4. Verify your PIN.
    5. Record your PIN[^passwords] to a piece of waterproof paper.
 
 It is strongly recommended that you update the firmware on your Passport before you begin using it[^36].
 
-1. [  ] Check the Firmware version on your Passport: v___________.
-   1. This can be found at Settings > Firmware > Firmware Version.
-1. [  ] Check the current Firmware version on the Setup Page: v____________.
-   1. If the Passport Firmware is less than the current Firmware, then continue (otherwise you're done).
-1. [  ] Download the current Firmware from the Setup page to a computer.
-1. [  ] Verify the firmware with `gpg`[^verifypassport].
+1. [  ] Download the current firmware for your device: [https://docs.foundationdevices.com/firmware-update](https://docs.foundationdevices.com/firmware-update).
+1. [  ] Write down the Firmware version: v____________.
+1. [  ] Optionally verify the firmware with `gpg`[^verifypassport].
+   1. The Passport firmware will only install on your Passport device if it is correctly signed, however it's always best practice to verify that sort of thing yourself. 
    1. Download the [foundation key](https://docs.foundationdevices.com/foundation_key.pgp).
    2. Import it with `gpg --import foundation_key.pgp`.
    3. Watch for key id `57C004A520148A68` with fingerprint `E7FA 9F9E 3477 BA54 9091 B6A7 57C0 04A5 2014 8A68`.
-   4. Download the signature file from [Github](https://github.com/Foundation-Devices/passport-firmware/releases) for the version you downloaded.
-   5. Test the signature file `gpg --verify passport-fw-X.Y.Z.bin.sig` (where X.Y.Z is the version)
-   6. Check the `shasum`: `shasum -b -a 256 passport-fw-X.Y.Z.bin`.
+   4. Download the signature file from [Github](https://github.com/Foundation-Devices/passport2/releases) for the version of `passport.bin` that you downloaded.
+   5. Test the signature file `gpg --verify VX.Y.Z-passport.bin.sig` (where X.Y.Z is the version)
+   6. Check the `shasum`: `shasum -b -a 256 VX.Y.Z-passport.bin`. It should match VX.Y.Z-sha256, also available from the GitHub releases page.
    7. If the signatures and sums match up, then you can feel good about installing.
-1. [  ] Copy the Firmware to a MicroSD card inserted into your computer, using an adapter[^37].
-1. [  ] Install the Firmware on your Passport.
-   1. Insert the MicroSD card into the top of your Passport.
-   1. On your Passport, choose Settings > Firmware > Update Firmware
+1. [  ] Copy the Firmware to a MicroSD card insert it into your computer, using an adapter[^37].
+1. [  ] Insert the MicroSD into your Passport.
+1. [  ] OK your Passport to update your Firmware.
+1. [  ] Choose the correct file on your MicroSD & agree to update it.
   
 ```mermaid
     graph LR;
@@ -1015,12 +1020,13 @@ You're now ready to create a new seed on your Passport.
    1. Choose Continue with the right button.
    1. Insert the first MicroSD Card[^38] supplied with the Passport.
    1. Choose Continue with the right button.
-   1. Write down the six backup password onto a piece of waterproof paper.
-   1. Verify your knowledge of the six words.
-   1 These "Passport Backup Words" are required to unlock your backup.
+   1. Write down the 20-digit backup code onto a piece of waterproof paper.
+   1. Verify your knowledge of the code.
+   1 That code is required to unlock your backup!
 1. [  ] Make a second backup
-   1. Choose "Yes" to make a second Backup.
-   1. Insert the second MicroSD Card[^38] supplied with the Passport.
+   1. We recommend you make a second backup with an additional MicroSD
+   1. Choose to make a second Backup with "Backup Now" from the Backup menu.
+   1. Insert a second MicroSD Card[^38].
    1. Choose Continue to make the Backup.
 
 ```mermaid
@@ -1042,9 +1048,10 @@ You can now import an account into your transaction coordinator.
 **Transaction Coordinator Instructions:**
 
 1. [  ] Display a Public Cosigner QR for Your Seed on the Passport.
-   1. Choose "Pair Wallet" on your Passport.
+   1. Choose "Manage Account" on your Passport.
+   2. Choose "Connect Wallet"
    1. Choose "Sparrow".
-   1. Choose "Multi-Sig". 
+   1. Choose "Multisig". 
    1. Choose "QR Code".
    1. Choose "Continue".
    1. An animated QR Code should be displayed.
@@ -2328,7 +2335,7 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^verifypassport]: **Verifying Passport's Firmware.** See ["Verifying the Firmware"](https://docs.foundationdevices.com/firmware-update) at Foundation Devices. This is important to ensure that Foundation Devices' web page hasn't been compromised.
 
-[^37]: **MicroSDs & SDs.** A MicroSD card is about the size of a fingernail. It can fit in your Passport, your iPhone, and other small devices. An SD card is about the size of your thumb. That's the size more typically used for computers. In order to use a MicroSD card on a computer, you'll typically need an [adapter](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), which is the size of an SD card. That'll let you read and write the MicroSD on your computer. You then remove the MicroSD card from the adapter, and you can use it with your Passport. 
+[^37]: **MicroSDs & SDs.** A MicroSD card is about the size of a fingernail. It can fit in your Passport, your iPhone, and other small devices. An SD or MiniSD card is about the size of your thumb. That's the size more typically used for computers. In order to use a MicroSD card on a computer, you'll typically need an adapter. Your Passport came with a hand USB-C adapter, but if you have an older computer, you'll need a [MiniSD adapter](https://www.amazon.com/gp/product/B08K8H6Q6T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). Either adapter will let you read and write the MicroSD on your computer. You then remove the MicroSD card from the adapter, and you can use it with your Passport. 
 
 [^38]: **Which Card is Which? (Redux).** These two cards are the two that came with your Passport. If you are using the "Suggested Resilience Improvement" of this Scenario, where you also back up SSKR shares to MicroSD cards[^18], you will _not_ make a backup to the extra card you have, because that one is going to be stored at home, which also has a copy of your backup words.
 
@@ -2370,6 +2377,8 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^coercion]: **Stopping Coercion.** We are aware of some solutions, such as the fact that the [Keystone wallet](https://keyst.one/) can create passphrase wallets that only become visible if you know the passphrase. Generally, we feel these accentuate other problems, specifically: (1) there is higher chance of loss for an "invisible" wallet, especially to heirs; and (2) there is a real chance of personal death for refusing to turn over a secret wallet under coercion. As with everything, it's a question of balance, and we balance vulnerability to this adversary as less important than loss or death.
 
-[^lifehashchange]: **Lifehash Differences.** Though the Lifehash libraries standardize the visual hash output for a specific input, different apps and devices and can choose to show Lifehashes for different objects. Gordian Seed Tool's main Lifehash is for the seed, while Sparrow shows a Lifehash for its master fingerprint. This makes sense for the two different programs, because GST was specifically built to store seeds, while Sparrow will often just have a key (and perhaps just a public key, for a read-only wallet). That means the two Lifehashes will differ. But, once you see a Lifehash on Sparrow, it should always be the same, just like the Lifehash should always be the same in Gordian Seed Tool. So how do you know the correct key got transferred from Gordian Seed Tool to Sparrow? You test it out by sending a small transaction back from Sparrow, later in this procedure.
+[^lifehashchange]: **Lifehash Differences.** Though the Lifehash libraries standardize the visual hash output for a specific input, different apps and devices and can choose to show Lifehashes for different objects. Gordian Seed Tool's main Lifehash is for the seed, while Sparrow shows a Lifehash for its master fingerprint. This makes sense for the two different programs, because GST was specifically built to store seeds, while Sparrow will often just have a key (and perhaps just a public key, for a read-only wallet). That's why Seed Tool displays a variety of different Lifehashes, past its default one for the seed. Beyond that, once you see a default Lifehash on one device, it should always be the same on that device.
+
+[^passed]: **What if the Supply-Chain Check Failed?** Obviously, don't use a device to store your keys if it doesn't pass its security checks!
 
 [^safetydeposit]: **Are Safety Deposit Boxes Safe?** Generally, yes, a safety deposit box is likely to be safer than anything but an unmovable safe that you personally control. Theoretically any safety deposit box requires dual control where you have one key and the bank the other. And theoretically your box is in a vault which is highly secured. But, safety deposit boxes are not fireproof. They're not waterproof. You don't know if a copy of a key has been made. Finally, they're not covered by FDIC protections, which can reduce a bank's incentives to keep them safe. A lot depends on both the trustworthiness of the bank and its adherence to security protocols. But even a great bank may not be enough: some states have become very aggressive about seizing (stealing) material from safety deposit boxes if they're "abandoned" ... which it turns out can mean that they're [not accessed for a few years](https://abcnews.go.com/GMA/story?id=4832471&page=1). California made news with seizures after a mere three years, but other states have given themselves the right to do so after ten years. Overall, this scenario should keep you protected from the worst potential problems, because you'll visit your safety deposit box every year, and because it doesn't contain enough keys to access your digital assets. Just be aware that it might be less safe than you think.
