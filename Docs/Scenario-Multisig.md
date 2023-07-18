@@ -13,7 +13,7 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 > _You can verify the authenticity of this scenario by looking at the [history of this file](https://github.com/BlockchainCommons/SmartCustody/commits/master/README.md) and seeing that all recent commits were made by @shannona or @ChristopherA and that they are **Verified**, which means they were signed with a registered GPG key. We may offer a more formal signing of this file or the #SmartCustody book in the future._
 
-***History:*** This procedure was updated in July 2023 for Gordian Seed Tool 1.6, Foundation Passport Batch 2 (the bronze-colored one), and Sparrow 1.7.7.
+***History:*** This procedure was updated in July 2023 for Gordian Seed Tool 1.6, Foundation Passport Batch 2 (the bronze-colored one), and Sparrow 1.7.8.
 
 ## Introduction to the Multisig Scenario
 
@@ -142,7 +142,7 @@ If you are an experiened user, you may wish to also consult the **Alternative St
 
 The following items are necessary for this procedure, and should be purchased[^sca] in advance of your setting up this scenario.
 
-* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/), with a webcam (or built-in camera). [Last test: Sparrow 1.7.7]
+* [  ] Existing Laptop or Desktop Computer capable of running [Sparrow Wallet](https://sparrowwallet.com/), with a webcam (or built-in camera). [Last test: Sparrow 1.7.8]
 * [  ] 1 Package Waterproof Laser Paper (TerraSlate, made of 1-PET [https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4](https://www.amazon.com/TerraSlate-Paper-Waterproof-Printer-Sheets/dp/B00NWVGOF4) or Rite in the Rain All-Weather Copier Paper, made of coated recyclable wood [https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/](https://www.amazon.com/Rite-Rain-All-Weather-Copier-8511/dp/B0016H1RYE/) or equivalent)[^inkjet][^acidfree]
 
 Three devices are required to hold seeds: two active devices and one recovery device. We suggest the following:
@@ -702,7 +702,7 @@ Now that you know you can recover your seed from the recovery shards, you should
    3. Click the "Scan" button for Gordian Seed Tool
    4. Hold your iPhone displaying the Account Descriptor in front of the camera for your computer running Sparrow.
    5. An xpub of the appropriate key derivation should be imported.
-   6. A new Lifehash will be shown; it will be different from the one shown in GST[^lifehashchange].
+   6. The subsidiary Lifehash for your seed, which depicts the Lifehash for the master fingerprint, should match the small Lifehash shown in Sparrow[^lifehashchange].
 1. [  ] Change the label for "Keystore 1" in Sparrow to be something meaningful, such as "SSKR Recovery Key"[^25].
 
 You can now close out this seed in Gordian Seed Tool:
@@ -1060,18 +1060,9 @@ You can now import an account into your transaction coordinator.
    2. Select "Airgapped Hardware Wallet".
    3. Click the "Scan" button for Passport Multisig.
    4. Hold your Passport desplaying the Cosigner Public Key in front of the camera for your computer running Sparrow.
-   5. If your computer is having problems reading the QR, consider shading it to reduce glare and/or hitting the right button for Resize, to display a smaller QR.
+   5. If your computer is having problems reading the QR, consider shading it to reduce glare.
    6. An xpub of the appropriate key derivation should be imported.
-1. [  ] Verify the multisig from Sparrow[^sharing].
-   1. Click "Export" on Sparrow.
-   1. Select "Show" next to "Passport Multisig".
-   1. Scan the animated QR into your Passport
-   1. When it gives you the option to create a wallet, click the right-button on your Passport to do so.
-1. [  ] Verify an address from Sparrow.
-   1. On Sparrow, cancel the "Export" and go to "Receive"
-   1. Scan the address into your Passport.
-   1. This should complete the two-stage verification that your Passport seed has been imported correctly
-1. [  ] Change the label for "Keystore 3" in Sparrow to be something meaningful like "FDP Active Key"[^25].
+1. [  ] Change the label for "Keystore 3" in Sparrow to be something meaningful like "Passport Active Key"[^25].
 
 ```mermaid
     graph BT;
@@ -1084,12 +1075,6 @@ You can now import an account into your transaction coordinator.
 
 <p align="center"><b><i>Figure 15: Active Seed #2 Entry</i></b></p>
 
-There's one last bit of administrivia for Passport:
-
-1. [  ] Update your backups
-   1. At this time, your Passport will suggest that you update the backups you just made.
-   1. You should do so, so that if your recover from backup, the backups include the Sparrow connection.
-   1. Be sure to also replace your second backup.
 
 ```mermaid
     graph TD;
@@ -1197,13 +1182,37 @@ After you have added three keys to your transaction coordinator, either using th
 
 **Transaction Coordinator Instructions:**
 
-1. [  ] Click "Apply" in Sparrow.
-2. [  ] Choose whether to add a password; you probably should not[^42].
-3. [  ] Export your account.
-   1. Choose "Export".
-   1. Click "Export File" next to "Output Descriptor".
-4. [  ] Print copies of the Descriptor and save to Home Storage, Primary Storage, and Secondary Storage.
+1. [  ] Finalize the Multisig in Sparrow
+   1. Choose "Apply".
+   2. Do not set a password[^42].
+1. [  ] Backup the Multisig Output Descriptor.
+   1. Save the wallet output descriptor with your xpubs as a PDF.
+   2. Print it onto waterproof paper.
+   3. Store copies in each of your Storage locations.
 
+**Passport Instruction:**
+
+If you used Passport for one of your active seeds, it requires some additional finalization following the final creation of your multisig.
+
+1. [  ] Verify the multisig from Sparrow[^sharing].
+   1. Click "Export" on Sparrow to export the Multisig Output Descriptor.
+   1. Select "Show" next to "Passport Multisig".
+   1. Scan the animated QR into your Passport.
+   1. If the scanning isn't working well, choose to "Decrease Density" in Sparrow. (You'll need to go back to "Connect Wallet" on the Passport and then move forward until you get back to the screen to read in the output descriptor QR.)
+   1. When it gives you the option to create a wallet, click the right-button on your Passport to do so.
+1. [  ] Verify an address from Sparrow.
+   1. On Sparrow, cancel the "Export" and go to "Receive"
+   1. Scan the address into your Passport.
+   1. This should complete the two-stage verification that your Passport seed has been imported correctly
+   
+There's one last bit of administrivia for Passport:
+
+1. [  ] Update your backups
+   1. This is a good time to update the backup on your Passport.
+   2. Click back to the Main Passport menu.
+   3. Choose "Backup"
+   4. Choose "Backup Now"
+   5. Repeat the Backup Process.
 ```mermaid
     graph TB;
     A["🏠 💻 🪶 Transaction Coordinator"]
@@ -2377,7 +2386,7 @@ As noted previously, please consider whether this letter should be specific or o
 
 [^coercion]: **Stopping Coercion.** We are aware of some solutions, such as the fact that the [Keystone wallet](https://keyst.one/) can create passphrase wallets that only become visible if you know the passphrase. Generally, we feel these accentuate other problems, specifically: (1) there is higher chance of loss for an "invisible" wallet, especially to heirs; and (2) there is a real chance of personal death for refusing to turn over a secret wallet under coercion. As with everything, it's a question of balance, and we balance vulnerability to this adversary as less important than loss or death.
 
-[^lifehashchange]: **Lifehash Differences.** Though the Lifehash libraries standardize the visual hash output for a specific input, different apps and devices and can choose to show Lifehashes for different objects. Gordian Seed Tool's main Lifehash is for the seed, while Sparrow shows a Lifehash for its master fingerprint. This makes sense for the two different programs, because GST was specifically built to store seeds, while Sparrow will often just have a key (and perhaps just a public key, for a read-only wallet). That's why Seed Tool displays a variety of different Lifehashes, past its default one for the seed. Beyond that, once you see a default Lifehash on one device, it should always be the same on that device.
+[^lifehashchange]: **Lifehash Variations.** Sparrow doesn't actually get your seed! That means that you can't match the seed's Lifehash on Sparrow. So how do you know that your multisig was created correctly? Sparrow innovated the use of Lifehash for the master fingerprint derived from a seed. It's shown as a subsidiary Lifehash in Gordian Seed Tool and as the main Lifehash in Sparrow, both times right next to the master fingerprint.
 
 [^passed]: **What if the Supply-Chain Check Failed?** Obviously, don't use a device to store your keys if it doesn't pass its security checks!
 
