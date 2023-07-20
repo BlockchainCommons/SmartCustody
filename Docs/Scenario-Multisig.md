@@ -1306,7 +1306,7 @@ Particularly in the case of a multisig, you want to test your new account by bot
 
 1. [  ] Send funds to your Multisig address from a remote wallet.
    1. Click "Receive" in Sparrow.
-   2. **Passport Instructions:** Test the address in Passport by choosing "Verify Address" and scanning it.
+   2. **Passport Instructions:** Test the address in Passport by choosing "Verify Address", selecting your multisig address, and scanning it. You should see verification that the address matches the multisig output descriptor that you previously imported.
    3. Read the address or QR into a remote wallet.
    4. Send a _small_ amount of funds to the multisig address from your remote wallet.
 1. [  ] Wait for the funds to arrive.
@@ -1323,18 +1323,20 @@ Particularly in the case of a multisig, you want to test your new account by bot
 1. [  ] ***Passport Instructions:*** Sign with your Passport[^43].
    1. Click "Show QR" in Sparrow
    1. Power on your Passport, and sign in with your PIN.
-   1. Select "Sign with QR Code".
-   1. Hit the right-button on your Passport to review the transaction[^44] and Sign.
-   1. Hit "Cancel" on Sparrow to end the "Show QR", then click "Scan QR".
-   1. You may need to "Resize" the Passport QR to make it smaller and/or protect the screen from glare.
-   1. You should see a status bar slowly increase as the QR is read in, and eventually the screen should show "FDP Active Key" (or whatever the name) has signed.
+   1. Select "Sign with QR Code". Scan the QR.
+   2. Review the amount and destination[^44].
+   3. Hit the right-button, review the change.
+   4. Hit the right-button, review the fee.
+   5. Choose to "Sign Transaction"
+   1. Hit "Cancel" on Sparrow to end the "Show QR", then click "Scan QR". Show the QR to your Computer with Sparrow.
+   1. You should see a status bar slowly increase as the QR is read in, and eventually the screen should show "Passport" (or whatever the name) has signed.
 1. [  ] ***GST Instructions:*** Sign with Gordian Seed Tool[^43].
    1. Click "Show QR" in Sparrow.
    1. Start up Gordian Seed Tool and hit the "Scan" (QR Code) button
    1. Review the transaction[^44] and "Approve".
-   1. Select "QR Code" under "ur:crypto-psbt"
-   1. Hit "Cancel" on Sparrow to end the "Show QR", then click "Scan QR".
-   1. You should see a status bar quickly increase as the QR is read in, and eventually the screen should show "GST Active Key" (or whatever the name) has signed.
+   1. Select "QR Code".
+   1. Hit "Cancel" on Sparrow to end the "Show QR", then click "Scan QR". Show the QR to your Computer with Sparrow"
+   1. You should see a status bar quickly increase as the QR is read in, and eventually the screen should show "Gordian Seed Tool" (or whatever the name) has signed.
 1. [  ] Touch "Broadcast Transmission"[^43]
 1. [  ] Wait for the funds to arrive.
    1. Click "Transactions" in Sparrow.
