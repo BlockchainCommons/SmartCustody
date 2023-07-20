@@ -118,7 +118,8 @@ This procedure incorporates 14 steps, divided in four logical parts:
 * **[Appendix III: SPOCs & SPOFs in This Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iii-spofs--spocs-in-this-scenario)** — Compromise & failure.
 * **[Appendix IV: Preserving Assets for Your Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-iv-preserving-assets-for-your-heirs)** — Why asset preservation is important.
 * **[Appendix V: Sample Letter to Heirs](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-v-sample-letter-to-heirs)** — What to say about your assets.
-
+* **[Appendix VI: Automating Scenarios](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md#appendix-vi-automating-scenarios)** — How to improve this through automated design.
+* 
 ### Initial Questions
 
 The following decisions are required for this procedure. You will be prompted in individual steps, but may wish to prepare by making the decisions now.
@@ -2234,7 +2235,45 @@ Run On: Old Laptop Computer (MacBook Air 2017 model with Grateful Dead sticker)
 Access Info: Password is at Safety Deposit Box
 ```
 As noted previously, please consider whether this letter should be specific or opaque, depending on the security of the locations where you're storing it. You may even need to have multiple versions of the letter: one for high-security locales (such as a safe), one for low-security locales (such as mom's bookshelf).
- 
+
+### Appendix VI: Automating Scenarios
+
+Just a few years ago, it wasn't possible for individuals to easily create multisig scenarios to resiliently store their funds. Now, thanks to next-generation transaction coordinators such as Sparrow, anyone can do so. 
+
+Except the process remains cumbersome. Sparrow does a great job of making it as easy as possible by showing and reading QR codes, but the user still needs to figure out which QR codes to display and when. In a recent revision of this scenario, the authors hit a stumbling block when they accidentally exported the QR code for a single keystore from Sparrow to Passport, when Passport actually wanted a QR code representing the entire multisig. This underlines the need to replace user selection of QR codes with bidirectional requests and responses, so that each device can ask for exactly what it needs at each point. The possibility for user error is taken out of the equation[^usererror].
+
+This sort of request and response is supported by Blockchain Commons' [Gordian Envelope specification](https://www.blockchaincommons.com/introduction/Envelope-Intro/) which allows for requests and responses using [Envelope Expressions](https://github.com/BlockchainCommons/Gordian/blob/master/Envelope/Expressions.md).
+
+In the case of this scenario, steps C-H could be simplified as following using Gordian Envelope's requests and responses:
+
+1. User creates a 2-of-3 multisig on Sparrow.
+2. User decides to create the first key on an airgapped device.
+3. A window pops up in Sparrow telling the user to display a QR code to their their first seed vault, which is the Gordian SeedTool (GST) program with the Recovery Seed.
+4. The QR code is an Envelope with a request for any key with a specific derivation path (probably `48'/0'/0'/2'`).
+5. GST reads it, and tells the user that Sparrow is requesting a pubkey with a `48'/0'/0'/2'` derivation path.
+6. The user is given an option to use an existing key or even create a new one, to ensure the entire process is automated.
+7. GST pops up an Envelope response as a QR code.
+8. The user tells Sparrow that the request has been read, and Sparrow immediately pops up a camera to read the response.
+9. Sparrow stores the first key.
+10. The user decides to create the second key on an airgapped device, and steps #3-9 are repeated for the second key, which is the Active Key stored on GST.
+11. The user decides to create the third key on an airgapped device, and steps #3-9 are repeated for the third key, which is the Active Key stored on Passport.
+12. Passport displays a new window that says, "When the multisig is finalized, show this QR code to Sparrow to retrieve the multisig configuration".
+13. The user tells Sparrow to read a QR request and shows it the Passport request.
+14. Sparrow creates an Envelope response as a QR code with the multisig descriptor that Passport requested.
+15. The user tells Passport that the request has been read, and Passport immediately pops up a camera to read the response.
+16. Passport reads the QR response from Sparrow and verifies for the user that the multisig has been created properly.
+
+Using the multisig account could similarly be simplified:
+
+1. User creates a transaction on Sparrow.
+2. Sparrow generates a PSBT as a request, which is read by GST.
+3. GST generates an updated PSBT as a request, which is read by Passport.
+4. Passport generates a fully signed PSBT as a response, which is read by Sparrow.
+5. Sparrow sends the transaction.
+
+In each case, the goal is to minimize fiddling around and looking for the precise information that another device wants, which also minimizes the possibility for error when doing so. However, that has to be done while _maximizing_ choice. Users should still know exactly what's being requested and make a proactive decision to share the info (or sign the PSBT or whatever). Gordian Envelopes offer a great start to that, though they still need to be supported with best practices for incorporating notes into the Envelopes and maximizing the information that's shown to users concerning a request.
+
+
 ## Credits
     
 **Authors:** Christopher Allen, Shannon Appelcline
@@ -2393,3 +2432,5 @@ As noted previously, please consider whether this letter should be specific or o
 [^passed]: **What if the Supply-Chain Check Failed?** Obviously, don't use a device to store your keys if it doesn't pass its security checks!
 
 [^safetydeposit]: **Are Safety Deposit Boxes Safe?** Generally, yes, a safety deposit box is likely to be safer than anything but an unmovable safe that you personally control. Theoretically any safety deposit box requires dual control where you have one key and the bank the other. And theoretically your box is in a vault which is highly secured. But, safety deposit boxes are not fireproof. They're not waterproof. You don't know if a copy of a key has been made. Finally, they're not covered by FDIC protections, which can reduce a bank's incentives to keep them safe. A lot depends on both the trustworthiness of the bank and its adherence to security protocols. But even a great bank may not be enough: some states have become very aggressive about seizing (stealing) material from safety deposit boxes if they're "abandoned" ... which it turns out can mean that they're [not accessed for a few years](https://abcnews.go.com/GMA/story?id=4832471&page=1). California made news with seizures after a mere three years, but other states have given themselves the right to do so after ten years. Overall, this scenario should keep you protected from the worst potential problems, because you'll visit your safety deposit box every year, and because it doesn't contain enough keys to access your digital assets. Just be aware that it might be less safe than you think.
+
+[^usererror]: **The Possibility for User Error is Taken Out of the Equation.** Mostly.
