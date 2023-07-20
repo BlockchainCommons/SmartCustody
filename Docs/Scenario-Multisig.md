@@ -5,7 +5,7 @@
 
 ##### Reviewed by Joe Andrieu, Eric Schuh, and Foundation Devices Staff
 
-_**WARNING:** This is currently a first draft, which has undergone incomplete review. We welcome more review; please post any comments in [issues](https://github.com/BlockchainCommons/SmartCustody/issues)._
+_**WARNING:** This is currently a revised first draft, which has undergone incomplete review. We welcome more review; please post any comments in [issues](https://github.com/BlockchainCommons/SmartCustody/issues)._
 
 _This is one of several possible scenarios for digital-asset storage. Other scenarios may use different default hardware and address different adversaries._
 
