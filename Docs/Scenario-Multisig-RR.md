@@ -14,7 +14,7 @@ Following is a look at the current system laid out by the Multisig Self-Custody 
 
 Following is a sequence diagram of the classic design of multisig detailed in [Multisig Self-Custody Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md), which makes use of current best-in-class transaction coordinator capabilities found in Sparrow Wallet. 
 
-```
+```mermaid
 sequenceDiagram
 participant Rs as Recovery Shares
 participant R as Recovery Device
