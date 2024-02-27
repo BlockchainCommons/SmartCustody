@@ -10,3 +10,47 @@ If a user can click "Create Multisig" on their transaction coordinator, and then
 
 Following is a look at the current system laid out by the Multisig Self-Custody Scenario and a hopeful future system using a Request/Response system.
 
+## Classic Scenario
+
+Following is a sequence diagram of the classic design of multisig detailed in [Multisig Self-Custody Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md), which makes use of current best-in-class transaction coordinator capabilities found in Sparrow Wallet. 
+
+```
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery Device
+participant S1 as Passport
+actor TC as Sparrow
+participant S2 as GST
+
+note right of TC: 🧠 USER: How do I create multisig?
+note right of TC: 💡 USER: What multisig?
+TC->>TC: 🙎🏽 Create Multisig
+
+note right of R: 🧠 USER: How do I create seed?
+R->>R: 🙎🏽 Create Recovery Seed
+note right of R: 🧠 USER: How do I shard seed?
+R->>Rs: 🙎🏽 Create SSKR Shares
+R->>R: 🙎🏽 Delete Seed
+Rs->>R: 🙎🏽 Test SSKR Shares A+B
+R->>R: 🙎🏽 Delete Seed
+Rs->>R: 🙎🏽 Test SSKR Shares B+C
+R->>R: 🙎🏽 Delete Seed
+Rs->>R: 🙎🏽 Test SSKR Shares A+C
+
+note right of R: 🧠 USER: How do I find descriptor?
+R->>R: 🙎🏽 Display Descriptor
+note right of TC: 🧠 USER: How do I scan from R.D.?
+TC->>TC: 🙎🏽 Initiate Scanning
+R-->>TC: 🤖 Read Descriptor
+R->>R: 🙎🏽 Delete Seed
+note right of Rs: 💡 USER: Where to send shares?
+Rs->>Rs: 🙎🏽 Distribute Shares
+```
+
+
+
+[problems]
+[X research points] 🧠
+[Y decision points] 💡
+[Y actions] ❗
+[no linear progression]
