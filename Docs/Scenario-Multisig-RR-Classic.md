@@ -41,7 +41,7 @@ S1-->>TC: 🤖 Read Descriptor
 note right of TC: 💡 USER: What Do I Call Key 2?
 TC->>TC: 🙎🏽 Rename Key 2
 
-note right of S2: 🧠 USER: How do create seed?
+note right of S2: 🧠 USER: How do I create seed?
 S2->>S2: 🙎🏽 Create Active Seed 2
 S2->>S2: 🙎🏽 Backup to MicroSD 1
 S2->>S2: 🙎🏽 Record Backup Code
