@@ -14,7 +14,7 @@ Following is a look at the current system laid out by the Multisig Self-Custody 
 
 Following is a sequence diagram of the classic design of multisig detailed in [Multisig Self-Custody Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md), which makes use of current best-in-class transaction coordinator capabilities found in Sparrow Wallet. 
 
-**Initial Multisig Setup:**
+**Multisig Prep:**
 
 ```mermaid
 sequenceDiagram
@@ -29,7 +29,7 @@ note right of TC: 💡 USER: What multisig?
 TC->>TC: 🙎🏽 Create Multisig
 ```
 
-**Recovery Key Creation & Input:**
+**Recovery Key (GST) Creation & Input:**
 
 ```mermaid
 sequenceDiagram
@@ -62,7 +62,7 @@ note right of Rs: 💡 USER: Where to send shares?
 Rs->>Rs: 🙎🏽 Distribute Shares
 ```
 
-**Active Key #1 Creation & Input:**
+**Active Key #1 (GST) Creation & Input:**
 
 ```mermaid
 sequenceDiagram
@@ -80,7 +80,7 @@ note right of TC: 💡 USER: Where Do I Call Key 2?
 TC->>TC: 🙎🏽 Rename Key 2
 ```
 
-**Active Key #1 Creation & Input:**
+**Active Key #2 (Passport) Creation & Input:**
 
 ```mermaid
 sequenceDiagram
@@ -102,6 +102,41 @@ S2-->>TC: 🤖 Read QR
 note right of TC: 💡 USER: Where Do I Call Key 3?
 ```
 
+**Multisig Finalization:**
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
+
+TC->>TC: 🙎🏽 Apply Multisig
+note right of TC: 🧠 USER: How do I backup multisig?
+```
+
+**Active Key #2 (Passport) Finalization:**
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
+
+TC->>TC: 🙎🏽 Backup Multisig Descriptor
+note right of TC: 🧠 USER: How do I output multisig?
+TC->>TC: 🙎🏽 Export Multisig
+TC-->>S2: 🤖 Read QR
+S2->>S2: 🙎🏽 Create Wallet
+note right of TC: 🧠 USER: How do I display address?
+TC->>TC: 🙎🏽 Export Address
+TC-->>S2: 🤖 Read QR
+S2->>S2: 🙎🏽 Backup to MicroSD 1
+S2->>S2: 🙎🏽 Backup to MicroSD 2
+```
 [problems]
 [X research points] 🧠
 [Y decision points] 💡
