@@ -354,6 +354,8 @@ The scenario updated with Request/Response includes the following steps:
 * **14 Human Actions (🙎🏽).** _When a user must intiate an action._ The Human Actions are halved, but the exact gains will depend on the devices used. Half of these actions are just the input of a Confirmation following a Decision Point, the other half are physical interactions, and all are now guided by the devices as they step through the procedure using Request/Response codes.
 * **32 Automated Actions (🤖).** _When the interopable process initiates an action on its own._ Obviously, Automated Actions take up the slack, and this is the great advantage of a Request/Response system: Automated Actions (and even Human Actions) driven by an automated procedure and human confirmations.
 
+[See a diagram of the whole "Request/Response Scenario" process.](Scenario-Multisig-RR-Updated.md)
+
 **Scenario Comparison:**
 
 Here's the comparison in pure numbers, which doesn't reflect the fact that the decisions and actions in the Request/Response Scenario are mostly binary decisions, confirmation inputs, and instructed actions, all decreasing the cognitive load.
@@ -365,7 +367,7 @@ Here's the comparison in pure numbers, which doesn't reflect the fact that the d
 | Human Actions (🙎🏽) | 30 | 14 |
 | Automated Actions (🤖) | 5 | 32 | 
 
-[See a diagram of the whole "Request/Response Scenario" process.](Scenario-Multisig-RR-Updated.md)
+
 
 ## Final Notes
 
