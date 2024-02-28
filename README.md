@@ -16,7 +16,8 @@
 We've recently supplemented the Cold-Storage scenario found in #SC 1.01 with a new multisig scenario:
 
 * [Multisig Self-Custody Scenario](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig.md) (April 2022) — _Draft_ of a specific scenario for multisig, currently seeking feedback on the overall thinking. Will be expanded in the future to support more signing devices and even transaction coordinators.
- 
+    * [Improving Multsigs with Request/Response](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig-RR.md) (February 2024) — Why Request/Response methods are needed to create the next generation of more accessible self-sovereign scenarios.
+
 ## SmartCustody Tools
 
 The following long-form essays describe how to use a variety of smart tools to improve the resilience and security of your digital assets.
