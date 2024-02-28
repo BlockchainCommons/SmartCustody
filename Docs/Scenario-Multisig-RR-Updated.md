@@ -63,7 +63,7 @@ note right of TC: 💡 USER: Request looks right?
 TC->>TC: 🙎🏽 OK Multisig Response
 TC-->>TC: 🤖 Display Multisig RESPONSE
 TC-->>S2: 🤖 Read Multisig Response
-S2->>S2: 🤖 Create Wallet
+S2-->>S2: 🤖 Create Wallet
 S2-->>TC: 🤖 REQUEST Address
 S2-->>S2: 🤖 Wait for Response QR
 
