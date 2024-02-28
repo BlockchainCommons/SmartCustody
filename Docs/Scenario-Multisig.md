@@ -15,7 +15,7 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 ***History:*** This procedure was updated in July 2023 for Gordian Seed Tool 1.6, Foundation Passport Batch 2 (the bronze-colored one), and Sparrow 1.7.8.
 
-> _Is this scenario too complex for you? See our [Request/Response Use Case](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig-RR.md) for our next-generation plans for a more automated system.
+> _Is this scenario too complex for you? See our [Request/Response Use Case](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig-RR.md) for our next-generation plans for a more automated system._
 
 ## Introduction to the Multisig Scenario
 
