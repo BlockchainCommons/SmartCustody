@@ -51,6 +51,7 @@ S2->>S2: 🙎🏽 Display Public Cosigner QR
 note right of TC: 🧠 USER: How do I scan from PP?
 S2-->>TC: 🤖 Read QR
 note right of TC: 💡 USER: What Do I Call Key 3?
+TC->>TC: 🙎🏽 Rename Key 3
 
 TC->>TC: 🙎🏽 Apply Multisig
 note right of TC: 🧠 USER: How do I backup multisig?
