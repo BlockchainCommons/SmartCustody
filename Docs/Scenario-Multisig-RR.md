@@ -8,7 +8,7 @@ Unfortunately, the methodology is complex and requires a fair amount of user kno
 
 If a user can click "Create Multisig" on their transaction coordinator, and then simply follow instructions and click confirmations then they are _much_ more likely to create a multisig system than if they must connect together all the pieces by hand.
 
-Following is a look at the current system laid out by the Multisig Self-Custody Scenario and a hopeful future system using a Request/Response system. Neither example shows required physical interactions, such as distributing data storage methods to different vaults. They also may miss minor actions or decisions (which is to say both of these scenarios are likely even more complex than they seem), but should both be abstracted to the same level, to provide a clear apples-to-apples comparison.
+Following is a look at the current system laid out by the Multisig Self-Custody Scenario and a hopeful future system using a Request/Response system. Neither example shows required physical interactions, such as distributing data storage methods to different vaults nor setup steps for any of the software or hardware. The examples may also miss minor actions or decisions, but should both be abstracted to the same level, to provide a clear apples-to-apples comparison. But overall, both of these scenarios are likely even more complex than they seem.
 
 ## Classic Scenario
 
@@ -80,6 +80,27 @@ note right of TC: 💡 USER: Where Do I Call Key 2?
 TC->>TC: 🙎🏽 Rename Key 2
 ```
 
+**Active Key #1 Creation & Input:**
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
+
+note right of S2: 🧠 USER: How do create seed?
+S2->>S2: 🙎🏽 Create Active Seed 2
+S2->>S2: 🙎🏽 Backup to MicroSD 1
+S2->>S2: 🙎🏽 Record Backup Code
+S2->>S2: 🙎🏽 Backup to MicroSD 2
+note right of S2: 🧠 USER: How do I display correct QR?
+S2->>S2: 🙎🏽 Display Public Cosigner QR
+note right of TC: 🧠 USER: How do I scan from PP?
+S2-->>TC: 🤖 Read QR
+note right of TC: 💡 USER: Where Do I Call Key 3?
+```
 
 [problems]
 [X research points] 🧠
