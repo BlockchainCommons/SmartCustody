@@ -125,6 +125,7 @@ participant S2 as Passport
 
 TC->>TC: 🙎🏽 Apply Multisig
 note right of TC: 🧠 USER: How do I backup multisig?
+TC->>TC: 🙎🏽 Backup Multisig Descriptor
 ```
 
 **Active Key #2 (Passport) Finalization:**
@@ -139,7 +140,6 @@ participant S1 as Active GST
 actor TC as Sparrow
 participant S2 as Passport
 
-TC->>TC: 🙎🏽 Backup Multisig Descriptor
 note right of TC: 🧠 USER: How do I output multisig?
 TC->>TC: 🙎🏽 Export Multisig
 TC-->>S2: 🤖 Read QR
