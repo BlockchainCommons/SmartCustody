@@ -59,7 +59,7 @@ R->>R: 🙎🏽 Display Descriptor
 note right of TC: 🧠 USER: How do I scan from GST?
 TC->>TC: 🙎🏽 Initiate Scanning
 R-->>TC: 🤖 Read Descriptor
-note right of TC: 💡 USER: Where Do I Call Key 1?
+note right of TC: 💡 USER: What Do I Call Key 1?
 TC->>TC: 🙎🏽 Rename Key 1
 R->>R: 🙎🏽 Delete Seed
 note right of Rs: 💡 USER: Where to send shares?
@@ -82,7 +82,7 @@ S1->>S1: 🙎🏽 Create Active Seed 1
 S1->>S1: 🙎🏽 Display Descriptor
 TC->>TC: 🙎🏽 Initiate Scanning
 S1-->>TC: 🤖 Read Descriptor
-note right of TC: 💡 USER: Where Do I Call Key 2?
+note right of TC: 💡 USER: What Do I Call Key 2?
 TC->>TC: 🙎🏽 Rename Key 2
 ```
 
@@ -107,7 +107,7 @@ note right of S2: 🧠 USER: How do I display correct QR?
 S2->>S2: 🙎🏽 Display Public Cosigner QR
 note right of TC: 🧠 USER: How do I scan from PP?
 S2-->>TC: 🤖 Read QR
-note right of TC: 💡 USER: Where Do I Call Key 3?
+note right of TC: 💡 USER: What Do I Call Key 3?
 ```
 
 **Multisig Finalization:**
