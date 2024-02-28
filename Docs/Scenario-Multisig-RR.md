@@ -159,7 +159,7 @@ Overall, this abstraction of the current Multisig Self-Custody scenario demonstr
 
 * **5 Decision Points (💡).** _When a user must make a decision._ Obviously, a user will have to make decisions in a process, but complex decisions are spread across the whole system (and all of the renaming of the keys wouldn't be necessary if the transaction coordinator could just learn more about the seed vaults it's working with).
 * **11 Research Points (🧠).** _When a user must figure out how to do something._ A user shouldn't have to figure out all of the intricacies of each of his signing devices. Instead, they should be cleanly interoperable: once a user figures out how to start a process, it should continue straight through without more learning required. The cognitive load of continued education needed is likely the biggest thing holding back usage of a multisig scenario (or many other somewhat complex digital-asset tasks). 
-* **30 Human Actions (🙎🏽).** _When a user must intiate an action._ Having to actively continue the process 30 times, in a wide variety of ways (while also requiring constant reference to the Scenario checklist), might be another show stopper, especially when that's on-top of physical activities such as storing things in different places.
+* **31 Human Actions (🙎🏽).** _When a user must intiate an action._ Having to actively continue the process 31 times, in a wide variety of ways (while also requiring constant reference to the Scenario checklist), might be another show stopper, especially when that's on-top of physical activities such as storing things in different places.
 * **5 Automated Actions (🤖).** _When the interopable process initiates an action on its own._ In the Classic Multisig Self-Custody Scenario, Automated Actions are limited to those times when one device has been setup to display a QR and another to read a QR. Only when both of these Human Actions have occurred does an Automated Action (briefly) continue.
 
 The imbalance of Research Points (11 🧠) and Human Actions (30 🙎🏽) to Automated Actions (5 🤖) is clearly the heart of the problem with the currently possible Multisig Self-Custody Scenario. But there are at least two other issues:
@@ -354,7 +354,7 @@ The Classic Scenario, updated with Request/Response, includes the following step
 * **6 Confirmation Points (👍🏽).** _When a user confirms a decision._ Blockchains Commons [best practices](https://developer.blockchaincommons.com/envelope/request/#best-practices-for-request--response) for use of Request/Response suggest confirming each Request (unless some sort of preconfirmation has been made). This introduces new points of human intervention, but ones that are both necessary (because they check the automated process so it doesn't run out of control) and simple (because they only require looking at information and OKing it). 
 * **1 Research Point (🧠).** _When a user must figure out how to do something._ An even bigger advantage is obvious in the Reseach Points: a user only has to figure out one thing; Request/Response takes care of the rest. 
 * **14 Human Actions (🙎🏽).** _When a user must intiate an action._ The Human Actions are halved. Even then, half of the remaining actions are just an OK of a Confirmation Point. The other half are physical interactions, but all are now guided by the devices as they step through the procedure using Request/Response codes, so they're simple and obvious. (Exact gains here depend on the precise needs of the devices being uses.)
-* **32 Automated Actions (🤖).** _When the interopable process initiates an action on its own._ Obviously, Automated Actions take up the slack, and this is the great advantage of a Request/Response system: Automated Actions (and even Human Actions) driven by an automated procedure and human confirmations.
+* **33 Automated Actions (🤖).** _When the interopable process initiates an action on its own._ Obviously, Automated Actions take up the slack, and this is the great advantage of a Request/Response system: Automated Actions (and even Human Actions) driven by an automated procedure and human confirmations.
 
 [See a diagram of the whole "Request/Response Scenario" process.](Scenario-Multisig-RR-Updated.md)
 
@@ -367,8 +367,8 @@ Here's the comparison in pure numbers, which doesn't reflect the fact that the d
 | Decision Points (💡) | 5 | 2 |
 | Confirmation Points (👍🏽) | 0 | 6 |
 | Research Points (🧠) | 11 | 1 |
-| Human Actions (🙎🏽) | 30 | 14 |
-| Automated Actions (🤖) | 5 | 32 | 
+| Human Actions (🙎🏽) | 31 | 14 |
+| Automated Actions (🤖) | 5 | 33 | 
 
 ## Final Notes
 
