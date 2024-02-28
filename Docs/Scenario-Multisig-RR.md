@@ -166,7 +166,18 @@ The imbalance of Research Points (11 🧠) and Human Actions (30 🙎🏽) to Au
 
 ## Request/Response Scenario
 
-Two 
+Blockchain Commons' forwarding-look Request-Response Scenario is meant to solve these problems primarily through the application of [Gordian Envelopes](https://developer.blockchaincommons.com/envelope/). Obviously individual seed vaults and transaction coordinators would need to build Envelopes into their standard processing methodology to make full use of the capabilities, and that's what's described here.
+
+Envelopes solve the problems of the Classic scenario via two main means:
+
+* **Request/Response.** Gordian Envelopes have a [Request/response system](https://developer.blockchaincommons.com/envelope/request/) that allow machines to send each other function calls remotedly. Currently, request/response supports calls to send seeds, send keys, send output descriptors, and sign PSBTs. This scenario imagines new request/response calls to create recovery seeds, create active seeds, delete seeds, send remote addresses, and send remote multisig descriptors that would be trivial to add. Through the use of request/response, this scenario creates a linear progression that at _every_ step across multiple devices prompts a user with what to do next, greatly simplifying the multisig setup (and removing the need for a written scenario).
+* **Metadata.** Envelopes can carry arbitrary metadata alongside their payload. This resolves the other major problem with the classic scenario, where even when QR codes transmit data from one device to another, there was still no ability for the transaction coordinator to view the larger scenario (for example, what device it was working with, and what notes or other data the device might have about the seed being used to generate a key).
+
+Though many of the specific Requests in this scenario are out-of-bounds for the current Request/Response specification, they are well-within the capability of Envelope and could be quickly added when working with hardware-wallet designers to create such a scenario.
+
+**Multisig Prep:**
+
+The prep is very similar to the prep in the Classic Scenario, except here a user will preload all their major choices for the entire scenario by choosing how to create their multisig and with what devices. From there, the transaction coordinator will be able to use Requests and Responses to walk through the entire process.
 
 ```mermaid
 sequenceDiagram
@@ -179,18 +190,42 @@ participant S2 as Passport
 note right of TC: 🧠 USER: How do I create multisig?
 note right of TC: 💡 USER: Change defaults?
 TC->>TC: 🙎🏽 Create Multisig
+```
+
+**Recovery Key (GST) Creation & Input:**
+
+The standard procedure for a Request/Response interaction between the transaction coordinator and a seed-vault device is as follows:
+
+1. The transaction coordinator makes a Request
+2. The transaction coordinator begins waiting for a Response
+3. The user reads the Request with the remote device
+4. The user OKs the Request on the remote device
+5. The remote device does its stuff
+6. The remote device displays a Response
+7. The user reads the Response with the transaction coordinator
+
+Obviously, there's the opportunity for more human interaction at each step, depending on the exact needs on the device. In this case, after the Seed Vault outputs the SSKR shares, the user will have to read them back into the device, and down the road they'll have to figure out how to distribute them. But, those human interactions are minimized to to the [best practice](https://developer.blockchaincommons.com/envelope/request/#best-practices-for-request--response) of responding to Requests and to the activities requiring _physical_ intervention of some sort.
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
 
 TC-->>R: 🤖 REQUEST Recovery Key
 TC-->>TC: 🤖 Wait for Response QR
+
 note right of R: 💡 USER: Looks right?
 R->>R: 🙎🏽 OK Key Creation
 R-->>R: 🤖 Create Seed
-R-->>Rs: 🤖 Create SSKR Shares
+R-->>Rs: 🤖 Output SSKR Shares
 R-->>R: 🤖 Delete Seed
-Rs->>R: 🙎🏽 Display Shares
+Rs->>R: 🙎🏽 Display Output Shares
 R-->>R: 🤖 Test Share Combinations
 R-->>R: 🤖 Display Descriptor RESPONSE
-R-->>TC: 🤖 Read QR RESPONSE
+R-->>TC: 🤖 Read Descriptor RESPONSE
 
 TC-->>R: 🤖 REQUEST Seed Deletion
 TC-->>TC: 🤖 Wait for Response QR
@@ -201,6 +236,19 @@ R-->>R: 🤖 Display Verification RESPONSE
 R-->>TC: 🤖 Read Verification Response
 note right of Rs: 💡 USER: Where to send shares?
 Rs->>Rs: 🙎🏽 Distribute Shares
+```
+
+**Active Key #1 (GST) Creation & Input:**
+
+In the simplest situation, all a user has to do is OK the remote activity on the seed vault. The devices and the Request/Response system take care of the rest.
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
 
 TC-->>S1: 🤖 REQUEST Active Key 1
 TC-->>TC: 🤖 Wait for Response QR
@@ -209,6 +257,21 @@ S1->>S1: 🙎🏽 OK Key Creation
 S1-->>S1: 🤖 Create Active Seed 1
 S1-->>S1: 🤖 Display Descriptor RESPONSE
 S1-->>TC: 🤖 Read Descriptor RESPONSE
+```
+
+**Active Key #2 (Passport) Creation & Input:**
+
+The Passport offers another example where a bit of physical interaction is still requiring, here to insert the two MicroSDs into the Passport for backup and to physically record a backup code. 
+
+(Could the backup code be recorded by the transaction coordinator using metadata? Definitely! Should it? That's a more difficult question, but it could be stored safely and securely by putting it in an Envelope, sharding it, and storing those shares on the transaction coordinator and the other devices, but that's a more complex scenario than what's laid out here. Instead, this scenario keeps itself to an example automation of the Classic Scenario.)
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
 
 TC-->>S2: 🤖 REQUEST Active Key 2
 TC-->>TC: 🤖 Wait for Response QR
@@ -222,15 +285,42 @@ S2-->>S2: 🤖 Display Public Cosigner RESPONSE
 S2-->>TC: 🤖 Read Cosigner RESPONSE
 S2-->>TC: 🤖 REQUEST Multisig Descriptor
 S2-->>S2: 🤖 Wait for Response QR
+```
+
+**Multisig Finalization:**
+
+As usual the finalization of the multisig on the transaction coordinator is simple.
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
 
 TC-->>TC: 🤖 Apply Multisig
 TC-->>TC: 🤖 Backup Multisig Descriptor
+```
+
+**Active Key #2 (Passport) Finalization:**
+
+However, there was a bit of a twist at the end of the Passport Active Key creation. After sending the Response to the transaction coordinator, the Passport then created a new Request: "🤖 REQUEST Multisig Descriptor". This previously required more human intervention for the user to find the data that the Passport wants. Now, after the multisig is created, the user just shows the transaction coordinator the new Request from the Passport, and afterward the two devices can 
+iteration through the Passport's final data acquisition.
+
+```mermaid
+sequenceDiagram
+participant Rs as Recovery Shares
+participant R as Recovery GST
+participant S1 as Active GST
+actor TC as Sparrow
+participant S2 as Passport
 
 note right of S2: 💡 USER: Request looks right?
-S2->>S2: 🙎🏽 OK Descriptor Response
+S2->>S2: 🙎🏽 OK Multisig Response
 TC-->>TC: 🤖 Display Multisig RESPONSE
 TC-->>S2: Read Multisig Response
-S2->>S2: 🙎🏽 Create Wallet
+S2->>S2:- 🤖 Create Wallet
 S2-->>TC: 🤖 REQUEST Address
 S2-->>S2: 🤖 Wait for Response QR
 
