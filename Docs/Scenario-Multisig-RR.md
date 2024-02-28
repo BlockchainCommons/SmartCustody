@@ -331,3 +331,12 @@ TC-->>S2: Read Address Response
 S2->>S2: 🙎🏽 Backup to MicroSD 1
 S2->>S2: 🙎🏽 Backup to MicroSD 2
 ```
+The scenario updated with Request/Response includes the following steps:
+
+* **7 Decision Points (💡).** _When a user must make a decision._ The number of decisions climbs up slightly, but other than the initial decision on scenario creation, everything is a simple binary choice offered to the user: "Does this request look right?"
+* **1 Research Points (🧠).** _When a user must figure out how to do something._ An even bigger advantage is obvious in the Reseach Points: a user only has to figure out one thing, and the Request/Response takes care of the rest. 
+* **14 Human Actions (🙎🏽).** _When a user must intiate an action._ The Human Actions are halved, but the exact gains will depend on the devices used. Half of these actions are just the input of a Confirmation following a Decision Point, the other half are physical interactions, and all are now guided by the devices as they step through the procedure using Request/Response codes.
+* **32 Automated Actions (🤖).** _When the interopable process initiates an action on its own._ Obviously, Automated Actions take up the slack, and this is the great advantage of a Request/Response system: Automated Actions (and even Human Actions) driven by an automated procedure and human confirmations.
+
+[See a diagram of the whole "Request/Response Scenario" process.](Scenario-Multisig-RR-Updated.md)
+
