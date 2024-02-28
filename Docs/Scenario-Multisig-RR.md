@@ -340,3 +340,16 @@ The scenario updated with Request/Response includes the following steps:
 
 [See a diagram of the whole "Request/Response Scenario" process.](Scenario-Multisig-RR-Updated.md)
 
+## Final Notes
+
+Even with sophisticated transaction coordinators such as Sparrow, current multisig scenarios are a hodge-podge. They're complex and they involve high amounts of human decision, research, and intervention. As a result, they're not used and digital assets remain insecure.
+
+This is one of the primary use cases for Gordian Envelopes, especially their [Request/Response functionality](https://developer.blockchaincommons.com/envelope/request/) and their ability to encode metadata. They create a new paradigm of not just interoperability (where different devices are able to talk to each other) but _interfunctionality_ (where different devices are able to work together as a cohesive whole). With a Request/Response scenario:
+
+1. The user makes initial decisions about multisig creation.
+2. The user follows the instructions on various devices, trading between them as instructed.
+3. The user OKs each Request as it's read into another device.
+4. The user takes care of physical chores.
+5. The devices do the rest.
+
+Thanks to linear progression and the transmission of metadata saying what each device is and what it did, the procedure is laid out for the user rather than the user needing to lay it out themself from a checklist and the probability of users engaging in a Smart Custody solution such as a multisig is dramatically increased.
