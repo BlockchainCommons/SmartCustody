@@ -8,7 +8,7 @@ Unfortunately, the methodology is complex and requires a fair amount of user kno
 
 If a user can click "Create Multisig" on their transaction coordinator, and then simply follow instructions and click confirmations then they are _much_ more likely to create a multisig system than if they must connect together all the pieces by hand.
 
-Following is a look at the current system laid out by the Multisig Self-Custody Scenario and a hopeful future system using a Request/Response system. Neither example shows required physical interactions, such as distributing data storage methods to different vaults. They also may miss minor actions or decisions, but should both be abstracted to the same level, to provide a clear apples-to-apples comparison.
+Following is a look at the current system laid out by the Multisig Self-Custody Scenario and a hopeful future system using a Request/Response system. Neither example shows required physical interactions, such as distributing data storage methods to different vaults. They also may miss minor actions or decisions (which is to say both of these scenarios are likely even more complex than they seem), but should both be abstracted to the same level, to provide a clear apples-to-apples comparison.
 
 ## Classic Scenario
 
@@ -64,7 +64,7 @@ Rs->>Rs: 🙎🏽 Distribute Shares
 
 **Active Key #1 Creation & Input:**
 
-```
+```mermaid
 sequenceDiagram
 participant Rs as Recovery Shares
 participant R as Recovery GST
