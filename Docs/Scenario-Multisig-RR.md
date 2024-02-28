@@ -52,10 +52,10 @@ Rs->>R: 🙎🏽 Test SSKR Shares A+C
 
 note right of R: 🧠 USER: How do I find descriptor?
 R->>R: 🙎🏽 Display Descriptor
-note right of TC: 🧠 USER: How do I scan from R.D.?
+note right of TC: 🧠 USER: How do I scan from GST?
 TC->>TC: 🙎🏽 Initiate Scanning
 R-->>TC: 🤖 Read Descriptor
-note right of TC: 💡 USER: Where do I Call It?
+note right of TC: 💡 USER: Where Do I Call Key 1?
 TC->>TC: 🙎🏽 Rename Key 1
 R->>R: 🙎🏽 Delete Seed
 note right of Rs: 💡 USER: Where to send shares?
