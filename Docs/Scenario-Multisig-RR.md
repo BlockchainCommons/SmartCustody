@@ -175,7 +175,17 @@ Envelopes solve the problems of the Classic scenario via two main means:
 * **Request/Response.** Gordian Envelopes have a [Request/response system](https://developer.blockchaincommons.com/envelope/request/) that allow machines to send each other function calls remotedly. Currently, request/response supports calls to send seeds, send keys, send output descriptors, and sign PSBTs. This scenario imagines new request/response calls to create recovery seeds, create active seeds, delete seeds, send remote addresses, and send remote multisig descriptors that would be trivial to add. Through the use of request/response, this scenario creates a linear progression that at _every_ step across multiple devices prompts a user with what to do next, greatly simplifying the multisig setup (and removing the need for a written scenario).
 * **Metadata.** Envelopes can carry arbitrary metadata alongside their payload. This resolves the other major problem with the Classic Scenario, where even when QR codes transmitted data from one device to another, there was still no ability for the transaction coordinator to view the larger picture (for example, what device it was working with, and what notes or other data the device might have about the seed being used to generate a key).
 
-Though many of the specific Requests in this scenario are out-of-bounds for the current Request/Response specification, they are well-within the capability of Envelope and could be quickly added when working with hardware-wallet designers to enable such a scenario.
+(Though many of the specific Requests in this scenario are not included in the current Request/Response specification, they are well-within the capability of Envelope and could be quickly added when working with hardware-wallet designers to enable such a scenario.)
+
+With a Request/Response scenario:
+
+1. The user makes initial decisions about multisig creation.
+2. The user follows the instructions on various devices, trading between them as instructed.
+3. The user OKs each Request as it's read into another device.
+4. The user takes care of physical chores.
+5. The devices do the rest.
+
+Thanks to linear progression and the transmission of metadata saying what each device is and what it did, the procedure is laid out for the user rather than the user needing to lay it out themself from a checklist and the probability of users engaging in a Smart Custody solution such as a multisig is dramatically increased.
 
 **Multisig Prep:**
 
@@ -333,12 +343,26 @@ TC-->>S2: Read Address Response
 S2->>S2: 🙎🏽 Backup to MicroSD 1
 S2->>S2: 🙎🏽 Backup to MicroSD 2
 ```
+
+**Request/Response Scenario Overview:**
+
 The scenario updated with Request/Response includes the following steps:
 
-* **7 Decision Points (💡).** _When a user must make a decision._ The number of decisions climbs up slightly, but other than the initial decision on scenario creation, everything is a simple binary choice offered to the user: "Does this request look right?"
+* **7 Decision Points (💡).** _When a user must make a decision._ The number of decisions climbs  slightly, but other than the initial decision on scenario creation, everything is a simple binary choice offered to the user: "Does this request look right?"
 * **1 Research Points (🧠).** _When a user must figure out how to do something._ An even bigger advantage is obvious in the Reseach Points: a user only has to figure out one thing, and the Request/Response takes care of the rest. 
 * **14 Human Actions (🙎🏽).** _When a user must intiate an action._ The Human Actions are halved, but the exact gains will depend on the devices used. Half of these actions are just the input of a Confirmation following a Decision Point, the other half are physical interactions, and all are now guided by the devices as they step through the procedure using Request/Response codes.
 * **32 Automated Actions (🤖).** _When the interopable process initiates an action on its own._ Obviously, Automated Actions take up the slack, and this is the great advantage of a Request/Response system: Automated Actions (and even Human Actions) driven by an automated procedure and human confirmations.
+
+**Scenario Comparison:**
+
+Here's the comparison in pure numbers, which doesn't reflect the fact that the decisions and actions in the Request/Response Scenario are mostly binary decisions, confirmation inputs, and instructed actions, all decreasing the cognitive load.
+
+| | Classic | R/R |
+|---|-------|-----|
+| Decision Points (💡) | 5 | 7 |
+| Research Points (🧠) | 11 | 1 |
+| Human Actions (🙎🏽) | 30 | 14 |
+| Automated Actions (🤖) | 5 | 32 | 
 
 [See a diagram of the whole "Request/Response Scenario" process.](Scenario-Multisig-RR-Updated.md)
 
@@ -346,12 +370,6 @@ The scenario updated with Request/Response includes the following steps:
 
 Even with sophisticated transaction coordinators such as Sparrow, current multisig scenarios are a hodge-podge. They're complex and they involve high amounts of human decision, research, and intervention. As a result, they're not used and digital assets remain insecure.
 
-This is one of the primary use cases for Gordian Envelopes, especially their [Request/Response functionality](https://developer.blockchaincommons.com/envelope/request/) and their ability to encode metadata. They create a new paradigm of not just interoperability (where different devices are able to talk to each other) but _interfunctionality_ (where different devices are able to work together as a cohesive whole). With a Request/Response scenario:
+This is one of the primary use cases for Gordian Envelope, especially its [Request/Response functionality](https://developer.blockchaincommons.com/envelope/request/) and its ability to encode metadata. Together these abilities create a new paradigm of not just interoperability (where different devices are able to talk to each other) but _interfunctionality_ (where different devices are able to work together as a cohesive whole). 
 
-1. The user makes initial decisions about multisig creation.
-2. The user follows the instructions on various devices, trading between them as instructed.
-3. The user OKs each Request as it's read into another device.
-4. The user takes care of physical chores.
-5. The devices do the rest.
 
-Thanks to linear progression and the transmission of metadata saying what each device is and what it did, the procedure is laid out for the user rather than the user needing to lay it out themself from a checklist and the probability of users engaging in a Smart Custody solution such as a multisig is dramatically increased.
