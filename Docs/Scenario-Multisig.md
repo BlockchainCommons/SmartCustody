@@ -15,6 +15,8 @@ _This is one of several possible scenarios for digital-asset storage. Other scen
 
 ***History:*** This procedure was updated in July 2023 for Gordian Seed Tool 1.6, Foundation Passport Batch 2 (the bronze-colored one), and Sparrow 1.7.8.
 
+> _Is this scenario too complex for you? See our [Request/Response Use Case](https://github.com/BlockchainCommons/SmartCustody/blob/master/Docs/Scenario-Multisig-RR.md) for our next-generation plans for a more automated system.
+
 ## Introduction to the Multisig Scenario
 
 Digital assets held personally ("self-custody") face two major dangers: single point of failure (SPOF) and single point of compromise (SPOC), which is to say losing those assets either through accident or theft. Traditional self-custody solutions focus on decreasing SPOF with methodologies like seed backup, but in doing so tend to increase the possibility of SPOC. This is generally in tune with the adversaries that the average self-custodian would be facing. However, now that multisig is sufficiently deployed to support strong usability, it can be used to simultaneously decrease both SPOF and SPOC at a relatively small cost to convenience and complexity. 
