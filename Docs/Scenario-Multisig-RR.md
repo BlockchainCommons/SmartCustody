@@ -207,10 +207,8 @@ S1->>S1: 🙎🏽 OK Key Creation
 S1-->>S1: 🤖 Create Active Seed 1
 S1-->>S1: 🤖 Display Descriptor RESPONSE
 S1-->>TC: 🤖 Read Descriptor RESPONSE
-note right of TC: 💡 USER: Where Do I Call Key 2?
-TC->>TC: 🙎🏽 Rename Key 2
 
-TC-->>S2: 🤖 REQUEST Active Key 1
+TC-->>S2: 🤖 REQUEST Active Key 2
 TC-->>TC: 🤖 Wait for Response QR
 note right of S2: 💡 USER: Looks right?
 S2->>S2: 🙎🏽 OK Key Creation
